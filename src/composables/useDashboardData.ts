@@ -35,9 +35,9 @@ export function useDashboardData() {
       while (!cancelled) {
         try {
           const [summary, skills, portability] = await Promise.all([
-            loadJson<DashboardSummary>("/data/summary.json"),
-            loadJson<SkillIndexRecord[]>("/data/skills_index.json"),
-            loadJson<PortabilitySummary>("/data/portability.json"),
+            loadJson<DashboardSummary>(`${import.meta.env.BASE_URL}data/summary.json`),
+            loadJson<SkillIndexRecord[]>(`${import.meta.env.BASE_URL}data/skills_index.json`),
+            loadJson<PortabilitySummary>(`${import.meta.env.BASE_URL}data/portability.json`),
           ]);
           if (!cancelled) {
             state.value = { status: "ready", data: { summary, skills, portability } };
