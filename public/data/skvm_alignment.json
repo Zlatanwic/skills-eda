@@ -1,0 +1,135 @@
+{
+  "implemented": [
+    "Treat skills as analyzable natural-language programs.",
+    "Extract derived skill capability requirements (SCR).",
+    "Import official SkVM target capability profiles (TCP).",
+    "Compute SCR/TCP portability gaps by model and harness.",
+    "Detect environment dependency risk from skill text."
+  ],
+  "out_of_scope": [
+    "AOT compilation into target-specific skill variants.",
+    "JIT code solidification and adaptive recompilation.",
+    "Runtime task execution, token reduction, and speedup evaluation.",
+    "Full public skill ecosystem crawling at 118k-scale."
+  ],
+  "partial": [
+    "Primitive catalog is project-defined and mapped approximately to SkVM primitive ids.",
+    "Environment binding is represented as risk detection, not generated setup scripts.",
+    "Concurrency is represented as primitive demand and complexity signals, not executable DAG extraction.",
+    "Validation sample is generated for manual review, but labels are not fully adjudicated yet."
+  ],
+  "primitive_mapping": [
+    {
+      "project_primitive": "agent.parallel",
+      "skvm_primitive": "follow.delegation"
+    },
+    {
+      "project_primitive": "data.parse",
+      "skvm_primitive": "reason.analysis"
+    },
+    {
+      "project_primitive": "data.transform",
+      "skvm_primitive": "reason.analysis"
+    },
+    {
+      "project_primitive": "data.visualize",
+      "skvm_primitive": "gen.code.python"
+    },
+    {
+      "project_primitive": "doc.generate",
+      "skvm_primitive": "gen.text.long"
+    },
+    {
+      "project_primitive": "follow.constraints",
+      "skvm_primitive": "follow.constraint"
+    },
+    {
+      "project_primitive": "follow.procedure",
+      "skvm_primitive": "follow.procedure"
+    },
+    {
+      "project_primitive": "follow.verify",
+      "skvm_primitive": "follow.constraint"
+    },
+    {
+      "project_primitive": "gen.code.javascript",
+      "skvm_primitive": "gen.code.javascript"
+    },
+    {
+      "project_primitive": "gen.code.python",
+      "skvm_primitive": "gen.code.python"
+    },
+    {
+      "project_primitive": "gen.code.shell",
+      "skvm_primitive": "gen.code.shell"
+    },
+    {
+      "project_primitive": "gen.code.sql",
+      "skvm_primitive": "gen.code.sql"
+    },
+    {
+      "project_primitive": "gen.code.test",
+      "skvm_primitive": "gen.code.python"
+    },
+    {
+      "project_primitive": "gen.code.typescript",
+      "skvm_primitive": "gen.code.javascript"
+    },
+    {
+      "project_primitive": "presentation.generate",
+      "skvm_primitive": "gen.text.structured"
+    },
+    {
+      "project_primitive": "reason.diagnose",
+      "skvm_primitive": "reason.analysis"
+    },
+    {
+      "project_primitive": "reason.plan",
+      "skvm_primitive": "reason.planning"
+    },
+    {
+      "project_primitive": "runtime.env_bind",
+      "skvm_primitive": "tool.exec"
+    },
+    {
+      "project_primitive": "spreadsheet.process",
+      "skvm_primitive": "gen.code.python"
+    },
+    {
+      "project_primitive": "tool.browser",
+      "skvm_primitive": "tool.browser"
+    },
+    {
+      "project_primitive": "tool.exec",
+      "skvm_primitive": "tool.exec"
+    },
+    {
+      "project_primitive": "tool.file.read",
+      "skvm_primitive": "tool.file.read"
+    },
+    {
+      "project_primitive": "tool.file.write",
+      "skvm_primitive": "tool.file.write"
+    },
+    {
+      "project_primitive": "tool.git",
+      "skvm_primitive": "tool.exec"
+    },
+    {
+      "project_primitive": "tool.github",
+      "skvm_primitive": "tool.web"
+    },
+    {
+      "project_primitive": "tool.package_manager",
+      "skvm_primitive": "tool.exec"
+    },
+    {
+      "project_primitive": "tool.web.fetch",
+      "skvm_primitive": "tool.web"
+    },
+    {
+      "project_primitive": "tool.web.search",
+      "skvm_primitive": "tool.web"
+    }
+  ]
+}

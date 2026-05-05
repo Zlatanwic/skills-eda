@@ -1,0 +1,3753 @@
+[
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "oral-health-analyzer",
+    "primitive_count": 0,
+    "scr_confidence": 0.2,
+    "skill_id": "oral_health_analyzer_skill_md__2a468dd66248",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": []
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "sexual-health-analyzer",
+    "primitive_count": 0,
+    "scr_confidence": 0.2,
+    "skill_id": "sexual_health_analyzer_skill_md__aa6af9530d14",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": []
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "skin-health-analyzer",
+    "primitive_count": 0,
+    "scr_confidence": 0.2,
+    "skill_id": "skin_health_analyzer_skill_md__72d1ad33f466",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": []
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "office-automation-test",
+    "primitive_count": 0,
+    "scr_confidence": 0.2,
+    "skill_id": "office_automation_test_skill_md__9ddeff6c654a",
+    "source": "skvm.benchmark",
+    "taxonomy": "procedural",
+    "top_primitives": []
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "zoom-out",
+    "primitive_count": 1,
+    "scr_confidence": 0.62,
+    "skill_id": "zoom_out_skill_md__73f6bdea8571",
+    "source": "local.agents",
+    "taxonomy": "mixed",
+    "top_primitives": [
+      {
+        "evidence": [
+          "visualization language",
+          "map"
+        ],
+        "level": 1,
+        "primitive": "data.visualize"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "meeting-notes",
+    "primitive_count": 7,
+    "scr_confidence": 0.62,
+    "skill_id": "meeting_minutes_skill_md__58e80fb1829f",
+    "source": "skvm.benchmark",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "document generation language",
+          "document"
+        ],
+        "level": 1,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "requirement"
+        ],
+        "level": 1,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "review"
+        ],
+        "level": 1,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 1,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "bash"
+        ],
+        "level": 1,
+        "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 1,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 1,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "story-writer",
+    "primitive_count": 3,
+    "scr_confidence": 0.62,
+    "skill_id": "story_writer_skill_md__06ac98744511",
+    "source": "skvm.benchmark",
+    "taxonomy": "generative",
+    "top_primitives": [
+      {
+        "evidence": [
+          "visualization language",
+          "plot"
+        ],
+        "level": 1,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 1,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 1,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "workflow-builder",
+    "primitive_count": 5,
+    "scr_confidence": 0.636,
+    "skill_id": "workflow_builder_skill_md__313b568e04f8",
+    "source": "skvm.benchmark",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "document generation language",
+          "document"
+        ],
+        "level": 1,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "process",
+          "workflow"
+        ],
+        "level": 1,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "bash"
+        ],
+        "level": 1,
+        "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 1,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 1,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "microservices-patterns",
+    "primitive_count": 4,
+    "scr_confidence": 0.64,
+    "skill_id": "microservices_patterns_skill_md__aaf7125fdded",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "constraint language",
+          "do not"
+        ],
+        "level": 1,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "step"
+        ],
+        "level": 1,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "SQL/database language",
+          "migration"
+        ],
+        "level": 1,
+        "primitive": "gen.code.sql"
+      },
+      {
+        "evidence": [
+          "planning language",
+          "plan",
+          "strategy"
+        ],
+        "level": 1,
+        "primitive": "reason.plan"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "Shell Script Helper",
+    "primitive_count": 6,
+    "scr_confidence": 0.647,
+    "skill_id": "shell_script_skill_md__67dac534bd83",
+    "source": "skvm.benchmark",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 1,
+        "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "diagnosis language",
+          "bug",
+          "debug"
+        ],
+        "level": 1,
+        "primitive": "reason.diagnose"
+      },
+      {
+        "evidence": [
+          "environment setup language",
+          "setup"
+        ],
+        "level": 1,
+        "primitive": "runtime.env_bind"
+      },
+      {
+        "evidence": [
+          "spreadsheet language",
+          "sheet"
+        ],
+        "level": 1,
+        "primitive": "spreadsheet.process"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 1,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 1,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "openai-whisper",
+    "primitive_count": 3,
+    "scr_confidence": 0.647,
+    "skill_id": "openai_whisper_skill_md__0ba77b428c15",
+    "source": "skvm.benchmark",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "environment setup language",
+          "api key",
+          "install"
+        ],
+        "level": 1,
+        "primitive": "runtime.env_bind"
+      },
+      {
+        "evidence": [
+          "command execution language",
+          "cli"
+        ],
+        "level": 1,
+        "primitive": "tool.exec"
+      },
+      {
+        "evidence": [
+          "web fetch language",
+          "download"
+        ],
+        "level": 1,
+        "primitive": "tool.web.fetch"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "builder",
+    "primitive_count": 7,
+    "scr_confidence": 0.654,
+    "skill_id": "builder_skill_md__82f3637ca36f",
+    "source": "skvm.benchmark",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "document generation language",
+          "document"
+        ],
+        "level": 1,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "SQL/database language",
+          "migration"
+        ],
+        "level": 1,
+        "primitive": "gen.code.sql"
+      },
+      {
+        "evidence": [
+          "diagnosis language",
+          "bug",
+          "debug"
+        ],
+        "level": 1,
+        "primitive": "reason.diagnose"
+      },
+      {
+        "evidence": [
+          "environment setup language",
+          "api key",
+          "credential"
+        ],
+        "level": 1,
+        "primitive": "runtime.env_bind"
+      },
+      {
+        "evidence": [
+          "spreadsheet language",
+          "sheet"
+        ],
+        "level": 1,
+        "primitive": "spreadsheet.process"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 1,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 1,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "Excel Formula Helper",
+    "primitive_count": 4,
+    "scr_confidence": 0.66,
+    "skill_id": "excel_formula_skill_md__2dfae9b48d6d",
+    "source": "skvm.benchmark",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "csv"
+        ],
+        "level": 1,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "spreadsheet language",
+          "csv",
+          "excel"
+        ],
+        "level": 1,
+        "primitive": "spreadsheet.process"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 1,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 1,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "ppt-outline",
+    "primitive_count": 8,
+    "scr_confidence": 0.66,
+    "skill_id": "ppt_outline_skill_md__8b18dfd14d36",
+    "source": "skvm.benchmark",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "document generation language",
+          "report"
+        ],
+        "level": 1,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "requirement"
+        ],
+        "level": 1,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "review"
+        ],
+        "level": 1,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 1,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 1,
+        "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "presentation language",
+          "deck",
+          "ppt"
+        ],
+        "level": 1,
+        "primitive": "presentation.generate"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 1,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 1,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "grill-me",
+    "primitive_count": 5,
+    "scr_confidence": 0.68,
+    "skill_id": "grill_me_skill_md__b1426b81997d",
+    "source": "local.agents",
+    "taxonomy": "mixed",
+    "top_primitives": [
+      {
+        "evidence": [
+          "verification language",
+          "test"
+        ],
+        "level": 2,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "testing language",
+          "test"
+        ],
+        "level": 2,
+        "primitive": "gen.code.test"
+      },
+      {
+        "evidence": [
+          "planning language",
+          "plan"
+        ],
+        "level": 2,
+        "primitive": "reason.plan"
+      },
+      {
+        "evidence": [
+          "git language",
+          "branch"
+        ],
+        "level": 2,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "package management language",
+          "dependencies"
+        ],
+        "level": 2,
+        "primitive": "tool.package_manager"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "10-andruia-skill-smith",
+    "primitive_count": 3,
+    "scr_confidence": 0.68,
+    "skill_id": "10_andruia_skill_smith_skill_md__2b69ce7f8322",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "visualization language",
+          "visualize"
+        ],
+        "level": 2,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "document"
+        ],
+        "level": 2,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "planning language",
+          "plan"
+        ],
+        "level": 2,
+        "primitive": "reason.plan"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "20-andruia-niche-intelligence",
+    "primitive_count": 3,
+    "scr_confidence": 0.68,
+    "skill_id": "20_andruia_niche_intelligence_skill_md__52d6abef0228",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "constraint language",
+          "requirement"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "review"
+        ],
+        "level": 2,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "spreadsheet language",
+          "excel"
+        ],
+        "level": 2,
+        "primitive": "spreadsheet.process"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "ai-analyzer",
+    "primitive_count": 5,
+    "scr_confidence": 0.68,
+    "skill_id": "ai_analyzer_skill_md__d5cc524bc859",
+    "source": "local.cc-switch",
+    "taxonomy": "generative",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 2,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "chart"
+        ],
+        "level": 2,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "report"
+        ],
+        "level": 2,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "javascript"
+        ],
+        "level": 2,
+        "primitive": "gen.code.javascript"
+      },
+      {
+        "evidence": [
+          "SQL/database language",
+          "query"
+        ],
+        "level": 2,
+        "primitive": "gen.code.sql"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "aws-skills",
+    "primitive_count": 2,
+    "scr_confidence": 0.68,
+    "skill_id": "aws_skills_skill_md__491f5a4f71db",
+    "source": "local.cc-switch",
+    "taxonomy": "mixed",
+    "top_primitives": [
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 2,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 2,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "azure-communication-callingserver-java",
+    "primitive_count": 6,
+    "scr_confidence": 0.68,
+    "skill_id": "azure_communication_callingserver_java_skill_md__d4939dac7c49",
+    "source": "local.cc-switch",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "xml"
+        ],
+        "level": 2,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "do not"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "workflow"
+        ],
+        "level": 2,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "SQL/database language",
+          "migration"
+        ],
+        "level": 2,
+        "primitive": "gen.code.sql"
+      },
+      {
+        "evidence": [
+          "environment setup language",
+          "dependency"
+        ],
+        "level": 2,
+        "primitive": "runtime.env_bind"
+      },
+      {
+        "evidence": [
+          "command execution language",
+          "cli"
+        ],
+        "level": 2,
+        "primitive": "tool.exec"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "docker-expert",
+    "primitive_count": 20,
+    "scr_confidence": 0.819,
+    "skill_id": "docker_expert_skill_md__6d1c3e0f4262",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "parallel agent language",
+          "parallel"
+        ],
+        "level": 3,
+        "primitive": "agent.parallel"
+      },
+      {
+        "evidence": [
+          "data parsing language",
+          "json",
+          "yaml"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "constraint"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "review"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "js ",
+          "node"
+        ],
+        "level": 3,
+        "primitive": "gen.code.javascript"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 3,
+        "primitive": "gen.code.shell"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "code-review-checklist",
+    "primitive_count": 14,
+    "scr_confidence": 0.859,
+    "skill_id": "code_review_checklist_skill_md__b67a39ffd8dd",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "document generation language",
+          "docs",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "must",
+          "never"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "javascript",
+          "npm"
+        ],
+        "level": 3,
+        "primitive": "gen.code.javascript"
+      },
+      {
+        "evidence": [
+          "SQL/database language",
+          "migration",
+          "query"
+        ],
+        "level": 3,
+        "primitive": "gen.code.sql"
+      },
+      {
+        "evidence": [
+          "testing language",
+          "test",
+          "tests"
+        ],
+        "level": 3,
+        "primitive": "gen.code.test"
+      },
+      {
+        "evidence": [
+          "diagnosis language",
+          "bug",
+          "debug"
+        ],
+        "level": 3,
+        "primitive": "reason.diagnose"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "github-actions-templates",
+    "primitive_count": 14,
+    "scr_confidence": 0.84,
+    "skill_id": "github_actions_templates_skill_md__f9404454e19a",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "extract",
+          "yaml"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "constraint",
+          "do not"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "step",
+          "workflow"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "test"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "js ",
+          "node"
+        ],
+        "level": 3,
+        "primitive": "gen.code.javascript"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "pytest",
+          "python"
+        ],
+        "level": 3,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "testing language",
+          "pytest",
+          "test"
+        ],
+        "level": 3,
+        "primitive": "gen.code.test"
+      },
+      {
+        "evidence": [
+          "diagnosis language",
+          "failure"
+        ],
+        "level": 3,
+        "primitive": "reason.diagnose"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "vibe-code-auditor",
+    "primitive_count": 18,
+    "scr_confidence": 0.818,
+    "skill_id": "vibe_code_auditor_skill_md__f3938433c3e9",
+    "source": "local.cc-switch",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "extract",
+          "json"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "document",
+          "report"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "constraint"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 3,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "SQL/database language",
+          "query",
+          "sql"
+        ],
+        "level": 3,
+        "primitive": "gen.code.sql"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "hugging-face-jobs",
+    "primitive_count": 21,
+    "scr_confidence": 0.823,
+    "skill_id": "hugging_face_jobs_skill_md__7a19457a2f11",
+    "source": "local.cc-switch",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "parallel agent language",
+          "parallel"
+        ],
+        "level": 3,
+        "primitive": "agent.parallel"
+      },
+      {
+        "evidence": [
+          "data parsing language",
+          "json",
+          "parse"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean",
+          "filter"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "docs",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "do not"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "test"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 3,
+        "primitive": "gen.code.python"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "nestjs-expert",
+    "primitive_count": 20,
+    "scr_confidence": 0.851,
+    "skill_id": "nestjs_expert_skill_md__c1d540967da7",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "extract",
+          "json"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean",
+          "filter"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "docs",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "must"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "phase"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "review"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "javascript",
+          "js "
+        ],
+        "level": 3,
+        "primitive": "gen.code.javascript"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 3,
+        "primitive": "gen.code.shell"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "electron-development",
+    "primitive_count": 23,
+    "scr_confidence": 0.838,
+    "skill_id": "electron_development_skill_md__ec7f196aca47",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "parallel agent language",
+          "concurrent",
+          "worker"
+        ],
+        "level": 3,
+        "primitive": "agent.parallel"
+      },
+      {
+        "evidence": [
+          "data parsing language",
+          "json",
+          "parse"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean",
+          "filter"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "map"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "docs"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "do not"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "hugging-face-model-trainer",
+    "primitive_count": 20,
+    "scr_confidence": 0.831,
+    "skill_id": "hugging_face_model_trainer_skill_md__288d6c87b43e",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data transformation language",
+          "clean",
+          "transform"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "dashboard",
+          "map"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "docs",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "constraint"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "test"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 3,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 3,
+        "primitive": "gen.code.shell"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "comfyui-gateway",
+    "primitive_count": 19,
+    "scr_confidence": 0.826,
+    "skill_id": "comfyui_gateway_skill_md__dd4bc9620b1b",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "parallel agent language",
+          "parallel",
+          "worker"
+        ],
+        "level": 3,
+        "primitive": "agent.parallel"
+      },
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean",
+          "filter"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "do not",
+          "requirement"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "process",
+          "step"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "review"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "javascript",
+          "node"
+        ],
+        "level": 3,
+        "primitive": "gen.code.javascript"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 3,
+        "primitive": "gen.code.python"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "environment-setup-guide",
+    "primitive_count": 20,
+    "scr_confidence": 0.828,
+    "skill_id": "environment_setup_guide_skill_md__6512f2a3f6b7",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "yaml"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "docs",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "requirement"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "process",
+          "step"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "js ",
+          "node"
+        ],
+        "level": 3,
+        "primitive": "gen.code.javascript"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 3,
+        "primitive": "gen.code.python"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "loki-mode",
+    "primitive_count": 24,
+    "scr_confidence": 0.838,
+    "skill_id": "loki_mode_skill_md__069ac981cbe7",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "parallel agent language",
+          "parallel",
+          "spawn"
+        ],
+        "level": 3,
+        "primitive": "agent.parallel"
+      },
+      {
+        "evidence": [
+          "data parsing language",
+          "extract",
+          "json"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "aggregate",
+          "clean"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "dashboard"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "docs",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "constraint"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "phase",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "using-git-worktrees",
+    "primitive_count": 16,
+    "scr_confidence": 0.846,
+    "skill_id": "using_git_worktrees_skill_md__3c84f6917d87",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json",
+          "parse"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "report"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "must"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "phase",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "node",
+          "npm"
+        ],
+        "level": 3,
+        "primitive": "gen.code.javascript"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "pytest",
+          "python"
+        ],
+        "level": 3,
+        "primitive": "gen.code.python"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "production-code-audit",
+    "primitive_count": 18,
+    "scr_confidence": 0.847,
+    "skill_id": "production_code_audit_skill_md__b13153dd12a1",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "parallel agent language",
+          "parallel"
+        ],
+        "level": 3,
+        "primitive": "agent.parallel"
+      },
+      {
+        "evidence": [
+          "data parsing language",
+          "json",
+          "parse"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean",
+          "join"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "map"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "docs",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "requirement"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "phase"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "review"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "convex",
+    "primitive_count": 22,
+    "scr_confidence": 0.825,
+    "skill_id": "convex_skill_md__8c4ffa287904",
+    "source": "local.cc-switch",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json",
+          "parse"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "filter"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "dashboard",
+          "map"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "docs",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "do not",
+          "must"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "process",
+          "workflow"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "test"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "js ",
+          "node"
+        ],
+        "level": 3,
+        "primitive": "gen.code.javascript"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "sast-configuration",
+    "primitive_count": 22,
+    "scr_confidence": 0.79,
+    "skill_id": "sast_configuration_skill_md__b88de113e83c",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "parallel agent language",
+          "parallel"
+        ],
+        "level": 3,
+        "primitive": "agent.parallel"
+      },
+      {
+        "evidence": [
+          "data parsing language",
+          "json",
+          "xml"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "filter"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "map"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "do not",
+          "requirement"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "review"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "hugging-face-evaluation",
+    "primitive_count": 19,
+    "scr_confidence": 0.827,
+    "skill_id": "hugging_face_evaluation_skill_md__34e944f5993a",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "parallel agent language",
+          "parallel"
+        ],
+        "level": 3,
+        "primitive": "agent.parallel"
+      },
+      {
+        "evidence": [
+          "data parsing language",
+          "extract",
+          "parse"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "normalize",
+          "transform"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "markdown",
+          "report"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "do not"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 3,
+        "primitive": "gen.code.python"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "skill-creator-ms",
+    "primitive_count": 20,
+    "scr_confidence": 0.822,
+    "skill_id": "skill_creator_ms_skill_md__57c420d47aa5",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "extract",
+          "json"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean",
+          "filter"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "docs",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "must"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "test"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "npm",
+          "react"
+        ],
+        "level": 3,
+        "primitive": "gen.code.javascript"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 3,
+        "primitive": "gen.code.python"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "1password",
+    "primitive_count": 8,
+    "scr_confidence": 0.75,
+    "skill_id": "1password_1_0_1_skill_md__f4c037b66f25",
+    "source": "local.agents",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "document generation language",
+          "docs"
+        ],
+        "level": 2,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "do not"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "step",
+          "workflow"
+        ],
+        "level": 2,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 2,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 2,
+        "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "diagnosis language",
+          "failure"
+        ],
+        "level": 2,
+        "primitive": "reason.diagnose"
+      },
+      {
+        "evidence": [
+          "environment setup language",
+          "install"
+        ],
+        "level": 2,
+        "primitive": "runtime.env_bind"
+      },
+      {
+        "evidence": [
+          "command execution language",
+          "cli"
+        ],
+        "level": 2,
+        "primitive": "tool.exec"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "00-andruia-consultant",
+    "primitive_count": 6,
+    "scr_confidence": 0.753,
+    "skill_id": "00_andruia_consultant_skill_md__988348859a62",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "map"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "workflow"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "diagnosis language",
+          "diagnose"
+        ],
+        "level": 3,
+        "primitive": "reason.diagnose"
+      },
+      {
+        "evidence": [
+          "planning language",
+          "plan",
+          "roadmap"
+        ],
+        "level": 3,
+        "primitive": "reason.plan"
+      },
+      {
+        "evidence": [
+          "package management language",
+          "package.json"
+        ],
+        "level": 3,
+        "primitive": "tool.package_manager"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "aws-compliance-checker",
+    "primitive_count": 13,
+    "scr_confidence": 0.777,
+    "skill_id": "security_aws_compliance_checker_skill_md__87a0e76fb8db",
+    "source": "local.codex",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "filter"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "dashboard",
+          "map"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "document",
+          "report"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "requirement",
+          "rule"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "validate"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 3,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 3,
+        "primitive": "gen.code.shell"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "Content ID Guide",
+    "primitive_count": 6,
+    "scr_confidence": 0.76,
+    "skill_id": "content_id_guide_skill_md__354ac528e0d3",
+    "source": "skvm.benchmark",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 2,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "graph"
+        ],
+        "level": 2,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "document"
+        ],
+        "level": 2,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "constraint",
+          "do not"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 2,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "review"
+        ],
+        "level": 2,
+        "primitive": "follow.verify"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "Code",
+    "primitive_count": 10,
+    "scr_confidence": 0.736,
+    "skill_id": "code_1_0_4_skill_md__dfd4f4c81abe",
+    "source": "local.agents",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "parallel agent language",
+          "delegate",
+          "sub-agent"
+        ],
+        "level": 2,
+        "primitive": "agent.parallel"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean"
+        ],
+        "level": 2,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "never"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "step",
+          "workflow"
+        ],
+        "level": 2,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "test"
+        ],
+        "level": 2,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "testing language",
+          "test",
+          "tests"
+        ],
+        "level": 2,
+        "primitive": "gen.code.test"
+      },
+      {
+        "evidence": [
+          "planning language",
+          "plan"
+        ],
+        "level": 2,
+        "primitive": "reason.plan"
+      },
+      {
+        "evidence": [
+          "environment setup language",
+          "setup"
+        ],
+        "level": 2,
+        "primitive": "runtime.env_bind"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "FFmpeg Video Editor",
+    "primitive_count": 10,
+    "scr_confidence": 0.788,
+    "skill_id": "ffmpeg_video_editor_1_0_0_skill_md__b5e5df209510",
+    "source": "local.agents",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "extract"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean",
+          "filter"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "map"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "must"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "step"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 3,
+        "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "browser interaction language",
+          "screenshot"
+        ],
+        "level": 3,
+        "primitive": "tool.browser"
+      },
+      {
+        "evidence": [
+          "command execution language",
+          "cli"
+        ],
+        "level": 3,
+        "primitive": "tool.exec"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "Market Research",
+    "primitive_count": 7,
+    "scr_confidence": 0.726,
+    "skill_id": "market_research_1_0_0_skill_md__5d3d848c20d4",
+    "source": "local.agents",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data transformation language",
+          "filter"
+        ],
+        "level": 2,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "graph",
+          "map"
+        ],
+        "level": 2,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "confirm",
+          "review"
+        ],
+        "level": 2,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "testing language",
+          "test"
+        ],
+        "level": 2,
+        "primitive": "gen.code.test"
+      },
+      {
+        "evidence": [
+          "planning language",
+          "approach"
+        ],
+        "level": 2,
+        "primitive": "reason.plan"
+      },
+      {
+        "evidence": [
+          "web fetch language",
+          "download"
+        ],
+        "level": 2,
+        "primitive": "tool.web.fetch"
+      },
+      {
+        "evidence": [
+          "web search language",
+          "google"
+        ],
+        "level": 2,
+        "primitive": "tool.web.search"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "Memory",
+    "primitive_count": 8,
+    "scr_confidence": 0.812,
+    "skill_id": "memory_1_0_2_skill_md__3e37228f5826",
+    "source": "local.agents",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "parallel agent language",
+          "parallel"
+        ],
+        "level": 3,
+        "primitive": "agent.parallel"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "markdown"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "never"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 3,
+        "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "environment setup language",
+          "configure",
+          "credential"
+        ],
+        "level": 3,
+        "primitive": "runtime.env_bind"
+      },
+      {
+        "evidence": [
+          "browser interaction language",
+          "navigate"
+        ],
+        "level": 3,
+        "primitive": "tool.browser"
+      },
+      {
+        "evidence": [
+          "file writing language",
+          "modify"
+        ],
+        "level": 3,
+        "primitive": "tool.file.write"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "SEO (Site Audit + Content Writer + Competitor Analysis)",
+    "primitive_count": 12,
+    "scr_confidence": 0.78,
+    "skill_id": "seo_1_0_3_skill_md__10af14cab112",
+    "source": "local.agents",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json",
+          "xml"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "map"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "report"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "never",
+          "rule"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "SQL/database language",
+          "query"
+        ],
+        "level": 3,
+        "primitive": "gen.code.sql"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "Self-Improving Agent (With Self-Reflection)",
+    "primitive_count": 10,
+    "scr_confidence": 0.812,
+    "skill_id": "self_improving_1_1_3_skill_md__45ff1c478d9e",
+    "source": "local.agents",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "document generation language",
+          "report"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "never"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "step",
+          "workflow"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 3,
+        "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "SQL/database language",
+          "query"
+        ],
+        "level": 3,
+        "primitive": "gen.code.sql"
+      },
+      {
+        "evidence": [
+          "diagnosis language",
+          "bug"
+        ],
+        "level": 3,
+        "primitive": "reason.diagnose"
+      },
+      {
+        "evidence": [
+          "planning language",
+          "approach",
+          "plan"
+        ],
+        "level": 3,
+        "primitive": "reason.plan"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "Social Media Scheduler",
+    "primitive_count": 6,
+    "scr_confidence": 0.707,
+    "skill_id": "social_media_scheduler_1_0_0_skill_md__6dd9c5033110",
+    "source": "local.agents",
+    "taxonomy": "generative",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data transformation language",
+          "clean"
+        ],
+        "level": 2,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "graph",
+          "map"
+        ],
+        "level": 2,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "test"
+        ],
+        "level": 2,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "testing language",
+          "test"
+        ],
+        "level": 2,
+        "primitive": "gen.code.test"
+      },
+      {
+        "evidence": [
+          "planning language",
+          "plan",
+          "strategy"
+        ],
+        "level": 2,
+        "primitive": "reason.plan"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "a-stock-analysis",
+    "primitive_count": 2,
+    "scr_confidence": 0.72,
+    "skill_id": "a_stock_analysis_1_0_0_skill_md__8a2c3fe70312",
+    "source": "local.agents",
+    "taxonomy": "mixed",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 2,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 2,
+        "primitive": "gen.code.shell"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "aminer-data-search",
+    "primitive_count": 6,
+    "scr_confidence": 0.753,
+    "skill_id": "aminer_open_academic_1_0_5_skill_md__0d012425f8e5",
+    "source": "local.agents",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "transform"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 3,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 3,
+        "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "SQL/database language",
+          "query"
+        ],
+        "level": 3,
+        "primitive": "gen.code.sql"
+      },
+      {
+        "evidence": [
+          "command execution language",
+          "cli"
+        ],
+        "level": 3,
+        "primitive": "tool.exec"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "architecture-designer",
+    "primitive_count": 6,
+    "scr_confidence": 0.807,
+    "skill_id": "architecture_designer_0_1_0_skill_md__c9fd47781fa7",
+    "source": "local.agents",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "document generation language",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "constraint",
+          "must"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "workflow"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "review"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "diagnosis language",
+          "failure"
+        ],
+        "level": 3,
+        "primitive": "reason.diagnose"
+      },
+      {
+        "evidence": [
+          "planning language",
+          "plan"
+        ],
+        "level": 3,
+        "primitive": "reason.plan"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "autoglm-browser-agent",
+    "primitive_count": 13,
+    "scr_confidence": 0.771,
+    "skill_id": "autoglm_browser_agent_skill_md__7efa8dd5ba1c",
+    "source": "local.agents",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "parallel agent language",
+          "delegate"
+        ],
+        "level": 3,
+        "primitive": "agent.parallel"
+      },
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "markdown"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "rule"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "step",
+          "workflow"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "verify"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "node"
+        ],
+        "level": 3,
+        "primitive": "gen.code.javascript"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 3,
+        "primitive": "gen.code.python"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "autoglm-deepresearch",
+    "primitive_count": 5,
+    "scr_confidence": 0.696,
+    "skill_id": "autoglm_deepresearch_skill_md__b2150f6cd573",
+    "source": "local.agents",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "procedure language",
+          "step"
+        ],
+        "level": 2,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 2,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 2,
+        "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "SQL/database language",
+          "query"
+        ],
+        "level": 2,
+        "primitive": "gen.code.sql"
+      },
+      {
+        "evidence": [
+          "web search language",
+          "web search"
+        ],
+        "level": 2,
+        "primitive": "tool.web.search"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "autoglm-generate-image",
+    "primitive_count": 4,
+    "scr_confidence": 0.7,
+    "skill_id": "autoglm_generate_image_skill_md__da998a018387",
+    "source": "local.agents",
+    "taxonomy": "generative",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 2,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "markdown"
+        ],
+        "level": 2,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 2,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 2,
+        "primitive": "gen.code.shell"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "autoglm-open-link",
+    "primitive_count": 3,
+    "scr_confidence": 0.707,
+    "skill_id": "autoglm_open_link_skill_md__0bf3fdceb7df",
+    "source": "local.agents",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 2,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 2,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 2,
+        "primitive": "gen.code.shell"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "autoglm-search-image",
+    "primitive_count": 5,
+    "scr_confidence": 0.696,
+    "skill_id": "autoglm_search_image_skill_md__18040148c65b",
+    "source": "local.agents",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 2,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "markdown"
+        ],
+        "level": 2,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 2,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 2,
+        "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "SQL/database language",
+          "query"
+        ],
+        "level": 2,
+        "primitive": "gen.code.sql"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "autoglm-websearch",
+    "primitive_count": 5,
+    "scr_confidence": 0.696,
+    "skill_id": "autoglm_websearch_skill_md__750f96ce9b29",
+    "source": "local.agents",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 2,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 2,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 2,
+        "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "SQL/database language",
+          "query"
+        ],
+        "level": 2,
+        "primitive": "gen.code.sql"
+      },
+      {
+        "evidence": [
+          "web search language",
+          "web search"
+        ],
+        "level": 2,
+        "primitive": "tool.web.search"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "automation-workflows",
+    "primitive_count": 15,
+    "scr_confidence": 0.796,
+    "skill_id": "automation_workflows_0_1_0_skill_md__1f43000f862a",
+    "source": "local.agents",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data transformation language",
+          "filter"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "dashboard",
+          "map"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "document",
+          "report"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "rule"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "testing language",
+          "test"
+        ],
+        "level": 3,
+        "primitive": "gen.code.test"
+      },
+      {
+        "evidence": [
+          "diagnosis language",
+          "bug",
+          "failure"
+        ],
+        "level": 3,
+        "primitive": "reason.diagnose"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "backtest-expert",
+    "primitive_count": 11,
+    "scr_confidence": 0.785,
+    "skill_id": "backtest_expert_0_1_0_skill_md__4dc61c02b092",
+    "source": "local.agents",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data transformation language",
+          "filter"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "must",
+          "never"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "workflow"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "test"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "testing language",
+          "test",
+          "tests"
+        ],
+        "level": 3,
+        "primitive": "gen.code.test"
+      },
+      {
+        "evidence": [
+          "diagnosis language",
+          "failure"
+        ],
+        "level": 3,
+        "primitive": "reason.diagnose"
+      },
+      {
+        "evidence": [
+          "planning language",
+          "approach",
+          "strategy"
+        ],
+        "level": 3,
+        "primitive": "reason.plan"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "blog-writer",
+    "primitive_count": 8,
+    "scr_confidence": 0.77,
+    "skill_id": "blog_writer_0_1_0_skill_md__a71389ea2311",
+    "source": "local.agents",
+    "taxonomy": "generative",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "graph"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "markdown"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "phase",
+          "workflow"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "diagnosis language",
+          "failure"
+        ],
+        "level": 3,
+        "primitive": "reason.diagnose"
+      },
+      {
+        "evidence": [
+          "file writing language",
+          "save"
+        ],
+        "level": 3,
+        "primitive": "tool.file.write"
+      }
+    ]
+  }
+]

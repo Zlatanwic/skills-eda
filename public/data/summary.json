@@ -1,0 +1,6923 @@
+{
+  "capabilities": {
+    "primitive_counts": [
+      {
+        "count": 1427,
+        "name": "follow.procedure"
+      },
+      {
+        "count": 1415,
+        "name": "follow.verify"
+      },
+      {
+        "count": 1255,
+        "name": "follow.constraints"
+      },
+      {
+        "count": 1092,
+        "name": "tool.git"
+      },
+      {
+        "count": 1022,
+        "name": "doc.generate"
+      },
+      {
+        "count": 976,
+        "name": "runtime.env_bind"
+      },
+      {
+        "count": 845,
+        "name": "data.parse"
+      },
+      {
+        "count": 840,
+        "name": "data.visualize"
+      },
+      {
+        "count": 834,
+        "name": "gen.code.test"
+      },
+      {
+        "count": 815,
+        "name": "reason.plan"
+      },
+      {
+        "count": 771,
+        "name": "tool.exec"
+      },
+      {
+        "count": 765,
+        "name": "data.transform"
+      },
+      {
+        "count": 608,
+        "name": "gen.code.shell"
+      },
+      {
+        "count": 588,
+        "name": "reason.diagnose"
+      },
+      {
+        "count": 559,
+        "name": "gen.code.javascript"
+      },
+      {
+        "count": 544,
+        "name": "gen.code.sql"
+      },
+      {
+        "count": 493,
+        "name": "tool.github"
+      },
+      {
+        "count": 455,
+        "name": "gen.code.python"
+      },
+      {
+        "count": 437,
+        "name": "tool.file.write"
+      },
+      {
+        "count": 406,
+        "name": "tool.package_manager"
+      },
+      {
+        "count": 393,
+        "name": "tool.web.fetch"
+      },
+      {
+        "count": 385,
+        "name": "agent.parallel"
+      },
+      {
+        "count": 376,
+        "name": "tool.browser"
+      },
+      {
+        "count": 357,
+        "name": "tool.web.search"
+      },
+      {
+        "count": 223,
+        "name": "gen.code.typescript"
+      },
+      {
+        "count": 210,
+        "name": "spreadsheet.process"
+      },
+      {
+        "count": 131,
+        "name": "presentation.generate"
+      },
+      {
+        "count": 30,
+        "name": "tool.file.read"
+      }
+    ],
+    "primitive_level_counts": [
+      {
+        "count": 989,
+        "name": "follow.procedure:L3"
+      },
+      {
+        "count": 986,
+        "name": "follow.verify:L3"
+      },
+      {
+        "count": 869,
+        "name": "follow.constraints:L3"
+      },
+      {
+        "count": 797,
+        "name": "runtime.env_bind:L3"
+      },
+      {
+        "count": 786,
+        "name": "doc.generate:L3"
+      },
+      {
+        "count": 777,
+        "name": "tool.git:L3"
+      },
+      {
+        "count": 672,
+        "name": "data.parse:L3"
+      },
+      {
+        "count": 651,
+        "name": "tool.exec:L3"
+      },
+      {
+        "count": 639,
+        "name": "gen.code.test:L3"
+      },
+      {
+        "count": 618,
+        "name": "data.visualize:L3"
+      },
+      {
+        "count": 614,
+        "name": "data.transform:L3"
+      },
+      {
+        "count": 559,
+        "name": "reason.plan:L3"
+      },
+      {
+        "count": 504,
+        "name": "gen.code.shell:L3"
+      },
+      {
+        "count": 447,
+        "name": "gen.code.sql:L3"
+      },
+      {
+        "count": 436,
+        "name": "follow.procedure:L2"
+      },
+      {
+        "count": 435,
+        "name": "reason.diagnose:L3"
+      },
+      {
+        "count": 427,
+        "name": "follow.verify:L2"
+      },
+      {
+        "count": 425,
+        "name": "gen.code.javascript:L3"
+      },
+      {
+        "count": 383,
+        "name": "follow.constraints:L2"
+      },
+      {
+        "count": 377,
+        "name": "tool.github:L3"
+      },
+      {
+        "count": 365,
+        "name": "tool.file.write:L3"
+      },
+      {
+        "count": 365,
+        "name": "gen.code.python:L3"
+      },
+      {
+        "count": 348,
+        "name": "tool.package_manager:L3"
+      },
+      {
+        "count": 332,
+        "name": "tool.web.fetch:L3"
+      },
+      {
+        "count": 312,
+        "name": "tool.browser:L3"
+      },
+      {
+        "count": 308,
+        "name": "tool.git:L2"
+      },
+      {
+        "count": 306,
+        "name": "tool.web.search:L3"
+      },
+      {
+        "count": 255,
+        "name": "reason.plan:L2"
+      },
+      {
+        "count": 242,
+        "name": "agent.parallel:L3"
+      },
+      {
+        "count": 232,
+        "name": "doc.generate:L2"
+      },
+      {
+        "count": 220,
+        "name": "data.visualize:L2"
+      },
+      {
+        "count": 195,
+        "name": "gen.code.test:L2"
+      },
+      {
+        "count": 180,
+        "name": "gen.code.typescript:L3"
+      },
+      {
+        "count": 176,
+        "name": "runtime.env_bind:L2"
+      },
+      {
+        "count": 173,
+        "name": "spreadsheet.process:L3"
+      },
+      {
+        "count": 172,
+        "name": "data.parse:L2"
+      },
+      {
+        "count": 151,
+        "name": "reason.diagnose:L2"
+      },
+      {
+        "count": 151,
+        "name": "data.transform:L2"
+      },
+      {
+        "count": 143,
+        "name": "agent.parallel:L2"
+      },
+      {
+        "count": 134,
+        "name": "gen.code.javascript:L2"
+      },
+      {
+        "count": 119,
+        "name": "tool.exec:L2"
+      },
+      {
+        "count": 109,
+        "name": "tool.github:L2"
+      },
+      {
+        "count": 106,
+        "name": "presentation.generate:L3"
+      },
+      {
+        "count": 100,
+        "name": "gen.code.shell:L2"
+      },
+      {
+        "count": 95,
+        "name": "gen.code.sql:L2"
+      },
+      {
+        "count": 88,
+        "name": "gen.code.python:L2"
+      },
+      {
+        "count": 72,
+        "name": "tool.file.write:L2"
+      },
+      {
+        "count": 64,
+        "name": "tool.browser:L2"
+      },
+      {
+        "count": 60,
+        "name": "tool.web.fetch:L2"
+      },
+      {
+        "count": 58,
+        "name": "tool.package_manager:L2"
+      },
+      {
+        "count": 51,
+        "name": "tool.web.search:L2"
+      },
+      {
+        "count": 43,
+        "name": "gen.code.typescript:L2"
+      },
+      {
+        "count": 34,
+        "name": "spreadsheet.process:L2"
+      },
+      {
+        "count": 28,
+        "name": "tool.file.read:L3"
+      },
+      {
+        "count": 24,
+        "name": "presentation.generate:L2"
+      },
+      {
+        "count": 7,
+        "name": "tool.git:L1"
+      },
+      {
+        "count": 7,
+        "name": "tool.github:L1"
+      },
+      {
+        "count": 4,
+        "name": "gen.code.shell:L1"
+      },
+      {
+        "count": 4,
+        "name": "doc.generate:L1"
+      },
+      {
+        "count": 3,
+        "name": "follow.constraints:L1"
+      },
+      {
+        "count": 3,
+        "name": "spreadsheet.process:L1"
+      },
+      {
+        "count": 3,
+        "name": "runtime.env_bind:L1"
+      },
+      {
+        "count": 2,
+        "name": "tool.file.read:L2"
+      },
+      {
+        "count": 2,
+        "name": "data.visualize:L1"
+      },
+      {
+        "count": 2,
+        "name": "follow.procedure:L1"
+      },
+      {
+        "count": 2,
+        "name": "gen.code.sql:L1"
+      },
+      {
+        "count": 2,
+        "name": "reason.diagnose:L1"
+      },
+      {
+        "count": 2,
+        "name": "follow.verify:L1"
+      },
+      {
+        "count": 2,
+        "name": "gen.code.python:L1"
+      },
+      {
+        "count": 1,
+        "name": "reason.plan:L1"
+      },
+      {
+        "count": 1,
+        "name": "data.parse:L1"
+      },
+      {
+        "count": 1,
+        "name": "tool.exec:L1"
+      },
+      {
+        "count": 1,
+        "name": "tool.web.fetch:L1"
+      },
+      {
+        "count": 1,
+        "name": "presentation.generate:L1"
+      }
+    ]
+  },
+  "code_tools": {
+    "code_language_counts": [
+      {
+        "count": 2487,
+        "name": "plain"
+      },
+      {
+        "count": 2485,
+        "name": "bash"
+      },
+      {
+        "count": 1355,
+        "name": "python"
+      },
+      {
+        "count": 1087,
+        "name": "typescript"
+      },
+      {
+        "count": 681,
+        "name": "javascript"
+      },
+      {
+        "count": 367,
+        "name": "java"
+      },
+      {
+        "count": 330,
+        "name": "csharp"
+      },
+      {
+        "count": 319,
+        "name": "markdown"
+      },
+      {
+        "count": 230,
+        "name": "json"
+      },
+      {
+        "count": 201,
+        "name": "yaml"
+      },
+      {
+        "count": 168,
+        "name": "rust"
+      },
+      {
+        "count": 127,
+        "name": "tsx"
+      },
+      {
+        "count": 89,
+        "name": "powershell"
+      },
+      {
+        "count": 65,
+        "name": "sql"
+      },
+      {
+        "count": 64,
+        "name": "text"
+      },
+      {
+        "count": 58,
+        "name": "html"
+      },
+      {
+        "count": 50,
+        "name": "xml"
+      },
+      {
+        "count": 36,
+        "name": "go"
+      },
+      {
+        "count": 27,
+        "name": "ts"
+      },
+      {
+        "count": 26,
+        "name": "hcl"
+      },
+      {
+        "count": 24,
+        "name": "css"
+      },
+      {
+        "count": 21,
+        "name": "php"
+      },
+      {
+        "count": 17,
+        "name": "asm"
+      },
+      {
+        "count": 17,
+        "name": "toml"
+      },
+      {
+        "count": 13,
+        "name": "js"
+      },
+      {
+        "count": 13,
+        "name": "glsl"
+      },
+      {
+        "count": 13,
+        "name": "swift"
+      },
+      {
+        "count": 12,
+        "name": "solidity"
+      },
+      {
+        "count": 11,
+        "name": "pseudo"
+      },
+      {
+        "count": 10,
+        "name": "sh"
+      },
+      {
+        "count": 10,
+        "name": "mermaid"
+      },
+      {
+        "count": 10,
+        "name": "dockerfile"
+      },
+      {
+        "count": 9,
+        "name": "kotlin"
+      },
+      {
+        "count": 9,
+        "name": "gdscript"
+      },
+      {
+        "count": 9,
+        "name": "splash"
+      },
+      {
+        "count": 8,
+        "name": "graphql"
+      },
+      {
+        "count": 8,
+        "name": "cpp"
+      },
+      {
+        "count": 8,
+        "name": "turtle"
+      },
+      {
+        "count": 8,
+        "name": "env"
+      },
+      {
+        "count": 7,
+        "name": "astro"
+      }
+    ],
+    "dependency_counts": [
+      {
+        "count": 459,
+        "name": "install"
+      },
+      {
+        "count": 373,
+        "name": "token"
+      },
+      {
+        "count": 270,
+        "name": "credential"
+      },
+      {
+        "count": 243,
+        "name": "package"
+      },
+      {
+        "count": 230,
+        "name": "dependencies"
+      },
+      {
+        "count": 217,
+        "name": "secret"
+      },
+      {
+        "count": 214,
+        "name": "dependency"
+      },
+      {
+        "count": 213,
+        "name": "environment variable"
+      },
+      {
+        "count": 212,
+        "name": "api key"
+      },
+      {
+        "count": 117,
+        "name": "pip install"
+      },
+      {
+        "count": 94,
+        "name": "npm install"
+      },
+      {
+        "count": 52,
+        "name": "package.json"
+      },
+      {
+        "count": 41,
+        "name": "env var"
+      },
+      {
+        "count": 31,
+        "name": "requirements.txt"
+      },
+      {
+        "count": 5,
+        "name": "pnpm install"
+      }
+    ],
+    "tool_counts": [
+      {
+        "count": 891,
+        "name": "api"
+      },
+      {
+        "count": 749,
+        "name": "cli"
+      },
+      {
+        "count": 677,
+        "name": "gh "
+      },
+      {
+        "count": 599,
+        "name": "bash"
+      },
+      {
+        "count": 573,
+        "name": "git"
+      },
+      {
+        "count": 445,
+        "name": "python"
+      },
+      {
+        "count": 418,
+        "name": "github"
+      },
+      {
+        "count": 388,
+        "name": "pip"
+      },
+      {
+        "count": 244,
+        "name": "node"
+      },
+      {
+        "count": 205,
+        "name": "sql"
+      },
+      {
+        "count": 164,
+        "name": "npm"
+      },
+      {
+        "count": 160,
+        "name": "browser"
+      },
+      {
+        "count": 103,
+        "name": "shell"
+      },
+      {
+        "count": 93,
+        "name": "docker"
+      },
+      {
+        "count": 93,
+        "name": "postgres"
+      },
+      {
+        "count": 81,
+        "name": "curl"
+      },
+      {
+        "count": 71,
+        "name": "uv"
+      },
+      {
+        "count": 45,
+        "name": "playwright"
+      },
+      {
+        "count": 34,
+        "name": "sqlite"
+      },
+      {
+        "count": 29,
+        "name": "powershell"
+      },
+      {
+        "count": 16,
+        "name": "pnpm"
+      },
+      {
+        "count": 14,
+        "name": "yarn"
+      },
+      {
+        "count": 11,
+        "name": "wget"
+      }
+    ]
+  },
+  "environment": {
+    "avg_dependency_count": 1.69,
+    "avg_tool_count": 3.71,
+    "dependency_categories": [
+      {
+        "count": 1018,
+        "name": "system cli"
+      },
+      {
+        "count": 978,
+        "name": "version control"
+      },
+      {
+        "count": 942,
+        "name": "web/browser"
+      },
+      {
+        "count": 811,
+        "name": "runtime"
+      },
+      {
+        "count": 707,
+        "name": "credentials"
+      },
+      {
+        "count": 389,
+        "name": "package managers"
+      },
+      {
+        "count": 19,
+        "name": "implicit"
+      }
+    ],
+    "dependency_skill_count": 1038,
+    "env_risk_skill_count": 505,
+    "top_environment_risk_skills": [
+      {
+        "dependency_count": 13,
+        "env_risk": 1.0,
+        "name": "apify-actor-development",
+        "skill_id": "apify_actor_development_skill_md__f98c0d6d5a35",
+        "source": "local.cc-switch",
+        "tool_count": 16
+      },
+      {
+        "dependency_count": 11,
+        "env_risk": 1.0,
+        "name": "cc-skill-security-review",
+        "skill_id": "cc_skill_security_review_skill_md__e0f1f4d56152",
+        "source": "local.cc-switch",
+        "tool_count": 6
+      },
+      {
+        "dependency_count": 10,
+        "env_risk": 1.0,
+        "name": "comfyui-gateway",
+        "skill_id": "comfyui_gateway_skill_md__dd4bc9620b1b",
+        "source": "local.cc-switch",
+        "tool_count": 12
+      },
+      {
+        "dependency_count": 10,
+        "env_risk": 1.0,
+        "name": "security-scanning-security-sast",
+        "skill_id": "security_scanning_security_sast_skill_md__ca7a7492456b",
+        "source": "local.cc-switch",
+        "tool_count": 11
+      },
+      {
+        "dependency_count": 9,
+        "env_risk": 1.0,
+        "name": "environment-setup-guide",
+        "skill_id": "environment_setup_guide_skill_md__6512f2a3f6b7",
+        "source": "local.cc-switch",
+        "tool_count": 17
+      },
+      {
+        "dependency_count": 9,
+        "env_risk": 1.0,
+        "name": "readme",
+        "skill_id": "readme_skill_md__7eb9a8bb1e9a",
+        "source": "local.cc-switch",
+        "tool_count": 14
+      },
+      {
+        "dependency_count": 9,
+        "env_risk": 1.0,
+        "name": "nestjs-expert",
+        "skill_id": "nestjs_expert_skill_md__c1d540967da7",
+        "source": "local.cc-switch",
+        "tool_count": 11
+      },
+      {
+        "dependency_count": 9,
+        "env_risk": 1.0,
+        "name": "skill-creator-ms",
+        "skill_id": "skill_creator_ms_skill_md__57c420d47aa5",
+        "source": "local.cc-switch",
+        "tool_count": 10
+      },
+      {
+        "dependency_count": 9,
+        "env_risk": 1.0,
+        "name": "production-code-audit",
+        "skill_id": "production_code_audit_skill_md__b13153dd12a1",
+        "source": "local.cc-switch",
+        "tool_count": 8
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "bun-development",
+        "skill_id": "bun_development_skill_md__9cb3eb9b171e",
+        "source": "local.cc-switch",
+        "tool_count": 14
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "copilot-sdk",
+        "skill_id": "copilot_sdk_skill_md__598c65701b53",
+        "source": "local.cc-switch",
+        "tool_count": 11
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "varlock",
+        "skill_id": "varlock_skill_md__fb6eb2aa0ef5",
+        "source": "local.cc-switch",
+        "tool_count": 11
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "amazon-alexa",
+        "skill_id": "amazon_alexa_skill_md__46743285eef7",
+        "source": "local.cc-switch",
+        "tool_count": 10
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "convex",
+        "skill_id": "convex_skill_md__8c4ffa287904",
+        "source": "local.cc-switch",
+        "tool_count": 10
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "hugging-face-jobs",
+        "skill_id": "hugging_face_jobs_skill_md__7a19457a2f11",
+        "source": "local.cc-switch",
+        "tool_count": 10
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "azure-microsoft-playwright-testing-ts",
+        "skill_id": "azure_microsoft_playwright_testing_ts_skill_md__1cdd8f7d2b32",
+        "source": "local.cc-switch",
+        "tool_count": 9
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "codebase-audit-pre-push",
+        "skill_id": "codebase_audit_pre_push_skill_md__7bd64226fe29",
+        "source": "local.cc-switch",
+        "tool_count": 8
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "github-actions-templates",
+        "skill_id": "github_actions_templates_skill_md__f9404454e19a",
+        "source": "local.cc-switch",
+        "tool_count": 8
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "turborepo-caching",
+        "skill_id": "turborepo_caching_skill_md__ff87df8b2fbf",
+        "source": "local.cc-switch",
+        "tool_count": 8
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "skill-scanner",
+        "skill_id": "skill_scanner_skill_md__19f737a8750c",
+        "source": "local.cc-switch",
+        "tool_count": 7
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "vibe-code-auditor",
+        "skill_id": "vibe_code_auditor_skill_md__f3938433c3e9",
+        "source": "local.cc-switch",
+        "tool_count": 7
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "security-auditor",
+        "skill_id": "security_auditor_1_0_0_skill_md__d6e721db31f9",
+        "source": "local.agents",
+        "tool_count": 6
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "security-auditor",
+        "skill_id": "security_auditor_1_0_0_skill_md__715577992d1e",
+        "source": "local.cc-switch",
+        "tool_count": 6
+      },
+      {
+        "dependency_count": 8,
+        "env_risk": 1.0,
+        "name": "pydantic-ai",
+        "skill_id": "pydantic_ai_skill_md__9e7a3fa1f7c0",
+        "source": "local.cc-switch",
+        "tool_count": 5
+      },
+      {
+        "dependency_count": 7,
+        "env_risk": 1.0,
+        "name": "docker-expert",
+        "skill_id": "docker_expert_skill_md__6d1c3e0f4262",
+        "source": "local.cc-switch",
+        "tool_count": 13
+      },
+      {
+        "dependency_count": 7,
+        "env_risk": 1.0,
+        "name": "electron-development",
+        "skill_id": "electron_development_skill_md__ec7f196aca47",
+        "source": "local.cc-switch",
+        "tool_count": 13
+      },
+      {
+        "dependency_count": 7,
+        "env_risk": 1.0,
+        "name": "007",
+        "skill_id": "007_skill_md__98df64a1efcb",
+        "source": "local.cc-switch",
+        "tool_count": 11
+      },
+      {
+        "dependency_count": 7,
+        "env_risk": 1.0,
+        "name": "expo-api-routes",
+        "skill_id": "expo_api_routes_skill_md__9b39eb16e668",
+        "source": "local.cc-switch",
+        "tool_count": 11
+      },
+      {
+        "dependency_count": 7,
+        "env_risk": 1.0,
+        "name": "bash-pro",
+        "skill_id": "bash_pro_skill_md__a8bfbc79fff4",
+        "source": "local.cc-switch",
+        "tool_count": 10
+      },
+      {
+        "dependency_count": 7,
+        "env_risk": 1.0,
+        "name": "javascript-typescript-typescript-scaffold",
+        "skill_id": "javascript_typescript_typescript_scaffold_skill_md__7100c93e7e42",
+        "source": "local.cc-switch",
+        "tool_count": 9
+      }
+    ]
+  },
+  "findings": [
+    {
+      "detail": "1427 skills (86.9%) require this primitive.",
+      "question": "What capability requirements are most common?",
+      "title": "Most common capability",
+      "value": "follow.procedure"
+    },
+    {
+      "detail": "Aggregated SCR/TCP gap score: 17059.",
+      "question": "Which primitive capabilities become bottlenecks most often?",
+      "title": "Largest portability bottleneck",
+      "value": "doc.generate"
+    },
+    {
+      "detail": "Average overall risk is 0.228 across 14 skills.",
+      "question": "Do skills from different sources have different structures and risks?",
+      "title": "Riskiest source",
+      "value": "local.codex"
+    },
+    {
+      "detail": "Average overall risk is 0.214.",
+      "question": "How do skill taxonomy and primitive requirements relate?",
+      "title": "Riskiest taxonomy",
+      "value": "tool-reference"
+    },
+    {
+      "detail": "Lowest average gap is 0.341.",
+      "question": "Which model/harness pairs are most compatible with the corpus?",
+      "title": "Best target profile",
+      "value": "deepseek-v4-pro / openclaw"
+    },
+    {
+      "detail": "63.2% of skills mention dependencies, credentials, packages, or environment setup.",
+      "question": "Are environment dependencies a major portability risk?",
+      "title": "Environment dependency footprint",
+      "value": "1038/1643"
+    },
+    {
+      "detail": "83.3% of skills include test/check/verify signals.",
+      "question": "How procedural are skills?",
+      "title": "Verification-heavy workflows",
+      "value": "1368/1643"
+    },
+    {
+      "detail": "Model avg 0.141, harness avg 0.145; margin 0.004.",
+      "question": "Is model mismatch or harness mismatch stronger?",
+      "title": "Dominant mismatch axis",
+      "value": "harness"
+    }
+  ],
+  "model_harness_contribution": {
+    "avg_harness_mismatch": 0.145,
+    "avg_model_mismatch": 0.141,
+    "dominant_axis": "harness",
+    "interpretation": "Harness mismatch contributes more to average risk.",
+    "margin": 0.004
+  },
+  "overview": {
+    "avg_char_count": 7735.66,
+    "avg_code_blocks": 6.43,
+    "avg_steps": 11.61,
+    "domain_counts": [
+      {
+        "count": 1597,
+        "name": "agent"
+      },
+      {
+        "count": 1471,
+        "name": "code"
+      },
+      {
+        "count": 1288,
+        "name": "data"
+      },
+      {
+        "count": 1134,
+        "name": "document"
+      },
+      {
+        "count": 877,
+        "name": "web"
+      },
+      {
+        "count": 624,
+        "name": "security"
+      },
+      {
+        "count": 602,
+        "name": "research"
+      },
+      {
+        "count": 401,
+        "name": "cloud"
+      },
+      {
+        "count": 4,
+        "name": "general"
+      }
+    ],
+    "length_buckets": [
+      {
+        "count": 36,
+        "name": "<1k"
+      },
+      {
+        "count": 376,
+        "name": "1k-3k"
+      },
+      {
+        "count": 457,
+        "name": "3k-7k"
+      },
+      {
+        "count": 623,
+        "name": "7k-15k"
+      },
+      {
+        "count": 151,
+        "name": "15k+"
+      }
+    ],
+    "skill_count": 1643,
+    "source_counts": [
+      {
+        "count": 1455,
+        "name": "local.cc-switch"
+      },
+      {
+        "count": 106,
+        "name": "skvm.benchmark"
+      },
+      {
+        "count": 68,
+        "name": "local.agents"
+      },
+      {
+        "count": 14,
+        "name": "local.codex"
+      }
+    ],
+    "taxonomy_counts": [
+      {
+        "count": 1009,
+        "name": "procedural"
+      },
+      {
+        "count": 496,
+        "name": "tool-reference"
+      },
+      {
+        "count": 112,
+        "name": "generative"
+      },
+      {
+        "count": 26,
+        "name": "mixed"
+      }
+    ]
+  },
+  "prioritization": [
+    {
+      "code_block_count": 26,
+      "environment_mismatch": 1.0,
+      "name": "loki-mode",
+      "overall_risk": 0.387,
+      "primitive_count": 24,
+      "priority_score": 0.683,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.838,
+      "skill_id": "loki_mode_skill_md__069ac981cbe7",
+      "source": "local.cc-switch",
+      "step_count": 45,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 21,
+      "environment_mismatch": 1.0,
+      "name": "electron-development",
+      "overall_risk": 0.389,
+      "primitive_count": 23,
+      "priority_score": 0.677,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.838,
+      "skill_id": "electron_development_skill_md__ec7f196aca47",
+      "source": "local.cc-switch",
+      "step_count": 5,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 6,
+      "environment_mismatch": 1.0,
+      "name": "sast-configuration",
+      "overall_risk": 0.383,
+      "primitive_count": 22,
+      "priority_score": 0.673,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.79,
+      "skill_id": "sast_configuration_skill_md__b88de113e83c",
+      "source": "local.cc-switch",
+      "step_count": 20,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 25,
+      "environment_mismatch": 1.0,
+      "name": "convex",
+      "overall_risk": 0.384,
+      "primitive_count": 22,
+      "priority_score": 0.67,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.825,
+      "skill_id": "convex_skill_md__8c4ffa287904",
+      "source": "local.cc-switch",
+      "step_count": 12,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 30,
+      "environment_mismatch": 1.0,
+      "name": "bun-development",
+      "overall_risk": 0.378,
+      "primitive_count": 22,
+      "priority_score": 0.668,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.82,
+      "skill_id": "bun_development_skill_md__9cb3eb9b171e",
+      "source": "local.cc-switch",
+      "step_count": 0,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 21,
+      "environment_mismatch": 0.94,
+      "name": "dependency-upgrade",
+      "overall_risk": 0.374,
+      "primitive_count": 24,
+      "priority_score": 0.666,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.834,
+      "skill_id": "dependency_upgrade_skill_md__6a56a7cf5fa7",
+      "source": "local.cc-switch",
+      "step_count": 31,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 50,
+      "environment_mismatch": 1.0,
+      "name": "hugging-face-jobs",
+      "overall_risk": 0.39,
+      "primitive_count": 21,
+      "priority_score": 0.666,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.823,
+      "skill_id": "hugging_face_jobs_skill_md__7a19457a2f11",
+      "source": "local.cc-switch",
+      "step_count": 47,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 19,
+      "environment_mismatch": 1.0,
+      "name": "security-scanning-security-sast",
+      "overall_risk": 0.374,
+      "primitive_count": 22,
+      "priority_score": 0.666,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.83,
+      "skill_id": "security_scanning_security_sast_skill_md__ca7a7492456b",
+      "source": "local.cc-switch",
+      "step_count": 14,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 10,
+      "environment_mismatch": 1.0,
+      "name": "readme",
+      "overall_risk": 0.379,
+      "primitive_count": 21,
+      "priority_score": 0.661,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.835,
+      "skill_id": "readme_skill_md__7eb9a8bb1e9a",
+      "source": "local.cc-switch",
+      "step_count": 29,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 12,
+      "environment_mismatch": 1.0,
+      "name": "docker-expert",
+      "overall_risk": 0.392,
+      "primitive_count": 20,
+      "priority_score": 0.66,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.819,
+      "skill_id": "docker_expert_skill_md__6d1c3e0f4262",
+      "source": "local.cc-switch",
+      "step_count": 38,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 9,
+      "environment_mismatch": 1.0,
+      "name": "environment-setup-guide",
+      "overall_risk": 0.387,
+      "primitive_count": 20,
+      "priority_score": 0.658,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.828,
+      "skill_id": "environment_setup_guide_skill_md__6512f2a3f6b7",
+      "source": "local.cc-switch",
+      "step_count": 21,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 25,
+      "environment_mismatch": 1.0,
+      "name": "hugging-face-model-trainer",
+      "overall_risk": 0.388,
+      "primitive_count": 20,
+      "priority_score": 0.658,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.831,
+      "skill_id": "hugging_face_model_trainer_skill_md__288d6c87b43e",
+      "source": "local.cc-switch",
+      "step_count": 40,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 17,
+      "environment_mismatch": 1.0,
+      "name": "azure-microsoft-playwright-testing-ts",
+      "overall_risk": 0.37,
+      "primitive_count": 20,
+      "priority_score": 0.656,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.784,
+      "skill_id": "azure_microsoft_playwright_testing_ts_skill_md__1cdd8f7d2b32",
+      "source": "local.cc-switch",
+      "step_count": 6,
+      "taxonomy": "generative"
+    },
+    {
+      "code_block_count": 15,
+      "environment_mismatch": 1.0,
+      "name": "nestjs-expert",
+      "overall_risk": 0.39,
+      "primitive_count": 20,
+      "priority_score": 0.656,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.851,
+      "skill_id": "nestjs_expert_skill_md__c1d540967da7",
+      "source": "local.cc-switch",
+      "step_count": 103,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 20,
+      "environment_mismatch": 1.0,
+      "name": "skill-creator-ms",
+      "overall_risk": 0.381,
+      "primitive_count": 20,
+      "priority_score": 0.656,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.822,
+      "skill_id": "skill_creator_ms_skill_md__57c420d47aa5",
+      "source": "local.cc-switch",
+      "step_count": 56,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 20,
+      "environment_mismatch": 1.0,
+      "name": "expo-api-routes",
+      "overall_risk": 0.375,
+      "primitive_count": 20,
+      "priority_score": 0.655,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.812,
+      "skill_id": "expo_api_routes_skill_md__9b39eb16e668",
+      "source": "local.cc-switch",
+      "step_count": 0,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 25,
+      "environment_mismatch": 1.0,
+      "name": "varlock",
+      "overall_risk": 0.379,
+      "primitive_count": 19,
+      "priority_score": 0.65,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.805,
+      "skill_id": "varlock_skill_md__fb6eb2aa0ef5",
+      "source": "local.cc-switch",
+      "step_count": 12,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 12,
+      "environment_mismatch": 1.0,
+      "name": "pydantic-ai",
+      "overall_risk": 0.379,
+      "primitive_count": 18,
+      "priority_score": 0.645,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.791,
+      "skill_id": "pydantic_ai_skill_md__9e7a3fa1f7c0",
+      "source": "local.cc-switch",
+      "step_count": 10,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 25,
+      "environment_mismatch": 1.0,
+      "name": "copilot-sdk",
+      "overall_risk": 0.38,
+      "primitive_count": 18,
+      "priority_score": 0.644,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.808,
+      "skill_id": "copilot_sdk_skill_md__598c65701b53",
+      "source": "local.cc-switch",
+      "step_count": 4,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 4,
+      "environment_mismatch": 1.0,
+      "name": "production-code-audit",
+      "overall_risk": 0.386,
+      "primitive_count": 18,
+      "priority_score": 0.642,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.847,
+      "skill_id": "production_code_audit_skill_md__b13153dd12a1",
+      "source": "local.cc-switch",
+      "step_count": 68,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 24,
+      "environment_mismatch": 1.0,
+      "name": "amazon-alexa",
+      "overall_risk": 0.369,
+      "primitive_count": 18,
+      "priority_score": 0.641,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.794,
+      "skill_id": "amazon_alexa_skill_md__46743285eef7",
+      "source": "local.cc-switch",
+      "step_count": 0,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 9,
+      "environment_mismatch": 1.0,
+      "name": "comfyui-gateway",
+      "overall_risk": 0.387,
+      "primitive_count": 19,
+      "priority_score": 0.637,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.826,
+      "skill_id": "comfyui_gateway_skill_md__dd4bc9620b1b",
+      "source": "local.cc-switch",
+      "step_count": 9,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 16,
+      "environment_mismatch": 0.94,
+      "name": "git-hooks-automation",
+      "overall_risk": 0.364,
+      "primitive_count": 20,
+      "priority_score": 0.637,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.819,
+      "skill_id": "git_hooks_automation_skill_md__63cdabb630cb",
+      "source": "local.cc-switch",
+      "step_count": 4,
+      "taxonomy": "generative"
+    },
+    {
+      "code_block_count": 22,
+      "environment_mismatch": 1.0,
+      "name": "cc-skill-security-review",
+      "overall_risk": 0.38,
+      "primitive_count": 17,
+      "priority_score": 0.636,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.819,
+      "skill_id": "cc_skill_security_review_skill_md__e0f1f4d56152",
+      "source": "local.cc-switch",
+      "step_count": 60,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 29,
+      "environment_mismatch": 0.94,
+      "name": "hugging-face-evaluation",
+      "overall_risk": 0.382,
+      "primitive_count": 19,
+      "priority_score": 0.636,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.827,
+      "skill_id": "hugging_face_evaluation_skill_md__34e944f5993a",
+      "source": "local.cc-switch",
+      "step_count": 19,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 15,
+      "environment_mismatch": 1.0,
+      "name": "javascript-typescript-typescript-scaffold",
+      "overall_risk": 0.365,
+      "primitive_count": 18,
+      "priority_score": 0.636,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.828,
+      "skill_id": "javascript_typescript_typescript_scaffold_skill_md__7100c93e7e42",
+      "source": "local.cc-switch",
+      "step_count": 6,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 14,
+      "environment_mismatch": 1.0,
+      "name": "security-auditor",
+      "overall_risk": 0.376,
+      "primitive_count": 17,
+      "priority_score": 0.634,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.822,
+      "skill_id": "security_auditor_1_0_0_skill_md__d6e721db31f9",
+      "source": "local.agents",
+      "step_count": 37,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 14,
+      "environment_mismatch": 1.0,
+      "name": "security-auditor",
+      "overall_risk": 0.376,
+      "primitive_count": 17,
+      "priority_score": 0.634,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.822,
+      "skill_id": "security_auditor_1_0_0_skill_md__715577992d1e",
+      "source": "local.cc-switch",
+      "step_count": 37,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 20,
+      "environment_mismatch": 0.94,
+      "name": "aws-penetration-testing",
+      "overall_risk": 0.365,
+      "primitive_count": 19,
+      "priority_score": 0.633,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.792,
+      "skill_id": "aws_penetration_testing_skill_md__3334ec35ca1c",
+      "source": "local.cc-switch",
+      "step_count": 3,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 15,
+      "environment_mismatch": 0.94,
+      "name": "hono",
+      "overall_risk": 0.365,
+      "primitive_count": 19,
+      "priority_score": 0.633,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.792,
+      "skill_id": "hono_skill_md__408e5af37fd3",
+      "source": "local.cc-switch",
+      "step_count": 7,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 12,
+      "environment_mismatch": 1.0,
+      "name": "007",
+      "overall_risk": 0.362,
+      "primitive_count": 17,
+      "priority_score": 0.631,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.799,
+      "skill_id": "007_skill_md__98df64a1efcb",
+      "source": "local.cc-switch",
+      "step_count": 89,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 43,
+      "environment_mismatch": 0.84,
+      "name": "graphify-windows",
+      "overall_risk": 0.339,
+      "primitive_count": 24,
+      "priority_score": 0.631,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.829,
+      "skill_id": "graphify_skill_md__c43184346230",
+      "source": "local.cc-switch",
+      "step_count": 13,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 34,
+      "environment_mismatch": 1.0,
+      "name": "azure-appconfiguration-java",
+      "overall_risk": 0.38,
+      "primitive_count": 15,
+      "priority_score": 0.628,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.763,
+      "skill_id": "azure_appconfiguration_java_skill_md__0b310ee9d6ee",
+      "source": "local.cc-switch",
+      "step_count": 8,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 9,
+      "environment_mismatch": 0.94,
+      "name": "claimable-postgres",
+      "overall_risk": 0.36,
+      "primitive_count": 19,
+      "priority_score": 0.628,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.823,
+      "skill_id": "claimable_postgres_skill_md__815ad1285063",
+      "source": "local.cc-switch",
+      "step_count": 17,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 8,
+      "environment_mismatch": 1.0,
+      "name": "imagegen",
+      "overall_risk": 0.362,
+      "primitive_count": 17,
+      "priority_score": 0.628,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.833,
+      "skill_id": "system_imagegen_skill_md__4ecc59a8aa0f",
+      "source": "local.codex",
+      "step_count": 32,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 3,
+      "environment_mismatch": 1.0,
+      "name": "api-security-best-practices",
+      "overall_risk": 0.363,
+      "primitive_count": 16,
+      "priority_score": 0.622,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.83,
+      "skill_id": "api_security_best_practices_skill_md__6031e1cf85ba",
+      "source": "local.cc-switch",
+      "step_count": 53,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 10,
+      "environment_mismatch": 0.84,
+      "name": "remotion",
+      "overall_risk": 0.349,
+      "primitive_count": 22,
+      "priority_score": 0.622,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.825,
+      "skill_id": "remotion_skill_md__8415aefe86b3",
+      "source": "local.cc-switch",
+      "step_count": 50,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 20,
+      "environment_mismatch": 1.0,
+      "name": "azure-monitor-query-java",
+      "overall_risk": 0.378,
+      "primitive_count": 14,
+      "priority_score": 0.62,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.77,
+      "skill_id": "azure_monitor_query_java_skill_md__0958363e68b1",
+      "source": "local.cc-switch",
+      "step_count": 7,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 1,
+      "environment_mismatch": 0.84,
+      "name": "claude-api",
+      "overall_risk": 0.349,
+      "primitive_count": 22,
+      "priority_score": 0.62,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.842,
+      "skill_id": "claude_api_skill_md__1521064b8afa",
+      "source": "local.cc-switch",
+      "step_count": 20,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 15,
+      "environment_mismatch": 0.94,
+      "name": "cloud-penetration-testing",
+      "overall_risk": 0.355,
+      "primitive_count": 18,
+      "priority_score": 0.62,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.813,
+      "skill_id": "cloud_penetration_testing_skill_md__3d4c1b31f27c",
+      "source": "local.cc-switch",
+      "step_count": 11,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 7,
+      "environment_mismatch": 1.0,
+      "name": "vibe-code-auditor",
+      "overall_risk": 0.391,
+      "primitive_count": 18,
+      "priority_score": 0.619,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.818,
+      "skill_id": "vibe_code_auditor_skill_md__f3938433c3e9",
+      "source": "local.cc-switch",
+      "step_count": 9,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 23,
+      "environment_mismatch": 0.84,
+      "name": "wellally-tech",
+      "overall_risk": 0.333,
+      "primitive_count": 22,
+      "priority_score": 0.619,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.788,
+      "skill_id": "wellally_tech_skill_md__777130250c96",
+      "source": "local.cc-switch",
+      "step_count": 32,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 20,
+      "environment_mismatch": 0.94,
+      "name": "turing-pyramid",
+      "overall_risk": 0.369,
+      "primitive_count": 17,
+      "priority_score": 0.618,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.824,
+      "skill_id": "turing_pyramid_skill_md__b541503f5551",
+      "source": "skvm.benchmark",
+      "step_count": 33,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 21,
+      "environment_mismatch": 0.84,
+      "name": "claude-code-expert",
+      "overall_risk": 0.342,
+      "primitive_count": 22,
+      "priority_score": 0.617,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.84,
+      "skill_id": "claude_code_expert_skill_md__0d2950c45afc",
+      "source": "local.cc-switch",
+      "step_count": 13,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 6,
+      "environment_mismatch": 1.0,
+      "name": "code-review-checklist",
+      "overall_risk": 0.391,
+      "primitive_count": 14,
+      "priority_score": 0.616,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.859,
+      "skill_id": "code_review_checklist_skill_md__b67a39ffd8dd",
+      "source": "local.cc-switch",
+      "step_count": 88,
+      "taxonomy": "procedural"
+    },
+    {
+      "code_block_count": 30,
+      "environment_mismatch": 0.94,
+      "name": "hugging-face-datasets",
+      "overall_risk": 0.36,
+      "primitive_count": 17,
+      "priority_score": 0.616,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.814,
+      "skill_id": "hugging_face_datasets_skill_md__fed06792d5b4",
+      "source": "local.cc-switch",
+      "step_count": 1,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 9,
+      "environment_mismatch": 1.0,
+      "name": "azure-cosmos-db-py",
+      "overall_risk": 0.356,
+      "primitive_count": 17,
+      "priority_score": 0.615,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.794,
+      "skill_id": "azure_cosmos_db_py_skill_md__fd315d8c852f",
+      "source": "local.cc-switch",
+      "step_count": 9,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 4,
+      "environment_mismatch": 0.84,
+      "name": "shadcn",
+      "overall_risk": 0.341,
+      "primitive_count": 21,
+      "priority_score": 0.615,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.796,
+      "skill_id": "shadcn_skill_md__5830b87dd6aa",
+      "source": "local.cc-switch",
+      "step_count": 17,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 6,
+      "environment_mismatch": 1.0,
+      "name": "apify-actor-development",
+      "overall_risk": 0.376,
+      "primitive_count": 20,
+      "priority_score": 0.611,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.832,
+      "skill_id": "apify_actor_development_skill_md__f98c0d6d5a35",
+      "source": "local.cc-switch",
+      "step_count": 8,
+      "taxonomy": "tool-reference"
+    },
+    {
+      "code_block_count": 18,
+      "environment_mismatch": 0.94,
+      "name": "devcontainer-setup",
+      "overall_risk": 0.344,
+      "primitive_count": 17,
+      "priority_score": 0.61,
+      "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+      "scr_confidence": 0.812,
+      "skill_id": "devcontainer_setup_skill_md__d61826a8065c",
+      "source": "local.cc-switch",
+      "step_count": 22,
+      "taxonomy": "procedural"
+    }
+  ],
+  "risks": {
+    "by_source": [
+      {
+        "avg_risk": 0.162,
+        "count": 68,
+        "name": "local.agents"
+      },
+      {
+        "avg_risk": 0.185,
+        "count": 1455,
+        "name": "local.cc-switch"
+      },
+      {
+        "avg_risk": 0.228,
+        "count": 14,
+        "name": "local.codex"
+      },
+      {
+        "avg_risk": 0.168,
+        "count": 106,
+        "name": "skvm.benchmark"
+      }
+    ],
+    "by_taxonomy": [
+      {
+        "avg_risk": 0.168,
+        "count": 112,
+        "name": "generative"
+      },
+      {
+        "avg_risk": 0.138,
+        "count": 26,
+        "name": "mixed"
+      },
+      {
+        "avg_risk": 0.171,
+        "count": 1009,
+        "name": "procedural"
+      },
+      {
+        "avg_risk": 0.214,
+        "count": 496,
+        "name": "tool-reference"
+      }
+    ],
+    "top_risky_skills": [
+      {
+        "domains": [
+          "general"
+        ],
+        "name": "oral-health-analyzer",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\oral-health-analyzer\\SKILL.md",
+        "primitive_count": 0,
+        "risk": {
+          "environment_mismatch": 0.0,
+          "harness_mismatch": 0.0,
+          "model_mismatch": 1.0,
+          "overall": 0.4
+        },
+        "skill_id": "oral_health_analyzer_skill_md__2a468dd66248",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "general"
+        ],
+        "name": "sexual-health-analyzer",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\sexual-health-analyzer\\SKILL.md",
+        "primitive_count": 0,
+        "risk": {
+          "environment_mismatch": 0.0,
+          "harness_mismatch": 0.0,
+          "model_mismatch": 1.0,
+          "overall": 0.4
+        },
+        "skill_id": "sexual_health_analyzer_skill_md__aa6af9530d14",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "data",
+          "agent"
+        ],
+        "name": "skin-health-analyzer",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\skin-health-analyzer\\SKILL.md",
+        "primitive_count": 0,
+        "risk": {
+          "environment_mismatch": 0.0,
+          "harness_mismatch": 0.0,
+          "model_mismatch": 1.0,
+          "overall": 0.4
+        },
+        "skill_id": "skin_health_analyzer_skill_md__72d1ad33f466",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "web",
+          "security",
+          "agent",
+          "cloud"
+        ],
+        "name": "docker-expert",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\docker-expert\\SKILL.md",
+        "primitive_count": 20,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.186,
+          "model_mismatch": 0.192,
+          "overall": 0.392
+        },
+        "skill_id": "docker_expert_skill_md__6d1c3e0f4262",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "code-review-checklist",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\code-review-checklist\\SKILL.md",
+        "primitive_count": 14,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.183,
+          "model_mismatch": 0.192,
+          "overall": 0.391
+        },
+        "skill_id": "code_review_checklist_skill_md__b67a39ffd8dd",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent",
+          "cloud"
+        ],
+        "name": "github-actions-templates",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\github-actions-templates\\SKILL.md",
+        "primitive_count": 14,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.187,
+          "model_mismatch": 0.188,
+          "overall": 0.391
+        },
+        "skill_id": "github_actions_templates_skill_md__f9404454e19a",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "agent",
+          "cloud"
+        ],
+        "name": "vibe-code-auditor",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\vibe-code-auditor\\SKILL.md",
+        "primitive_count": 18,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.185,
+          "model_mismatch": 0.191,
+          "overall": 0.391
+        },
+        "skill_id": "vibe_code_auditor_skill_md__f3938433c3e9",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "agent",
+          "cloud"
+        ],
+        "name": "hugging-face-jobs",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\hugging-face-jobs\\SKILL.md",
+        "primitive_count": 21,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.184,
+          "model_mismatch": 0.189,
+          "overall": 0.39
+        },
+        "skill_id": "hugging_face_jobs_skill_md__7a19457a2f11",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "nestjs-expert",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\nestjs-expert\\SKILL.md",
+        "primitive_count": 20,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.187,
+          "model_mismatch": 0.186,
+          "overall": 0.39
+        },
+        "skill_id": "nestjs_expert_skill_md__c1d540967da7",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "electron-development",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\electron-development\\SKILL.md",
+        "primitive_count": 23,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.186,
+          "model_mismatch": 0.185,
+          "overall": 0.389
+        },
+        "skill_id": "electron_development_skill_md__ec7f196aca47",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "agent",
+          "cloud"
+        ],
+        "name": "hugging-face-model-trainer",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\hugging-face-model-trainer\\SKILL.md",
+        "primitive_count": 20,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.18,
+          "model_mismatch": 0.188,
+          "overall": 0.388
+        },
+        "skill_id": "hugging_face_model_trainer_skill_md__288d6c87b43e",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "comfyui-gateway",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\comfyui-gateway\\SKILL.md",
+        "primitive_count": 19,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.185,
+          "model_mismatch": 0.181,
+          "overall": 0.387
+        },
+        "skill_id": "comfyui_gateway_skill_md__dd4bc9620b1b",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "environment-setup-guide",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\environment-setup-guide\\SKILL.md",
+        "primitive_count": 20,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.182,
+          "model_mismatch": 0.182,
+          "overall": 0.387
+        },
+        "skill_id": "environment_setup_guide_skill_md__6512f2a3f6b7",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "agent",
+          "cloud"
+        ],
+        "name": "loki-mode",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\loki-mode\\SKILL.md",
+        "primitive_count": 24,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.182,
+          "model_mismatch": 0.183,
+          "overall": 0.387
+        },
+        "skill_id": "loki_mode_skill_md__069ac981cbe7",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "agent"
+        ],
+        "name": "using-git-worktrees",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\using-git-worktrees\\SKILL.md",
+        "primitive_count": 16,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.187,
+          "model_mismatch": 0.179,
+          "overall": 0.387
+        },
+        "skill_id": "using_git_worktrees_skill_md__3c84f6917d87",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "production-code-audit",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\production-code-audit\\SKILL.md",
+        "primitive_count": 18,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.181,
+          "model_mismatch": 0.182,
+          "overall": 0.386
+        },
+        "skill_id": "production_code_audit_skill_md__b13153dd12a1",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "agent",
+          "cloud"
+        ],
+        "name": "convex",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\convex\\SKILL.md",
+        "primitive_count": 22,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.176,
+          "model_mismatch": 0.18,
+          "overall": 0.384
+        },
+        "skill_id": "convex_skill_md__8c4ffa287904",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "security",
+          "research",
+          "agent"
+        ],
+        "name": "sast-configuration",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\sast-configuration\\SKILL.md",
+        "primitive_count": 22,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.18,
+          "model_mismatch": 0.176,
+          "overall": 0.383
+        },
+        "skill_id": "sast_configuration_skill_md__b88de113e83c",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "agent"
+        ],
+        "name": "hugging-face-evaluation",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\hugging-face-evaluation\\SKILL.md",
+        "primitive_count": 19,
+        "risk": {
+          "environment_mismatch": 0.94,
+          "harness_mismatch": 0.192,
+          "model_mismatch": 0.201,
+          "overall": 0.382
+        },
+        "skill_id": "hugging_face_evaluation_skill_md__34e944f5993a",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "agent",
+          "cloud"
+        ],
+        "name": "skill-creator-ms",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\skill-creator-ms\\SKILL.md",
+        "primitive_count": 20,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.176,
+          "model_mismatch": 0.173,
+          "overall": 0.381
+        },
+        "skill_id": "skill_creator_ms_skill_md__57c420d47aa5",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent",
+          "cloud"
+        ],
+        "name": "azure-appconfiguration-java",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\azure-appconfiguration-java\\SKILL.md",
+        "primitive_count": 15,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.172,
+          "model_mismatch": 0.175,
+          "overall": 0.38
+        },
+        "skill_id": "azure_appconfiguration_java_skill_md__0b310ee9d6ee",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "agent"
+        ],
+        "name": "cc-skill-security-review",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\cc-skill-security-review\\SKILL.md",
+        "primitive_count": 17,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.172,
+          "model_mismatch": 0.173,
+          "overall": 0.38
+        },
+        "skill_id": "cc_skill_security_review_skill_md__e0f1f4d56152",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent",
+          "cloud"
+        ],
+        "name": "copilot-sdk",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\copilot-sdk\\SKILL.md",
+        "primitive_count": 18,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.18,
+          "model_mismatch": 0.168,
+          "overall": 0.38
+        },
+        "skill_id": "copilot_sdk_skill_md__598c65701b53",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "security",
+          "research",
+          "agent",
+          "cloud"
+        ],
+        "name": "pydantic-ai",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\pydantic-ai\\SKILL.md",
+        "primitive_count": 18,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.173,
+          "model_mismatch": 0.172,
+          "overall": 0.379
+        },
+        "skill_id": "pydantic_ai_skill_md__9e7a3fa1f7c0",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent",
+          "cloud"
+        ],
+        "name": "readme",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\readme\\SKILL.md",
+        "primitive_count": 21,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.175,
+          "model_mismatch": 0.17,
+          "overall": 0.379
+        },
+        "skill_id": "readme_skill_md__7eb9a8bb1e9a",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "security",
+          "agent",
+          "cloud"
+        ],
+        "name": "varlock",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\varlock\\SKILL.md",
+        "primitive_count": 19,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.173,
+          "model_mismatch": 0.17,
+          "overall": 0.379
+        },
+        "skill_id": "varlock_skill_md__fb6eb2aa0ef5",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "web",
+          "agent",
+          "cloud"
+        ],
+        "name": "azure-monitor-query-java",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\azure-monitor-query-java\\SKILL.md",
+        "primitive_count": 14,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.174,
+          "model_mismatch": 0.167,
+          "overall": 0.378
+        },
+        "skill_id": "azure_monitor_query_java_skill_md__0958363e68b1",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "bun-development",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\bun-development\\SKILL.md",
+        "primitive_count": 22,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.17,
+          "model_mismatch": 0.171,
+          "overall": 0.378
+        },
+        "skill_id": "bun_development_skill_md__9cb3eb9b171e",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "turborepo-caching",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\turborepo-caching\\SKILL.md",
+        "primitive_count": 20,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.172,
+          "model_mismatch": 0.17,
+          "overall": 0.378
+        },
+        "skill_id": "turborepo_caching_skill_md__ff87df8b2fbf",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "cloud"
+        ],
+        "name": "security-auditor",
+        "path_or_url": "C:\\Users\\27651\\.agents\\skills\\security-auditor-1.0.0\\SKILL.md",
+        "primitive_count": 17,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.172,
+          "model_mismatch": 0.164,
+          "overall": 0.376
+        },
+        "skill_id": "security_auditor_1_0_0_skill_md__d6e721db31f9",
+        "source": "local.agents",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "agent",
+          "cloud"
+        ],
+        "name": "apify-actor-development",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\apify-actor-development\\SKILL.md",
+        "primitive_count": 20,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.17,
+          "model_mismatch": 0.165,
+          "overall": 0.376
+        },
+        "skill_id": "apify_actor_development_skill_md__f98c0d6d5a35",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "cloud"
+        ],
+        "name": "security-auditor",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\security-auditor-1.0.0\\SKILL.md",
+        "primitive_count": 17,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.172,
+          "model_mismatch": 0.164,
+          "overall": 0.376
+        },
+        "skill_id": "security_auditor_1_0_0_skill_md__715577992d1e",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "security",
+          "agent",
+          "cloud"
+        ],
+        "name": "devops-deploy",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\devops-deploy\\SKILL.md",
+        "primitive_count": 19,
+        "risk": {
+          "environment_mismatch": 0.94,
+          "harness_mismatch": 0.181,
+          "model_mismatch": 0.192,
+          "overall": 0.375
+        },
+        "skill_id": "devops_deploy_skill_md__c82e29385afb",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "cloud"
+        ],
+        "name": "expo-api-routes",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\expo-api-routes\\SKILL.md",
+        "primitive_count": 20,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.171,
+          "model_mismatch": 0.164,
+          "overall": 0.375
+        },
+        "skill_id": "expo_api_routes_skill_md__9b39eb16e668",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "dependency-upgrade",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\dependency-upgrade\\SKILL.md",
+        "primitive_count": 24,
+        "risk": {
+          "environment_mismatch": 0.94,
+          "harness_mismatch": 0.185,
+          "model_mismatch": 0.185,
+          "overall": 0.374
+        },
+        "skill_id": "dependency_upgrade_skill_md__6a56a7cf5fa7",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent",
+          "cloud"
+        ],
+        "name": "security-scanning-security-sast",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\security-scanning-security-sast\\SKILL.md",
+        "primitive_count": 22,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.168,
+          "model_mismatch": 0.163,
+          "overall": 0.374
+        },
+        "skill_id": "security_scanning_security_sast_skill_md__ca7a7492456b",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "skill-scanner",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\skill-scanner\\SKILL.md",
+        "primitive_count": 15,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.163,
+          "model_mismatch": 0.168,
+          "overall": 0.374
+        },
+        "skill_id": "skill_scanner_skill_md__19f737a8750c",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "security",
+          "agent"
+        ],
+        "name": "skill-sentinel",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\skill-sentinel\\SKILL.md",
+        "primitive_count": 13,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.166,
+          "model_mismatch": 0.166,
+          "overall": 0.374
+        },
+        "skill_id": "skill_sentinel_skill_md__426d159d4e41",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "research",
+          "agent"
+        ],
+        "name": "deep-research",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\deep-research\\SKILL.md",
+        "primitive_count": 14,
+        "risk": {
+          "environment_mismatch": 0.94,
+          "harness_mismatch": 0.177,
+          "model_mismatch": 0.188,
+          "overall": 0.372
+        },
+        "skill_id": "deep_research_skill_md__d68189de1b64",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "document",
+          "web",
+          "security",
+          "agent",
+          "cloud"
+        ],
+        "name": "azure-microsoft-playwright-testing-ts",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\azure-microsoft-playwright-testing-ts\\SKILL.md",
+        "primitive_count": 20,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.162,
+          "model_mismatch": 0.158,
+          "overall": 0.37
+        },
+        "skill_id": "azure_microsoft_playwright_testing_ts_skill_md__1cdd8f7d2b32",
+        "source": "local.cc-switch",
+        "taxonomy": "generative"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "security",
+          "research",
+          "agent",
+          "cloud"
+        ],
+        "name": "amazon-alexa",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\amazon-alexa\\SKILL.md",
+        "primitive_count": 18,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.163,
+          "model_mismatch": 0.155,
+          "overall": 0.369
+        },
+        "skill_id": "amazon_alexa_skill_md__46743285eef7",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "agent"
+        ],
+        "name": "turing-pyramid",
+        "path_or_url": "E:\\大三下\\dadv\\skills-vis\\data\\raw\\skvm-data\\skills\\turing-pyramid\\SKILL.md",
+        "primitive_count": 17,
+        "risk": {
+          "environment_mismatch": 0.94,
+          "harness_mismatch": 0.178,
+          "model_mismatch": 0.178,
+          "overall": 0.369
+        },
+        "skill_id": "turing_pyramid_skill_md__b541503f5551",
+        "source": "skvm.benchmark",
+        "taxonomy": "procedural"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent",
+          "cloud"
+        ],
+        "name": "backend-security-coder",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\backend-security-coder\\SKILL.md",
+        "primitive_count": 15,
+        "risk": {
+          "environment_mismatch": 0.94,
+          "harness_mismatch": 0.18,
+          "model_mismatch": 0.176,
+          "overall": 0.368
+        },
+        "skill_id": "backend_security_coder_skill_md__b3eefd8e0c29",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "research",
+          "agent",
+          "cloud"
+        ],
+        "name": "aws-penetration-testing",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\aws-penetration-testing\\SKILL.md",
+        "primitive_count": 19,
+        "risk": {
+          "environment_mismatch": 0.94,
+          "harness_mismatch": 0.167,
+          "model_mismatch": 0.178,
+          "overall": 0.365
+        },
+        "skill_id": "aws_penetration_testing_skill_md__3334ec35ca1c",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "bash-pro",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\bash-pro\\SKILL.md",
+        "primitive_count": 22,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.146,
+          "model_mismatch": 0.16,
+          "overall": 0.365
+        },
+        "skill_id": "bash_pro_skill_md__a8bfbc79fff4",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent",
+          "cloud"
+        ],
+        "name": "hono",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\hono\\SKILL.md",
+        "primitive_count": 19,
+        "risk": {
+          "environment_mismatch": 0.94,
+          "harness_mismatch": 0.177,
+          "model_mismatch": 0.17,
+          "overall": 0.365
+        },
+        "skill_id": "hono_skill_md__408e5af37fd3",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "javascript-typescript-typescript-scaffold",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\javascript-typescript-typescript-scaffold\\SKILL.md",
+        "primitive_count": 18,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.155,
+          "model_mismatch": 0.153,
+          "overall": 0.365
+        },
+        "skill_id": "javascript_typescript_typescript_scaffold_skill_md__7100c93e7e42",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "agent",
+          "cloud"
+        ],
+        "name": "azure-ai-voicelive-ts",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\azure-ai-voicelive-ts\\SKILL.md",
+        "primitive_count": 16,
+        "risk": {
+          "environment_mismatch": 0.94,
+          "harness_mismatch": 0.173,
+          "model_mismatch": 0.171,
+          "overall": 0.364
+        },
+        "skill_id": "azure_ai_voicelive_ts_skill_md__296b2abd1ee3",
+        "source": "local.cc-switch",
+        "taxonomy": "tool-reference"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "git-hooks-automation",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\git-hooks-automation\\SKILL.md",
+        "primitive_count": 20,
+        "risk": {
+          "environment_mismatch": 0.94,
+          "harness_mismatch": 0.173,
+          "model_mismatch": 0.171,
+          "overall": 0.364
+        },
+        "skill_id": "git_hooks_automation_skill_md__63cdabb630cb",
+        "source": "local.cc-switch",
+        "taxonomy": "generative"
+      },
+      {
+        "domains": [
+          "code",
+          "data",
+          "document",
+          "web",
+          "security",
+          "agent"
+        ],
+        "name": "api-security-best-practices",
+        "path_or_url": "C:\\Users\\27651\\.cc-switch\\skills\\api-security-best-practices\\SKILL.md",
+        "primitive_count": 16,
+        "risk": {
+          "environment_mismatch": 1.0,
+          "harness_mismatch": 0.154,
+          "model_mismatch": 0.148,
+          "overall": 0.363
+        },
+        "skill_id": "api_security_best_practices_skill_md__6031e1cf85ba",
+        "source": "local.cc-switch",
+        "taxonomy": "procedural"
+      }
+    ]
+  },
+  "skvm_alignment": {
+    "implemented": [
+      "Treat skills as analyzable natural-language programs.",
+      "Extract derived skill capability requirements (SCR).",
+      "Import official SkVM target capability profiles (TCP).",
+      "Compute SCR/TCP portability gaps by model and harness.",
+      "Detect environment dependency risk from skill text."
+    ],
+    "out_of_scope": [
+      "AOT compilation into target-specific skill variants.",
+      "JIT code solidification and adaptive recompilation.",
+      "Runtime task execution, token reduction, and speedup evaluation.",
+      "Full public skill ecosystem crawling at 118k-scale."
+    ],
+    "partial": [
+      "Primitive catalog is project-defined and mapped approximately to SkVM primitive ids.",
+      "Environment binding is represented as risk detection, not generated setup scripts.",
+      "Concurrency is represented as primitive demand and complexity signals, not executable DAG extraction.",
+      "Validation sample is generated for manual review, but labels are not fully adjudicated yet."
+    ],
+    "primitive_mapping": [
+      {
+        "project_primitive": "agent.parallel",
+        "skvm_primitive": "follow.delegation"
+      },
+      {
+        "project_primitive": "data.parse",
+        "skvm_primitive": "reason.analysis"
+      },
+      {
+        "project_primitive": "data.transform",
+        "skvm_primitive": "reason.analysis"
+      },
+      {
+        "project_primitive": "data.visualize",
+        "skvm_primitive": "gen.code.python"
+      },
+      {
+        "project_primitive": "doc.generate",
+        "skvm_primitive": "gen.text.long"
+      },
+      {
+        "project_primitive": "follow.constraints",
+        "skvm_primitive": "follow.constraint"
+      },
+      {
+        "project_primitive": "follow.procedure",
+        "skvm_primitive": "follow.procedure"
+      },
+      {
+        "project_primitive": "follow.verify",
+        "skvm_primitive": "follow.constraint"
+      },
+      {
+        "project_primitive": "gen.code.javascript",
+        "skvm_primitive": "gen.code.javascript"
+      },
+      {
+        "project_primitive": "gen.code.python",
+        "skvm_primitive": "gen.code.python"
+      },
+      {
+        "project_primitive": "gen.code.shell",
+        "skvm_primitive": "gen.code.shell"
+      },
+      {
+        "project_primitive": "gen.code.sql",
+        "skvm_primitive": "gen.code.sql"
+      },
+      {
+        "project_primitive": "gen.code.test",
+        "skvm_primitive": "gen.code.python"
+      },
+      {
+        "project_primitive": "gen.code.typescript",
+        "skvm_primitive": "gen.code.javascript"
+      },
+      {
+        "project_primitive": "presentation.generate",
+        "skvm_primitive": "gen.text.structured"
+      },
+      {
+        "project_primitive": "reason.diagnose",
+        "skvm_primitive": "reason.analysis"
+      },
+      {
+        "project_primitive": "reason.plan",
+        "skvm_primitive": "reason.planning"
+      },
+      {
+        "project_primitive": "runtime.env_bind",
+        "skvm_primitive": "tool.exec"
+      },
+      {
+        "project_primitive": "spreadsheet.process",
+        "skvm_primitive": "gen.code.python"
+      },
+      {
+        "project_primitive": "tool.browser",
+        "skvm_primitive": "tool.browser"
+      },
+      {
+        "project_primitive": "tool.exec",
+        "skvm_primitive": "tool.exec"
+      },
+      {
+        "project_primitive": "tool.file.read",
+        "skvm_primitive": "tool.file.read"
+      },
+      {
+        "project_primitive": "tool.file.write",
+        "skvm_primitive": "tool.file.write"
+      },
+      {
+        "project_primitive": "tool.git",
+        "skvm_primitive": "tool.exec"
+      },
+      {
+        "project_primitive": "tool.github",
+        "skvm_primitive": "tool.web"
+      },
+      {
+        "project_primitive": "tool.package_manager",
+        "skvm_primitive": "tool.exec"
+      },
+      {
+        "project_primitive": "tool.web.fetch",
+        "skvm_primitive": "tool.web"
+      },
+      {
+        "project_primitive": "tool.web.search",
+        "skvm_primitive": "tool.web"
+      }
+    ]
+  },
+  "validation_sample": [
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "oral-health-analyzer",
+      "primitive_count": 0,
+      "scr_confidence": 0.2,
+      "skill_id": "oral_health_analyzer_skill_md__2a468dd66248",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": []
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "sexual-health-analyzer",
+      "primitive_count": 0,
+      "scr_confidence": 0.2,
+      "skill_id": "sexual_health_analyzer_skill_md__aa6af9530d14",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": []
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "skin-health-analyzer",
+      "primitive_count": 0,
+      "scr_confidence": 0.2,
+      "skill_id": "skin_health_analyzer_skill_md__72d1ad33f466",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": []
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "office-automation-test",
+      "primitive_count": 0,
+      "scr_confidence": 0.2,
+      "skill_id": "office_automation_test_skill_md__9ddeff6c654a",
+      "source": "skvm.benchmark",
+      "taxonomy": "procedural",
+      "top_primitives": []
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "zoom-out",
+      "primitive_count": 1,
+      "scr_confidence": 0.62,
+      "skill_id": "zoom_out_skill_md__73f6bdea8571",
+      "source": "local.agents",
+      "taxonomy": "mixed",
+      "top_primitives": [
+        {
+          "evidence": [
+            "visualization language",
+            "map"
+          ],
+          "level": 1,
+          "primitive": "data.visualize"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "meeting-notes",
+      "primitive_count": 7,
+      "scr_confidence": 0.62,
+      "skill_id": "meeting_minutes_skill_md__58e80fb1829f",
+      "source": "skvm.benchmark",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "document generation language",
+            "document"
+          ],
+          "level": 1,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "requirement"
+          ],
+          "level": 1,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "review"
+          ],
+          "level": 1,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 1,
+          "primitive": "gen.code.python"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "bash"
+          ],
+          "level": 1,
+          "primitive": "gen.code.shell"
+        },
+        {
+          "evidence": [
+            "git language",
+            "git"
+          ],
+          "level": 1,
+          "primitive": "tool.git"
+        },
+        {
+          "evidence": [
+            "GitHub language",
+            "github"
+          ],
+          "level": 1,
+          "primitive": "tool.github"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "story-writer",
+      "primitive_count": 3,
+      "scr_confidence": 0.62,
+      "skill_id": "story_writer_skill_md__06ac98744511",
+      "source": "skvm.benchmark",
+      "taxonomy": "generative",
+      "top_primitives": [
+        {
+          "evidence": [
+            "visualization language",
+            "plot"
+          ],
+          "level": 1,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "git language",
+            "git"
+          ],
+          "level": 1,
+          "primitive": "tool.git"
+        },
+        {
+          "evidence": [
+            "GitHub language",
+            "github"
+          ],
+          "level": 1,
+          "primitive": "tool.github"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "workflow-builder",
+      "primitive_count": 5,
+      "scr_confidence": 0.636,
+      "skill_id": "workflow_builder_skill_md__313b568e04f8",
+      "source": "skvm.benchmark",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "document generation language",
+            "document"
+          ],
+          "level": 1,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "process",
+            "workflow"
+          ],
+          "level": 1,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "bash"
+          ],
+          "level": 1,
+          "primitive": "gen.code.shell"
+        },
+        {
+          "evidence": [
+            "git language",
+            "git"
+          ],
+          "level": 1,
+          "primitive": "tool.git"
+        },
+        {
+          "evidence": [
+            "GitHub language",
+            "github"
+          ],
+          "level": 1,
+          "primitive": "tool.github"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "microservices-patterns",
+      "primitive_count": 4,
+      "scr_confidence": 0.64,
+      "skill_id": "microservices_patterns_skill_md__aaf7125fdded",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "constraint language",
+            "do not"
+          ],
+          "level": 1,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "step"
+          ],
+          "level": 1,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "SQL/database language",
+            "migration"
+          ],
+          "level": 1,
+          "primitive": "gen.code.sql"
+        },
+        {
+          "evidence": [
+            "planning language",
+            "plan",
+            "strategy"
+          ],
+          "level": 1,
+          "primitive": "reason.plan"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "Shell Script Helper",
+      "primitive_count": 6,
+      "scr_confidence": 0.647,
+      "skill_id": "shell_script_skill_md__67dac534bd83",
+      "source": "skvm.benchmark",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 1,
+          "primitive": "gen.code.shell"
+        },
+        {
+          "evidence": [
+            "diagnosis language",
+            "bug",
+            "debug"
+          ],
+          "level": 1,
+          "primitive": "reason.diagnose"
+        },
+        {
+          "evidence": [
+            "environment setup language",
+            "setup"
+          ],
+          "level": 1,
+          "primitive": "runtime.env_bind"
+        },
+        {
+          "evidence": [
+            "spreadsheet language",
+            "sheet"
+          ],
+          "level": 1,
+          "primitive": "spreadsheet.process"
+        },
+        {
+          "evidence": [
+            "git language",
+            "git"
+          ],
+          "level": 1,
+          "primitive": "tool.git"
+        },
+        {
+          "evidence": [
+            "GitHub language",
+            "github"
+          ],
+          "level": 1,
+          "primitive": "tool.github"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "openai-whisper",
+      "primitive_count": 3,
+      "scr_confidence": 0.647,
+      "skill_id": "openai_whisper_skill_md__0ba77b428c15",
+      "source": "skvm.benchmark",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "environment setup language",
+            "api key",
+            "install"
+          ],
+          "level": 1,
+          "primitive": "runtime.env_bind"
+        },
+        {
+          "evidence": [
+            "command execution language",
+            "cli"
+          ],
+          "level": 1,
+          "primitive": "tool.exec"
+        },
+        {
+          "evidence": [
+            "web fetch language",
+            "download"
+          ],
+          "level": 1,
+          "primitive": "tool.web.fetch"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "builder",
+      "primitive_count": 7,
+      "scr_confidence": 0.654,
+      "skill_id": "builder_skill_md__82f3637ca36f",
+      "source": "skvm.benchmark",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "document generation language",
+            "document"
+          ],
+          "level": 1,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "SQL/database language",
+            "migration"
+          ],
+          "level": 1,
+          "primitive": "gen.code.sql"
+        },
+        {
+          "evidence": [
+            "diagnosis language",
+            "bug",
+            "debug"
+          ],
+          "level": 1,
+          "primitive": "reason.diagnose"
+        },
+        {
+          "evidence": [
+            "environment setup language",
+            "api key",
+            "credential"
+          ],
+          "level": 1,
+          "primitive": "runtime.env_bind"
+        },
+        {
+          "evidence": [
+            "spreadsheet language",
+            "sheet"
+          ],
+          "level": 1,
+          "primitive": "spreadsheet.process"
+        },
+        {
+          "evidence": [
+            "git language",
+            "git"
+          ],
+          "level": 1,
+          "primitive": "tool.git"
+        },
+        {
+          "evidence": [
+            "GitHub language",
+            "github"
+          ],
+          "level": 1,
+          "primitive": "tool.github"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "Excel Formula Helper",
+      "primitive_count": 4,
+      "scr_confidence": 0.66,
+      "skill_id": "excel_formula_skill_md__2dfae9b48d6d",
+      "source": "skvm.benchmark",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "csv"
+          ],
+          "level": 1,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "spreadsheet language",
+            "csv",
+            "excel"
+          ],
+          "level": 1,
+          "primitive": "spreadsheet.process"
+        },
+        {
+          "evidence": [
+            "git language",
+            "git"
+          ],
+          "level": 1,
+          "primitive": "tool.git"
+        },
+        {
+          "evidence": [
+            "GitHub language",
+            "github"
+          ],
+          "level": 1,
+          "primitive": "tool.github"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "ppt-outline",
+      "primitive_count": 8,
+      "scr_confidence": 0.66,
+      "skill_id": "ppt_outline_skill_md__8b18dfd14d36",
+      "source": "skvm.benchmark",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "document generation language",
+            "report"
+          ],
+          "level": 1,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "requirement"
+          ],
+          "level": 1,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "review"
+          ],
+          "level": 1,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 1,
+          "primitive": "gen.code.python"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 1,
+          "primitive": "gen.code.shell"
+        },
+        {
+          "evidence": [
+            "presentation language",
+            "deck",
+            "ppt"
+          ],
+          "level": 1,
+          "primitive": "presentation.generate"
+        },
+        {
+          "evidence": [
+            "git language",
+            "git"
+          ],
+          "level": 1,
+          "primitive": "tool.git"
+        },
+        {
+          "evidence": [
+            "GitHub language",
+            "github"
+          ],
+          "level": 1,
+          "primitive": "tool.github"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "grill-me",
+      "primitive_count": 5,
+      "scr_confidence": 0.68,
+      "skill_id": "grill_me_skill_md__b1426b81997d",
+      "source": "local.agents",
+      "taxonomy": "mixed",
+      "top_primitives": [
+        {
+          "evidence": [
+            "verification language",
+            "test"
+          ],
+          "level": 2,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "testing language",
+            "test"
+          ],
+          "level": 2,
+          "primitive": "gen.code.test"
+        },
+        {
+          "evidence": [
+            "planning language",
+            "plan"
+          ],
+          "level": 2,
+          "primitive": "reason.plan"
+        },
+        {
+          "evidence": [
+            "git language",
+            "branch"
+          ],
+          "level": 2,
+          "primitive": "tool.git"
+        },
+        {
+          "evidence": [
+            "package management language",
+            "dependencies"
+          ],
+          "level": 2,
+          "primitive": "tool.package_manager"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "10-andruia-skill-smith",
+      "primitive_count": 3,
+      "scr_confidence": 0.68,
+      "skill_id": "10_andruia_skill_smith_skill_md__2b69ce7f8322",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "visualization language",
+            "visualize"
+          ],
+          "level": 2,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "document"
+          ],
+          "level": 2,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "planning language",
+            "plan"
+          ],
+          "level": 2,
+          "primitive": "reason.plan"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "20-andruia-niche-intelligence",
+      "primitive_count": 3,
+      "scr_confidence": 0.68,
+      "skill_id": "20_andruia_niche_intelligence_skill_md__52d6abef0228",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "constraint language",
+            "requirement"
+          ],
+          "level": 2,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "review"
+          ],
+          "level": 2,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "spreadsheet language",
+            "excel"
+          ],
+          "level": 2,
+          "primitive": "spreadsheet.process"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "ai-analyzer",
+      "primitive_count": 5,
+      "scr_confidence": 0.68,
+      "skill_id": "ai_analyzer_skill_md__d5cc524bc859",
+      "source": "local.cc-switch",
+      "taxonomy": "generative",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 2,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "chart"
+          ],
+          "level": 2,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "report"
+          ],
+          "level": 2,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "JavaScript-related language",
+            "javascript"
+          ],
+          "level": 2,
+          "primitive": "gen.code.javascript"
+        },
+        {
+          "evidence": [
+            "SQL/database language",
+            "query"
+          ],
+          "level": 2,
+          "primitive": "gen.code.sql"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "aws-skills",
+      "primitive_count": 2,
+      "scr_confidence": 0.68,
+      "skill_id": "aws_skills_skill_md__491f5a4f71db",
+      "source": "local.cc-switch",
+      "taxonomy": "mixed",
+      "top_primitives": [
+        {
+          "evidence": [
+            "git language",
+            "git"
+          ],
+          "level": 2,
+          "primitive": "tool.git"
+        },
+        {
+          "evidence": [
+            "GitHub language",
+            "github"
+          ],
+          "level": 2,
+          "primitive": "tool.github"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "azure-communication-callingserver-java",
+      "primitive_count": 6,
+      "scr_confidence": 0.68,
+      "skill_id": "azure_communication_callingserver_java_skill_md__d4939dac7c49",
+      "source": "local.cc-switch",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "xml"
+          ],
+          "level": 2,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "do not"
+          ],
+          "level": 2,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "workflow"
+          ],
+          "level": 2,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "SQL/database language",
+            "migration"
+          ],
+          "level": 2,
+          "primitive": "gen.code.sql"
+        },
+        {
+          "evidence": [
+            "environment setup language",
+            "dependency"
+          ],
+          "level": 2,
+          "primitive": "runtime.env_bind"
+        },
+        {
+          "evidence": [
+            "command execution language",
+            "cli"
+          ],
+          "level": 2,
+          "primitive": "tool.exec"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "docker-expert",
+      "primitive_count": 20,
+      "scr_confidence": 0.819,
+      "skill_id": "docker_expert_skill_md__6d1c3e0f4262",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "parallel agent language",
+            "parallel"
+          ],
+          "level": 3,
+          "primitive": "agent.parallel"
+        },
+        {
+          "evidence": [
+            "data parsing language",
+            "json",
+            "yaml"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "constraint"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "review"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "JavaScript-related language",
+            "js ",
+            "node"
+          ],
+          "level": 3,
+          "primitive": "gen.code.javascript"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 3,
+          "primitive": "gen.code.shell"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "code-review-checklist",
+      "primitive_count": 14,
+      "scr_confidence": 0.859,
+      "skill_id": "code_review_checklist_skill_md__b67a39ffd8dd",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "document generation language",
+            "docs",
+            "document"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "must",
+            "never"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "JavaScript-related language",
+            "javascript",
+            "npm"
+          ],
+          "level": 3,
+          "primitive": "gen.code.javascript"
+        },
+        {
+          "evidence": [
+            "SQL/database language",
+            "migration",
+            "query"
+          ],
+          "level": 3,
+          "primitive": "gen.code.sql"
+        },
+        {
+          "evidence": [
+            "testing language",
+            "test",
+            "tests"
+          ],
+          "level": 3,
+          "primitive": "gen.code.test"
+        },
+        {
+          "evidence": [
+            "diagnosis language",
+            "bug",
+            "debug"
+          ],
+          "level": 3,
+          "primitive": "reason.diagnose"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "github-actions-templates",
+      "primitive_count": 14,
+      "scr_confidence": 0.84,
+      "skill_id": "github_actions_templates_skill_md__f9404454e19a",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "extract",
+            "yaml"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "constraint",
+            "do not"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "step",
+            "workflow"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "test"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "JavaScript-related language",
+            "js ",
+            "node"
+          ],
+          "level": 3,
+          "primitive": "gen.code.javascript"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "pytest",
+            "python"
+          ],
+          "level": 3,
+          "primitive": "gen.code.python"
+        },
+        {
+          "evidence": [
+            "testing language",
+            "pytest",
+            "test"
+          ],
+          "level": 3,
+          "primitive": "gen.code.test"
+        },
+        {
+          "evidence": [
+            "diagnosis language",
+            "failure"
+          ],
+          "level": 3,
+          "primitive": "reason.diagnose"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "vibe-code-auditor",
+      "primitive_count": 18,
+      "scr_confidence": 0.818,
+      "skill_id": "vibe_code_auditor_skill_md__f3938433c3e9",
+      "source": "local.cc-switch",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "extract",
+            "json"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "document",
+            "report"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "constraint"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 3,
+          "primitive": "gen.code.python"
+        },
+        {
+          "evidence": [
+            "SQL/database language",
+            "query",
+            "sql"
+          ],
+          "level": 3,
+          "primitive": "gen.code.sql"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "hugging-face-jobs",
+      "primitive_count": 21,
+      "scr_confidence": 0.823,
+      "skill_id": "hugging_face_jobs_skill_md__7a19457a2f11",
+      "source": "local.cc-switch",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "parallel agent language",
+            "parallel"
+          ],
+          "level": 3,
+          "primitive": "agent.parallel"
+        },
+        {
+          "evidence": [
+            "data parsing language",
+            "json",
+            "parse"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean",
+            "filter"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "docs",
+            "document"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "do not"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "test"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 3,
+          "primitive": "gen.code.python"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "nestjs-expert",
+      "primitive_count": 20,
+      "scr_confidence": 0.851,
+      "skill_id": "nestjs_expert_skill_md__c1d540967da7",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "extract",
+            "json"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean",
+            "filter"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "docs",
+            "document"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "must"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "phase"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "review"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "JavaScript-related language",
+            "javascript",
+            "js "
+          ],
+          "level": 3,
+          "primitive": "gen.code.javascript"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 3,
+          "primitive": "gen.code.shell"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "electron-development",
+      "primitive_count": 23,
+      "scr_confidence": 0.838,
+      "skill_id": "electron_development_skill_md__ec7f196aca47",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "parallel agent language",
+            "concurrent",
+            "worker"
+          ],
+          "level": 3,
+          "primitive": "agent.parallel"
+        },
+        {
+          "evidence": [
+            "data parsing language",
+            "json",
+            "parse"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean",
+            "filter"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "map"
+          ],
+          "level": 3,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "docs"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "do not"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "hugging-face-model-trainer",
+      "primitive_count": 20,
+      "scr_confidence": 0.831,
+      "skill_id": "hugging_face_model_trainer_skill_md__288d6c87b43e",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data transformation language",
+            "clean",
+            "transform"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "dashboard",
+            "map"
+          ],
+          "level": 3,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "docs",
+            "document"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "constraint"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "test"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 3,
+          "primitive": "gen.code.python"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 3,
+          "primitive": "gen.code.shell"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "comfyui-gateway",
+      "primitive_count": 19,
+      "scr_confidence": 0.826,
+      "skill_id": "comfyui_gateway_skill_md__dd4bc9620b1b",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "parallel agent language",
+            "parallel",
+            "worker"
+          ],
+          "level": 3,
+          "primitive": "agent.parallel"
+        },
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean",
+            "filter"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "do not",
+            "requirement"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "process",
+            "step"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "review"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "JavaScript-related language",
+            "javascript",
+            "node"
+          ],
+          "level": 3,
+          "primitive": "gen.code.javascript"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 3,
+          "primitive": "gen.code.python"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "environment-setup-guide",
+      "primitive_count": 20,
+      "scr_confidence": 0.828,
+      "skill_id": "environment_setup_guide_skill_md__6512f2a3f6b7",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "yaml"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "docs",
+            "document"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "requirement"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "process",
+            "step"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "JavaScript-related language",
+            "js ",
+            "node"
+          ],
+          "level": 3,
+          "primitive": "gen.code.javascript"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 3,
+          "primitive": "gen.code.python"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "loki-mode",
+      "primitive_count": 24,
+      "scr_confidence": 0.838,
+      "skill_id": "loki_mode_skill_md__069ac981cbe7",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "parallel agent language",
+            "parallel",
+            "spawn"
+          ],
+          "level": 3,
+          "primitive": "agent.parallel"
+        },
+        {
+          "evidence": [
+            "data parsing language",
+            "extract",
+            "json"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "aggregate",
+            "clean"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "dashboard"
+          ],
+          "level": 3,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "docs",
+            "document"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "constraint"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "phase",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "using-git-worktrees",
+      "primitive_count": 16,
+      "scr_confidence": 0.846,
+      "skill_id": "using_git_worktrees_skill_md__3c84f6917d87",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json",
+            "parse"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "report"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "must"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "phase",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "JavaScript-related language",
+            "node",
+            "npm"
+          ],
+          "level": 3,
+          "primitive": "gen.code.javascript"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "pytest",
+            "python"
+          ],
+          "level": 3,
+          "primitive": "gen.code.python"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "production-code-audit",
+      "primitive_count": 18,
+      "scr_confidence": 0.847,
+      "skill_id": "production_code_audit_skill_md__b13153dd12a1",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "parallel agent language",
+            "parallel"
+          ],
+          "level": 3,
+          "primitive": "agent.parallel"
+        },
+        {
+          "evidence": [
+            "data parsing language",
+            "json",
+            "parse"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean",
+            "join"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "map"
+          ],
+          "level": 3,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "docs",
+            "document"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "requirement"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "phase"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "review"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "convex",
+      "primitive_count": 22,
+      "scr_confidence": 0.825,
+      "skill_id": "convex_skill_md__8c4ffa287904",
+      "source": "local.cc-switch",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json",
+            "parse"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "filter"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "dashboard",
+            "map"
+          ],
+          "level": 3,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "docs",
+            "document"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "do not",
+            "must"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "process",
+            "workflow"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "test"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "JavaScript-related language",
+            "js ",
+            "node"
+          ],
+          "level": 3,
+          "primitive": "gen.code.javascript"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "sast-configuration",
+      "primitive_count": 22,
+      "scr_confidence": 0.79,
+      "skill_id": "sast_configuration_skill_md__b88de113e83c",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "parallel agent language",
+            "parallel"
+          ],
+          "level": 3,
+          "primitive": "agent.parallel"
+        },
+        {
+          "evidence": [
+            "data parsing language",
+            "json",
+            "xml"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "filter"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "map"
+          ],
+          "level": 3,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "document"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "do not",
+            "requirement"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "review"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "hugging-face-evaluation",
+      "primitive_count": 19,
+      "scr_confidence": 0.827,
+      "skill_id": "hugging_face_evaluation_skill_md__34e944f5993a",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "parallel agent language",
+            "parallel"
+          ],
+          "level": 3,
+          "primitive": "agent.parallel"
+        },
+        {
+          "evidence": [
+            "data parsing language",
+            "extract",
+            "parse"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "normalize",
+            "transform"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "markdown",
+            "report"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "do not"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 3,
+          "primitive": "gen.code.python"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "skill-creator-ms",
+      "primitive_count": 20,
+      "scr_confidence": 0.822,
+      "skill_id": "skill_creator_ms_skill_md__57c420d47aa5",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "extract",
+            "json"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean",
+            "filter"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "docs",
+            "document"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "must"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "test"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "JavaScript-related language",
+            "npm",
+            "react"
+          ],
+          "level": 3,
+          "primitive": "gen.code.javascript"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 3,
+          "primitive": "gen.code.python"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "1password",
+      "primitive_count": 8,
+      "scr_confidence": 0.75,
+      "skill_id": "1password_1_0_1_skill_md__f4c037b66f25",
+      "source": "local.agents",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "document generation language",
+            "docs"
+          ],
+          "level": 2,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "do not"
+          ],
+          "level": 2,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "step",
+            "workflow"
+          ],
+          "level": 2,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 2,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 2,
+          "primitive": "gen.code.shell"
+        },
+        {
+          "evidence": [
+            "diagnosis language",
+            "failure"
+          ],
+          "level": 2,
+          "primitive": "reason.diagnose"
+        },
+        {
+          "evidence": [
+            "environment setup language",
+            "install"
+          ],
+          "level": 2,
+          "primitive": "runtime.env_bind"
+        },
+        {
+          "evidence": [
+            "command execution language",
+            "cli"
+          ],
+          "level": 2,
+          "primitive": "tool.exec"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "00-andruia-consultant",
+      "primitive_count": 6,
+      "scr_confidence": 0.753,
+      "skill_id": "00_andruia_consultant_skill_md__988348859a62",
+      "source": "local.cc-switch",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "map"
+          ],
+          "level": 3,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "workflow"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "diagnosis language",
+            "diagnose"
+          ],
+          "level": 3,
+          "primitive": "reason.diagnose"
+        },
+        {
+          "evidence": [
+            "planning language",
+            "plan",
+            "roadmap"
+          ],
+          "level": 3,
+          "primitive": "reason.plan"
+        },
+        {
+          "evidence": [
+            "package management language",
+            "package.json"
+          ],
+          "level": 3,
+          "primitive": "tool.package_manager"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "aws-compliance-checker",
+      "primitive_count": 13,
+      "scr_confidence": 0.777,
+      "skill_id": "security_aws_compliance_checker_skill_md__87a0e76fb8db",
+      "source": "local.codex",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "filter"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "dashboard",
+            "map"
+          ],
+          "level": 3,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "document",
+            "report"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "requirement",
+            "rule"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "validate"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 3,
+          "primitive": "gen.code.python"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 3,
+          "primitive": "gen.code.shell"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "Content ID Guide",
+      "primitive_count": 6,
+      "scr_confidence": 0.76,
+      "skill_id": "content_id_guide_skill_md__354ac528e0d3",
+      "source": "skvm.benchmark",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 2,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "graph"
+          ],
+          "level": 2,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "document"
+          ],
+          "level": 2,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "constraint",
+            "do not"
+          ],
+          "level": 2,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "process"
+          ],
+          "level": 2,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "review"
+          ],
+          "level": 2,
+          "primitive": "follow.verify"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "Code",
+      "primitive_count": 10,
+      "scr_confidence": 0.736,
+      "skill_id": "code_1_0_4_skill_md__dfd4f4c81abe",
+      "source": "local.agents",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "parallel agent language",
+            "delegate",
+            "sub-agent"
+          ],
+          "level": 2,
+          "primitive": "agent.parallel"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean"
+          ],
+          "level": 2,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "never"
+          ],
+          "level": 2,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "step",
+            "workflow"
+          ],
+          "level": 2,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "test"
+          ],
+          "level": 2,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "testing language",
+            "test",
+            "tests"
+          ],
+          "level": 2,
+          "primitive": "gen.code.test"
+        },
+        {
+          "evidence": [
+            "planning language",
+            "plan"
+          ],
+          "level": 2,
+          "primitive": "reason.plan"
+        },
+        {
+          "evidence": [
+            "environment setup language",
+            "setup"
+          ],
+          "level": 2,
+          "primitive": "runtime.env_bind"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "FFmpeg Video Editor",
+      "primitive_count": 10,
+      "scr_confidence": 0.788,
+      "skill_id": "ffmpeg_video_editor_1_0_0_skill_md__b5e5df209510",
+      "source": "local.agents",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "extract"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean",
+            "filter"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "map"
+          ],
+          "level": 3,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "must"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "step"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 3,
+          "primitive": "gen.code.shell"
+        },
+        {
+          "evidence": [
+            "browser interaction language",
+            "screenshot"
+          ],
+          "level": 3,
+          "primitive": "tool.browser"
+        },
+        {
+          "evidence": [
+            "command execution language",
+            "cli"
+          ],
+          "level": 3,
+          "primitive": "tool.exec"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "Market Research",
+      "primitive_count": 7,
+      "scr_confidence": 0.726,
+      "skill_id": "market_research_1_0_0_skill_md__5d3d848c20d4",
+      "source": "local.agents",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data transformation language",
+            "filter"
+          ],
+          "level": 2,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "graph",
+            "map"
+          ],
+          "level": 2,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "confirm",
+            "review"
+          ],
+          "level": 2,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "testing language",
+            "test"
+          ],
+          "level": 2,
+          "primitive": "gen.code.test"
+        },
+        {
+          "evidence": [
+            "planning language",
+            "approach"
+          ],
+          "level": 2,
+          "primitive": "reason.plan"
+        },
+        {
+          "evidence": [
+            "web fetch language",
+            "download"
+          ],
+          "level": 2,
+          "primitive": "tool.web.fetch"
+        },
+        {
+          "evidence": [
+            "web search language",
+            "google"
+          ],
+          "level": 2,
+          "primitive": "tool.web.search"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "Memory",
+      "primitive_count": 8,
+      "scr_confidence": 0.812,
+      "skill_id": "memory_1_0_2_skill_md__3e37228f5826",
+      "source": "local.agents",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "parallel agent language",
+            "parallel"
+          ],
+          "level": 3,
+          "primitive": "agent.parallel"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "markdown"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "never"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 3,
+          "primitive": "gen.code.shell"
+        },
+        {
+          "evidence": [
+            "environment setup language",
+            "configure",
+            "credential"
+          ],
+          "level": 3,
+          "primitive": "runtime.env_bind"
+        },
+        {
+          "evidence": [
+            "browser interaction language",
+            "navigate"
+          ],
+          "level": 3,
+          "primitive": "tool.browser"
+        },
+        {
+          "evidence": [
+            "file writing language",
+            "modify"
+          ],
+          "level": 3,
+          "primitive": "tool.file.write"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "SEO (Site Audit + Content Writer + Competitor Analysis)",
+      "primitive_count": 12,
+      "scr_confidence": 0.78,
+      "skill_id": "seo_1_0_3_skill_md__10af14cab112",
+      "source": "local.agents",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json",
+            "xml"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "clean"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "map"
+          ],
+          "level": 3,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "report"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "never",
+            "rule"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "SQL/database language",
+            "query"
+          ],
+          "level": 3,
+          "primitive": "gen.code.sql"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "Self-Improving Agent (With Self-Reflection)",
+      "primitive_count": 10,
+      "scr_confidence": 0.812,
+      "skill_id": "self_improving_1_1_3_skill_md__45ff1c478d9e",
+      "source": "local.agents",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "document generation language",
+            "report"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "never"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "step",
+            "workflow"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 3,
+          "primitive": "gen.code.shell"
+        },
+        {
+          "evidence": [
+            "SQL/database language",
+            "query"
+          ],
+          "level": 3,
+          "primitive": "gen.code.sql"
+        },
+        {
+          "evidence": [
+            "diagnosis language",
+            "bug"
+          ],
+          "level": 3,
+          "primitive": "reason.diagnose"
+        },
+        {
+          "evidence": [
+            "planning language",
+            "approach",
+            "plan"
+          ],
+          "level": 3,
+          "primitive": "reason.plan"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "Social Media Scheduler",
+      "primitive_count": 6,
+      "scr_confidence": 0.707,
+      "skill_id": "social_media_scheduler_1_0_0_skill_md__6dd9c5033110",
+      "source": "local.agents",
+      "taxonomy": "generative",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data transformation language",
+            "clean"
+          ],
+          "level": 2,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "graph",
+            "map"
+          ],
+          "level": 2,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always"
+          ],
+          "level": 2,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "test"
+          ],
+          "level": 2,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "testing language",
+            "test"
+          ],
+          "level": 2,
+          "primitive": "gen.code.test"
+        },
+        {
+          "evidence": [
+            "planning language",
+            "plan",
+            "strategy"
+          ],
+          "level": 2,
+          "primitive": "reason.plan"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "a-stock-analysis",
+      "primitive_count": 2,
+      "scr_confidence": 0.72,
+      "skill_id": "a_stock_analysis_1_0_0_skill_md__8a2c3fe70312",
+      "source": "local.agents",
+      "taxonomy": "mixed",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 2,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 2,
+          "primitive": "gen.code.shell"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "aminer-data-search",
+      "primitive_count": 6,
+      "scr_confidence": 0.753,
+      "skill_id": "aminer_open_academic_1_0_5_skill_md__0d012425f8e5",
+      "source": "local.agents",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "data transformation language",
+            "transform"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 3,
+          "primitive": "gen.code.python"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 3,
+          "primitive": "gen.code.shell"
+        },
+        {
+          "evidence": [
+            "SQL/database language",
+            "query"
+          ],
+          "level": 3,
+          "primitive": "gen.code.sql"
+        },
+        {
+          "evidence": [
+            "command execution language",
+            "cli"
+          ],
+          "level": 3,
+          "primitive": "tool.exec"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "architecture-designer",
+      "primitive_count": 6,
+      "scr_confidence": 0.807,
+      "skill_id": "architecture_designer_0_1_0_skill_md__c9fd47781fa7",
+      "source": "local.agents",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "document generation language",
+            "document"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "constraint",
+            "must"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "workflow"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "review"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "diagnosis language",
+            "failure"
+          ],
+          "level": 3,
+          "primitive": "reason.diagnose"
+        },
+        {
+          "evidence": [
+            "planning language",
+            "plan"
+          ],
+          "level": 3,
+          "primitive": "reason.plan"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "autoglm-browser-agent",
+      "primitive_count": 13,
+      "scr_confidence": 0.771,
+      "skill_id": "autoglm_browser_agent_skill_md__7efa8dd5ba1c",
+      "source": "local.agents",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "parallel agent language",
+            "delegate"
+          ],
+          "level": 3,
+          "primitive": "agent.parallel"
+        },
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "markdown"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "rule"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "step",
+            "workflow"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "verify"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "JavaScript-related language",
+            "node"
+          ],
+          "level": 3,
+          "primitive": "gen.code.javascript"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 3,
+          "primitive": "gen.code.python"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "autoglm-deepresearch",
+      "primitive_count": 5,
+      "scr_confidence": 0.696,
+      "skill_id": "autoglm_deepresearch_skill_md__b2150f6cd573",
+      "source": "local.agents",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "procedure language",
+            "step"
+          ],
+          "level": 2,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 2,
+          "primitive": "gen.code.python"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 2,
+          "primitive": "gen.code.shell"
+        },
+        {
+          "evidence": [
+            "SQL/database language",
+            "query"
+          ],
+          "level": 2,
+          "primitive": "gen.code.sql"
+        },
+        {
+          "evidence": [
+            "web search language",
+            "web search"
+          ],
+          "level": 2,
+          "primitive": "tool.web.search"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "autoglm-generate-image",
+      "primitive_count": 4,
+      "scr_confidence": 0.7,
+      "skill_id": "autoglm_generate_image_skill_md__da998a018387",
+      "source": "local.agents",
+      "taxonomy": "generative",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 2,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "markdown"
+          ],
+          "level": 2,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 2,
+          "primitive": "gen.code.python"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 2,
+          "primitive": "gen.code.shell"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "autoglm-open-link",
+      "primitive_count": 3,
+      "scr_confidence": 0.707,
+      "skill_id": "autoglm_open_link_skill_md__0bf3fdceb7df",
+      "source": "local.agents",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 2,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 2,
+          "primitive": "gen.code.python"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 2,
+          "primitive": "gen.code.shell"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "autoglm-search-image",
+      "primitive_count": 5,
+      "scr_confidence": 0.696,
+      "skill_id": "autoglm_search_image_skill_md__18040148c65b",
+      "source": "local.agents",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 2,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "markdown"
+          ],
+          "level": 2,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 2,
+          "primitive": "gen.code.python"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 2,
+          "primitive": "gen.code.shell"
+        },
+        {
+          "evidence": [
+            "SQL/database language",
+            "query"
+          ],
+          "level": 2,
+          "primitive": "gen.code.sql"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "autoglm-websearch",
+      "primitive_count": 5,
+      "scr_confidence": 0.696,
+      "skill_id": "autoglm_websearch_skill_md__750f96ce9b29",
+      "source": "local.agents",
+      "taxonomy": "tool-reference",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 2,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "Python-related language",
+            "python"
+          ],
+          "level": 2,
+          "primitive": "gen.code.python"
+        },
+        {
+          "evidence": [
+            "shell-related language",
+            "```bash",
+            "bash"
+          ],
+          "level": 2,
+          "primitive": "gen.code.shell"
+        },
+        {
+          "evidence": [
+            "SQL/database language",
+            "query"
+          ],
+          "level": 2,
+          "primitive": "gen.code.sql"
+        },
+        {
+          "evidence": [
+            "web search language",
+            "web search"
+          ],
+          "level": 2,
+          "primitive": "tool.web.search"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "automation-workflows",
+      "primitive_count": 15,
+      "scr_confidence": 0.796,
+      "skill_id": "automation_workflows_0_1_0_skill_md__1f43000f862a",
+      "source": "local.agents",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data transformation language",
+            "filter"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "dashboard",
+            "map"
+          ],
+          "level": 3,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "document",
+            "report"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always",
+            "rule"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "process"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "testing language",
+            "test"
+          ],
+          "level": 3,
+          "primitive": "gen.code.test"
+        },
+        {
+          "evidence": [
+            "diagnosis language",
+            "bug",
+            "failure"
+          ],
+          "level": 3,
+          "primitive": "reason.diagnose"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "backtest-expert",
+      "primitive_count": 11,
+      "scr_confidence": 0.785,
+      "skill_id": "backtest_expert_0_1_0_skill_md__4dc61c02b092",
+      "source": "local.agents",
+      "taxonomy": "procedural",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data transformation language",
+            "filter"
+          ],
+          "level": 3,
+          "primitive": "data.transform"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "document"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "must",
+            "never"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "checklist",
+            "workflow"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "test"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "testing language",
+            "test",
+            "tests"
+          ],
+          "level": 3,
+          "primitive": "gen.code.test"
+        },
+        {
+          "evidence": [
+            "diagnosis language",
+            "failure"
+          ],
+          "level": 3,
+          "primitive": "reason.diagnose"
+        },
+        {
+          "evidence": [
+            "planning language",
+            "approach",
+            "strategy"
+          ],
+          "level": 3,
+          "primitive": "reason.plan"
+        }
+      ]
+    },
+    {
+      "manual_notes": "",
+      "manual_status": "unreviewed",
+      "name": "blog-writer",
+      "primitive_count": 8,
+      "scr_confidence": 0.77,
+      "skill_id": "blog_writer_0_1_0_skill_md__a71389ea2311",
+      "source": "local.agents",
+      "taxonomy": "generative",
+      "top_primitives": [
+        {
+          "evidence": [
+            "data parsing language",
+            "json"
+          ],
+          "level": 3,
+          "primitive": "data.parse"
+        },
+        {
+          "evidence": [
+            "visualization language",
+            "graph"
+          ],
+          "level": 3,
+          "primitive": "data.visualize"
+        },
+        {
+          "evidence": [
+            "document generation language",
+            "markdown"
+          ],
+          "level": 3,
+          "primitive": "doc.generate"
+        },
+        {
+          "evidence": [
+            "constraint language",
+            "always"
+          ],
+          "level": 3,
+          "primitive": "follow.constraints"
+        },
+        {
+          "evidence": [
+            "procedure language",
+            "phase",
+            "workflow"
+          ],
+          "level": 3,
+          "primitive": "follow.procedure"
+        },
+        {
+          "evidence": [
+            "verification language",
+            "check",
+            "confirm"
+          ],
+          "level": 3,
+          "primitive": "follow.verify"
+        },
+        {
+          "evidence": [
+            "diagnosis language",
+            "failure"
+          ],
+          "level": 3,
+          "primitive": "reason.diagnose"
+        },
+        {
+          "evidence": [
+            "file writing language",
+            "save"
+          ],
+          "level": 3,
+          "primitive": "tool.file.write"
+        }
+      ]
+    }
+  ]
+}

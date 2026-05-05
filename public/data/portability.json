@@ -1,0 +1,560 @@
+{
+  "harnesses": [
+    "bare-agent",
+    "hermes",
+    "openclaw"
+  ],
+  "models": [
+    "deepseek/deepseek-v4-flash",
+    "deepseek/deepseek-v4-pro",
+    "openrouter/anthropic/claude-haiku-4.5",
+    "openrouter/anthropic/claude-opus-4.6",
+    "openrouter/deepseek/deepseek-v3.2",
+    "openrouter/minimax/minimax-m2.5",
+    "openrouter/openai/gpt-5.4",
+    "openrouter/qwen/qwen3.5-122b-a10b",
+    "openrouter/qwen/qwen3.5-35b-a3b",
+    "openrouter/qwen/qwen3.5-9b",
+    "openrouter/qwen/qwen3.6-plus",
+    "openrouter/z-ai/glm-5-turbo"
+  ],
+  "primitive_bottleneck": [
+    {
+      "gap_sum": 17059,
+      "primitive": "doc.generate"
+    },
+    {
+      "gap_sum": 16856,
+      "primitive": "reason.plan"
+    },
+    {
+      "gap_sum": 16276,
+      "primitive": "data.parse"
+    },
+    {
+      "gap_sum": 14479,
+      "primitive": "data.transform"
+    },
+    {
+      "gap_sum": 10076,
+      "primitive": "tool.github"
+    },
+    {
+      "gap_sum": 9595,
+      "primitive": "reason.diagnose"
+    },
+    {
+      "gap_sum": 7880,
+      "primitive": "tool.web.fetch"
+    },
+    {
+      "gap_sum": 7004,
+      "primitive": "data.visualize"
+    },
+    {
+      "gap_sum": 6833,
+      "primitive": "gen.code.javascript"
+    },
+    {
+      "gap_sum": 6815,
+      "primitive": "tool.web.search"
+    },
+    {
+      "gap_sum": 5554,
+      "primitive": "gen.code.test"
+    },
+    {
+      "gap_sum": 3506,
+      "primitive": "gen.code.python"
+    },
+    {
+      "gap_sum": 3255,
+      "primitive": "gen.code.shell"
+    },
+    {
+      "gap_sum": 3034,
+      "primitive": "follow.constraints"
+    },
+    {
+      "gap_sum": 2790,
+      "primitive": "follow.verify"
+    },
+    {
+      "gap_sum": 2564,
+      "primitive": "gen.code.sql"
+    },
+    {
+      "gap_sum": 2487,
+      "primitive": "agent.parallel"
+    },
+    {
+      "gap_sum": 1901,
+      "primitive": "gen.code.typescript"
+    },
+    {
+      "gap_sum": 1399,
+      "primitive": "runtime.env_bind"
+    },
+    {
+      "gap_sum": 1141,
+      "primitive": "presentation.generate"
+    }
+  ],
+  "profile_count": 25,
+  "target_matrix": [
+    {
+      "avg_gap": 3.874,
+      "harness": "bare-agent",
+      "model": "deepseek/deepseek-v4-flash",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 1.732,
+      "harness": "bare-agent",
+      "model": "deepseek/deepseek-v4-pro",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 5.896,
+      "harness": "bare-agent",
+      "model": "openrouter/anthropic/claude-opus-4.6",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 6.914,
+      "harness": "bare-agent",
+      "model": "openrouter/deepseek/deepseek-v3.2",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 3.181,
+      "harness": "bare-agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 1.664,
+      "harness": "bare-agent",
+      "model": "openrouter/openai/gpt-5.4",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 7.024,
+      "harness": "bare-agent",
+      "model": "openrouter/qwen/qwen3.5-122b-a10b",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 5.753,
+      "harness": "bare-agent",
+      "model": "openrouter/qwen/qwen3.5-35b-a3b",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 15.445,
+      "harness": "bare-agent",
+      "model": "openrouter/qwen/qwen3.5-9b",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 1.391,
+      "harness": "bare-agent",
+      "model": "openrouter/qwen/qwen3.6-plus",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 2.747,
+      "harness": "bare-agent",
+      "model": "openrouter/z-ai/glm-5-turbo",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 4.771,
+      "harness": "hermes",
+      "model": "deepseek/deepseek-v4-flash",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 3.638,
+      "harness": "hermes",
+      "model": "deepseek/deepseek-v4-pro",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 1.727,
+      "harness": "openclaw",
+      "model": "deepseek/deepseek-v4-flash",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 0.341,
+      "harness": "openclaw",
+      "model": "deepseek/deepseek-v4-pro",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 1.184,
+      "harness": "openclaw",
+      "model": "openrouter/anthropic/claude-haiku-4.5",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 2.795,
+      "harness": "openclaw",
+      "model": "openrouter/anthropic/claude-opus-4.6",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 2.353,
+      "harness": "openclaw",
+      "model": "openrouter/deepseek/deepseek-v3.2",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 4.516,
+      "harness": "openclaw",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 5.288,
+      "harness": "openclaw",
+      "model": "openrouter/openai/gpt-5.4",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 1.501,
+      "harness": "openclaw",
+      "model": "openrouter/qwen/qwen3.5-122b-a10b",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 2.925,
+      "harness": "openclaw",
+      "model": "openrouter/qwen/qwen3.5-35b-a3b",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 19.358,
+      "harness": "openclaw",
+      "model": "openrouter/qwen/qwen3.5-9b",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 7.436,
+      "harness": "openclaw",
+      "model": "openrouter/qwen/qwen3.6-plus",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 6.558,
+      "harness": "openclaw",
+      "model": "openrouter/z-ai/glm-5-turbo",
+      "skill_count": 1639
+    }
+  ],
+  "target_ranking": [
+    {
+      "avg_gap": 0.341,
+      "harness": "openclaw",
+      "model": "deepseek/deepseek-v4-pro",
+      "profile_id": "deepseek_deepseek_v4_pro__df4b8d4427ee",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 1.184,
+      "harness": "openclaw",
+      "model": "openrouter/anthropic/claude-haiku-4.5",
+      "profile_id": "openrouter_anthropic_claude_haiku_4_5__1b4a5e4300a5",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 1.391,
+      "harness": "bare-agent",
+      "model": "openrouter/qwen/qwen3.6-plus",
+      "profile_id": "openrouter_qwen_qwen3_6_plus__b289683946cc",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 1.501,
+      "harness": "openclaw",
+      "model": "openrouter/qwen/qwen3.5-122b-a10b",
+      "profile_id": "openrouter_qwen_qwen3_5_122b_a10b__f975503d9047",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 1.664,
+      "harness": "bare-agent",
+      "model": "openrouter/openai/gpt-5.4",
+      "profile_id": "openrouter_openai_gpt_5_4__3fb11ccaa857",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 1.727,
+      "harness": "openclaw",
+      "model": "deepseek/deepseek-v4-flash",
+      "profile_id": "deepseek_deepseek_v4_flash__ccf36e9bb565",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 1.732,
+      "harness": "bare-agent",
+      "model": "deepseek/deepseek-v4-pro",
+      "profile_id": "deepseek_deepseek_v4_pro__1112152c304a",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 2.353,
+      "harness": "openclaw",
+      "model": "openrouter/deepseek/deepseek-v3.2",
+      "profile_id": "openrouter_deepseek_deepseek_v3_2__efdace68aac4",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 2.747,
+      "harness": "bare-agent",
+      "model": "openrouter/z-ai/glm-5-turbo",
+      "profile_id": "openrouter_z_ai_glm_5_turbo__751551529b87",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 2.795,
+      "harness": "openclaw",
+      "model": "openrouter/anthropic/claude-opus-4.6",
+      "profile_id": "openrouter_anthropic_claude_opus_4_6__d7010cccd458",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 2.925,
+      "harness": "openclaw",
+      "model": "openrouter/qwen/qwen3.5-35b-a3b",
+      "profile_id": "openrouter_qwen_qwen3_5_35b_a3b__fa300ddd2d21",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 3.181,
+      "harness": "bare-agent",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "profile_id": "openrouter_minimax_minimax_m2_5__cdbb9d8622d6",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 3.638,
+      "harness": "hermes",
+      "model": "deepseek/deepseek-v4-pro",
+      "profile_id": "deepseek_deepseek_v4_pro__1acef51268b7",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 3.874,
+      "harness": "bare-agent",
+      "model": "deepseek/deepseek-v4-flash",
+      "profile_id": "deepseek_deepseek_v4_flash__b31a601e05eb",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 4.516,
+      "harness": "openclaw",
+      "model": "openrouter/minimax/minimax-m2.5",
+      "profile_id": "openrouter_minimax_minimax_m2_5__345a834ccf26",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 4.771,
+      "harness": "hermes",
+      "model": "deepseek/deepseek-v4-flash",
+      "profile_id": "deepseek_deepseek_v4_flash__b6049de72d32",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 5.288,
+      "harness": "openclaw",
+      "model": "openrouter/openai/gpt-5.4",
+      "profile_id": "openrouter_openai_gpt_5_4__c2f22f36aca9",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 5.753,
+      "harness": "bare-agent",
+      "model": "openrouter/qwen/qwen3.5-35b-a3b",
+      "profile_id": "openrouter_qwen_qwen3_5_35b_a3b__3aef3059f6ea",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 5.896,
+      "harness": "bare-agent",
+      "model": "openrouter/anthropic/claude-opus-4.6",
+      "profile_id": "openrouter_anthropic_claude_opus_4_6__309373f0fdfd",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 6.558,
+      "harness": "openclaw",
+      "model": "openrouter/z-ai/glm-5-turbo",
+      "profile_id": "openrouter_z_ai_glm_5_turbo__dec9a3c1f9f4",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 6.914,
+      "harness": "bare-agent",
+      "model": "openrouter/deepseek/deepseek-v3.2",
+      "profile_id": "openrouter_deepseek_deepseek_v3_2__f5d0a84d8568",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 7.024,
+      "harness": "bare-agent",
+      "model": "openrouter/qwen/qwen3.5-122b-a10b",
+      "profile_id": "openrouter_qwen_qwen3_5_122b_a10b__f274539f0943",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 7.436,
+      "harness": "openclaw",
+      "model": "openrouter/qwen/qwen3.6-plus",
+      "profile_id": "openrouter_qwen_qwen3_6_plus__b2876c41e6fa",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 15.445,
+      "harness": "bare-agent",
+      "model": "openrouter/qwen/qwen3.5-9b",
+      "profile_id": "openrouter_qwen_qwen3_5_9b__56978b60265a",
+      "skill_count": 1639
+    },
+    {
+      "avg_gap": 19.358,
+      "harness": "openclaw",
+      "model": "openrouter/qwen/qwen3.5-9b",
+      "profile_id": "openrouter_qwen_qwen3_5_9b__4a1274b861c0",
+      "skill_count": 1639
+    }
+  ],
+  "top_risky_skills": [
+    {
+      "fleet_gap": 331,
+      "name": "dependency-upgrade",
+      "skill_id": "dependency_upgrade_skill_md__6a56a7cf5fa7"
+    },
+    {
+      "fleet_gap": 326,
+      "name": "loki-mode",
+      "skill_id": "loki_mode_skill_md__069ac981cbe7"
+    },
+    {
+      "fleet_gap": 321,
+      "name": "electron-development",
+      "skill_id": "electron_development_skill_md__ec7f196aca47"
+    },
+    {
+      "fleet_gap": 313,
+      "name": "graphify-windows",
+      "skill_id": "graphify_skill_md__c43184346230"
+    },
+    {
+      "fleet_gap": 312,
+      "name": "n8n-workflow-patterns",
+      "skill_id": "n8n_workflow_patterns_skill_md__a0025999776d"
+    },
+    {
+      "fleet_gap": 306,
+      "name": "claude-api",
+      "skill_id": "claude_api_skill_md__1521064b8afa"
+    },
+    {
+      "fleet_gap": 304,
+      "name": "distributed-tracing",
+      "skill_id": "distributed_tracing_skill_md__b149476fcdb1"
+    },
+    {
+      "fleet_gap": 303,
+      "name": "remotion",
+      "skill_id": "remotion_skill_md__8415aefe86b3"
+    },
+    {
+      "fleet_gap": 302,
+      "name": "autonomous-agent-patterns",
+      "skill_id": "autonomous_agent_patterns_skill_md__54fc9ab14e72"
+    },
+    {
+      "fleet_gap": 300,
+      "name": "agentic-actions-auditor",
+      "skill_id": "agentic_actions_auditor_skill_md__fcb00ebc37ea"
+    },
+    {
+      "fleet_gap": 299,
+      "name": "github-workflow-automation",
+      "skill_id": "github_workflow_automation_skill_md__86053c7984b6"
+    },
+    {
+      "fleet_gap": 295,
+      "name": "sast-configuration",
+      "skill_id": "sast_configuration_skill_md__b88de113e83c"
+    },
+    {
+      "fleet_gap": 294,
+      "name": "code-review-ai-ai-review",
+      "skill_id": "code_review_ai_ai_review_skill_md__3b4e86eafa52"
+    },
+    {
+      "fleet_gap": 294,
+      "name": "performance-testing-review-ai-review",
+      "skill_id": "performance_testing_review_ai_review_skill_md__926321194f14"
+    },
+    {
+      "fleet_gap": 292,
+      "name": "shodan-reconnaissance",
+      "skill_id": "shodan_reconnaissance_skill_md__6e8b34850785"
+    },
+    {
+      "fleet_gap": 291,
+      "name": "claude-code-expert",
+      "skill_id": "claude_code_expert_skill_md__0d2950c45afc"
+    },
+    {
+      "fleet_gap": 291,
+      "name": "hugging-face-jobs",
+      "skill_id": "hugging_face_jobs_skill_md__7a19457a2f11"
+    },
+    {
+      "fleet_gap": 290,
+      "name": "convex",
+      "skill_id": "convex_skill_md__8c4ffa287904"
+    },
+    {
+      "fleet_gap": 289,
+      "name": "go-rod-master",
+      "skill_id": "go_rod_master_skill_md__3e369e23240b"
+    },
+    {
+      "fleet_gap": 288,
+      "name": "bazel-build-optimization",
+      "skill_id": "bazel_build_optimization_skill_md__925b820613dc"
+    },
+    {
+      "fleet_gap": 286,
+      "name": "andrej-karpathy",
+      "skill_id": "andrej_karpathy_skill_md__70a5543cc393"
+    },
+    {
+      "fleet_gap": 285,
+      "name": "cred-omega",
+      "skill_id": "cred_omega_skill_md__9ec4fd261ada"
+    },
+    {
+      "fleet_gap": 280,
+      "name": "angular",
+      "skill_id": "angular_skill_md__7438d475c79c"
+    },
+    {
+      "fleet_gap": 279,
+      "name": "nestjs-expert",
+      "skill_id": "nestjs_expert_skill_md__c1d540967da7"
+    },
+    {
+      "fleet_gap": 279,
+      "name": "web-scraper",
+      "skill_id": "web_scraper_skill_md__0198f4ec169c"
+    }
+  ]
+}

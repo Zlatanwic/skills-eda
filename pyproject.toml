@@ -1,0 +1,9 @@
+[project]
+name = "skillscope"
+version = "0.1.0"
+description = "Exploratory analysis and visualization of LLM agent skills"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv]
+package = false

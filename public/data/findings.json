@@ -1,0 +1,50 @@
+[
+  {
+    "detail": "1427 skills (86.9%) require this primitive.",
+    "question": "What capability requirements are most common?",
+    "title": "Most common capability",
+    "value": "follow.procedure"
+  },
+  {
+    "detail": "Aggregated SCR/TCP gap score: 17059.",
+    "question": "Which primitive capabilities become bottlenecks most often?",
+    "title": "Largest portability bottleneck",
+    "value": "doc.generate"
+  },
+  {
+    "detail": "Average overall risk is 0.228 across 14 skills.",
+    "question": "Do skills from different sources have different structures and risks?",
+    "title": "Riskiest source",
+    "value": "local.codex"
+  },
+  {
+    "detail": "Average overall risk is 0.214.",
+    "question": "How do skill taxonomy and primitive requirements relate?",
+    "title": "Riskiest taxonomy",
+    "value": "tool-reference"
+  },
+  {
+    "detail": "Lowest average gap is 0.341.",
+    "question": "Which model/harness pairs are most compatible with the corpus?",
+    "title": "Best target profile",
+    "value": "deepseek-v4-pro / openclaw"
+  },
+  {
+    "detail": "63.2% of skills mention dependencies, credentials, packages, or environment setup.",
+    "question": "Are environment dependencies a major portability risk?",
+    "title": "Environment dependency footprint",
+    "value": "1038/1643"
+  },
+  {
+    "detail": "83.3% of skills include test/check/verify signals.",
+    "question": "How procedural are skills?",
+    "title": "Verification-heavy workflows",
+    "value": "1368/1643"
+  },
+  {
+    "detail": "Model avg 0.141, harness avg 0.145; margin 0.004.",
+    "question": "Is model mismatch or harness mismatch stronger?",
+    "title": "Dominant mismatch axis",
+    "value": "harness"
+  }
+]

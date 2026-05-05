@@ -1,0 +1,278 @@
+{
+  "avg_dependency_count": 1.69,
+  "avg_tool_count": 3.71,
+  "dependency_categories": [
+    {
+      "count": 1018,
+      "name": "system cli"
+    },
+    {
+      "count": 978,
+      "name": "version control"
+    },
+    {
+      "count": 942,
+      "name": "web/browser"
+    },
+    {
+      "count": 811,
+      "name": "runtime"
+    },
+    {
+      "count": 707,
+      "name": "credentials"
+    },
+    {
+      "count": 389,
+      "name": "package managers"
+    },
+    {
+      "count": 19,
+      "name": "implicit"
+    }
+  ],
+  "dependency_skill_count": 1038,
+  "env_risk_skill_count": 505,
+  "top_environment_risk_skills": [
+    {
+      "dependency_count": 13,
+      "env_risk": 1.0,
+      "name": "apify-actor-development",
+      "skill_id": "apify_actor_development_skill_md__f98c0d6d5a35",
+      "source": "local.cc-switch",
+      "tool_count": 16
+    },
+    {
+      "dependency_count": 11,
+      "env_risk": 1.0,
+      "name": "cc-skill-security-review",
+      "skill_id": "cc_skill_security_review_skill_md__e0f1f4d56152",
+      "source": "local.cc-switch",
+      "tool_count": 6
+    },
+    {
+      "dependency_count": 10,
+      "env_risk": 1.0,
+      "name": "comfyui-gateway",
+      "skill_id": "comfyui_gateway_skill_md__dd4bc9620b1b",
+      "source": "local.cc-switch",
+      "tool_count": 12
+    },
+    {
+      "dependency_count": 10,
+      "env_risk": 1.0,
+      "name": "security-scanning-security-sast",
+      "skill_id": "security_scanning_security_sast_skill_md__ca7a7492456b",
+      "source": "local.cc-switch",
+      "tool_count": 11
+    },
+    {
+      "dependency_count": 9,
+      "env_risk": 1.0,
+      "name": "environment-setup-guide",
+      "skill_id": "environment_setup_guide_skill_md__6512f2a3f6b7",
+      "source": "local.cc-switch",
+      "tool_count": 17
+    },
+    {
+      "dependency_count": 9,
+      "env_risk": 1.0,
+      "name": "readme",
+      "skill_id": "readme_skill_md__7eb9a8bb1e9a",
+      "source": "local.cc-switch",
+      "tool_count": 14
+    },
+    {
+      "dependency_count": 9,
+      "env_risk": 1.0,
+      "name": "nestjs-expert",
+      "skill_id": "nestjs_expert_skill_md__c1d540967da7",
+      "source": "local.cc-switch",
+      "tool_count": 11
+    },
+    {
+      "dependency_count": 9,
+      "env_risk": 1.0,
+      "name": "skill-creator-ms",
+      "skill_id": "skill_creator_ms_skill_md__57c420d47aa5",
+      "source": "local.cc-switch",
+      "tool_count": 10
+    },
+    {
+      "dependency_count": 9,
+      "env_risk": 1.0,
+      "name": "production-code-audit",
+      "skill_id": "production_code_audit_skill_md__b13153dd12a1",
+      "source": "local.cc-switch",
+      "tool_count": 8
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "bun-development",
+      "skill_id": "bun_development_skill_md__9cb3eb9b171e",
+      "source": "local.cc-switch",
+      "tool_count": 14
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "copilot-sdk",
+      "skill_id": "copilot_sdk_skill_md__598c65701b53",
+      "source": "local.cc-switch",
+      "tool_count": 11
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "varlock",
+      "skill_id": "varlock_skill_md__fb6eb2aa0ef5",
+      "source": "local.cc-switch",
+      "tool_count": 11
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "amazon-alexa",
+      "skill_id": "amazon_alexa_skill_md__46743285eef7",
+      "source": "local.cc-switch",
+      "tool_count": 10
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "convex",
+      "skill_id": "convex_skill_md__8c4ffa287904",
+      "source": "local.cc-switch",
+      "tool_count": 10
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "hugging-face-jobs",
+      "skill_id": "hugging_face_jobs_skill_md__7a19457a2f11",
+      "source": "local.cc-switch",
+      "tool_count": 10
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "azure-microsoft-playwright-testing-ts",
+      "skill_id": "azure_microsoft_playwright_testing_ts_skill_md__1cdd8f7d2b32",
+      "source": "local.cc-switch",
+      "tool_count": 9
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "codebase-audit-pre-push",
+      "skill_id": "codebase_audit_pre_push_skill_md__7bd64226fe29",
+      "source": "local.cc-switch",
+      "tool_count": 8
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "github-actions-templates",
+      "skill_id": "github_actions_templates_skill_md__f9404454e19a",
+      "source": "local.cc-switch",
+      "tool_count": 8
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "turborepo-caching",
+      "skill_id": "turborepo_caching_skill_md__ff87df8b2fbf",
+      "source": "local.cc-switch",
+      "tool_count": 8
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "skill-scanner",
+      "skill_id": "skill_scanner_skill_md__19f737a8750c",
+      "source": "local.cc-switch",
+      "tool_count": 7
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "vibe-code-auditor",
+      "skill_id": "vibe_code_auditor_skill_md__f3938433c3e9",
+      "source": "local.cc-switch",
+      "tool_count": 7
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "security-auditor",
+      "skill_id": "security_auditor_1_0_0_skill_md__d6e721db31f9",
+      "source": "local.agents",
+      "tool_count": 6
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "security-auditor",
+      "skill_id": "security_auditor_1_0_0_skill_md__715577992d1e",
+      "source": "local.cc-switch",
+      "tool_count": 6
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
+      "name": "pydantic-ai",
+      "skill_id": "pydantic_ai_skill_md__9e7a3fa1f7c0",
+      "source": "local.cc-switch",
+      "tool_count": 5
+    },
+    {
+      "dependency_count": 7,
+      "env_risk": 1.0,
+      "name": "docker-expert",
+      "skill_id": "docker_expert_skill_md__6d1c3e0f4262",
+      "source": "local.cc-switch",
+      "tool_count": 13
+    },
+    {
+      "dependency_count": 7,
+      "env_risk": 1.0,
+      "name": "electron-development",
+      "skill_id": "electron_development_skill_md__ec7f196aca47",
+      "source": "local.cc-switch",
+      "tool_count": 13
+    },
+    {
+      "dependency_count": 7,
+      "env_risk": 1.0,
+      "name": "007",
+      "skill_id": "007_skill_md__98df64a1efcb",
+      "source": "local.cc-switch",
+      "tool_count": 11
+    },
+    {
+      "dependency_count": 7,
+      "env_risk": 1.0,
+      "name": "expo-api-routes",
+      "skill_id": "expo_api_routes_skill_md__9b39eb16e668",
+      "source": "local.cc-switch",
+      "tool_count": 11
+    },
+    {
+      "dependency_count": 7,
+      "env_risk": 1.0,
+      "name": "bash-pro",
+      "skill_id": "bash_pro_skill_md__a8bfbc79fff4",
+      "source": "local.cc-switch",
+      "tool_count": 10
+    },
+    {
+      "dependency_count": 7,
+      "env_risk": 1.0,
+      "name": "javascript-typescript-typescript-scaffold",
+      "skill_id": "javascript_typescript_typescript_scaffold_skill_md__7100c93e7e42",
+      "source": "local.cc-switch",
+      "tool_count": 9
+    }
+  ]
+}

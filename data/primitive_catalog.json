@@ -1,0 +1,142 @@
+[
+  {
+    "primitive": "gen.code.shell",
+    "group": "code_generation",
+    "description": "Generate or adapt shell commands and scripts."
+  },
+  {
+    "primitive": "gen.code.python",
+    "group": "code_generation",
+    "description": "Generate or adapt Python code."
+  },
+  {
+    "primitive": "gen.code.javascript",
+    "group": "code_generation",
+    "description": "Generate or adapt JavaScript code."
+  },
+  {
+    "primitive": "gen.code.typescript",
+    "group": "code_generation",
+    "description": "Generate or adapt TypeScript code."
+  },
+  {
+    "primitive": "gen.code.sql",
+    "group": "code_generation",
+    "description": "Generate or adapt SQL queries or migrations."
+  },
+  {
+    "primitive": "gen.code.test",
+    "group": "code_generation",
+    "description": "Generate, run, or modify tests."
+  },
+  {
+    "primitive": "tool.exec",
+    "group": "tool_use",
+    "description": "Execute CLI commands or scripts."
+  },
+  {
+    "primitive": "tool.file.read",
+    "group": "tool_use",
+    "description": "Read files from the local workspace."
+  },
+  {
+    "primitive": "tool.file.write",
+    "group": "tool_use",
+    "description": "Create or modify files in the local workspace."
+  },
+  {
+    "primitive": "tool.web.search",
+    "group": "tool_use",
+    "description": "Search the web for external information."
+  },
+  {
+    "primitive": "tool.web.fetch",
+    "group": "tool_use",
+    "description": "Fetch or inspect web pages and URLs."
+  },
+  {
+    "primitive": "tool.browser",
+    "group": "tool_use",
+    "description": "Use a browser for navigation, screenshots, or interaction."
+  },
+  {
+    "primitive": "tool.git",
+    "group": "tool_use",
+    "description": "Use git commands or inspect repository state."
+  },
+  {
+    "primitive": "tool.github",
+    "group": "tool_use",
+    "description": "Interact with GitHub issues, pull requests, or repositories."
+  },
+  {
+    "primitive": "tool.package_manager",
+    "group": "tool_use",
+    "description": "Install or inspect pip, npm, cargo, or other package dependencies."
+  },
+  {
+    "primitive": "data.parse",
+    "group": "data_documents",
+    "description": "Parse structured or semi-structured data."
+  },
+  {
+    "primitive": "data.transform",
+    "group": "data_documents",
+    "description": "Clean, reshape, aggregate, or transform data."
+  },
+  {
+    "primitive": "data.visualize",
+    "group": "data_documents",
+    "description": "Create charts, plots, dashboards, or visual summaries."
+  },
+  {
+    "primitive": "doc.generate",
+    "group": "data_documents",
+    "description": "Generate markdown, reports, docs, PDFs, or prose artifacts."
+  },
+  {
+    "primitive": "spreadsheet.process",
+    "group": "data_documents",
+    "description": "Read, write, or analyze spreadsheet files."
+  },
+  {
+    "primitive": "presentation.generate",
+    "group": "data_documents",
+    "description": "Generate or modify slide decks."
+  },
+  {
+    "primitive": "reason.plan",
+    "group": "reasoning_following",
+    "description": "Plan work before execution."
+  },
+  {
+    "primitive": "reason.diagnose",
+    "group": "reasoning_following",
+    "description": "Diagnose bugs, failures, or root causes."
+  },
+  {
+    "primitive": "follow.procedure",
+    "group": "reasoning_following",
+    "description": "Follow multi-step procedures."
+  },
+  {
+    "primitive": "follow.constraints",
+    "group": "reasoning_following",
+    "description": "Respect explicit constraints and rules."
+  },
+  {
+    "primitive": "follow.verify",
+    "group": "reasoning_following",
+    "description": "Verify results with checks, tests, or review."
+  },
+  {
+    "primitive": "agent.parallel",
+    "group": "parallel_runtime",
+    "description": "Coordinate parallel agents, tasks, or independent work streams."
+  },
+  {
+    "primitive": "runtime.env_bind",
+    "group": "parallel_runtime",
+    "description": "Bind or prepare runtime environment dependencies."
+  }
+]
