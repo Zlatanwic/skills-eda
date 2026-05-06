@@ -171,6 +171,81 @@ def infer_level(record: dict[str, Any], hits: list[str], primitive: str) -> int:
     return min(level, 3)
 
 
+def merge_requirements(requirements: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    merged: dict[str, dict[str, Any]] = {}
+    for requirement in requirements:
+        primitive = requirement["primitive"]
+        existing = merged.get(primitive)
+        if existing is None:
+            merged[primitive] = {
+                **requirement,
+                "evidence": list(dict.fromkeys(requirement.get("evidence", []))),
+            }
+            continue
+
+        existing["level"] = max(existing["level"], requirement["level"])
+        existing["confidence"] = round(max(existing["confidence"], requirement["confidence"]), 3)
+        if existing["method"] != requirement["method"]:
+            methods = sorted(set(existing["method"].split("+")) | set(requirement["method"].split("+")))
+            existing["method"] = "+".join(methods)
+        existing["evidence"] = list(
+            dict.fromkeys([*existing.get("evidence", []), *requirement.get("evidence", [])])
+        )[:12]
+
+    return sorted(merged.values(), key=lambda item: (-item["level"], item["primitive"]))
+
+
+def structural_requirements(record: dict[str, Any]) -> list[dict[str, Any]]:
+    features = record["features"]
+    requirements: list[dict[str, Any]] = []
+
+    step_count = int(features.get("step_count", 0))
+    if step_count >= 3:
+        if step_count >= 8:
+            level = 3
+        elif step_count >= 5:
+            level = 2
+        else:
+            level = 1
+        confidence = min(0.78, 0.46 + 0.03 * min(step_count, 8) + 0.04 * level)
+        requirements.append(
+            {
+                "primitive": "follow.procedure",
+                "level": level,
+                "method": "structural",
+                "confidence": round(confidence, 3),
+                "evidence": [
+                    f"structural step_count={step_count}",
+                    "enumerated or checklist-like workflow structure",
+                ],
+            }
+        )
+
+    if features.get("has_branching"):
+        requirements.append(
+            {
+                "primitive": "follow.constraints",
+                "level": 2,
+                "method": "structural",
+                "confidence": 0.58,
+                "evidence": ["conditional or branching structure detected"],
+            }
+        )
+
+    if features.get("has_verification"):
+        requirements.append(
+            {
+                "primitive": "follow.verify",
+                "level": 2,
+                "method": "structural",
+                "confidence": 0.6,
+                "evidence": ["verification/checking structure detected"],
+            }
+        )
+
+    return requirements
+
+
 def extract_scr(record: dict[str, Any]) -> dict[str, Any]:
     text = record["raw_text"]
     requirements = []
@@ -191,7 +266,7 @@ def extract_scr(record: dict[str, Any]) -> dict[str, Any]:
             }
         )
 
-    requirements = sorted(requirements, key=lambda item: (item["primitive"], item["level"]))
+    requirements = merge_requirements([*requirements, *structural_requirements(record)])
     if not requirements:
         confidence = 0.2
     else:

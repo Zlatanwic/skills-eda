@@ -414,7 +414,7 @@ h3 {
 
 .metric-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-base);
   margin-bottom: var(--space-xl);
 }
@@ -583,6 +583,10 @@ h3 {
 
 .chart.tall {
   height: 330px;
+}
+
+.chart.extra-tall {
+  height: 430px;
 }
 
 .workspace-grid {
@@ -792,6 +796,13 @@ td:nth-child(5) {
   font-size: 13px;
   font-weight: 500;
   font-variant-numeric: tabular-nums;
+}
+
+.muted-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.45;
 }
 
 .evidence-list {
@@ -1095,6 +1106,10 @@ td:nth-child(5) {
     height: 390px;
   }
 
+  .chart.extra-tall {
+    height: 500px;
+  }
+
   .workspace-grid {
     grid-template-columns: minmax(0, 1fr) minmax(440px, 0.32fr);
     gap: var(--space-lg);
@@ -1209,7 +1224,8 @@ td:nth-child(5) {
   }
 
   .chart,
-  .chart.tall {
+  .chart.tall,
+  .chart.extra-tall {
     height: 300px;
   }
 

@@ -8,6 +8,34 @@ const props = defineProps<{
 function riskEntries(skill: SkillIndexRecord) {
   return Object.entries(skill.risks);
 }
+
+function evidenceItems(skill: SkillIndexRecord) {
+  const items = [
+    ...skill.scr.requirements.flatMap((requirement) =>
+      requirement.evidence.map((item) => `${requirement.primitive}: ${item}`),
+    ),
+    ...skill.features.tool_evidence.map((item) => `tool signal: ${item}`),
+    ...skill.features.dependency_evidence.map((item) => `dependency signal: ${item}`),
+  ];
+
+  if (skill.features.step_count > 0) {
+    items.push(`structural signal: ${skill.features.step_count} procedure steps detected`);
+  }
+  if (skill.features.section_count > 0) {
+    items.push(`structural signal: ${skill.features.section_count} markdown sections`);
+  }
+  if (skill.features.has_branching) {
+    items.push("structural signal: branching or conditional instructions");
+  }
+  if (skill.features.has_loop) {
+    items.push("structural signal: iterative or repeated workflow");
+  }
+  if (skill.features.has_verification) {
+    items.push("structural signal: verification or checking instructions");
+  }
+
+  return [...new Set(items)].slice(0, 12);
+}
 </script>
 
 <template>
@@ -48,20 +76,22 @@ function riskEntries(skill: SkillIndexRecord) {
     </div>
 
     <h3>Top primitives</h3>
-    <div class="tag-list">
+    <div v-if="props.skill.scr.requirements.length" class="tag-list">
       <span v-for="requirement in props.skill.scr.requirements.slice(0, 12)" :key="requirement.primitive">
         {{ requirement.primitive }} L{{ requirement.level }}
       </span>
     </div>
+    <p v-else class="muted-note">
+      No SCR primitives extracted. This usually means the current rule pass found structure, but no named capability
+      primitive; run LLM SCR or inspect the structural evidence below.
+    </p>
 
     <h3>Evidence</h3>
-    <ul class="evidence-list">
-      <li
-        v-for="item in [...props.skill.features.tool_evidence, ...props.skill.features.dependency_evidence].slice(0, 10)"
-        :key="item"
-      >
+    <ul v-if="evidenceItems(props.skill).length" class="evidence-list">
+      <li v-for="item in evidenceItems(props.skill)" :key="item">
         {{ item }}
       </li>
     </ul>
+    <p v-else class="muted-note">No evidence signals were extracted for this skill.</p>
   </aside>
 </template>

@@ -2,45 +2,12 @@
   {
     "manual_notes": "",
     "manual_status": "unreviewed",
-    "name": "oral-health-analyzer",
+    "name": "audit-maintenance",
     "primitive_count": 0,
     "scr_confidence": 0.2,
-    "skill_id": "oral_health_analyzer_skill_md__2a468dd66248",
-    "source": "local.cc-switch",
-    "taxonomy": "procedural",
-    "top_primitives": []
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "sexual-health-analyzer",
-    "primitive_count": 0,
-    "scr_confidence": 0.2,
-    "skill_id": "sexual_health_analyzer_skill_md__aa6af9530d14",
-    "source": "local.cc-switch",
-    "taxonomy": "procedural",
-    "top_primitives": []
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "skin-health-analyzer",
-    "primitive_count": 0,
-    "scr_confidence": 0.2,
-    "skill_id": "skin_health_analyzer_skill_md__72d1ad33f466",
-    "source": "local.cc-switch",
-    "taxonomy": "procedural",
-    "top_primitives": []
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "office-automation-test",
-    "primitive_count": 0,
-    "scr_confidence": 0.2,
-    "skill_id": "office_automation_test_skill_md__9ddeff6c654a",
-    "source": "skvm.benchmark",
-    "taxonomy": "procedural",
+    "skill_id": "skill_md__6d1c4b5e1bbb",
+    "source": "public.github",
+    "taxonomy": "mixed",
     "top_primitives": []
   },
   {
@@ -135,7 +102,7 @@
     "manual_notes": "",
     "manual_status": "unreviewed",
     "name": "story-writer",
-    "primitive_count": 3,
+    "primitive_count": 4,
     "scr_confidence": 0.62,
     "skill_id": "story_writer_skill_md__06ac98744511",
     "source": "skvm.benchmark",
@@ -148,6 +115,14 @@
         ],
         "level": 1,
         "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "structural step_count=4",
+          "enumerated or checklist-like workflow structure"
+        ],
+        "level": 1,
+        "primitive": "follow.procedure"
       },
       {
         "evidence": [
@@ -164,6 +139,149 @@
         ],
         "level": 1,
         "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "mijia-control",
+    "primitive_count": 6,
+    "scr_confidence": 0.628,
+    "skill_id": "skill_md__f4a3d63cfc8c",
+    "source": "public.github",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json"
+        ],
+        "level": 1,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "structural step_count=3",
+          "enumerated or checklist-like workflow structure"
+        ],
+        "level": 1,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check"
+        ],
+        "level": 1,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "Python-related language",
+          "python"
+        ],
+        "level": 1,
+        "primitive": "gen.code.python"
+      },
+      {
+        "evidence": [
+          "environment setup language",
+          "install",
+          "setup"
+        ],
+        "level": 1,
+        "primitive": "runtime.env_bind"
+      },
+      {
+        "evidence": [
+          "command execution language",
+          "cli"
+        ],
+        "level": 1,
+        "primitive": "tool.exec"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "cc-skill-continuous-learning",
+    "primitive_count": 2,
+    "scr_confidence": 0.63,
+    "skill_id": "cc_skill_continuous_learning_skill_md__42bbdb94deab",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "workflow"
+        ],
+        "level": 2,
+        "primitive": "follow.procedure"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "cc-skill-strategic-compact",
+    "primitive_count": 2,
+    "scr_confidence": 0.63,
+    "skill_id": "cc_skill_strategic_compact_skill_md__445fc6ea9516",
+    "source": "local.cc-switch",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "workflow"
+        ],
+        "level": 2,
+        "primitive": "follow.procedure"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "loresmith-ai",
+    "primitive_count": 2,
+    "scr_confidence": 0.63,
+    "skill_id": "skill_md__96b8f312c8b0",
+    "source": "public.github",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "step",
+          "structural step_count=3"
+        ],
+        "level": 2,
+        "primitive": "follow.procedure"
       }
     ]
   },
@@ -241,7 +359,8 @@
       {
         "evidence": [
           "procedure language",
-          "step"
+          "step",
+          "structural step_count=4"
         ],
         "level": 1,
         "primitive": "follow.procedure"
@@ -268,483 +387,22 @@
   {
     "manual_notes": "",
     "manual_status": "unreviewed",
-    "name": "Shell Script Helper",
-    "primitive_count": 6,
-    "scr_confidence": 0.647,
-    "skill_id": "shell_script_skill_md__67dac534bd83",
-    "source": "skvm.benchmark",
-    "taxonomy": "tool-reference",
-    "top_primitives": [
-      {
-        "evidence": [
-          "shell-related language",
-          "```bash",
-          "bash"
-        ],
-        "level": 1,
-        "primitive": "gen.code.shell"
-      },
-      {
-        "evidence": [
-          "diagnosis language",
-          "bug",
-          "debug"
-        ],
-        "level": 1,
-        "primitive": "reason.diagnose"
-      },
-      {
-        "evidence": [
-          "environment setup language",
-          "setup"
-        ],
-        "level": 1,
-        "primitive": "runtime.env_bind"
-      },
-      {
-        "evidence": [
-          "spreadsheet language",
-          "sheet"
-        ],
-        "level": 1,
-        "primitive": "spreadsheet.process"
-      },
-      {
-        "evidence": [
-          "git language",
-          "git"
-        ],
-        "level": 1,
-        "primitive": "tool.git"
-      },
-      {
-        "evidence": [
-          "GitHub language",
-          "github"
-        ],
-        "level": 1,
-        "primitive": "tool.github"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "openai-whisper",
-    "primitive_count": 3,
-    "scr_confidence": 0.647,
-    "skill_id": "openai_whisper_skill_md__0ba77b428c15",
-    "source": "skvm.benchmark",
-    "taxonomy": "tool-reference",
-    "top_primitives": [
-      {
-        "evidence": [
-          "environment setup language",
-          "api key",
-          "install"
-        ],
-        "level": 1,
-        "primitive": "runtime.env_bind"
-      },
-      {
-        "evidence": [
-          "command execution language",
-          "cli"
-        ],
-        "level": 1,
-        "primitive": "tool.exec"
-      },
-      {
-        "evidence": [
-          "web fetch language",
-          "download"
-        ],
-        "level": 1,
-        "primitive": "tool.web.fetch"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "builder",
-    "primitive_count": 7,
-    "scr_confidence": 0.654,
-    "skill_id": "builder_skill_md__82f3637ca36f",
-    "source": "skvm.benchmark",
-    "taxonomy": "tool-reference",
-    "top_primitives": [
-      {
-        "evidence": [
-          "document generation language",
-          "document"
-        ],
-        "level": 1,
-        "primitive": "doc.generate"
-      },
-      {
-        "evidence": [
-          "SQL/database language",
-          "migration"
-        ],
-        "level": 1,
-        "primitive": "gen.code.sql"
-      },
-      {
-        "evidence": [
-          "diagnosis language",
-          "bug",
-          "debug"
-        ],
-        "level": 1,
-        "primitive": "reason.diagnose"
-      },
-      {
-        "evidence": [
-          "environment setup language",
-          "api key",
-          "credential"
-        ],
-        "level": 1,
-        "primitive": "runtime.env_bind"
-      },
-      {
-        "evidence": [
-          "spreadsheet language",
-          "sheet"
-        ],
-        "level": 1,
-        "primitive": "spreadsheet.process"
-      },
-      {
-        "evidence": [
-          "git language",
-          "git"
-        ],
-        "level": 1,
-        "primitive": "tool.git"
-      },
-      {
-        "evidence": [
-          "GitHub language",
-          "github"
-        ],
-        "level": 1,
-        "primitive": "tool.github"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "Excel Formula Helper",
-    "primitive_count": 4,
-    "scr_confidence": 0.66,
-    "skill_id": "excel_formula_skill_md__2dfae9b48d6d",
-    "source": "skvm.benchmark",
-    "taxonomy": "tool-reference",
-    "top_primitives": [
-      {
-        "evidence": [
-          "data parsing language",
-          "csv"
-        ],
-        "level": 1,
-        "primitive": "data.parse"
-      },
-      {
-        "evidence": [
-          "spreadsheet language",
-          "csv",
-          "excel"
-        ],
-        "level": 1,
-        "primitive": "spreadsheet.process"
-      },
-      {
-        "evidence": [
-          "git language",
-          "git"
-        ],
-        "level": 1,
-        "primitive": "tool.git"
-      },
-      {
-        "evidence": [
-          "GitHub language",
-          "github"
-        ],
-        "level": 1,
-        "primitive": "tool.github"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "ppt-outline",
-    "primitive_count": 8,
-    "scr_confidence": 0.66,
-    "skill_id": "ppt_outline_skill_md__8b18dfd14d36",
-    "source": "skvm.benchmark",
-    "taxonomy": "tool-reference",
-    "top_primitives": [
-      {
-        "evidence": [
-          "document generation language",
-          "report"
-        ],
-        "level": 1,
-        "primitive": "doc.generate"
-      },
-      {
-        "evidence": [
-          "constraint language",
-          "requirement"
-        ],
-        "level": 1,
-        "primitive": "follow.constraints"
-      },
-      {
-        "evidence": [
-          "verification language",
-          "review"
-        ],
-        "level": 1,
-        "primitive": "follow.verify"
-      },
-      {
-        "evidence": [
-          "Python-related language",
-          "python"
-        ],
-        "level": 1,
-        "primitive": "gen.code.python"
-      },
-      {
-        "evidence": [
-          "shell-related language",
-          "```bash",
-          "bash"
-        ],
-        "level": 1,
-        "primitive": "gen.code.shell"
-      },
-      {
-        "evidence": [
-          "presentation language",
-          "deck",
-          "ppt"
-        ],
-        "level": 1,
-        "primitive": "presentation.generate"
-      },
-      {
-        "evidence": [
-          "git language",
-          "git"
-        ],
-        "level": 1,
-        "primitive": "tool.git"
-      },
-      {
-        "evidence": [
-          "GitHub language",
-          "github"
-        ],
-        "level": 1,
-        "primitive": "tool.github"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "grill-me",
-    "primitive_count": 5,
-    "scr_confidence": 0.68,
-    "skill_id": "grill_me_skill_md__b1426b81997d",
-    "source": "local.agents",
-    "taxonomy": "mixed",
-    "top_primitives": [
-      {
-        "evidence": [
-          "verification language",
-          "test"
-        ],
-        "level": 2,
-        "primitive": "follow.verify"
-      },
-      {
-        "evidence": [
-          "testing language",
-          "test"
-        ],
-        "level": 2,
-        "primitive": "gen.code.test"
-      },
-      {
-        "evidence": [
-          "planning language",
-          "plan"
-        ],
-        "level": 2,
-        "primitive": "reason.plan"
-      },
-      {
-        "evidence": [
-          "git language",
-          "branch"
-        ],
-        "level": 2,
-        "primitive": "tool.git"
-      },
-      {
-        "evidence": [
-          "package management language",
-          "dependencies"
-        ],
-        "level": 2,
-        "primitive": "tool.package_manager"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "10-andruia-skill-smith",
-    "primitive_count": 3,
-    "scr_confidence": 0.68,
-    "skill_id": "10_andruia_skill_smith_skill_md__2b69ce7f8322",
-    "source": "local.cc-switch",
-    "taxonomy": "procedural",
-    "top_primitives": [
-      {
-        "evidence": [
-          "visualization language",
-          "visualize"
-        ],
-        "level": 2,
-        "primitive": "data.visualize"
-      },
-      {
-        "evidence": [
-          "document generation language",
-          "document"
-        ],
-        "level": 2,
-        "primitive": "doc.generate"
-      },
-      {
-        "evidence": [
-          "planning language",
-          "plan"
-        ],
-        "level": 2,
-        "primitive": "reason.plan"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "20-andruia-niche-intelligence",
-    "primitive_count": 3,
-    "scr_confidence": 0.68,
-    "skill_id": "20_andruia_niche_intelligence_skill_md__52d6abef0228",
-    "source": "local.cc-switch",
-    "taxonomy": "procedural",
-    "top_primitives": [
-      {
-        "evidence": [
-          "constraint language",
-          "requirement"
-        ],
-        "level": 2,
-        "primitive": "follow.constraints"
-      },
-      {
-        "evidence": [
-          "verification language",
-          "review"
-        ],
-        "level": 2,
-        "primitive": "follow.verify"
-      },
-      {
-        "evidence": [
-          "spreadsheet language",
-          "excel"
-        ],
-        "level": 2,
-        "primitive": "spreadsheet.process"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "ai-analyzer",
-    "primitive_count": 5,
-    "scr_confidence": 0.68,
-    "skill_id": "ai_analyzer_skill_md__d5cc524bc859",
-    "source": "local.cc-switch",
-    "taxonomy": "generative",
-    "top_primitives": [
-      {
-        "evidence": [
-          "data parsing language",
-          "json"
-        ],
-        "level": 2,
-        "primitive": "data.parse"
-      },
-      {
-        "evidence": [
-          "visualization language",
-          "chart"
-        ],
-        "level": 2,
-        "primitive": "data.visualize"
-      },
-      {
-        "evidence": [
-          "document generation language",
-          "report"
-        ],
-        "level": 2,
-        "primitive": "doc.generate"
-      },
-      {
-        "evidence": [
-          "JavaScript-related language",
-          "javascript"
-        ],
-        "level": 2,
-        "primitive": "gen.code.javascript"
-      },
-      {
-        "evidence": [
-          "SQL/database language",
-          "query"
-        ],
-        "level": 2,
-        "primitive": "gen.code.sql"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
     "name": "aws-skills",
-    "primitive_count": 2,
-    "scr_confidence": 0.68,
+    "primitive_count": 3,
+    "scr_confidence": 0.647,
     "skill_id": "aws_skills_skill_md__491f5a4f71db",
     "source": "local.cc-switch",
     "taxonomy": "mixed",
     "top_primitives": [
       {
         "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
           "git language",
           "git"
         ],
@@ -764,60 +422,481 @@
   {
     "manual_notes": "",
     "manual_status": "unreviewed",
-    "name": "azure-communication-callingserver-java",
-    "primitive_count": 6,
-    "scr_confidence": 0.68,
-    "skill_id": "azure_communication_callingserver_java_skill_md__d4939dac7c49",
+    "name": "beautiful-prose",
+    "primitive_count": 3,
+    "scr_confidence": 0.647,
+    "skill_id": "beautiful_prose_skill_md__10e09c64a339",
     "source": "local.cc-switch",
-    "taxonomy": "tool-reference",
+    "taxonomy": "mixed",
     "top_primitives": [
       {
         "evidence": [
-          "data parsing language",
-          "xml"
-        ],
-        "level": 2,
-        "primitive": "data.parse"
-      },
-      {
-        "evidence": [
-          "constraint language",
-          "do not"
+          "conditional or branching structure detected"
         ],
         "level": 2,
         "primitive": "follow.constraints"
       },
       {
         "evidence": [
-          "procedure language",
-          "workflow"
+          "git language",
+          "git"
         ],
         "level": 2,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 2,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "claude-ally-health",
+    "primitive_count": 3,
+    "scr_confidence": 0.647,
+    "skill_id": "claude_ally_health_skill_md__58b3cd78061c",
+    "source": "local.cc-switch",
+    "taxonomy": "mixed",
+    "top_primitives": [
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 2,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 2,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "claude-scientific-skills",
+    "primitive_count": 3,
+    "scr_confidence": 0.647,
+    "skill_id": "claude_scientific_skills_skill_md__133061aed8c4",
+    "source": "local.cc-switch",
+    "taxonomy": "mixed",
+    "top_primitives": [
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 2,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 2,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "claude-speed-reader",
+    "primitive_count": 3,
+    "scr_confidence": 0.647,
+    "skill_id": "claude_speed_reader_skill_md__720c0608098c",
+    "source": "local.cc-switch",
+    "taxonomy": "mixed",
+    "top_primitives": [
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 2,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 2,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "claude-win11-speckit-update-skill",
+    "primitive_count": 3,
+    "scr_confidence": 0.647,
+    "skill_id": "claude_win11_speckit_update_skill_skill_md__cd5abecd53b2",
+    "source": "local.cc-switch",
+    "taxonomy": "mixed",
+    "top_primitives": [
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 2,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 2,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "fal-audio",
+    "primitive_count": 3,
+    "scr_confidence": 0.647,
+    "skill_id": "fal_audio_skill_md__58e197d1bdd3",
+    "source": "local.cc-switch",
+    "taxonomy": "mixed",
+    "top_primitives": [
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 2,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 2,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "fal-generate",
+    "primitive_count": 3,
+    "scr_confidence": 0.647,
+    "skill_id": "fal_generate_skill_md__712e238180d0",
+    "source": "local.cc-switch",
+    "taxonomy": "generative",
+    "top_primitives": [
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 2,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 2,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "fal-image-edit",
+    "primitive_count": 3,
+    "scr_confidence": 0.647,
+    "skill_id": "fal_image_edit_skill_md__69a70f2c2b21",
+    "source": "local.cc-switch",
+    "taxonomy": "mixed",
+    "top_primitives": [
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 2,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 2,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "fal-platform",
+    "primitive_count": 3,
+    "scr_confidence": 0.647,
+    "skill_id": "fal_platform_skill_md__d59915d586c0",
+    "source": "local.cc-switch",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "git language",
+          "git"
+        ],
+        "level": 2,
+        "primitive": "tool.git"
+      },
+      {
+        "evidence": [
+          "GitHub language",
+          "github"
+        ],
+        "level": 2,
+        "primitive": "tool.github"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "SKILL",
+    "primitive_count": 20,
+    "scr_confidence": 0.841,
+    "skill_id": "skill_md__a24e1f109766",
+    "source": "public.github",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "extract",
+          "json"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "data transformation language",
+          "clean"
+        ],
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "dashboard",
+          "graph"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "document",
+          "markdown"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "do not"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "process",
+          "step"
+        ],
+        "level": 3,
         "primitive": "follow.procedure"
       },
       {
         "evidence": [
-          "SQL/database language",
-          "migration"
+          "verification language",
+          "check",
+          "test"
         ],
-        "level": 2,
-        "primitive": "gen.code.sql"
+        "level": 3,
+        "primitive": "follow.verify"
       },
       {
         "evidence": [
-          "environment setup language",
-          "dependency"
+          "JavaScript-related language",
+          "javascript",
+          "js "
         ],
-        "level": 2,
-        "primitive": "runtime.env_bind"
+        "level": 3,
+        "primitive": "gen.code.javascript"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "cli",
+    "primitive_count": 20,
+    "scr_confidence": 0.826,
+    "skill_id": "skill_md__2ae015ffc364",
+    "source": "public.github",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "data parsing language",
+          "json",
+          "parse"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
       },
       {
         "evidence": [
-          "command execution language",
-          "cli"
+          "data transformation language",
+          "clean",
+          "join"
         ],
-        "level": 2,
-        "primitive": "tool.exec"
+        "level": 3,
+        "primitive": "data.transform"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "requirement",
+          "conditional or branching structure detected"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "process",
+          "step"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "confirm"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "javascript",
+          "js "
+        ],
+        "level": 3,
+        "primitive": "gen.code.javascript"
+      },
+      {
+        "evidence": [
+          "shell-related language",
+          "```bash",
+          "bash"
+        ],
+        "level": 3,
+        "primitive": "gen.code.shell"
       }
     ]
   },
@@ -859,7 +938,8 @@
       {
         "evidence": [
           "constraint language",
-          "constraint"
+          "constraint",
+          "conditional or branching structure detected"
         ],
         "level": 3,
         "primitive": "follow.constraints"
@@ -1866,7 +1946,8 @@
       {
         "evidence": [
           "constraint language",
-          "requirement"
+          "requirement",
+          "conditional or branching structure detected"
         ],
         "level": 3,
         "primitive": "follow.constraints"
@@ -2051,6 +2132,89 @@
         ],
         "level": 3,
         "primitive": "follow.verify"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "skill",
+    "primitive_count": 22,
+    "scr_confidence": 0.81,
+    "skill_id": "skill_md__f48eedb878ee",
+    "source": "public.github",
+    "taxonomy": "tool-reference",
+    "top_primitives": [
+      {
+        "evidence": [
+          "parallel agent language",
+          "parallel"
+        ],
+        "level": 3,
+        "primitive": "agent.parallel"
+      },
+      {
+        "evidence": [
+          "data parsing language",
+          "json",
+          "yaml"
+        ],
+        "level": 3,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "visualization language",
+          "dashboard",
+          "map"
+        ],
+        "level": 3,
+        "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "document generation language",
+          "docs",
+          "document"
+        ],
+        "level": 3,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "constraint language",
+          "always",
+          "must"
+        ],
+        "level": 3,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "procedure language",
+          "checklist",
+          "process"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
+      },
+      {
+        "evidence": [
+          "verification language",
+          "check",
+          "review"
+        ],
+        "level": 3,
+        "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "JavaScript-related language",
+          "javascript",
+          "npm"
+        ],
+        "level": 3,
+        "primitive": "gen.code.javascript"
       }
     ]
   },
@@ -2303,8 +2467,8 @@
     "manual_notes": "",
     "manual_status": "unreviewed",
     "name": "00-andruia-consultant",
-    "primitive_count": 6,
-    "scr_confidence": 0.753,
+    "primitive_count": 7,
+    "scr_confidence": 0.734,
     "skill_id": "00_andruia_consultant_skill_md__988348859a62",
     "source": "local.cc-switch",
     "taxonomy": "procedural",
@@ -2328,7 +2492,8 @@
       {
         "evidence": [
           "procedure language",
-          "workflow"
+          "workflow",
+          "structural step_count=8"
         ],
         "level": 3,
         "primitive": "follow.procedure"
@@ -2357,6 +2522,13 @@
         ],
         "level": 3,
         "primitive": "tool.package_manager"
+      },
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
       }
     ]
   },
@@ -2444,29 +2616,13 @@
   {
     "manual_notes": "",
     "manual_status": "unreviewed",
-    "name": "Content ID Guide",
-    "primitive_count": 6,
-    "scr_confidence": 0.76,
-    "skill_id": "content_id_guide_skill_md__354ac528e0d3",
-    "source": "skvm.benchmark",
+    "name": "AgentStack",
+    "primitive_count": 3,
+    "scr_confidence": 0.647,
+    "skill_id": "skill_md__a0bbb32ea717",
+    "source": "public.github",
     "taxonomy": "procedural",
     "top_primitives": [
-      {
-        "evidence": [
-          "data parsing language",
-          "json"
-        ],
-        "level": 2,
-        "primitive": "data.parse"
-      },
-      {
-        "evidence": [
-          "visualization language",
-          "graph"
-        ],
-        "level": 2,
-        "primitive": "data.visualize"
-      },
       {
         "evidence": [
           "document generation language",
@@ -2477,9 +2633,7 @@
       },
       {
         "evidence": [
-          "constraint language",
-          "constraint",
-          "do not"
+          "conditional or branching structure detected"
         ],
         "level": 2,
         "primitive": "follow.constraints"
@@ -2487,20 +2641,71 @@
       {
         "evidence": [
           "procedure language",
-          "checklist",
-          "process"
+          "step",
+          "structural step_count=3"
+        ],
+        "level": 2,
+        "primitive": "follow.procedure"
+      }
+    ]
+  },
+  {
+    "manual_notes": "",
+    "manual_status": "unreviewed",
+    "name": "Content ID Guide",
+    "primitive_count": 6,
+    "scr_confidence": 0.817,
+    "skill_id": "content_id_guide_skill_md__354ac528e0d3",
+    "source": "skvm.benchmark",
+    "taxonomy": "procedural",
+    "top_primitives": [
+      {
+        "evidence": [
+          "Input Schema (ClaimEvent) in JSON",
+          "parsing claim information"
+        ],
+        "level": 2,
+        "primitive": "data.parse"
+      },
+      {
+        "evidence": [
+          "Generate summaries",
+          "organize documentation"
+        ],
+        "level": 2,
+        "primitive": "doc.generate"
+      },
+      {
+        "evidence": [
+          "Mandatory Enforcement Gate",
+          "Safety & Compliance (L8 Firewall)",
+          "SAFE_01-04"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "Evidence Organization Checklist",
+          "objective prompts"
         ],
         "level": 2,
         "primitive": "follow.procedure"
       },
       {
         "evidence": [
-          "verification language",
-          "check",
-          "review"
+          "acknowledgment required",
+          "checklist completion"
         ],
         "level": 2,
         "primitive": "follow.verify"
+      },
+      {
+        "evidence": [
+          "organize the documentation they already have"
+        ],
+        "level": 1,
+        "primitive": "tool.file.read"
       }
     ]
   },
@@ -2590,7 +2795,7 @@
     "manual_status": "unreviewed",
     "name": "FFmpeg Video Editor",
     "primitive_count": 10,
-    "scr_confidence": 0.788,
+    "scr_confidence": 0.792,
     "skill_id": "ffmpeg_video_editor_1_0_0_skill_md__b5e5df209510",
     "source": "local.agents",
     "taxonomy": "tool-reference",
@@ -2632,7 +2837,8 @@
       {
         "evidence": [
           "procedure language",
-          "step"
+          "step",
+          "structural step_count=8"
         ],
         "level": 3,
         "primitive": "follow.procedure"
@@ -2668,8 +2874,8 @@
     "manual_notes": "",
     "manual_status": "unreviewed",
     "name": "Market Research",
-    "primitive_count": 7,
-    "scr_confidence": 0.726,
+    "primitive_count": 9,
+    "scr_confidence": 0.698,
     "skill_id": "market_research_1_0_0_skill_md__5d3d848c20d4",
     "source": "local.agents",
     "taxonomy": "procedural",
@@ -2690,6 +2896,13 @@
         ],
         "level": 2,
         "primitive": "data.visualize"
+      },
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
       },
       {
         "evidence": [
@@ -2738,8 +2951,8 @@
     "manual_notes": "",
     "manual_status": "unreviewed",
     "name": "Memory",
-    "primitive_count": 8,
-    "scr_confidence": 0.812,
+    "primitive_count": 9,
+    "scr_confidence": 0.809,
     "skill_id": "memory_1_0_2_skill_md__3e37228f5826",
     "source": "local.agents",
     "taxonomy": "procedural",
@@ -2768,6 +2981,14 @@
         ],
         "level": 3,
         "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "structural step_count=12",
+          "enumerated or checklist-like workflow structure"
+        ],
+        "level": 3,
+        "primitive": "follow.procedure"
       },
       {
         "evidence": [
@@ -2803,14 +3024,6 @@
         ],
         "level": 3,
         "primitive": "tool.browser"
-      },
-      {
-        "evidence": [
-          "file writing language",
-          "modify"
-        ],
-        "level": 3,
-        "primitive": "tool.file.write"
       }
     ]
   },
@@ -3013,7 +3226,8 @@
       {
         "evidence": [
           "verification language",
-          "test"
+          "test",
+          "verification/checking structure detected"
         ],
         "level": 2,
         "primitive": "follow.verify"
@@ -3070,8 +3284,8 @@
     "manual_notes": "",
     "manual_status": "unreviewed",
     "name": "aminer-data-search",
-    "primitive_count": 6,
-    "scr_confidence": 0.753,
+    "primitive_count": 8,
+    "scr_confidence": 0.728,
     "skill_id": "aminer_open_academic_1_0_5_skill_md__0d012425f8e5",
     "source": "local.agents",
     "taxonomy": "tool-reference",
@@ -3124,6 +3338,21 @@
         ],
         "level": 3,
         "primitive": "tool.exec"
+      },
+      {
+        "evidence": [
+          "conditional or branching structure detected"
+        ],
+        "level": 2,
+        "primitive": "follow.constraints"
+      },
+      {
+        "evidence": [
+          "structural step_count=6",
+          "enumerated or checklist-like workflow structure"
+        ],
+        "level": 2,
+        "primitive": "follow.procedure"
       }
     ]
   },
@@ -3227,7 +3456,8 @@
       {
         "evidence": [
           "constraint language",
-          "rule"
+          "rule",
+          "conditional or branching structure detected"
         ],
         "level": 3,
         "primitive": "follow.constraints"
@@ -3281,7 +3511,8 @@
       {
         "evidence": [
           "procedure language",
-          "step"
+          "step",
+          "structural step_count=4"
         ],
         "level": 2,
         "primitive": "follow.procedure"
@@ -3370,8 +3601,8 @@
     "manual_notes": "",
     "manual_status": "unreviewed",
     "name": "autoglm-open-link",
-    "primitive_count": 3,
-    "scr_confidence": 0.707,
+    "primitive_count": 4,
+    "scr_confidence": 0.677,
     "skill_id": "autoglm_open_link_skill_md__0bf3fdceb7df",
     "source": "local.agents",
     "taxonomy": "tool-reference",
@@ -3400,6 +3631,14 @@
         ],
         "level": 2,
         "primitive": "gen.code.shell"
+      },
+      {
+        "evidence": [
+          "structural step_count=3",
+          "enumerated or checklist-like workflow structure"
+        ],
+        "level": 1,
+        "primitive": "follow.procedure"
       }
     ]
   },
@@ -3453,300 +3692,6 @@
         ],
         "level": 2,
         "primitive": "gen.code.sql"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "autoglm-websearch",
-    "primitive_count": 5,
-    "scr_confidence": 0.696,
-    "skill_id": "autoglm_websearch_skill_md__750f96ce9b29",
-    "source": "local.agents",
-    "taxonomy": "tool-reference",
-    "top_primitives": [
-      {
-        "evidence": [
-          "data parsing language",
-          "json"
-        ],
-        "level": 2,
-        "primitive": "data.parse"
-      },
-      {
-        "evidence": [
-          "Python-related language",
-          "python"
-        ],
-        "level": 2,
-        "primitive": "gen.code.python"
-      },
-      {
-        "evidence": [
-          "shell-related language",
-          "```bash",
-          "bash"
-        ],
-        "level": 2,
-        "primitive": "gen.code.shell"
-      },
-      {
-        "evidence": [
-          "SQL/database language",
-          "query"
-        ],
-        "level": 2,
-        "primitive": "gen.code.sql"
-      },
-      {
-        "evidence": [
-          "web search language",
-          "web search"
-        ],
-        "level": 2,
-        "primitive": "tool.web.search"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "automation-workflows",
-    "primitive_count": 15,
-    "scr_confidence": 0.796,
-    "skill_id": "automation_workflows_0_1_0_skill_md__1f43000f862a",
-    "source": "local.agents",
-    "taxonomy": "procedural",
-    "top_primitives": [
-      {
-        "evidence": [
-          "data transformation language",
-          "filter"
-        ],
-        "level": 3,
-        "primitive": "data.transform"
-      },
-      {
-        "evidence": [
-          "visualization language",
-          "dashboard",
-          "map"
-        ],
-        "level": 3,
-        "primitive": "data.visualize"
-      },
-      {
-        "evidence": [
-          "document generation language",
-          "document",
-          "report"
-        ],
-        "level": 3,
-        "primitive": "doc.generate"
-      },
-      {
-        "evidence": [
-          "constraint language",
-          "always",
-          "rule"
-        ],
-        "level": 3,
-        "primitive": "follow.constraints"
-      },
-      {
-        "evidence": [
-          "procedure language",
-          "checklist",
-          "process"
-        ],
-        "level": 3,
-        "primitive": "follow.procedure"
-      },
-      {
-        "evidence": [
-          "verification language",
-          "check",
-          "confirm"
-        ],
-        "level": 3,
-        "primitive": "follow.verify"
-      },
-      {
-        "evidence": [
-          "testing language",
-          "test"
-        ],
-        "level": 3,
-        "primitive": "gen.code.test"
-      },
-      {
-        "evidence": [
-          "diagnosis language",
-          "bug",
-          "failure"
-        ],
-        "level": 3,
-        "primitive": "reason.diagnose"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "backtest-expert",
-    "primitive_count": 11,
-    "scr_confidence": 0.785,
-    "skill_id": "backtest_expert_0_1_0_skill_md__4dc61c02b092",
-    "source": "local.agents",
-    "taxonomy": "procedural",
-    "top_primitives": [
-      {
-        "evidence": [
-          "data transformation language",
-          "filter"
-        ],
-        "level": 3,
-        "primitive": "data.transform"
-      },
-      {
-        "evidence": [
-          "document generation language",
-          "document"
-        ],
-        "level": 3,
-        "primitive": "doc.generate"
-      },
-      {
-        "evidence": [
-          "constraint language",
-          "must",
-          "never"
-        ],
-        "level": 3,
-        "primitive": "follow.constraints"
-      },
-      {
-        "evidence": [
-          "procedure language",
-          "checklist",
-          "workflow"
-        ],
-        "level": 3,
-        "primitive": "follow.procedure"
-      },
-      {
-        "evidence": [
-          "verification language",
-          "check",
-          "test"
-        ],
-        "level": 3,
-        "primitive": "follow.verify"
-      },
-      {
-        "evidence": [
-          "testing language",
-          "test",
-          "tests"
-        ],
-        "level": 3,
-        "primitive": "gen.code.test"
-      },
-      {
-        "evidence": [
-          "diagnosis language",
-          "failure"
-        ],
-        "level": 3,
-        "primitive": "reason.diagnose"
-      },
-      {
-        "evidence": [
-          "planning language",
-          "approach",
-          "strategy"
-        ],
-        "level": 3,
-        "primitive": "reason.plan"
-      }
-    ]
-  },
-  {
-    "manual_notes": "",
-    "manual_status": "unreviewed",
-    "name": "blog-writer",
-    "primitive_count": 8,
-    "scr_confidence": 0.77,
-    "skill_id": "blog_writer_0_1_0_skill_md__a71389ea2311",
-    "source": "local.agents",
-    "taxonomy": "generative",
-    "top_primitives": [
-      {
-        "evidence": [
-          "data parsing language",
-          "json"
-        ],
-        "level": 3,
-        "primitive": "data.parse"
-      },
-      {
-        "evidence": [
-          "visualization language",
-          "graph"
-        ],
-        "level": 3,
-        "primitive": "data.visualize"
-      },
-      {
-        "evidence": [
-          "document generation language",
-          "markdown"
-        ],
-        "level": 3,
-        "primitive": "doc.generate"
-      },
-      {
-        "evidence": [
-          "constraint language",
-          "always"
-        ],
-        "level": 3,
-        "primitive": "follow.constraints"
-      },
-      {
-        "evidence": [
-          "procedure language",
-          "phase",
-          "workflow"
-        ],
-        "level": 3,
-        "primitive": "follow.procedure"
-      },
-      {
-        "evidence": [
-          "verification language",
-          "check",
-          "confirm"
-        ],
-        "level": 3,
-        "primitive": "follow.verify"
-      },
-      {
-        "evidence": [
-          "diagnosis language",
-          "failure"
-        ],
-        "level": 3,
-        "primitive": "reason.diagnose"
-      },
-      {
-        "evidence": [
-          "file writing language",
-          "save"
-        ],
-        "level": 3,
-        "primitive": "tool.file.write"
       }
     ]
   }

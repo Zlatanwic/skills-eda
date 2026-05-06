@@ -16,16 +16,17 @@ The dashboard asks:
 
 ## 2. Data And Pipeline
 
-The current dashboard uses 1,643 skills, including local skills, SkVM benchmark skills, and TCP profiles from SkVM-data.
+The current dashboard uses 1,739 skills, including local skills, 96 public GitHub skills, SkVM benchmark skills, and TCP profiles from SkVM-data.
 
 Pipeline:
 
-1. Collect local skills and SkVM benchmark skills.
+1. Collect local skills, public GitHub skills, and SkVM benchmark skills.
 2. Parse markdown, frontmatter, headings, code blocks, and steps.
 3. Extract structural features, tool evidence, dependency evidence, and taxonomy.
 4. Extract derived SCR labels: primitive capability requirements for each skill.
-5. Compare SCR with SkVM TCP profiles to compute portability gaps.
-6. Generate static dashboard JSON for the Vue/Vite frontend.
+5. Merge optional LLM-assisted SCR labels for selected skills; the current snapshot has 20 `rule+llm` SkVM benchmark annotations.
+6. Compare SCR with SkVM TCP profiles to compute portability gaps.
+7. Generate static dashboard JSON for the Vue/Vite frontend.
 
 Key distinction: SkVM TCP is imported official data. SCR is derived by this project.
 
@@ -101,9 +102,9 @@ The detail panel shows taxonomy, length, steps, code blocks, risk profile, top p
 
 ## 8. Limitations
 
-- SCR is derived, not official SkVM annotation.
+- SCR is derived, not official SkVM annotation. The current snapshot includes 20 LLM-assisted SCR labels, but most labels remain rule-derived.
 - Primitive mapping is approximate.
-- Public skill sampling is not yet implemented.
+- Public skill sampling is implemented and currently includes 96 public GitHub skills, but this is still a small exploratory sample.
 - Environment risk is keyword-based.
 - The project does not execute tasks or measure speedup/token reduction.
 

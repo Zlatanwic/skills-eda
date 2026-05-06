@@ -536,11 +536,11 @@ Acceptance criteria:
 
 ### Phase 3: Public Skill Sampling
 
-Current status: optional / not implemented in the current MVP. The dashboard currently compares local skills with SkVM benchmark skills and should describe public crawling as future work unless `collect_public_skills.py` is added.
+Current status: implemented as an optional GitHub sampler. The current checked-in/generated data snapshot contains 96 `public.github` skills collected through GitHub code search, so the dashboard now compares local skills, SkVM benchmark skills, and a small public GitHub sample. The public sample is intentionally modest and should be described as exploratory rather than representative of the full public skill ecosystem.
 
 Deliverables:
 
-- Public source crawler/sampler
+- Public source crawler/sampler (`scripts/collect_public_skills.py`)
 - Source metadata tracking
 - Rate-limit and failure handling
 
@@ -596,7 +596,7 @@ Recommended commands:
 & 'C:\Users\27651\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' scripts\build_dashboard_data.py
 ```
 
-The project should report LLM SCR as derived labels, not official SkVM labels.
+The project should report LLM SCR as derived labels, not official SkVM labels. Current status: the project has merged 20 `rule+llm` SCR annotations for SkVM benchmark skills through the configured OpenAI-compatible LLM API; the rest of the corpus remains rule-derived unless more annotations are requested.
 
 ### Phase 6: Risk and Gap Analysis
 
@@ -618,6 +618,7 @@ Acceptance criteria:
 Deliverables:
 
 - Dashboard pages for Findings, Skills, Risks, Primitives, and SkVM Alignment
+- Advanced EDA page with primitive co-occurrence, taxonomy-to-primitive Sankey, source-language heatmap, skill-primitive matrix, histograms, and PCA/k-means exploration
 - Global filters
 - Skill detail panel
 - Responsive layout
@@ -758,9 +759,9 @@ This MVP is enough to demonstrate the core idea: skills can be analyzed as natur
 
 ## 18. Current Implementation Notes
 
-The current project is a SkVM-inspired exploratory dashboard, not a reimplementation of the SkVM compiler/runtime. It implements local and SkVM skill collection, feature extraction, derived SCR extraction, imported TCP profile comparison, portability gap analysis, dependency/environment risk detection, findings cards, primitive visualizations, model/harness heatmaps, and skill prioritization.
+The current project is a SkVM-inspired exploratory dashboard, not a reimplementation of the SkVM compiler/runtime. It implements local, public GitHub, and SkVM skill collection, feature extraction, derived SCR extraction with optional LLM assistance, imported TCP profile comparison, portability gap analysis, dependency/environment risk detection, findings cards, primitive visualizations, model/harness heatmaps, Advanced EDA views, and skill prioritization.
 
-The current project does not yet implement public skill crawling, AOT skill rewriting, generated environment-binding scripts, concurrency DAG extraction, JIT code solidification, adaptive recompilation, or task-level completion/token/speedup evaluation. These should be presented as future work or SkVM paper features outside the scope of this course dashboard.
+The current project includes a public skill sampler and an active 96-record public GitHub sample. It does not implement AOT skill rewriting, generated environment-binding scripts, concurrency DAG extraction, JIT code solidification, adaptive recompilation, or task-level completion/token/speedup evaluation. These should be presented as future work or SkVM paper features outside the scope of this course dashboard.
 
 ## 17. Suggested Project Narrative
 

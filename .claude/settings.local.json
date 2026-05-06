@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Bash(git add *)",
+      "Bash(git commit -m 'fix: use BASE_URL for data paths and split deploy into separate job *)"
     ]
   }
 }

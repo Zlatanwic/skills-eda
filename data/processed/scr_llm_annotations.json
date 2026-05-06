@@ -1,0 +1,5702 @@
+[
+  {
+    "name": "Content ID Guide",
+    "scr": {
+      "confidence": 0.817,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Input Schema (ClaimEvent) in JSON",
+            "parsing claim information"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill requires parsing structured claim data from JSON input to organize and process it."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Generate summaries",
+            "organize documentation"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill helps creators organize and produce structured documentation or summaries of claims."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Mandatory Enforcement Gate",
+            "Safety & Compliance (L8 Firewall)",
+            "SAFE_01-04"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill enforces strict safety and compliance constraints that override all other behavior."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Evidence Organization Checklist",
+            "objective prompts"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill provides a multi-step checklist for inventorying documentation, requiring procedural adherence."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "acknowledgment required",
+            "checklist completion"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Verification is needed to ensure user acknowledgment and that steps are followed, though evaluation is limited."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "organize the documentation they already have"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "The skill may need to read existing documentation files from the user's workspace to organize them."
+        }
+      ]
+    },
+    "skill_id": "content_id_guide_skill_md__354ac528e0d3",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Creator Rights Assistant",
+    "scr": {
+      "confidence": 0.756,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "standardize rights-related metadata",
+            "generate and maintain a consistent set of metadata fields"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "The skill organizes and standardizes metadata fields (Origin, Identity, Provenance, etc.) which requires transforming raw creator input into structured metadata records."
+        },
+        {
+          "confidence": 0.75,
+          "evidence": [
+            "generate standardized metadata formats",
+            "Asset Birth Certificate (ABC)"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill produces metadata records (ABC) that can be stored as embedded metadata or sidecar files, which is a form of document generation."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "mandatory-disclaimer-first-turn: true",
+            "redact-pii-on-ingestion: true",
+            "metadata-format-neutrality: true"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill must respect explicit runtime constraints: always show disclaimer, redact PII, maintain format neutrality."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "multi-step process: mandatory disclosure gate, then ABC creation, then platform guidance",
+            "standardize ... at creation time"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill follows a defined procedure: first disclose limitations, then generate metadata, then provide guidance. This requires step-by-step execution."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "creators are responsible for the accuracy",
+            "help creators maintain consistent ... declarations"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The skill may need to verify that metadata fields are complete and consistent, though creators retain final responsibility."
+        },
+        {
+          "confidence": 0.75,
+          "evidence": [
+            "intent to help creators standardize ... at the moment assets are finalized",
+            "preparation, consistency, and transparency"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "The skill requires planning the workflow: identify asset, gather info, generate ABC, provide guidance. Planning ensures orderly execution."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "stored as embedded metadata or as a companion sidecar file",
+            "reference internally by creators"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "May need to read existing metadata files or sidecar files to update or maintain them."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Asset Birth Certificate (ABC) is a standardized metadata record",
+            "stored as embedded metadata or as a companion sidecar file"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "The skill writes metadata records (ABC) to files for persistent storage and portability."
+        }
+      ]
+    },
+    "skill_id": "creator_rights_assistant_skill_md__e0dc1b39e81d",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Data Analysis",
+    "scr": {
+      "confidence": 0.854,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Query databases, analyze data from SQL, spreadsheets, exports"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Core to parsing data from various sources for analysis"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Cleanup and normalization for tabular inputs",
+            "transformation"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "Essential for cleaning and reshaping data before analysis"
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Choose visuals to answer a question",
+            "chart-selection.md reference"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "Central to creating charts and visual summaries for insights"
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "generate reports",
+            "decision-ready output formats"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "Produces stakeholder-facing reports and decision briefs"
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Core Rules: Start from decision, Lock metric contract, etc."
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Skill enforces strict constraints on analysis methodology"
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Statistical Rigor Checklist",
+            "Quick Reference load files"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Multi-step procedures for rigor and file usage"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Stress-test claims",
+            "Quantify uncertainty",
+            "Checklist"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Critical for verifying analysis validity and robustness"
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Python",
+            "notebooks"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "Used for data analysis scripting, but not always required"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Query databases",
+            "SQL"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "gen.code.sql",
+          "reason": "Required for database queries and metric contracts"
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "KPI debugging",
+            "Diagnose bugs, failures"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "Used for diagnosing anomalies and root causes"
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Methodology First: What decision?",
+            "What would change mind?"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "Planning before execution to align analysis with decisions"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "automate spreadsheets",
+            "csv reference"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "spreadsheet.process",
+          "reason": "Core for handling tabular data and spreadsheet automation"
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Load only the smallest relevant file",
+            "reference files"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Basic file reading for reference guides"
+        }
+      ]
+    },
+    "skill_id": "data_analysis_skill_md__6401ce033821",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Decide",
+    "scr": {
+      "confidence": 0.9,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Core Rules: Default Conservative, A Decision Requires Components, Reuse Only When Context Matches, etc."
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill enforces multiple explicit constraints on when to autonomously decide versus ask."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Decision Workflow: Frame, Gather, Read, Reuse, Ask",
+            "Use those files as a decision safety stack: first know the structure, then calibrate confidence, then verify exceptions"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill defines a multi-step procedure that must be followed precisely."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Verify exceptions before reusing any past choice",
+            "Reuse a past choice only if the question, key components, and exception boundaries still line up"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Requires verification of context matching and exception checks before reusing decisions."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Common Traps: pattern-matching too early, collapsing major decision into shallow preference",
+            "Diagnose if context materially matches"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "The skill requires diagnosing potential mismatches and traps to avoid false autonomy."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Frame the decision as a real question, not as a vague feeling",
+            "Gather the components that materially affect the answer"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "The initial steps involve planning and framing the decision before acting."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Read ~/decide/memory.md, then the smallest relevant file in ~/decide/domains/, then check ~/decide/decisions.md"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Essential to load decision memory, domain overrides, and past decisions as part of the workflow."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Store the question, components, chosen option, rationale, confidence, and outcome",
+            "Log the answer once the human decides"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Required to log decisions and update memory files for future reuse."
+        }
+      ]
+    },
+    "skill_id": "decide_skill_md__fdaf29e77b90",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Excel / XLSX",
+    "scr": {
+      "confidence": 0.796,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Reading values, preserving a live workbook",
+            "Protect data types before Excel mangles them"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Parsing CSV and Excel data while respecting types, dates, and structure is fundamental."
+        },
+        {
+          "confidence": 0.75,
+          "evidence": [
+            "Use pandas for reshaping",
+            "Clean, reshape, aggregate"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "Transforming data (e.g., reshaping, cleaning, applying calculations) is a common task when preparing spreadsheet content."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Keep calculations in Excel when the workbook should stay live",
+            "Protect data types",
+            "Preserve workbook structure"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill has explicit Core Rules that must be followed, such as preserving templates, matching styles, and avoiding corruption."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Choose the workflow by job",
+            "Recalculate and review before delivery",
+            "Scale the workflow to the file size"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Multi-step procedures are required: selecting the right library, writing formulas, verifying, and delivering without errors."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Verify no #REF!, #DIV/0!, #VALUE!, #NAME?, or circular-reference fallout",
+            "Test new formulas on a few representative cells",
+            "Recalculate and review before delivery"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Verification is critical: checking formulas, cached values, errors, and visual appearance. This involves branching and coordination with other tools."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Use pandas for analysis, openpyxl when formulas matter"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "Python is the main tool for reading, writing, and manipulating Excel files via libraries like pandas and openpyxl."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Diagnose bugs, failures, or root causes",
+            "Common Traps section lists many failure modes"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "Diagnosing issues like formula errors, type corruption, and stale cached values is essential for reliability."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "Install openpyxl, pandas as needed"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Environment setup (installing Python packages) is a prerequisite, but often handled once."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Create, inspect, and edit Microsoft Excel workbooks",
+            "Treat CSV as plain data exchange"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "spreadsheet.process",
+          "reason": "Core skill responsibility: handling spreadsheets with formulas, formatting, workbook structure, and cross-platform behavior."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Install with clawhub",
+            "Run Python scripts"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Executing commands (e.g., running Python scripts, installing packages) is necessary for implementing the workflow."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Reading values, preserving a live workbook"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Reading existing Excel files is a basic step."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Create or modify files in the local workspace"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Writing modified or new workbook files is required for output."
+        }
+      ]
+    },
+    "skill_id": "excel_xlsx_skill_md__d019ba6cf363",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Excel Formula Helper",
+    "scr": {
+      "confidence": 0.8,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Multiple commands with specific syntax",
+            "Needs to follow skill instructions"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Using the skill requires following its command structure and interpreting outputs."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Run `excel-formula help` to see commands",
+            "CLI tool for formula generation"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Skill is invoked via CLI commands to generate, explain, convert formulas, etc."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "template command outputs CSV content"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Generating CSV templates requires writing to a file."
+        }
+      ]
+    },
+    "skill_id": "excel_formula_skill_md__2dfae9b48d6d",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Git",
+    "scr": {
+      "confidence": 0.926,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Never force push to shared branches",
+            "Commit early, commit often",
+            "Write meaningful commit messages"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Skill imposes explicit constraints on Git usage, such as not rewriting history on shared branches and commit message format."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Feature Branch Flow",
+            "Hotfix Flow",
+            "Daily Sync procedure"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Skill defines multi-step procedures for team workflows and daily sync that must be followed."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Safety Checklist before destructive operations",
+            "Verify no markers remain",
+            "Test that code builds"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Skill includes verification steps before risky Git operations and after conflict resolution."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "```bash ...``` in Quick Summary",
+            "`git rebase -i`",
+            "`git bisect start`"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "Skill requires generating complex shell commands and scripts for Git operations like rebase, bisect, and status checks."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Debugging with Bisect",
+            "Find the commit that introduced a bug"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "Skill provides systematic debugging using git bisect, requiring diagnostic reasoning."
+        },
+        {
+          "confidence": 0.98,
+          "evidence": [
+            "Git commits, branches, rebases, merges, conflict resolution",
+            "`git pull --rebase`",
+            "`git push --force-with-lease`"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "tool.git",
+          "reason": "Core Git operations are the essence of the skill, involving complex multi-step workflows, branching strategies, and conflict resolution."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Open PR, get review",
+            "Pull request",
+            "collaboration.md"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.github",
+          "reason": "Skill includes interaction with GitHub pull requests as part of team workflows."
+        }
+      ]
+    },
+    "skill_id": "git_skill_md__fee76afe6485",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Image",
+    "scr": {
+      "confidence": 0.871,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Core Rules: Pick formats by content, not by trend; Treat metadata and orientation as real delivery concerns; Use practical budgets and delivery defaults"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Numerous explicit constraints about format choice, metadata handling, file sizes, and platform compliance must be respected."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Fast Workflow: Identify asset type, destination, inspect, load destination file, make transformation set, validate",
+            "Keep the main workflow in this file, then pull in the specialized file"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill defines a clear multi-step procedure that must be followed to ensure correct image processing and export."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Validate the exported result in the destination context, not only in the editor",
+            "Validate against the actual destination",
+            "If the asset ships on the web, remember the surrounding delivery too"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Validation of the final image's quality, size, and suitability for the target platform is a critical step that requires verification."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "ImageMagick or Pillow examples",
+            "If the task is destination-specific, load the matching file before deciding"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "Python with Pillow is a common alternative for image processing, and the skill may require generating Python code for complex or custom transformations."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "commands.md when the user needs concrete ImageMagick or Pillow examples",
+            "Batch processing should apply consistent rules"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "The skill often involves generating shell scripts to automate image processing steps, such as batch resizing or format conversion."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Common Traps: Saving transparent images as JPEG and silently losing the alpha channel",
+            "Inspect the file before editing: dimensions, aspect ratio, orientation, transparency, color profile, metadata, and current compression damage"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "Diagnosing image issues such as incorrect format, quality degradation, or metadata problems is essential to avoid common mistakes."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Identify the asset type: photo, screenshot, UI capture, logo, diagram, social card, product image, or print source",
+            "Decide whether the source should remain vector, layered, or RAW instead of being flattened too early"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "The skill requires upfront planning to choose the right workflow, format, and transformations before executing any operations."
+        },
+        {
+          "confidence": 0.75,
+          "evidence": [
+            "Install with `clawhub install <slug>` if user confirms",
+            "commands.md when the user needs concrete ImageMagick or Pillow examples"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "The skill may require installing or checking for image processing tools (ImageMagick, Pillow) in the runtime environment."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "screenshots.md for UI captures, documentation images, annotations",
+            "If the asset is a screenshot, load screenshots.md"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.browser",
+          "reason": "For tasks involving UI screenshots, the skill may require using a browser to capture screen images or interact with web pages."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Make the minimum safe transformation set: crop, resize, convert, compress, strip or preserve metadata, and export",
+            "Use concrete commands once the export decision is already clear"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Image processing tasks require executing CLI tools like ImageMagick or Pillow to perform transformations, inspections, and exports."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "load the matching file before deciding",
+            "Load the destination-specific file if the job is web, social, ecommerce, photography/print, branding, screenshots, accessibility, or command-heavy"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Reading local markdown files (web.md, social.md, etc.) is necessary to obtain platform-specific guidelines and specifications."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Make the minimum safe transformation set: ... export",
+            "Keep per-destination exports separated from masters"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Saving the processed images to files is a fundamental part of the skill; output files must be written to the workspace."
+        }
+      ]
+    },
+    "skill_id": "image_skill_md__ea6a867b39f5",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "JavaScript",
+    "scr": {
+      "confidence": 0.85,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "strictly follows the style guide",
+            "24+ style rules"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill enforces numerous style constraints (naming, formatting, async patterns, etc.) that must be respected during code generation."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "code review",
+            "check for style issues"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The skill can review user-provided code for style compliance, requiring verification against the guide's rules."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "generates JavaScript code that strictly conforms to the style guide"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "gen.code.javascript",
+          "reason": "Core function: generating JavaScript code according to the style guide requires complex multi-step code generation with branching and adherence to many rules."
+        }
+      ]
+    },
+    "skill_id": "javascript_skills_skill_md__6e9e3fd582d5",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Market Research",
+    "scr": {
+      "confidence": 0.864,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "S",
+            "i",
+            "z",
+            "e"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "Data must be layered, segmented, and transformed from raw inputs into structured sizing views."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "U",
+            "s",
+            "e",
+            " "
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "Visual artifacts like positioning maps and matrices are part of competitor analysis."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "F",
+            "i",
+            "n",
+            "i"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "Final output is a document (market snapshot, decision memo, etc.) with structured findings."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "C",
+            "o",
+            "r",
+            "e"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Lots of explicit rules and constraints to adhere to during research."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "C",
+            "o",
+            "r",
+            "e"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill outlines multi-step procedures with branching based on context."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "T",
+            "r",
+            "i",
+            "a"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Verification is central: grading evidence, triangulating, and requiring confidence labels."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "S",
+            "t",
+            "a",
+            "r"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "Market research requires planning the decision, mode, and scope before execution."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "U",
+            "s",
+            "e",
+            " "
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Skill relies on reading reference markdown files for frameworks and rubrics."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "F",
+            "i",
+            "n",
+            "a"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Research results are written to files (market snapshot, decision memo, etc.)."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "B",
+            "e",
+            "h",
+            "a"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.fetch",
+          "reason": "Fetching specific web pages is often required to extract detailed market data or pricing."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "L",
+            "i",
+            "v",
+            "e"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.search",
+          "reason": "Web search is needed for competitor info, pricing, trends, and external data."
+        }
+      ]
+    },
+    "skill_id": "market_research_skill_md__ce5bb6b61c18",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Powerpoint / PPTX",
+    "scr": {
+      "confidence": 0.877,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "INVENTORY the deck before replacing content",
+            "PPTMX file is OOXML with separate parts"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Parsing OOXML structure to inspect slide layouts, placeholders, and content is essential for reliable editing."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Match content to the actual placeholders",
+            "Count the actual content pieces before choosing a layout"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "Transforming raw content into slide elements (text, charts, images) requires mapping data to placeholders."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "charts, graphs, map",
+            "charts, table, or image-heavy slides"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "Charts and visualizations are common in presentations; creating them requires data.visualize."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Preserve the deck's visual language",
+            "Keep decks portable and review-safe",
+            "Core Rules"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Numerous explicit rules about template fidelity, theme preservation, and portability must be respected."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Choose the workflow before touching the deck",
+            "Inventory the deck before replacing content",
+            "Run content QA and visual QA separately"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Multi-step procedure with distinct phases (inventory, edit, QA) must be followed to avoid common failures."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Run both content QA and visual QA",
+            "Assume the first render is wrong and do at least one fix-and-verify cycle"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Verification is critical and explicitly emphasized; requires separate checks for content and layout, plus iterative fixes."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Create, inspect, and edit Microsoft PowerPoint presentations and PPTX decks",
+            "layouts, templates, placeholders, notes, charts, and visual QA"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "presentation.generate",
+          "reason": "Core capability: generating and modifying PPTX files with complex layouts, placeholders, charts, and templates requires multi-step coordination and verification."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "A deck can pass text extraction and still fail on overlap, clipping, wrong theme inheritance",
+            "Common Traps"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "Diagnosing layout bugs, placeholder mismatches, and theme inheritance issues is a recurring need."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Choose the workflow before touching the deck",
+            "Reading text, editing, rebuilding from template, and creating from scratch are different jobs"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "Planning which workflow (read, edit, rebuild, create) to use is essential to avoid failure modes."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "requires bins: []",
+            "Install with `clawhub install <slug>`"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Preparing runtime environment (e.g., installing python-pptx library) is necessary to manipulate PPTX files."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Install with `clawhub install <slug>`",
+            "Run scripts to manipulate PPTX (e.g., python‑pptx)"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Executing CLI commands or scripts is needed to install dependencies and run PPTX manipulation code."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Read text, editing an existing deck",
+            "Inspect the actual slide or template"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Reading PPTX files and other input files is fundamental to inspect and edit."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Create, inspect, and edit Microsoft PowerPoint presentations",
+            "the deck must render cleanly after edits"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Writing modified PPTX files is the output of the skill."
+        }
+      ]
+    },
+    "skill_id": "powerpoint_pptx_skill_md__4d67c1ae025c",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Shell Script Helper",
+    "scr": {
+      "confidence": 0.7,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Shell script generator",
+            "Bash速查表"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "The skill is primarily about generating shell scripts, including templates, one-liners, and cheatsheets."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "debugger",
+            "调试排错"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "The skill explicitly includes debugging and troubleshooting shell scripts."
+        },
+        {
+          "confidence": 0.5,
+          "evidence": [
+            "setup",
+            "set -euo pipefail"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Setting up shell environment variables and options is part of best practices."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Run shell-script run"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill involves executing shell scripts or commands as part of its functionality."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "模板"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Reading script templates from files may be needed."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "脚本生成"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Writing generated scripts to files is a likely step."
+        }
+      ]
+    },
+    "skill_id": "shell_script_skill_md__67dac534bd83",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Short Drama Writer",
+    "scr": {
+      "confidence": 0.767,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "script generation",
+            "plot design",
+            "dialogue"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill produces structured script documents as output."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "short-drama-writer run",
+            "short-drama-writer help"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill requires executing CLI commands to invoke the short drama writer tool."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "output scripts or content generated by the tool"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "To save generated drama scripts to files in the workspace."
+        }
+      ]
+    },
+    "skill_id": "short_drama_writer_skill_md__0a88fa805bd7",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Test Generator",
+    "scr": {
+      "confidence": 0.76,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "Commands are executed in a specific order (e.g., init before add)",
+            "Multiple steps: init, add, list, search"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Using the tool effectively involves following a sequence of commands to achieve a goal, such as setting up workspace and logging data."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Set the TEST_GENERATOR_DIR environment variable to change the data directory"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Configuration relies on an environment variable, so binding or preparing that runtime environment may be required."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Run `test-generator init` to initialize the workspace",
+            "Commands like add, list, search are executed via the script"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill is primarily a CLI tool that requires executing shell commands to perform actions like data logging, search, and status checks."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "List all entries from the data log",
+            "Export all data log contents to stdout"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Commands like list, search, and export read the data.log file to display or output its contents."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Add a new timestamped entry to the data log",
+            "History log stores every command invocation"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "The add command writes to data.log, and all commands are logged to history.log, requiring file write operations."
+        }
+      ]
+    },
+    "skill_id": "test_generator_skill_md__bfc176b0d795",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "Word / DOCX",
+    "scr": {
+      "confidence": 0.832,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "A .docx file is a ZIP of XML parts",
+            "structured extraction for quick reading"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Reading OOXML requires parsing XML, especially word/document.xml, styles.xml, numbering.xml."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Create, inspect, and edit Microsoft Word documents and DOCX files",
+            "style-driven generation for new files"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "Core skill is generating DOCX files with proper styles, numbering, tables, sections, and tracked changes."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Core Rules",
+            "Treat DOCX as OOXML, not plain text",
+            "Preserve styles and direct formatting deliberately"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill has detailed rules about preserving structure, styles, numbering, and avoiding common traps."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Use different workflows on purpose",
+            "For review workflows, make minimal replacements"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill recommends structured workflows for reading, generation, and editing."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Verify round-trip compatibility before delivery",
+            "A document that passes a text check can still fail on pagination"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Verification of compatibility across editors and field refresh is a critical step."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Use different workflows on purpose",
+            "OOXML-aware editing"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "Manipulating DOCX often relies on python-docx or similar libraries for reliable OOXML handling."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Install with `clawhub install <slug>`",
+            "Treat .docm as macro-bearing and higher risk"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "May need to set up environment with python-docx or conversion tools."
+        },
+        {
+          "confidence": 0.75,
+          "evidence": [
+            "Legacy .doc inputs usually need conversion",
+            "Install with `clawhub install <slug>`"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Converting .doc to .docx or running validation/installation commands may be needed."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "inspect the package layout",
+            "reading, extracting, or reviewing"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Reading existing DOCX files from the workspace is a fundamental operation."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Create, inspect, and edit",
+            "generation for new files"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Writing modified or new DOCX files is essential for editing."
+        },
+        {
+          "confidence": 0.65,
+          "evidence": [
+            "Install with `clawhub install <slug>`",
+            "Conversion tools"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "Installing necessary packages (e.g., python-docx) via pip or other managers."
+        }
+      ]
+    },
+    "skill_id": "word_docx_skill_md__3a520429c1ea",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "agile-product-owner",
+    "scr": {
+      "confidence": 0.85,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Generate INVEST-compliant user stories",
+            "User Story Template"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill produces user stories, acceptance criteria, sprint plans, and other documents."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "User Story Generation Workflow",
+            "Sprint Planning Workflow"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill provides detailed step-by-step workflows that must be followed."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Validate against INVEST criteria",
+            "Validation: Story passes all INVEST criteria"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Stories must be verified against acceptance criteria and INVEST checklist."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Plan sprint capacity and select stories",
+            "Epic Breakdown Workflow"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "Planning sprints, epics, and backlog prioritization are central to the product owner role."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Run python scripts/user_story_generator.py"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill uses a CLI tool to generate stories and sprint plans."
+        },
+        {
+          "confidence": 0.75,
+          "evidence": [
+            "references/user-story-templates.md",
+            "references/sprint-planning-guide.md"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Reference documentation must be read for templates and procedures."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Add to backlog with priority",
+            "Sprint Loading Template"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Output files may be created for backlog items and sprint plans."
+        }
+      ]
+    },
+    "skill_id": "agile_product_owner_skill_md__7adc3299a0a6",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "baseball",
+    "scr": {
+      "confidence": 0.84,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "JSON output",
+            "Text output with tables"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill outputs structured data (text and JSON) that must be parsed to extract game info, player stats, etc."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Use when the user asks about baseball games",
+            "Quick Start",
+            "Usage"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The agent must follow the documented command patterns to correctly respond to user queries."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "poll no more than once every 15 seconds",
+            "Output Fields"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The agent should verify that the output matches expected formats and respect rate limits."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Fetch MLB game schedules, live game status, box scores, player search, and season statistics"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "Different user requests require selecting the appropriate command (games, live, score, player, stats) and arguments."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "python3 /home/claw/.openclaw/workspace/skills/baseball/scripts/baseball.py games"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill requires executing shell commands to run the baseball script."
+        }
+      ]
+    },
+    "skill_id": "baseball_skill_md__9e13f2587177",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "beginner-fitness-transformation-coach",
+    "scr": {
+      "confidence": 0.858,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Intake: Fitness level, Main goal, Training location, Available equipment, Training days/week, Session length"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill parses user input (goal, experience, equipment, etc.) into structured parameters to guide plan generation."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Create simple, safe, beginner-friendly fitness plans",
+            "Output Template",
+            "JSON Output"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill generates structured fitness plans in markdown and JSON format, requiring complex document generation with templates and branching based on user parameters."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Core Rules: keep plans beginner-friendly, prioritize consistency, avoid medical advice, etc."
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill must adhere to multiple explicit rules (e.g., safety, no medical claims), requiring constraint-following behavior."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Workflow: Step 1 — Identify the Starting Point ... Step 5 — Add Recovery and Nutrition"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill follows a clear multi-step workflow to build a fitness plan, requiring procedural execution."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "User Profile Detection: training experience, primary goal, training location, etc."
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "The skill diagnoses the user's fitness level and goals to tailor the plan, though this is basic classification."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Step 1 — Identify the Starting Point",
+            "Step 2 — Choose Program Shape"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "The skill plans the workout structure by selecting weekly frequency, plan length, and training emphasis based on user input."
+        }
+      ]
+    },
+    "skill_id": "fitness_coach_skill_md__a869a88ac6ed",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "builder",
+    "scr": {
+      "confidence": 0.8,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "outputs reference documentation only",
+            "outputs plain-text reference documentation via heredoc"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill generates reference documentation about build systems; it does not execute builds or use external tools."
+        }
+      ]
+    },
+    "skill_id": "builder_skill_md__82f3637ca36f",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "calendar",
+    "scr": {
+      "confidence": 0.9,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Parse the user's natural language request for date, time, title, attendees, and notes",
+            "Calculate absolute dates from relative expressions"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill requires parsing date/time expressions and extracting event details from natural language."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Generate a valid .ics file with all required fields"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill involves creating an iCalendar (.ics) file, which is a structured document artifact."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Dates use YYYYMMDD format",
+            "Use 24-hour time",
+            "Required fields: DTSTART, SUMMARY, etc."
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The iCalendar format has strict field formats and required elements that must be followed."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Workflow: 1. Parse... 2. Calculate... 3. Generate... 4. Save."
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill describes a clear multi-step procedure to be executed in order."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "The workflow requires planning the steps from parsing to saving"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "The agent needs to plan the sequence of parsing, calculation, generation, and file writing."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Save the file to the workspace with a descriptive filename"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "The final output is a file written to the local workspace."
+        }
+      ]
+    },
+    "skill_id": "calendar_skill_md__92a00177ad14",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "oral-health-analyzer",
+    "scr": {
+      "confidence": 0.89,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "分析检查记录、治疗记录、问题记录"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "需要解析结构化或半结构化的健康记录数据。"
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "计算健康评分变化",
+            "分析检查记录、治疗记录、问题记录"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "需要清洗、聚合、计算多源数据，如风险评分和趋势分析。"
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "分析流程：1. 读取...2. 分析...3. 评估...4. 计算...5. 识别...6. 生成..."
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "技能包含大量多步骤、分支条件（如风险等级判定）的复杂流程，需要嚴格遵循程序。"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "读取最近6个月的所有口腔健康记录"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "需要从文件系统读取多个健康记录（口腔、营养、慢性病等）以进行分析。"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "生成综合评估报告"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "需要将分析结果写入文件，生成报告或保存进度。"
+        }
+      ]
+    },
+    "skill_id": "oral_health_analyzer_skill_md__2a468dd66248",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "sexual-health-analyzer",
+    "scr": {
+      "confidence": 0.867,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "读取用户记录数据",
+            "数据验证: 检查数据完整性, 验证数据一致性, 识别异常值, 处理缺失数据"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill must parse structured user data (questionnaire responses, logs) into analyzable formats."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "定量分析: 统计描述, 趋势分析, 相关性分析",
+            "风险评分计算(多因素加权)"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "The skill transforms raw data into scores, trends, and risk metrics through aggregation and calculation."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "IIEF-5评分时间序列图表",
+            "ED严重程度变化图",
+            "风险因素雷达图"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "The skill generates multiple chart types to visualize trends, distributions, and correlations."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "输出内容: IIEF-5评分变化曲线, ED严重程度变化, 主要风险因素, 改善建议"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill produces structured reports with analysis results and recommendations in text form."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "分析流程: 1. 读取最近6个月的所有性健康记录 2. 分析IIEF-5评分变化趋势 3. 评估STD筛查历史 4. 检查避孕方法有效性 5. 分析用药效果 6. 评估生活方式因素"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill defines explicit multi-step workflows with branching based on risk levels and ED severity, requiring complex procedural execution."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "数据验证: 检查数据完整性, 验证数据一致性, 识别异常值",
+            "结果验证: 医学逻辑检查, 与临床指南对照"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The skill includes verification steps for data quality and result plausibility, with branching on validation outcomes."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "ED诊断辅助: 分析最近IIEF-5评分历史, 分析用药记录, 评估慢性病控制情况, 检查心理状态记录"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "The skill performs diagnostic reasoning to identify root causes of sexual health issues from multiple data sources."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "读取最近6个月的所有性健康记录"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "The skill requires reading user data files from the workspace."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "输出内容: ... 改善建议, 下次检查时间"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "The skill writes output reports to files."
+        }
+      ]
+    },
+    "skill_id": "sexual_health_analyzer_skill_md__aa6af9530d14",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "skin-health-analyzer",
+    "scr": {
+      "confidence": 0.756,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.75,
+          "evidence": [
+            "读",
+            "取",
+            "皮",
+            "肤"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Skill needs to parse structured health data from multiple sources."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "计",
+            "算",
+            "健",
+            "康"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "Skill requires data aggregation, scoring, and transformation for analysis."
+        },
+        {
+          "confidence": 0.75,
+          "evidence": [
+            "时",
+            "间",
+            "序",
+            "列"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "Skill produces various visual outputs to present analysis results."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "生",
+            "成",
+            "综",
+            "合"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "Skill generates comprehensive reports and personalized recommendations."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "所",
+            "有",
+            "皮",
+            "肤"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Skill must respect medical disclaimers and constraints, ensuring outputs are advisory not diagnostic."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "分",
+            "析",
+            "流",
+            "程"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Skill involves multiple structured multi-step analysis procedures with branching and verification across various scenarios."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "读",
+            "取",
+            "最",
+            "近"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Skill reads user data files from workspace."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "生",
+            "成",
+            "综",
+            "合"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Skill writes output reports to files."
+        }
+      ]
+    },
+    "skill_id": "skin_health_analyzer_skill_md__72d1ad33f466",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "code-analysis",
+    "scr": {
+      "confidence": 0.863,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Generate Markdown / HTML / JSON / PDF reports",
+            "Output structured reports"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill produces formatted documentation (reports) in multiple formats."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Step 1: Confirm Analysis Parameters",
+            "Step 4: Deep-Dive into Evaluation Results",
+            "Workflow: numbered steps"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill follows a detailed multi-step procedure including parameter confirmation, analysis, and evaluation."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Each backed by concrete data, not generic praise",
+            "Verify results with checks, tests, or review"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The skill includes verification steps such as checking that strengths are data-backed and reports are complete."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "python -m src.main -r /path/to/repo",
+            "pip install gitpython pydriller radon tabulate jinja2 click reportlab"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill requires executing CLI commands to install dependencies and run the analysis."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Scan specified repositories or directories containing Git repositories",
+            "Reads Git commit history and file contents"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "The skill reads local Git repositories and their files to analyze commit patterns and code style."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Output structured reports in Markdown / HTML / JSON / PDF",
+            "-o report.md, -o report.html"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "The skill generates and writes report files to the filesystem."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Analyze Git repositories",
+            "Compare developer commit patterns",
+            "Scan all .git repositories"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "tool.git",
+          "reason": "The skill relies heavily on Git commands and data (commit history, branches, etc.) for its analysis."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "pip install gitpython pydriller radon tabulate jinja2 click reportlab"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "The skill needs to install Python packages via pip to run its code."
+        }
+      ]
+    },
+    "skill_id": "code_analysis_skills_skill_md__5e6f30c71b45",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "competitor-analysis",
+    "scr": {
+      "confidence": 0.855,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Document total keywords ranking, top 10/top 3 counts",
+            "Review total backlinks, referring domains, link quality distribution"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Complex parsing of structured data from multiple sources (keywords, backlinks, metrics)"
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Aggregate and analyze data",
+            "Compare against your site's metrics",
+            "Synthesize Competitive Intelligence"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "Transformation and aggregation of competitor data into comparative insights"
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Create charts, plots, dashboards",
+            "Visual summaries in reports"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "Typically needed to present comparative metrics visually, though not strictly required"
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Produce a final report with: Executive Summary, Competitive Landscape comparison table, ...",
+            "Action Plan (Immediate / Short-term / Long-term)"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "Skill outputs a comprehensive multi-section report as the primary deliverable"
+        },
+        {
+          "confidence": 0.75,
+          "evidence": [
+            "Respect explicit constraints and rules",
+            "With manual data only: ask user to provide ...",
+            "Note which metrics are from automated collection vs. user-provided data"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Must adhere to data source constraints and report limitations"
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Instructions: 1. Identify Competitors, 2. Gather Competitor Data, 3. Analyze Keyword Rankings, ... 8. Synthesize",
+            "Validation Checkpoints"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Skill follows a structured multi-step procedure with 8 main steps and sub-steps"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Validation Checkpoints",
+            "Input Validation",
+            "Output Validation",
+            "Every recommendation cites specific data points"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Required to verify inputs and outputs against quality criteria"
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Diagnose bugs, failures, or root causes",
+            "Understanding why competitors rank higher",
+            "Identifying content gaps competitors miss"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "Diagnosis of competitor strengths/weaknesses and root causes of ranking differences"
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Plan work before execution",
+            "Identify Competitors",
+            "Define analysis scope"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "Planning needed to determine which competitors and aspects to analyze"
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Analyze competitor content strategies",
+            "Review competitor link-building approaches"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.fetch",
+          "reason": "Required to retrieve competitor web pages and backlink profiles"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Search \"[your main keyword]\" and note top 5 organic results",
+            "Identify Competitors",
+            "Check who's advertising for your keywords"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.search",
+          "reason": "Needed to identify competitors and gather initial ranking data"
+        }
+      ]
+    },
+    "skill_id": "competitor_analysis_skill_md__f17ad4b60936",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "content-quality-auditor",
+    "scr": {
+      "confidence": 0.881,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Scores every CORE-EEAT check item as Pass/Partial/Fail",
+            "evaluates content quality across 80 standardized criteria"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill must parse and analyze content text against 80 checklist items, requiring complex data extraction and interpretation."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "produces a comprehensive audit report with per-item scoring",
+            "Action Plan",
+            "markdown report"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill generates a detailed markdown report with tables, scores, and prioritized action plans."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Veto Detection: flags critical trust violations",
+            "weighted scoring by content type",
+            "N/A item handling rules"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill enforces constraints like veto overrides, content-type weight tables, and exclusion rules for insufficient data."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Full 80-Item Audit",
+            "scoring across 8 dimensions",
+            "N/A Item Handling",
+            "Step 1: Preparation"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill follows a multi-step procedure with 80 items, branching for N/A handling and content-type-specific logic."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Validation Checkpoints",
+            "Input Validation",
+            "Output Validation"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The skill includes explicit verification steps to ensure input validity and output correctness (e.g., all 80 items scored)."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "prioritized fix plans",
+            "Top 5 Priority Improvements",
+            "Action Plan"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "The skill generates a prioritized action plan based on weighted impact, requiring planning logic."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "content text, URL, or file path"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "If the user provides a file path, the skill must read the local file to evaluate content."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Fetch content from URL",
+            "allowed-tools: WebFetch"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.fetch",
+          "reason": "The skill can accept a URL as input and needs to fetch the page content for auditing."
+        }
+      ]
+    },
+    "skill_id": "content_quality_auditor_skill_md__508fd1082e80",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "find-skills",
+    "scr": {
+      "confidence": 0.85,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Rate Limits",
+            "Check requirements before installing"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Respecting rate limits and verifying skill requirements are explicit constraints."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Search Strategies with multiple flows"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill text provides a multi-step procedure with branching based on criteria like functionality, provider, popularity."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "npx clawhub search"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Searching skills requires running CLI commands like npx clawhub."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "GitHub: Search: openclaw skill"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.github",
+          "reason": "Searching GitHub for skill repositories."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Website: https://www.openclawdirectory.dev/skills"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.fetch",
+          "reason": "Fetching skill listings from external websites."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Search: openclaw skill"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.search",
+          "reason": "Skills are discovered via web searches for repositories and directories."
+        }
+      ]
+    },
+    "skill_id": "find_skills_skill_skill_md__98353c679bf7",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "frontend-arch-analyzer",
+    "scr": {
+      "confidence": 0.817,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "用户提供项目目录结构、package.json、配置文件"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill needs to parse user-provided project information (directory structure, package.json, etc.) to conduct analysis."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "按模板输出完整架构评审报告",
+            "生成markdown格式报告"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill's output is a structured architecture evaluation report in markdown format, requiring generation of prose and tables."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "遵循评分规则和框架专项检查清单"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill must respect explicit constraints such as scoring rules, framework-specific checklists, and report template."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "执行流程有明确的多步步骤（识别项目类型→技术栈健康度→架构设计→工程化→综合评分）"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill defines a detailed multi-step procedure (6 steps with branching) that must be followed to produce the report."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "通过检查清单验证各维度",
+            "评分标准"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The skill includes verification steps like checking against checklists and scoring, requiring result verification."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "诊断bug、失败或根因",
+            "核心是分析架构问题"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "The skill's core purpose is diagnosing architectural issues, bugs, or weaknesses. It evaluates tech stack, component design, etc., which requires root cause analysis."
+        }
+      ]
+    },
+    "skill_id": "eno_skill_md__ca03c9ae25cf",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "interview-simulator",
+    "scr": {
+      "confidence": 0.914,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "If the user provides a resume/CV, analyze it first, extract key skills and experience"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill can parse a resume/CV to extract relevant skills and experience for tailoring the interview."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "At the end of the session (or when the user asks), provide: ═══════════════════════════════════════ 📋 INTERVIEW SCORECARD ═══════════════════════════════════════"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill generates a structured markdown scorecard document summarizing the interview results."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Stay in character as the interviewer throughout the session",
+            "One question at a time",
+            "Be respectful and professional",
+            "Use the candidate's language"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill must respect multiple explicit constraints such as not breaking character, asking one question at a time, adapting difficulty dynamically, and matching language."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Based on the role, select the appropriate interview modules",
+            "Step 1 — Role & Level Discovery",
+            "Step 2 — Interview Execution",
+            "Step 3 — Conduct the Interview"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill follows a detailed multi-step procedure with branching based on role and user input."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "After the answer, provide: ✅ What was done well, ⚠️ What could be improved, 💡 Ideal/model answer or key points they missed, 📊 Score: 1–10 with brief justification",
+            "Verdict: Strong Hire / Hire / Lean Hire / Lean No Hire / No Hire"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The skill verifies candidate answers by scoring and providing detailed feedback, and at the end produces a comprehensive scorecard."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Diagnose why an answer is good or bad",
+            "Provide feedback: ✅ What was done well, ⚠️ What could be improved"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "The skill diagnoses candidate responses to identify strengths and areas for improvement."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Based on the role, select the appropriate interview modules",
+            "If the user set a time limit, pace the interview accordingly and prioritize the most important modules"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "The skill plans the interview session by selecting modules and pacing based on time and role."
+        }
+      ]
+    },
+    "skill_id": "interview_simulator_skill_md__c9ca4a9a4e7b",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "keyword-research",
+    "scr": {
+      "confidence": 0.794,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "Parse structured or semi-structured data",
+            "Intent Classification",
+            "Difficulty Assessment"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill may need to parse data from web results or user-provided lists into structured keyword data."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "Clean, reshape, aggregate, or transform data",
+            "Opportunity Score calculation",
+            "Topic Clustering"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "Keyword data often requires cleaning, scoring, and grouping into clusters."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Produce a report containing: Executive Summary, Top Keyword Opportunities, Topic Clusters, Content Calendar",
+            "Generate Output Report"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "A comprehensive report with multiple sections must be generated as the final deliverable."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "respect explicit constraints like user's business goal, audience, domain authority",
+            "Must respect user's domain authority"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill must adapt to user-provided constraints (target audience, goals, domain authority) throughout the process."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "follow a step-by-step discovery and analysis process",
+            "Instructions: 9-step workflow",
+            "Validation Checkpoints"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill defines a detailed multi-step procedure (1-9) with validation checkpoints, requiring methodical execution."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Validation Checkpoints: Input Validation and Output Validation checklists"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The skill includes verification steps to ensure input completeness and output quality."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Plan work before execution",
+            "Understand the Context and generate seed keywords"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "The skill requires planning the research approach based on context and goals before executing detailed steps."
+        },
+        {
+          "confidence": 0.65,
+          "evidence": [
+            "Fetch or inspect web pages and URLs",
+            "SERP analysis",
+            "Competitor keyword overlap"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.fetch",
+          "reason": "Fetching SERP pages or competitor URLs may be needed for detailed analysis, but is optional."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Search the web for external information",
+            "With SEO tool + search console connected: automatically pull data"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.search",
+          "reason": "Web search is used to gather keyword metrics and competitor data when tools are available, though manual input is an alternative."
+        }
+      ]
+    },
+    "skill_id": "keyword_research_skill_md__28f549bc5456",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "novel-generator",
+    "scr": {
+      "confidence": 0.838,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "关键情节生成图解（Mermaid）",
+            "人物关系图、等级体系图示例"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "需要创建可视化图表表达复杂关系，可能涉及图像生成或 Mermaid 语法"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "生成完善后的提示词、大纲、章节、图解等 markdown 文档",
+            "输出规范要求独立 md 文件"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "核心产出是长篇小说章节和相关文档，需按模板生成高质量 prose"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "工作流总览包含四个主要步骤",
+            "每个步骤有详细子流程和检查清单"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "整个创作过程是多步骤复杂流程，需严格遵循顺序和分支逻辑"
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "提示词质量检查清单",
+            "章节质量标准（节奏、冲突、悬念等）"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "需要验证生成内容是否符合质量标准、与前文一致"
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "使用初始化脚本 ./scripts/init-novel.sh",
+            "可能需要在 shell 中执行命令"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "初始化新小说工作区需要生成或运行 shell 脚本"
+        },
+        {
+          "confidence": 0.65,
+          "evidence": [
+            "执行 ./scripts/init-novel.sh 初始化脚本"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "需要运行命令行脚本完成初始化或维护操作"
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "每次生成新章节前必须读取所有记忆文件",
+            "读取 .learnings/CHARACTERS.md 等文件"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "需要读取多个记忆文件以维护故事连续性，涉及复杂多步读取"
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "输出章节到 output/目录",
+            "写入 .learnings/ 中的记忆文件"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "需要创建或更新章节、记忆文件、大纲等多种类型文件，操作频繁且依赖上下文"
+        }
+      ]
+    },
+    "skill_id": "novel_generator_skill_md__ab87bfe5f3d8",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "on-page-seo-auditor",
+    "scr": {
+      "confidence": 0.9,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Analyze title tags, headers, image alt text, internal links"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Skill must parse HTML to extract and evaluate on-page elements."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Visual breakdown of scores",
+            "Overall score with visual elements"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "Report includes visual representation of audit scores."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Generate scored SEO report",
+            "Audit Summary with visual breakdown"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "Skill produces a structured report with scores and recommendations."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "11-step audit procedure",
+            "Instructions specify ordered steps"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Skill requires following a detailed multi-step audit process."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Validation checkpoints for input and output"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Skill includes validation to ensure correctness of audit."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Audit on-page HTML elements",
+            "Fetch page HTML via web crawler"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.fetch",
+          "reason": "Skill requires fetching page content to analyze on-page elements."
+        }
+      ]
+    },
+    "skill_id": "on_page_seo_auditor_skill_md__6c3734004741",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "quality-manager-qmr",
+    "scr": {
+      "confidence": 0.8,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Collect required inputs from process owners",
+            "Parse audit results, customer feedback, process performance data"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill involves collecting and parsing structured data from various sources for analysis."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Transform raw data into metrics and trend analysis",
+            "Aggregate KPI data for dashboard"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "The skill requires cleaning, aggregating, and transforming raw quality data into actionable metrics."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Create dashboard(s) to view and identify trends",
+            "Chart actual performance vs targets",
+            "Visual representation of quality cost data"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "The skill involves creating dashboards and charts to visualize KPI trends and performance data."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Compile input summary report with trend analysis",
+            "Prepare presentation materials with supporting data",
+            "Generate Quality Performance Dashboard",
+            "Generate management review records"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill requires generating structured reports, dashboards, and presentation materials as outputs."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Management Review Workflow with 8 steps",
+            "Quality KPI Management Workflow with 8 steps",
+            "Quality Objectives Workflow with 10 steps",
+            "Culture Assessment Workflow with 8 steps"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill describes multiple multi-step workflows with branching and verification steps, requiring complex procedural execution."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Validation: All required inputs reviewed; decisions documented with owners and due dates",
+            "Validation: Dashboard generated; KPI data verified against source systems",
+            "Validation: All applicable requirements mapped; no expired registrations"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Each workflow includes explicit validation and verification steps to ensure completeness and accuracy."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Schedule management review",
+            "Notify attendees",
+            "Collect inputs",
+            "Prepare materials"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "The skill includes planning and coordinating management review activities in advance."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Usage: python management_review_tracker.py --help",
+            "Run scripts to track review inputs, actions, metrics"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill references executing a Python script to support management review tracking."
+        }
+      ]
+    },
+    "skill_id": "quality_manager_qmr_skill_md__3a2cb9934e4b",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "remind-me",
+    "scr": {
+      "confidence": 0.89,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Parse the user's intent",
+            "From the user's natural language request, extract: Schedule type, Job name, Message",
+            "Format the output as a readable list, not raw JSON"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The agent must parse natural language to extract schedule information, job name, and message, and also parse JSON output from the list command to format it for the user."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Never ask the user for these. Never hardcode them. Always read from session context.",
+            "Do NOT create the job until all three are confirmed.",
+            "Do NOT use sessions_spawn, web search, or any other tool to create cron jobs"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill imposes multiple explicit constraints that must be respected, such as never asking for channel or hardcoding, and confirming before creation."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Step 1 — Auto-detect channel...",
+            "Step 2 — Parse the user's intent",
+            "Step 3 — Clarification rules (ask before acting)",
+            "Always resolve these THREE things before creating a reminder"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill follows a multi-step procedure with conditional branching (asking for clarification when fields are missing) and verification steps, making it complex."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Confirmation before creating (always): Before calling the script, summarise what you're about to set up and get a quick confirmation",
+            "Only proceed after user confirms."
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The skill requires a verification step where the agent confirms with the user the details before executing the create command."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Run: uv run /root/.openclaw/workspace/skills/remind-me/src/main.py create ...",
+            "uv run /root/.openclaw/workspace/skills/remind-me/src/main.py list ...",
+            "uv run /root/.openclaw/workspace/skills/remind-me/src/main.py cancel name ..."
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill requires executing a CLI script with various arguments to create, list, and cancel reminders."
+        }
+      ]
+    },
+    "skill_id": "remind_me_pro_skill_md__e456dd99db06",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "resume-screener-pro",
+    "scr": {
+      "confidence": 0.863,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "解析简历关键信息",
+            "输入：候选人简历（PDF/DOCX/TXT）"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "需要从非结构化/半结构化文档（简历、JD）中提取关键信息（如技能、工作年限、成就）。"
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "JD匹配对照打分",
+            "排名输出"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "将解析后的数据进行匹配度计算、评分、排名等转换操作，输出结构化比较结果。"
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "生成候选人排名表",
+            "输出格式：【简历筛选报告】",
+            "【面试问题清单】"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "需要生成多种格式的结构化报告、评估表和问题清单，涉及复杂的多步骤内容编排和可能的多格式输出（如表格、列表）。"
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "不要一上来就给答案",
+            "先确认需求再执行",
+            "ATS检测不能少"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "技能包含多项显式约束和规则（如顺序约束、方法论要求），需要严格遵守以避免跳过关键步骤。"
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "四阶段一站式流程（筛选→面试设计→评估→推荐）",
+            "阶段0的迭代确认流程有明确子步骤"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "整个技能定义了多个阶段和嵌套子步骤，需要精确遵循流程，包括分支和条件触发（如根据用户需求选择阶段）。"
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "ATS检测报告包含多项检查",
+            "追问6层深以验证回答真实性",
+            "PEARL框架需要评估结果"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "包含多维度验证和结果校验（如ATS检测、追问深度评估、评分），需要协调多个检查项并给出通过/失败判断。"
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "阶段0：迭代式需求确认",
+            "先理解需求，再设计方案"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "在正式执行前需要规划工作顺序，包括需求澄清和确认，属于计划性步骤。"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "候选人简历（PDF/DOCX/TXT）",
+            "岗位JD"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "需要读取用户提供的简历和职位描述文件以进行后续分析。"
+        }
+      ]
+    },
+    "skill_id": "resume_screener_pro_skill_md__0ba9cd86b558",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "revenue-operations",
+    "scr": {
+      "confidence": 0.841,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Input Schema: JSON schema with nested fields like deals array, stage configurations"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill requires parsing complex JSON structures containing nested data (deals, forecast periods, metrics)."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Pipeline Coverage Ratio = Total pipeline value / quota target",
+            "MAPE = mean(|actual - forecast| / |actual|) x 100",
+            "Magic Number = Net New ARR / Prior Period S&M Spend"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "The core of the skill is transforming raw data into meaningful metrics like coverage ratios, MAPE, and GTM efficiency numbers."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "Document using template: Use assets/pipeline_review_template.md"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "Workflows include documentation steps using templates, though the generation may be limited to filling templated reports."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Confirm pipeline export is current and all required fields (stage, value, close_date, owner) are populated",
+            "Input Schema constraints"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The agent must respect constraints such as required fields in input data and schema validation before processing."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Weekly Pipeline Review workflow: 1. Verify input data, 2. Generate pipeline report, 3. Cross-check output totals, ..."
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill defines structured multi-step workflows (e.g., weekly pipeline review, forecast accuracy review) that require following procedures in order."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Cross-check output totals against your CRM source system to confirm data integrity",
+            "Cross-check computed ARR and spend totals against your finance system"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Each workflow includes explicit verification steps to ensure data integrity and accuracy of results."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "python scripts/pipeline_analyzer.py",
+            "python scripts/forecast_accuracy_tracker.py",
+            "python scripts/gtm_efficiency_calculator.py"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "The skill relies on Python scripts to perform pipeline analysis, forecast accuracy tracking, and GTM efficiency calculations. The agent may need to generate or adapt these scripts for custom data."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "python scripts/pipeline_analyzer.py --input assets/sample_pipeline_data.json --format text"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "Commands to invoke the Python scripts are shell commands. The agent must be able to generate shell commands to run the scripts with appropriate arguments."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "python scripts/pipeline_analyzer.py --input assets/sample_pipeline_data.json --format text"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The agent must execute shell commands to run the analysis scripts and retrieve results."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "--input assets/sample_pipeline_data.json",
+            "Input: JSON file with deals, quota, and stage configuration"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "The scripts read JSON input files from the workspace. The agent must be able to read these files to process data."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Output: Coverage ratios, conversion rates, velocity metrics, aging flags, risk assessment"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Scripts produce output that may be written to files. Also, templates are used for documentation. The agent may need to write output files."
+        }
+      ]
+    },
+    "skill_id": "revenue_operations_skill_md__057a4fa3cad8",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "risk-management-specialist",
+    "scr": {
+      "confidence": 0.755,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.5,
+          "evidence": [
+            "JSON output for integration"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The script supports JSON output, and parsing structured data from risk assessments may be needed."
+        },
+        {
+          "confidence": 0.5,
+          "evidence": [
+            "Risk Acceptability Matrix (5x5)"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "Risk matrices and visual summaries may need to be generated or interpreted, though the text does not explicitly require charts."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Create Risk Management Plan",
+            "Risk Assessment Templates"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill involves generating risk management plans, hazard analysis reports, and other documentation as part of the ISO 14971 process."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "risk acceptability criteria",
+            "ALARP achieved",
+            "Unacceptable – design change mandatory"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill requires adherence to strict risk acceptability thresholds, regulatory constraints, and hierarchical decision rules."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Workflow: Create Risk Management Plan",
+            "1. Define scope...",
+            "2. Establish risk acceptability criteria..."
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill contains detailed multi-step workflows with enumerated steps, checklists, and decision points throughout risk management activities."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "**Validation:** Plan approved; acceptability criteria defined...",
+            "verification activities",
+            "Verification Plan"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Each workflow includes a validation step, and the skill emphasizes verifying risk controls through test, analysis, review, and inspection."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "risk_matrix_calculator.py",
+            "python risk_matrix_calculator.py --help"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "The skill includes a Python script for risk matrix and FMEA calculations, and may require generating or adapting similar code for specific assessments."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Define scope of risk management activities",
+            "Risk Management Planning Workflow"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "The skill begins with planning activities and requires defining scope, criteria, and responsibilities."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "Risk Acceptability Matrix (5x5)",
+            "risk matrix with acceptance thresholds"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "spreadsheet.process",
+          "reason": "Risk matrices and hazard tracking are often implemented in spreadsheets, and the skill references quantitative criteria that may require spreadsheet manipulation."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "python risk_matrix_calculator.py --help"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill involves executing the risk matrix calculator script and possibly other CLI commands."
+        }
+      ]
+    },
+    "skill_id": "risk_management_specialist_skill_md__06c46f92ae41",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "schema-markup-generator",
+    "scr": {
+      "confidence": 0.9,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Identify Content Type and Rich Result Opportunity",
+            "Map your content to schema properties",
+            "Parse user input to extract schema fields"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill needs to parse user-provided content (e.g., text, URLs, existing markup) to identify schema types and extract properties for generation."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Creates Schema.org structured data markup",
+            "Generate FAQ schema",
+            "Produce validated markup",
+            "JSON-LD generation"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The primary output is generating structured data documents (JSON-LD) which is a form of document generation. The complexity involves multiple schema types, nested properties, and validation."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "All required properties present",
+            "No policy violations",
+            "Schema.org spec requirements",
+            "Google Rich Results Test requirements"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Schema markup must adhere to strict schema.org and Google rich result rules. The skill must enforce these constraints during generation."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Follow the workflow outlined in Instructions",
+            "Validation Checkpoints",
+            "Implementation Guide with steps",
+            "Schema Type Decision Tree"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill has a multi-step procedure: identify type, gather data, generate markup, validate, provide implementation guide. Following this procedure is essential."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Validation Checklist",
+            "Output Validation",
+            "Passes Google Rich Results Test",
+            "Check JSON syntax"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The skill includes validation steps to ensure the generated markup is correct and will pass testing tools. Verification is a key part of the workflow."
+        }
+      ]
+    },
+    "skill_id": "schema_markup_generator_skill_md__d8d7172adfd9",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "senior-computer-vision",
+    "scr": {
+      "confidence": 0.827,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Convert VOC to COCO format",
+            "from pycocotools.coco import COCO",
+            "Parse COCO JSON"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Parsing annotation formats (COCO, VOC, YOLO) is required for dataset preparation and model evaluation."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Apply Augmentations",
+            "Clean and Validate",
+            "Convert Annotation Format"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "Data transformation tasks include cleaning, augmenting, and converting datasets with multiple steps and conditional operations."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Analysis report includes: ... distribution ...",
+            "Metrics: mAP, Precision, Recall"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "Visualization of dataset distributions and model performance metrics is implied but not explicitly commanded."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Real-time requirement: [yes/no, target FPS]",
+            "Accuracy priority: [speed vs accuracy trade-off]",
+            "Performance Targets table"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Users must respect explicit constraints like FPS, memory, model size, and accuracy targets throughout the workflow."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Workflow 1: Object Detection Pipeline (6 steps)",
+            "Workflow 2: Model Optimization and Deployment (6 steps)",
+            "Workflow 3: Custom Dataset Preparation (6 steps)"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill provides detailed multi-step procedures that must be followed precisely for successful outcomes."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Validate on test set",
+            "Benchmark Optimized Model",
+            "Verify dataset: ... from pycocotools.coco import COCO"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Verification steps such as validation, benchmarking, and dataset integrity checks are integrated into the workflows."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "python scripts/vision_model_trainer.py models/ --task detection --arch yolov8",
+            "python scripts/inference_optimizer.py model.pt --target onnx --benchmark"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "The skill requires generating and executing Python scripts for training, optimization, and dataset preparation workflows."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "yolo detect train data=data.yaml model=yolov8m.pt epochs=100 imgsz=640",
+            "trtexec --onnx=model.onnx --saveEngine=model.engine --fp16"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "Shell commands are used extensively for training, conversion, and benchmarking tasks."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Use this workflow when building an object detection system from scratch",
+            "Select Detection Architecture based on requirements"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "Planning is needed to choose appropriate architectures, optimization strategies, and workflow steps."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Tech stack: PyTorch, torchvision, Ultralytics, Detectron2, ..., ONNX, TensorRT"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "The skill assumes a runtime environment with specific frameworks and tools installed, but does not detail setup steps."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Examples: yolo detect train ..., python scripts/vision_model_trainer.py ..., trtexec ..."
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill relies on executing CLI commands and scripts for model training, conversion, and validation."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "data.yaml",
+            "configs/faster_rcnn.yaml",
+            "model.pt"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Reading configuration files, model weights, and dataset annotations is necessary for training and evaluation."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "--output data/coco/",
+            "--saveEngine=model.engine",
+            "model.save('model.mlpackage')"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Writing output files like converted models, dataset splits, and processed data is a core part of the workflows."
+        }
+      ]
+    },
+    "skill_id": "senior_computer_vision_skill_md__e9d385a88346",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "technical-seo-checker",
+    "scr": {
+      "confidence": 0.886,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Parses robots.txt content",
+            "Parses XML sitemap",
+            "Parses HTML for meta tags and headers"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Skill needs to parse structured data from robots.txt, sitemaps, and web pages to extract directives, meta tags, and links."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Overall health score with visual breakdown",
+            "Display scores in tables and possibly charts"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "Skill may create visual representations of audit scores, though not strictly required."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Generates a comprehensive markdown audit report with tables, scores, and visual breakdown"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "Skill produces a multi-section technical audit report with structured findings, scores, and recommendations."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Instructions are a step-by-step procedure with 9 numbered audit steps and validation checkpoints"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Skill requires following a detailed multi-step procedure for performing the technical audit."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Validation Checkpoints section",
+            "Output validation: every recommendation cites specific data points"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Skill includes explicit validation steps to ensure findings are accurate and supported by data."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Diagnoses crawlability, indexability, speed issues from data"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "Skill involves diagnosing technical SEO issues based on fetched data and metrics."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "allowed-tools: WebFetch",
+            "fetch robots.txt, sitemap, pages for analysis"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.fetch",
+          "reason": "Skill requires fetching web resources like robots.txt, sitemap, and page HTML for crawlability and indexability audits."
+        }
+      ]
+    },
+    "skill_id": "technical_seo_checker_skill_md__356b8ad92e27",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "ux-researcher-designer",
+    "scr": {
+      "confidence": 0.875,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Prepare user data Required format (JSON)"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The workflow requires parsing user data in JSON format to generate personas."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Generate user personas from research data",
+            "Create Journey Map"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.transform",
+          "reason": "The skill involves transforming raw research data into structured personas and journey maps."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Map the stages",
+            "visualize the end-to-end user experience"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.visualize",
+          "reason": "Journey mapping inherently involves creating visual representations of user experience."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Generate User Persona",
+            "Create Journey Map",
+            "Plan Usability Test"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill produces documents such as persona reports, journey maps, and test plans."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Step-by-step workflows with multiple steps and validation checklists"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill is structured as multi-step workflows with branching (e.g., different methods) and verification steps."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Validation Checklist",
+            "Validate persona",
+            "Cross-check with support tickets"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Each workflow includes verification steps and checklists to ensure quality."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "python scripts/persona_generator.py"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "The persona generator is a Python script that must be executed."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Run persona generator bash command"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "Shell commands are used to invoke the persona generator script."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Define research questions",
+            "Select method",
+            "Plan Usability Test"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "The skill requires planning research studies, including defining questions and selecting methods."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Run persona generator"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Commands are executed to run the persona generation script."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "See references/persona-methodology.md",
+            "See references/journey-mapping-guide.md"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Reference files are read to guide the workflows."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Output of persona generator",
+            "Create journey map"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Generated artifacts like personas and journey maps are written to files."
+        }
+      ]
+    },
+    "skill_id": "ux_researcher_designer_skill_md__7922a0975cca",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "office-automation-test",
+    "scr": {
+      "confidence": 0.883,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "快速生成规范、完整的日报、周报和会议纪要",
+            "输出：# 日报 日期：2026年3月8日 ..."
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "技能的核心产出是生成结构化文档，包括标题、分模块列表等，属于标准的多步文档生成任务。"
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "输出的文档以结构化文本形式返回",
+            "用户可提出格式、语言风格等调整需求"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "必须严格遵循预定义的文档模块结构，同时根据用户要求调整格式和风格，体现了对约束的遵守和灵活适应。"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "技能会主动询问用户核心信息",
+            "文档生成规则：默认包含四个/五个模块"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "技能需要执行多步骤流程：激活后收集信息，根据文档类型选择不同模板，生成文档，并允许用户调整，流程包含分支和用户交互，属于复杂多步操作。"
+        }
+      ]
+    },
+    "skill_id": "office_automation_test_skill_md__9ddeff6c654a",
+    "source": "skvm.benchmark"
+  },
+  {
+    "name": "gemini-api-dev",
+    "scr": {
+      "confidence": 0.922,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "structured output",
+            "generate valid JSON"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Gemini API supports structured outputs and generating JSON schemas, requiring parsing of JSON data."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Always use the latest REST API discovery spec as source of truth",
+            "Use v1beta unless pinned"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill imposes constraints on which API version and documentation to use, requiring adherence to explicit rules."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "How to use the Gemini API",
+            "Key Documentation Pages"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill provides a multi-step procedure for using the Gemini API, including fetching docs, installing SDKs, and making API calls."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "JavaScript/TypeScript quick start",
+            "import { GoogleGenAI } from \"@google/genai\""
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.javascript",
+          "reason": "The skill includes JavaScript/TypeScript code snippets, requiring JavaScript code generation."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Python quick start",
+            "from google import genai"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "The skill includes Python code snippets to interact with the Gemini API, requiring Python code generation."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "JavaScript/TypeScript quick start",
+            "import { GoogleGenAI } from \"@google/genai\""
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.typescript",
+          "reason": "The skill's JavaScript/TypeScript snippet uses TypeScript syntax, requiring TypeScript code generation."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "install with pip install google-genai",
+            "npm install @google/genai",
+            "go get google.golang.org/genai"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "The skill explicitly instructs to install SDKs for Python, JavaScript/TypeScript, and Go, which requires environment setup and dependency management."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "pip install google-genai",
+            "npm install @google/genai"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "The skill requires installing SDKs via package managers for Python and JavaScript/TypeScript."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Fetch the spec",
+            "use web fetch tools to fetch llms.txt",
+            "fetch specific documentation pages"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.fetch",
+          "reason": "The skill emphasizes fetching the latest REST API discovery spec and documentation pages as source of truth, requiring web fetch capabilities."
+        }
+      ]
+    },
+    "skill_id": "gemini_api_dev_skill_md__0142cd2863b3",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "azure-messaging-webpubsubservice-py",
+    "scr": {
+      "confidence": 0.807,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Installation",
+            "Environment Variables",
+            "Service Client",
+            "Generate Client Access Token"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Skill requires following a multi-step procedure to set up and use the service."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "connection_exists",
+            "check_permission"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Verification methods are used to check connection existence and permissions."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "from azure.messaging.webpubsubservice import WebPubSubServiceClient"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "User must generate Python code to create and use the Web PubSub service client."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "pip install azure-messaging-webpubsubservice"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "User runs shell commands for package installation."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "AZURE_WEBPUBSUB_CONNECTION_STRING=Endpoint=...",
+            "AZURE_WEBPUBSUB_HUB"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Setting required environment variables for authentication."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "pip install"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Execution of shell commands."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "pip install"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "Installation of Python packages via pip."
+        }
+      ]
+    },
+    "skill_id": "azure_messaging_webpubsubservice_py_skill_md__fe1f260d1a26",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "azure-appconfiguration-py",
+    "scr": {
+      "confidence": 0.73,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "json.loads on feature flag value",
+            "JSON structure for feature flags"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Feature flags require parsing JSON data; other settings might be parsed as well."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "Authentication choice (connection string vs Entra ID)",
+            "Environment separation using labels"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Agent must respect constraints like security (prefer Entra ID) and environment-specific settings."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Best practices enumerated (1-7)",
+            "Sequential steps: install, auth, get/set, etc."
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Skill outlines a multi-step workflow with best practices that must be followed in order."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Python code examples for client operations",
+            "async client import",
+            "feature flag JSON construction"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "Skill extensively provides Python code snippets for SDK usage, requiring generation and adaptation of Python code."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "```bash pip install azure-appconfiguration```",
+            "environment variable export examples"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "Installation and environment setup commands are provided; agent may need to generate shell commands."
+        },
+        {
+          "confidence": 0.5,
+          "evidence": [
+            "General best practices imply testing",
+            "No explicit test code, but typical usage involves verification"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.test",
+          "reason": "While not directly addressed, using the SDK in production likely requires testing; agent may need to generate tests."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "AZURE_APPCONFIGURATION_CONNECTION_STRING",
+            "AZURE_APPCONFIGURATION_ENDPOINT",
+            "DefaultAzureCredential usage"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Multiple environment variables and credential setup are critical for authentication; binding these is a multi-step process."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "pip install commands",
+            "export environment variables"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Executing installation and setting environment variables requires CLI execution."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "Writing Python scripts to file is implicit in code generation usage"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Agent will need to write code files to implement the SDK usage."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "pip install azure-appconfiguration"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "Skill requires installing a Python package via pip."
+        }
+      ]
+    },
+    "skill_id": "azure_appconfiguration_py_skill_md__4d2a24a1df45",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "upgrading-expo",
+    "scr": {
+      "confidence": 0.829,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Update app.json"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Parsing JSON or configuration data is needed to read and modify app.json."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Use expo install instead of npm install for Expo packages",
+            "Always upgrade in a feature branch"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill imposes specific constraints to avoid dependency conflicts and ensure safe upgrades."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Instructions: Pre-Upgrade Planning, Dependency Updates, Configuration Migration, Code Updates, Testing"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill defines a clear multi-step procedure that must be followed sequentially."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Test core app functionality",
+            "Verify compatibility",
+            "Verify app store builds still work"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Verification steps are required to confirm the upgrade was successful."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Migrate deprecated APIs to new versions",
+            "Update code to use new APIs"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.javascript",
+          "reason": "Updating JavaScript code is required to handle breaking changes in Expo SDK."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "npm install -g expo-cli@latest",
+            "npx expo install --fix",
+            "npx expo-doctor"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "Shell commands are generated to update Expo CLI and SDK packages."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Test core app functionality",
+            "Verify app functionality after upgrade",
+            "Check for runtime errors"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.test",
+          "reason": "Testing is a key step to ensure the upgrade does not break app functionality."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Pre-Upgrade Planning: Review release notes and breaking changes"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "Planning the upgrade by reviewing release notes ensures a smooth process."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "npx expo install expo@latest",
+            "npm install -g expo-cli@latest",
+            "npx expo-doctor"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Executing CLI commands is central to upgrading Expo SDK and managing dependencies."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Update app.json and configuration files"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Reading configuration files is necessary to inspect current settings before migration."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Update app.json for new SDK requirements",
+            "Modify configuration files as needed"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Writing to configuration files is essential to apply SDK migration changes."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Backup current project state",
+            "Create a feature branch for the upgrade"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.git",
+          "reason": "Git operations are recommended to isolate the upgrade changes and allow easy rollback."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Update Expo SDK: npm install -g expo-cli@latest",
+            "Update packages to compatible versions"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "Package manager interactions are needed to install and update Expo related packages."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "Review Expo SDK release notes"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.web.search",
+          "reason": "Searching the web for release notes helps identify breaking changes and upgrade steps."
+        }
+      ]
+    },
+    "skill_id": "upgrading_expo_skill_md__a168288229dd",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "aegisops-ai",
+    "scr": {
+      "confidence": 0.8,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "analysis_results.json",
+            "infrastructure_audit_report.json",
+            "hardened_deployment.yaml"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill parses structured data from JSON and YAML files for further processing or reporting."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "generate all security reports"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "The skill generates documentation artifacts such as reports and manifests."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Goal: To automate high-stakes security and financial audits by:",
+            "Core Modules: 1... 2... 3...",
+            "Setup & Environment, Operational Dashboard"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill follows a multi-step procedure: clone, setup, run modules, produce outputs."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Auditing Linux Kernel patches",
+            "Detecting massive 'Silent Disaster' cost drifts",
+            "Human-in-the-loop for kernel-level merges"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The skill involves verification and auditing of security and cost aspects, and recommends manual sign-off."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "To automate high-stakes security and financial audits by:",
+            "Goal section plans the audit workflow"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "The skill requires planning the audit steps and reasoning about security and cost anomalies."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "python3 -m venv venv",
+            "pip install google-genai python-dotenv",
+            "Create a .env file"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Setting up a Python virtual environment, installing dependencies, and configuring API credentials are required for the skill's execution."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "python3 main.py"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill executes a main script to run the full suite of agents."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "auditing raw C-based Git diffs",
+            "Analyzing terraform plan outputs",
+            "translating natural language security intent"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "The skill reads Git diffs, Terraform plans, and security intent inputs from files."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "analysis_results.json",
+            "infrastructure_audit_report.json",
+            "hardened_deployment.yaml"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "The skill generates JSON and YAML output files as audit results and hardened manifests."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "git clone https://github.com/Champbreed/AegisOps-AI.git",
+            "auditing raw C-based Git diffs"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.git",
+          "reason": "The skill requires cloning the repository and potentially using git diffs for patch analysis."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "Blocking non-compliant merges via GitHub Actions",
+            "https://github.com/Champbreed/AegisOps-AI"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.github",
+          "reason": "The skill interacts with GitHub for repository access and CI/CD integration."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "pip install google-genai python-dotenv"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "The skill requires installing Python packages via pip."
+        }
+      ]
+    },
+    "skill_id": "aegisops_ai_skill_md__768f489bda2b",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "emblemai-crypto-wallet",
+    "scr": {
+      "confidence": 0.86,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Check wallet balance",
+            "Portfolio overview",
+            "Token information"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "API responses are JSON; parsing is needed to extract data like balances, token details."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "portfolio analysis or token research",
+            "cross-chain wallet operations"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "doc.generate",
+          "reason": "User may request summary reports or analysis results in a readable format."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Always confirm before executing transactions",
+            "Never expose private keys"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Critical constraints must be respected to ensure security and user trust."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Check balances first before attempting swaps or transfers",
+            "Verify token contracts using rugcheck or similar before trading unknown tokens"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Multi-step procedures must be followed in the correct order."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Always confirm before executing transactions — show the user what will happen",
+            "Report gas estimates when available"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Verification steps like user confirmation and gas estimation are required before execution."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "```bash npx skills add ...```",
+            "```bash npm install ...```"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "Setup commands are shell scripts; also curl may be used for API calls."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Install the full skill with references and scripts: npx skills add EmblemCompany/Agent-skills --skill emblem-ai-agent-wallet",
+            "Or install the npm package directly: npm install @emblemvault/agentwallet"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Setup requires installing the skill and npm package, which involves environment preparation with dependencies and API key."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "POST /swap — Execute token swap",
+            "POST /transfer — Send tokens"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Executing transactions requires POST requests, often done via curl or similar CLI tools."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "npm install @emblemvault/agentwallet"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "The skill requires installing an npm package for wallet functionality."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "GET /balance/{chain}/{address} — Check wallet balance",
+            "GET /portfolio/{address} — Portfolio overview",
+            "GET /token/{chain}/{contract} — Token information"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.fetch",
+          "reason": "Balance, portfolio, and token lookups are GET requests to the API."
+        }
+      ]
+    },
+    "skill_id": "emblemai_crypto_wallet_skill_md__26f391e6e03b",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "evomap",
+    "scr": {
+      "confidence": 0.84,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Swarm decomposition: Large tasks can be split across multiple agents working in parallel"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "agent.parallel",
+          "reason": "Coordinating multiple agents for parallel task execution"
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "JSON payload",
+            "canonical JSON serialization"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Protocol messages are in JSON and must be parsed"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "1. Send POST https://evomap.ai/a2a/hello to register",
+            "2. You immediately receive 500 starter credits"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Onboarding and task lifecycle follow defined multi-step procedures"
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "content-addressable verification (SHA256)",
+            "validation consensus"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Assets must be verified for integrity and consensus before promotion"
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "npm install && node index.js --loop"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.javascript",
+          "reason": "Evolver is a Node.js client; customization may require JavaScript code"
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Proposers, solvers, and aggregators each earn their share"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.plan",
+          "reason": "Task decomposition and assignment require planning"
+        },
+        {
+          "confidence": 0.75,
+          "evidence": [
+            "env_fingerprint"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Agent must report and potentially set up its runtime environment"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "npm install && node index.js --loop"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Running the evolver client requires executing CLI commands"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "npm install"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "Installing evolver dependencies via npm"
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "POST https://evomap.ai/a2a/hello",
+            "GET https://evomap.ai/a2a/directory"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.web.fetch",
+          "reason": "All GEP-A2A protocol interactions use HTTP requests"
+        }
+      ]
+    },
+    "skill_id": "skill_md__8a6a48c3cb35",
+    "source": "public.github"
+  },
+  {
+    "name": "odoo-rpc-api",
+    "scr": {
+      "confidence": 0.867,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Odoo's external JSON-RPC and XML-RPC APIs",
+            "JSON responses"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "API responses are in JSON/XML format and need to be parsed to extract data."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Best Practices",
+            "Do: Use API Keys",
+            "Don't: Hardcode passwords"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill lists explicit do's and don'ts that must be followed."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Step 1: Authenticate",
+            "Step 2: Call models",
+            "Authenticate and Read Records"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill outlines a multi-step procedure for authentication and method calls."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Get copy-paste ready RPC call code in ... JavaScript"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.javascript",
+          "reason": "The skill describes generating JavaScript code for API integration."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Get copy-paste ready RPC call code in Python",
+            "Example 1: Authenticate and Read Records (Python)"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "The skill explicitly provides Python code examples for authentication and CRUD operations."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Example 3: JSON-RPC via curl",
+            "curl -X POST ..."
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "The skill provides shell commands (curl) for interacting with the API."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Debug: Paste an error and get a diagnosis with a corrected call"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "The skill includes a debugging workflow for diagnosing API errors."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Store credentials in environment variables or a secrets manager"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Best practices require binding API keys and passwords to environment variables."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "curl -X POST https://myodoo.example.com/web/dataset/call_kw"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The curl command must be executed in a shell to send HTTP requests."
+        }
+      ]
+    },
+    "skill_id": "odoo_rpc_api_skill_md__d2d7723ac52d",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "azure-eventgrid-py",
+    "scr": {
+      "confidence": 0.819,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "event data is provided as Python dictionaries (JSON-like)",
+            "understanding CloudEvent and EventGridEvent data structures"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "The skill involves creating event data structures that must be correctly parsed and serialized, though the SDK abstracts most parsing."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "different endpoint types for custom topics vs namespace topics",
+            "specific event property requirements"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill imposes constraints on event types, properties, and endpoint configurations."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "step-by-step workflow from installation to publishing events",
+            "multiple event types and client variants (sync/async, custom topic/namespace)"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill outlines a multi-step procedure with branching (sync/async, CloudEvent/EventGridEvent, custom topic/namespace) that must be followed."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "multiple Python code examples for publishing events",
+            "CloudEvent and EventGridEvent class usage",
+            "async client pattern"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "The skill provides extensive Python code snippets for event publishing, requiring generation or adaptation of Python code."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "bash commands for installation and environment variables"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "The skill includes shell commands for pip install and setting environment variables, which need to be executed or adapted."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Environment Variables section with EVENTGRID_TOPIC_ENDPOINT and EVENTGRID_NAMESPACE_ENDPOINT",
+            "use of DefaultAzureCredential for authentication"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "The skill requires setting up environment variables and credentials for authentication."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "pip install commands",
+            "environment variable export commands"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill requires executing CLI commands for setup and potentially running Python scripts."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "pip install azure-eventgrid azure-identity"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "The skill explicitly uses pip to install required packages."
+        }
+      ]
+    },
+    "skill_id": "azure_eventgrid_py_skill_md__9ccfaa588674",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "azure-search-documents-dotnet",
+    "scr": {
+      "confidence": 0.789,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "1. **Use `DefaultAzureCredential`** over API keys for production"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Best practices impose constraints on the implementation (e.g., preferred authentication method)."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "## Installation",
+            "## Environment Variables",
+            "## Authentication",
+            "## Index Creation"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill outlines a clear multi-step procedure with branching (e.g., different authentication methods) that must be followed."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "```bash\nSEARCH_ENDPOINT=https://<search-service>.search.windows.net\n```"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "Setting environment variables and running setup commands requires shell script generation."
+        },
+        {
+          "confidence": 0.6,
+          "evidence": [
+            "```csharp\ntry { ... } catch (RequestFailedException ex) when (ex.Status == 404) { ... }\n```"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "Error handling examples require diagnosing and responding to failures."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "SEARCH_ENDPOINT=https://<search-service>.search.windows.net"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Environment variables need to be set before running the application."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "```bash\ndotnet add package Azure.Search.Documents\ndotnet add package Azure.Identity\n```"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Installation requires executing dotnet CLI commands."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "references/vector-search.md",
+            "references/semantic-search.md"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "The skill references external files that the agent may need to read for detailed patterns."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "```csharp\npublic class Hotel { ... }\n```"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Creating C# code files for index models, clients, and search logic requires writing files."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "dotnet add package Azure.Search.Documents"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "Adding NuGet packages via dotnet is a package manager operation."
+        }
+      ]
+    },
+    "skill_id": "azure_search_documents_dotnet_skill_md__18b0b66c3b7f",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "jobgpt",
+    "scr": {
+      "confidence": 0.825,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.75,
+          "evidence": [
+            "Auto-apply and resume generation consume credits",
+            "Ensure a resume is uploaded"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill must respect credit limits and prerequisites before performing operations."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Check credits first",
+            "Complete your profile",
+            "Upload a resume before applying"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill requires following a multi-step workflow: setup, profile completion, resume upload, job search, auto-apply, and tracking."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Check credits first",
+            "Monitor progress with get_application_stats"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "The skill includes verification steps like checking credit balance and monitoring application stats to ensure success."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Set the JOBGPT_API_KEY environment variable"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "The skill requires configuring the JOBGPT_API_KEY environment variable for the MCP server to authenticate."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "npx jobgpt-mcp-server",
+            "claude mcp add jobgpt"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill involves executing commands to start the MCP server or add it to the client."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "npx jobgpt-mcp-server",
+            "Install via npm"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "The skill may require installing the npm package, though npx can auto-run it."
+        }
+      ]
+    },
+    "skill_id": "jobgpt_skill_md__02c3a76e3ee2",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "defuddle",
+    "scr": {
+      "confidence": 0.9,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Use instead of WebFetch when the user provides a URL to read or analyze"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill includes a constraint to prefer Defuddle over other web fetching methods for standard web pages."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "If not installed: `npm install -g defuddle`"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "The agent may need to install Defuddle if it is not already available in the runtime environment."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "defuddle parse <url> --md",
+            "defuddle parse <url> --md -o content.md"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill requires running Defuddle CLI commands to extract content from web pages."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "npm install -g defuddle"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "The installation of Defuddle requires using a package manager (npm) to install the CLI tool globally."
+        }
+      ]
+    },
+    "skill_id": "defuddle_skill_md__7bf01f74ac6f",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "stability-ai",
+    "scr": {
+      "confidence": 0.82,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "--json",
+            "Metadados salvos em .meta.json"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "data.parse",
+          "reason": "Skill may need to parse JSON metadata or analyze prompts with JSON output."
+        },
+        {
+          "confidence": 0.7,
+          "evidence": [
+            "Community License: 150 requests/10 segundos",
+            "Limite diario: 100 imagens/dia"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Skill must respect rate limits and usage constraints to avoid errors."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Setup Rapido",
+            "1. Criar conta... 2. Copiar API Key... 3. Colar no .env... 4. pip install"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "Skill involves a multi-step procedure (setup, select mode, run) that must be followed."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "scripts/generate.py"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "The skill relies on a Python script, and the agent may need to generate or adapt Python code for custom operations."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "python scripts/generate.py --prompt \"a serene mountain landscape at sunset\" --mode generate"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.shell",
+          "reason": "Skill requires generating shell commands to invoke the Python script with various arguments."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "STABILITY_API_KEY=sk-sua-chave-aqui",
+            "Colar no .env"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Skill requires setting up the API key as an environment variable for authentication."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "python scripts/generate.py --prompt \"...\" --mode generate"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Skill requires executing CLI commands to run the generator script."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "--image foto.jpg",
+            "--mask mascara.png"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Skill requires reading input images, masks, and other files from the workspace."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Imagens salvas em data/outputs/",
+            "Metadados salvos em .meta.json"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Skill requires writing generated images and metadata to the file system."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "pip install -r scripts/requirements.txt"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "Skill requires installing Python dependencies before running the script."
+        }
+      ]
+    },
+    "skill_id": "stability_ai_skill_md__9d5723f354ad",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "akf-trust-metadata",
+    "scr": {
+      "confidence": 0.85,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "After creating or modifying files",
+            "Before modifying existing files"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill describes a multi-step procedure: stamp after modifications, read before modifications."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "akf audit <file> --regulation eu_ai_act",
+            "compliance auditing"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Audit commands verify compliance with regulations, acting as verification steps."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "akf stamp <file> --agent <agent-name> --evidence",
+            "akf read <file>",
+            "akf inspect <file>",
+            "akf audit <file> --regulation"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill requires executing akf CLI commands for stamping, reading, inspecting, and auditing files."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "akf read <file>",
+            "akf inspect <file>"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.read",
+          "reason": "Before modifying files, the agent must read existing trust metadata via akf commands."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "akf stamp <file>",
+            "stamps every file with trust scores"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "The stamp command modifies files by embedding metadata, requiring write access."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "pip install akf"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "The skill requires installing the akf package via pip."
+        }
+      ]
+    },
+    "skill_id": "akf_trust_metadata_skill_md__f282193e2093",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "go-playwright",
+    "scr": {
+      "confidence": 0.871,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "Never launch a new Browser instance for every task",
+            "Never use Fill()",
+            "Do not use fmt.Println"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "The skill enforces strict coding rules (architecture, logging, stealth) that must be followed precisely."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Summary Checklist for Agent"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill provides a multi-step checklist (debug mode, new identity, critical actions, target guarded) that guides the automation process."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "test",
+            "automation scripts"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.test",
+          "reason": "The skill is used to generate or modify Playwright test scripts for browser automation."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "debugging existing Playwright scripts"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "reason.diagnose",
+          "reason": "The skill includes diagnosing bugs or failures in existing automation scripts."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Requires Playwright drivers and browsers to be installed",
+            "environment dependencies"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "The skill requires setting up the runtime environment with Playwright and browser installations."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "use a real browser",
+            "browser automation",
+            "stealth techniques"
+          ],
+          "level": 3,
+          "method": "llm",
+          "primitive": "tool.browser",
+          "reason": "Core primitive for browser automation using Playwright, including launching, navigating, and interacting with web pages."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "go run github.com/playwright-community/playwright-go/cmd/playwright@latest install --with-deps"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "Necessary to run CLI commands for installing browser dependencies and executing Go scripts."
+        }
+      ]
+    },
+    "skill_id": "go_playwright_skill_md__71d4c63c1844",
+    "source": "local.cc-switch"
+  },
+  {
+    "name": "pipecat-friday-agent",
+    "scr": {
+      "confidence": 0.887,
+      "method": "llm",
+      "requirements": [
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Use Silero VAD",
+            "Concise Prompts",
+            "Sample Rate Match",
+            "No Polite Fillers"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.constraints",
+          "reason": "Best practices impose constraints on implementation for optimal performance."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Step 1: Install Dependencies",
+            "Step 2: Configure Environment",
+            "Step 3: Run the Agent"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.procedure",
+          "reason": "The skill defines a clear multi-step procedure that must be followed."
+        },
+        {
+          "confidence": 0.8,
+          "evidence": [
+            "Check your OUTPUT_DEVICE index",
+            "Run a script like test_audio_output.py to find the correct hardware index"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "follow.verify",
+          "reason": "Troubleshooting steps include verification actions to ensure correct audio output."
+        },
+        {
+          "confidence": 0.85,
+          "evidence": [
+            "Execute the provided Python script",
+            "includes a GoogleSafeContext and GoogleSafeMessage class to bridge the gap"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "gen.code.python",
+          "reason": "The skill involves generating or adapting Python code for the voice agent pipeline and compatibility shim."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Create a .env file with your API keys",
+            "pip install"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "runtime.env_bind",
+          "reason": "Environment setup with API keys and dependencies is required for the agent to run."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "pip install pipecat-ai[openai,google,silero] python-dotenv",
+            "python scripts/friday_agent.py",
+            "Run a script like test_audio_output.py"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.exec",
+          "reason": "The skill requires executing shell commands for installation, running the agent, and troubleshooting audio output."
+        },
+        {
+          "confidence": 0.9,
+          "evidence": [
+            "Create a .env file with your API keys"
+          ],
+          "level": 1,
+          "method": "llm",
+          "primitive": "tool.file.write",
+          "reason": "Configuration file creation is needed to store API keys."
+        },
+        {
+          "confidence": 0.95,
+          "evidence": [
+            "pip install pipecat-ai[openai,google,silero] python-dotenv"
+          ],
+          "level": 2,
+          "method": "llm",
+          "primitive": "tool.package_manager",
+          "reason": "Dependencies must be installed via pip, which is a package manager action."
+        }
+      ]
+    },
+    "skill_id": "pipecat_friday_agent_skill_md__de130e464b19",
+    "source": "local.cc-switch"
+  }
+]

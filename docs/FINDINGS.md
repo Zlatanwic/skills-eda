@@ -6,17 +6,17 @@ Important distinction: SkVM TCP profiles are imported official data from SkVM-da
 
 ## Data Snapshot
 
-- Corpus size: 1,643 skills.
-- Data sources: local `.cc-switch`, local `.agents`, local `.codex`, and SkVM benchmark skills.
+- Corpus size: 1,739 skills.
+- Data sources: local `.cc-switch`, local `.agents`, local `.codex`, SkVM benchmark skills, and public GitHub skills.
 - TCP profiles: 25 model/harness profiles.
 - Harnesses: `bare-agent`, `hermes`, `openclaw`.
 - Models: 12 unique models.
 
 ## Main Findings
 
-### 1. Procedure-following dominates the skill corpus
+### 1. Procedure-following and verification dominate the skill corpus
 
-The most common derived primitive is `follow.procedure`, appearing in 1,427 skills, or 86.9% of the corpus. This supports the project framing that skills are closer to natural-language workflows than ordinary documentation snippets.
+The most common derived primitive is now `follow.procedure`, appearing in 1,496 skills, or 86.0% of the corpus. Verification is nearly tied as the second strongest signal. This supports the project framing that skills encode action plus validation logic, not ordinary documentation snippets.
 
 Related dashboard view: `Findings`, `Primitives -> Primitive demand ranking`.
 
@@ -28,7 +28,7 @@ Related dashboard view: `Findings`, `Primitives -> Workflow complexity map`, sel
 
 ### 3. `doc.generate` is the largest portability bottleneck
 
-Across the SCR/TCP comparison, `doc.generate` has the largest aggregate gap score at 17,059. Other high bottlenecks include `reason.plan`, `data.parse`, `data.transform`, and `tool.github`.
+Across the SCR/TCP comparison, `doc.generate` has the largest aggregate gap score at 18,068. Other high bottlenecks include `reason.plan`, `data.parse`, `data.transform`, and `tool.github`.
 
 Interpretation: writing structured or long-form outputs, planning, data handling, and GitHub/web-mediated work are recurring weak points when skill requirements are compared against available target profiles.
 
@@ -36,7 +36,7 @@ Related dashboard view: `Risks -> Portability Risk`, `Primitives -> Bottleneck p
 
 ### 4. Target compatibility varies strongly by model/harness pair
 
-The best observed target profile is `deepseek-v4-pro / openclaw`, with an average gap of 0.341. The weakest target in the current profiles is `qwen3.5-9b / openclaw`, with an average gap of 19.358.
+The best observed target profile is `deepseek-v4-pro / openclaw`, with an average gap of 0.339. The weakest target in the current profiles is `qwen3.5-9b / openclaw`, with an average gap of 19.459.
 
 This makes the model/harness pair a useful unit of analysis: the same skill corpus can look much more or less portable depending on runtime and model pairing.
 
@@ -50,14 +50,14 @@ Related dashboard view: `Risks -> Risk by taxonomy`, `Dependency / Environment R
 
 ### 6. Environment dependencies are common
 
-1,038 of 1,643 skills, or 63.2%, mention dependencies, credentials, packages, environment variables, or setup hints. The largest environment categories are:
+1,107 of 1,739 skills, or 63.7%, mention dependencies, credentials, packages, environment variables, or setup hints. The largest environment categories are:
 
-- `system cli`: 1,018 skills
-- `version control`: 978 skills
-- `web/browser`: 942 skills
-- `runtime`: 811 skills
-- `credentials`: 707 skills
-- `package managers`: 389 skills
+- `system cli`: 1,090 skills
+- `version control`: 1,036 skills
+- `web/browser`: 1,002 skills
+- `runtime`: 865 skills
+- `credentials`: 761 skills
+- `package managers`: 419 skills
 
 This supports the idea that environment mismatch is not a marginal issue for skills; it is a visible part of the ecosystem.
 
@@ -78,8 +78,9 @@ Related dashboard view: `Risks -> Rewrite / compilation priority`.
 ## Limitations
 
 - SCR labels are derived by project rules, not official SkVM labels.
+- 20 SkVM benchmark skills currently have merged `rule+llm` SCR annotations from the configured LLM API, but most labels remain rule-derived.
 - The primitive mapping from project primitives to SkVM TCP primitives is approximate for extra project-specific primitives such as `tool.github`, `data.visualize`, and `runtime.env_bind`.
-- Public skills sampling is not yet implemented, so current findings compare local skills and SkVM benchmark data.
+- Public skills sampling is implemented and the current generated dataset contains 96 `public.github` records. This is useful for initial comparison, but still too small to represent the full public skill ecosystem.
 - The current environment risk detector is keyword-based. It is useful for EDA, but should be validated manually before making strong claims.
 - The dashboard does not implement SkVM AOT compilation, JIT code solidification, adaptive recompilation, runtime scheduling, or task-level performance evaluation.
 

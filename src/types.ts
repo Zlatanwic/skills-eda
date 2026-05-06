@@ -92,6 +92,43 @@ export interface SkvmAlignment {
   primitive_mapping: Array<{ project_primitive: string; skvm_primitive: string }>;
 }
 
+export interface AdvancedEdaSummary {
+  primitive_cooccurrence: {
+    primitives: string[];
+    cells: Array<[number, number, number]>;
+  };
+  taxonomy_primitive_sankey: {
+    nodes: Array<{ name: string }>;
+    links: Array<{ source: string; target: string; value: number }>;
+  };
+  source_language_heatmap: {
+    sources: string[];
+    languages: string[];
+    cells: Array<[string, string, number]>;
+  };
+  skill_primitive_matrix: {
+    skills: Array<{ skill_id: string; name: string; source: string; risk: number }>;
+    primitives: string[];
+    cells: Array<[number, number, number]>;
+  };
+  length_histogram: CountItem[];
+  step_histogram: CountItem[];
+  pca_projection: {
+    method: string;
+    features: string[];
+    points: Array<{
+      skill_id: string;
+      name: string;
+      source: string;
+      taxonomy: string;
+      risk: number;
+      x: number;
+      y: number;
+      cluster: number;
+    }>;
+  };
+}
+
 export interface RiskScore {
   model_mismatch: number;
   harness_mismatch: number;
@@ -132,6 +169,7 @@ export interface DashboardSummary {
   prioritization: PrioritizedSkill[];
   validation_sample: ValidationSampleItem[];
   skvm_alignment: SkvmAlignment;
+  advanced: AdvancedEdaSummary;
   findings: FindingItem[];
 }
 

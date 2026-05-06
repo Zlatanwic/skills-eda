@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import Counter, defaultdict
+import math
 from statistics import mean
 from typing import Any
 
@@ -14,6 +15,13 @@ except ImportError:
 
 def top_items(counter: Counter, limit: int = 30) -> list[dict[str, Any]]:
     return [{"name": name, "count": count} for name, count in counter.most_common(limit)]
+
+
+def bucket_numeric(value: int, buckets: list[tuple[str, int | None]]) -> str:
+    for label, upper in buckets:
+        if upper is None or value <= upper:
+            return label
+    return buckets[-1][0]
 
 
 def bucket_length(char_count: int) -> str:
@@ -232,6 +240,266 @@ def build_skvm_alignment() -> dict[str, Any]:
     }
 
 
+def build_advanced_eda(records: list[dict[str, Any]]) -> dict[str, Any]:
+    primitive_counts = Counter(
+        requirement["primitive"]
+        for record in records
+        for requirement in record["scr"]["requirements"]
+    )
+    top_primitives = [item for item, _count in primitive_counts.most_common(18)]
+    top_primitive_set = set(top_primitives)
+
+    pair_counts: Counter[tuple[str, str]] = Counter()
+    taxonomy_primitive: Counter[tuple[str, str]] = Counter()
+    source_language: Counter[tuple[str, str]] = Counter()
+
+    for record in records:
+        primitives = sorted({
+            requirement["primitive"]
+            for requirement in record["scr"]["requirements"]
+            if requirement["primitive"] in top_primitive_set
+        })
+        for index, left in enumerate(primitives):
+            for right in primitives[index + 1 :]:
+                pair_counts[(left, right)] += 1
+        taxonomy = record["taxonomy"]["primary_type"]
+        for primitive in primitives:
+            taxonomy_primitive[(taxonomy, primitive)] += 1
+        for language, count in record["features"].get("code_languages", {}).items():
+            source_language[(record["source"], language or "plain")] += int(count)
+
+    risky_or_diverse = sorted(
+        records,
+        key=lambda record: (
+            record["risks"]["overall"],
+            len(record["scr"]["requirements"]),
+            record["features"]["step_count"],
+        ),
+        reverse=True,
+    )[:36]
+    matrix_primitives = top_primitives[:16]
+    skill_primitive_cells = []
+    for skill_index, record in enumerate(risky_or_diverse):
+        levels = {
+            requirement["primitive"]: requirement["level"]
+            for requirement in record["scr"]["requirements"]
+        }
+        for primitive_index, primitive in enumerate(matrix_primitives):
+            level = levels.get(primitive, 0)
+            if level:
+                skill_primitive_cells.append([primitive_index, skill_index, level])
+
+    length_buckets = [
+        ("<1k", 999),
+        ("1k-3k", 2999),
+        ("3k-7k", 6999),
+        ("7k-15k", 14999),
+        ("15k-30k", 29999),
+        ("30k+", None),
+    ]
+    step_buckets = [
+        ("0", 0),
+        ("1-2", 2),
+        ("3-5", 5),
+        ("6-10", 10),
+        ("11-20", 20),
+        ("20+", None),
+    ]
+    length_hist = Counter(bucket_numeric(record["features"]["char_count"], length_buckets) for record in records)
+    step_hist = Counter(bucket_numeric(record["features"]["step_count"], step_buckets) for record in records)
+
+    projection = build_pca_projection(records, top_primitives[:14])
+
+    return {
+        "primitive_cooccurrence": {
+            "primitives": top_primitives,
+            "cells": [
+                [top_primitives.index(left), top_primitives.index(right), count]
+                for (left, right), count in pair_counts.most_common(180)
+                if left in top_primitive_set and right in top_primitive_set
+            ],
+        },
+        "taxonomy_primitive_sankey": {
+            "nodes": [{"name": name} for name in sorted({key[0] for key in taxonomy_primitive} | set(top_primitives))],
+            "links": [
+                {"source": taxonomy, "target": primitive, "value": count}
+                for (taxonomy, primitive), count in taxonomy_primitive.most_common(80)
+            ],
+        },
+        "source_language_heatmap": {
+            "sources": sorted({source for source, _language in source_language}),
+            "languages": [language for language, _count in Counter({
+                language: sum(count for (source, lang), count in source_language.items() if lang == language)
+                for _source, language in source_language
+            }).most_common(16)],
+            "cells": [
+                [source, language, count]
+                for (source, language), count in source_language.items()
+            ],
+        },
+        "skill_primitive_matrix": {
+            "skills": [
+                {
+                    "skill_id": record["skill_id"],
+                    "name": record["name"],
+                    "source": record["source"],
+                    "risk": record["risks"]["overall"],
+                }
+                for record in risky_or_diverse
+            ],
+            "primitives": matrix_primitives,
+            "cells": skill_primitive_cells,
+        },
+        "length_histogram": [{"name": label, "count": length_hist[label]} for label, _upper in length_buckets],
+        "step_histogram": [{"name": label, "count": step_hist[label]} for label, _upper in step_buckets],
+        "pca_projection": projection,
+    }
+
+
+def build_pca_projection(records: list[dict[str, Any]], primitive_features: list[str]) -> dict[str, Any]:
+    selected = sorted(
+        records,
+        key=lambda record: (
+            record["risks"]["overall"],
+            len(record["scr"]["requirements"]),
+            record["features"]["char_count"],
+        ),
+        reverse=True,
+    )[:700]
+    if not selected:
+        return {"method": "pca+kmeans", "features": [], "points": []}
+
+    feature_names = [
+        "log_chars",
+        "log_words",
+        "sections",
+        "code_blocks",
+        "steps",
+        "dependencies",
+        "tools",
+        "branching",
+        "loop",
+        "verification",
+        *[f"primitive:{primitive}" for primitive in primitive_features],
+    ]
+    rows: list[list[float]] = []
+    for record in selected:
+        features = record["features"]
+        levels = {
+            requirement["primitive"]: requirement["level"]
+            for requirement in record["scr"]["requirements"]
+        }
+        rows.append(
+            [
+                math.log1p(features["char_count"]),
+                math.log1p(features["word_count"]),
+                float(features["section_count"]),
+                float(features["code_block_count"]),
+                float(features["step_count"]),
+                float(features["dependency_count"]),
+                float(features["tool_count"]),
+                1.0 if features["has_branching"] else 0.0,
+                1.0 if features["has_loop"] else 0.0,
+                1.0 if features["has_verification"] else 0.0,
+                *[float(levels.get(primitive, 0)) for primitive in primitive_features],
+            ]
+        )
+
+    standardized = standardize(rows)
+    components = pca_components(standardized, 2)
+    coords = project_rows(standardized, components)
+    clusters = kmeans(coords, k=4, iterations=16)
+
+    return {
+        "method": "standardized structural/SCR features + PCA projection + k-means clusters",
+        "features": feature_names,
+        "points": [
+            {
+                "skill_id": record["skill_id"],
+                "name": record["name"],
+                "source": record["source"],
+                "taxonomy": record["taxonomy"]["primary_type"],
+                "risk": record["risks"]["overall"],
+                "x": round(coords[index][0], 4),
+                "y": round(coords[index][1], 4),
+                "cluster": clusters[index],
+            }
+            for index, record in enumerate(selected)
+        ],
+    }
+
+
+def standardize(rows: list[list[float]]) -> list[list[float]]:
+    cols = len(rows[0])
+    means = [mean(row[col] for row in rows) for col in range(cols)]
+    stds = []
+    for col in range(cols):
+        variance = mean((row[col] - means[col]) ** 2 for row in rows)
+        stds.append(math.sqrt(variance) or 1.0)
+    return [[(row[col] - means[col]) / stds[col] for col in range(cols)] for row in rows]
+
+
+def pca_components(rows: list[list[float]], count: int) -> list[list[float]]:
+    cols = len(rows[0])
+    covariance = [
+        [mean(row[i] * row[j] for row in rows) for j in range(cols)]
+        for i in range(cols)
+    ]
+    components: list[list[float]] = []
+    working = [row[:] for row in covariance]
+    for seed in range(count):
+        vector = [1.0 / math.sqrt(cols) for _ in range(cols)]
+        if seed == 1 and cols > 1:
+            vector = [(-1.0 if index % 2 else 1.0) / math.sqrt(cols) for index in range(cols)]
+        for _ in range(40):
+            next_vector = [
+                sum(working[row][col] * vector[col] for col in range(cols))
+                for row in range(cols)
+            ]
+            norm = math.sqrt(sum(value * value for value in next_vector)) or 1.0
+            vector = [value / norm for value in next_vector]
+        components.append(vector)
+        eigenvalue = sum(
+            vector[i] * sum(working[i][j] * vector[j] for j in range(cols))
+            for i in range(cols)
+        )
+        for i in range(cols):
+            for j in range(cols):
+                working[i][j] -= eigenvalue * vector[i] * vector[j]
+    return components
+
+
+def project_rows(rows: list[list[float]], components: list[list[float]]) -> list[list[float]]:
+    return [
+        [sum(row[index] * component[index] for index in range(len(row))) for component in components]
+        for row in rows
+    ]
+
+
+def kmeans(points: list[list[float]], k: int, iterations: int) -> list[int]:
+    if not points:
+        return []
+    k = min(k, len(points))
+    ordered = sorted(points, key=lambda point: (point[0], point[1]))
+    centers = [ordered[round(index * (len(ordered) - 1) / max(1, k - 1))][:] for index in range(k)]
+    assignments = [0 for _ in points]
+    for _ in range(iterations):
+        for index, point in enumerate(points):
+            assignments[index] = min(
+                range(k),
+                key=lambda cluster: (point[0] - centers[cluster][0]) ** 2 + (point[1] - centers[cluster][1]) ** 2,
+            )
+        for cluster in range(k):
+            cluster_points = [point for index, point in enumerate(points) if assignments[index] == cluster]
+            if not cluster_points:
+                continue
+            centers[cluster] = [
+                mean(point[dimension] for point in cluster_points)
+                for dimension in range(len(points[0]))
+            ]
+    return assignments
+
+
 def build_findings(
     records: list[dict[str, Any]],
     summary: dict[str, Any],
@@ -406,6 +674,7 @@ def summarize(records: list[dict[str, Any]]) -> dict[str, Any]:
         "prioritization": build_prioritization(records),
         "validation_sample": build_validation_sample(records),
         "skvm_alignment": build_skvm_alignment(),
+        "advanced": build_advanced_eda(records),
         "findings": [],
     }
     portability = read_json(DASHBOARD_DIR / "portability.json") if (DASHBOARD_DIR / "portability.json").exists() else None

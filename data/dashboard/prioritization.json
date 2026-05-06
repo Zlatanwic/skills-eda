@@ -42,6 +42,20 @@
     "taxonomy": "procedural"
   },
   {
+    "code_block_count": 44,
+    "environment_mismatch": 1.0,
+    "name": "skill",
+    "overall_risk": 0.383,
+    "primitive_count": 22,
+    "priority_score": 0.671,
+    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+    "scr_confidence": 0.81,
+    "skill_id": "skill_md__f48eedb878ee",
+    "source": "public.github",
+    "step_count": 14,
+    "taxonomy": "tool-reference"
+  },
+  {
     "code_block_count": 25,
     "environment_mismatch": 1.0,
     "name": "convex",
@@ -126,6 +140,20 @@
     "taxonomy": "procedural"
   },
   {
+    "code_block_count": 33,
+    "environment_mismatch": 1.0,
+    "name": "SKILL",
+    "overall_risk": 0.399,
+    "primitive_count": 20,
+    "priority_score": 0.661,
+    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+    "scr_confidence": 0.841,
+    "skill_id": "skill_md__a24e1f109766",
+    "source": "public.github",
+    "step_count": 8,
+    "taxonomy": "tool-reference"
+  },
+  {
     "code_block_count": 12,
     "environment_mismatch": 1.0,
     "name": "docker-expert",
@@ -138,6 +166,34 @@
     "source": "local.cc-switch",
     "step_count": 38,
     "taxonomy": "procedural"
+  },
+  {
+    "code_block_count": 20,
+    "environment_mismatch": 1.0,
+    "name": "aws-deploy",
+    "overall_risk": 0.376,
+    "primitive_count": 21,
+    "priority_score": 0.66,
+    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+    "scr_confidence": 0.826,
+    "skill_id": "skill_md__27167b60844c",
+    "source": "public.github",
+    "step_count": 49,
+    "taxonomy": "procedural"
+  },
+  {
+    "code_block_count": 21,
+    "environment_mismatch": 1.0,
+    "name": "cli",
+    "overall_risk": 0.393,
+    "primitive_count": 20,
+    "priority_score": 0.66,
+    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+    "scr_confidence": 0.826,
+    "skill_id": "skill_md__2ae015ffc364",
+    "source": "public.github",
+    "step_count": 12,
+    "taxonomy": "tool-reference"
   },
   {
     "code_block_count": 9,
@@ -238,6 +294,34 @@
     "taxonomy": "tool-reference"
   },
   {
+    "code_block_count": 26,
+    "environment_mismatch": 0.94,
+    "name": "mini-wiki",
+    "overall_risk": 0.362,
+    "primitive_count": 22,
+    "priority_score": 0.65,
+    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+    "scr_confidence": 0.812,
+    "skill_id": "skill_md__a96fe56718b8",
+    "source": "public.github",
+    "step_count": 39,
+    "taxonomy": "procedural"
+  },
+  {
+    "code_block_count": 12,
+    "environment_mismatch": 0.94,
+    "name": "SKILL",
+    "overall_risk": 0.368,
+    "primitive_count": 21,
+    "priority_score": 0.647,
+    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+    "scr_confidence": 0.799,
+    "skill_id": "skill_md__b34aee145f8c",
+    "source": "public.github",
+    "step_count": 38,
+    "taxonomy": "tool-reference"
+  },
+  {
     "code_block_count": 12,
     "environment_mismatch": 1.0,
     "name": "pydantic-ai",
@@ -245,7 +329,7 @@
     "primitive_count": 18,
     "priority_score": 0.645,
     "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.791,
+    "scr_confidence": 0.793,
     "skill_id": "pydantic_ai_skill_md__9e7a3fa1f7c0",
     "source": "local.cc-switch",
     "step_count": 10,
@@ -378,6 +462,20 @@
     "taxonomy": "procedural"
   },
   {
+    "code_block_count": 34,
+    "environment_mismatch": 1.0,
+    "name": "azure-appconfiguration-java",
+    "overall_risk": 0.376,
+    "primitive_count": 16,
+    "priority_score": 0.634,
+    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+    "scr_confidence": 0.754,
+    "skill_id": "azure_appconfiguration_java_skill_md__0b310ee9d6ee",
+    "source": "local.cc-switch",
+    "step_count": 8,
+    "taxonomy": "tool-reference"
+  },
+  {
     "code_block_count": 14,
     "environment_mismatch": 1.0,
     "name": "security-auditor",
@@ -448,20 +546,6 @@
     "taxonomy": "procedural"
   },
   {
-    "code_block_count": 34,
-    "environment_mismatch": 1.0,
-    "name": "azure-appconfiguration-java",
-    "overall_risk": 0.38,
-    "primitive_count": 15,
-    "priority_score": 0.628,
-    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.763,
-    "skill_id": "azure_appconfiguration_java_skill_md__0b310ee9d6ee",
-    "source": "local.cc-switch",
-    "step_count": 8,
-    "taxonomy": "tool-reference"
-  },
-  {
     "code_block_count": 9,
     "environment_mismatch": 0.94,
     "name": "claimable-postgres",
@@ -490,6 +574,34 @@
     "taxonomy": "tool-reference"
   },
   {
+    "code_block_count": 20,
+    "environment_mismatch": 1.0,
+    "name": "azure-monitor-query-java",
+    "overall_risk": 0.374,
+    "primitive_count": 15,
+    "priority_score": 0.626,
+    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+    "scr_confidence": 0.758,
+    "skill_id": "azure_monitor_query_java_skill_md__0958363e68b1",
+    "source": "local.cc-switch",
+    "step_count": 7,
+    "taxonomy": "tool-reference"
+  },
+  {
+    "code_block_count": 30,
+    "environment_mismatch": 1.0,
+    "name": "aws-serverless",
+    "overall_risk": 0.373,
+    "primitive_count": 16,
+    "priority_score": 0.626,
+    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+    "scr_confidence": 0.828,
+    "skill_id": "skill_md__d130f72e7e97",
+    "source": "public.github",
+    "step_count": 43,
+    "taxonomy": "procedural"
+  },
+  {
     "code_block_count": 3,
     "environment_mismatch": 1.0,
     "name": "api-security-best-practices",
@@ -516,20 +628,6 @@
     "source": "local.cc-switch",
     "step_count": 50,
     "taxonomy": "procedural"
-  },
-  {
-    "code_block_count": 20,
-    "environment_mismatch": 1.0,
-    "name": "azure-monitor-query-java",
-    "overall_risk": 0.378,
-    "primitive_count": 14,
-    "priority_score": 0.62,
-    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.77,
-    "skill_id": "azure_monitor_query_java_skill_md__0958363e68b1",
-    "source": "local.cc-switch",
-    "step_count": 7,
-    "taxonomy": "tool-reference"
   },
   {
     "code_block_count": 1,
@@ -599,104 +697,6 @@
     "skill_id": "turing_pyramid_skill_md__b541503f5551",
     "source": "skvm.benchmark",
     "step_count": 33,
-    "taxonomy": "procedural"
-  },
-  {
-    "code_block_count": 21,
-    "environment_mismatch": 0.84,
-    "name": "claude-code-expert",
-    "overall_risk": 0.342,
-    "primitive_count": 22,
-    "priority_score": 0.617,
-    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.84,
-    "skill_id": "claude_code_expert_skill_md__0d2950c45afc",
-    "source": "local.cc-switch",
-    "step_count": 13,
-    "taxonomy": "tool-reference"
-  },
-  {
-    "code_block_count": 6,
-    "environment_mismatch": 1.0,
-    "name": "code-review-checklist",
-    "overall_risk": 0.391,
-    "primitive_count": 14,
-    "priority_score": 0.616,
-    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.859,
-    "skill_id": "code_review_checklist_skill_md__b67a39ffd8dd",
-    "source": "local.cc-switch",
-    "step_count": 88,
-    "taxonomy": "procedural"
-  },
-  {
-    "code_block_count": 30,
-    "environment_mismatch": 0.94,
-    "name": "hugging-face-datasets",
-    "overall_risk": 0.36,
-    "primitive_count": 17,
-    "priority_score": 0.616,
-    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.814,
-    "skill_id": "hugging_face_datasets_skill_md__fed06792d5b4",
-    "source": "local.cc-switch",
-    "step_count": 1,
-    "taxonomy": "tool-reference"
-  },
-  {
-    "code_block_count": 9,
-    "environment_mismatch": 1.0,
-    "name": "azure-cosmos-db-py",
-    "overall_risk": 0.356,
-    "primitive_count": 17,
-    "priority_score": 0.615,
-    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.794,
-    "skill_id": "azure_cosmos_db_py_skill_md__fd315d8c852f",
-    "source": "local.cc-switch",
-    "step_count": 9,
-    "taxonomy": "tool-reference"
-  },
-  {
-    "code_block_count": 4,
-    "environment_mismatch": 0.84,
-    "name": "shadcn",
-    "overall_risk": 0.341,
-    "primitive_count": 21,
-    "priority_score": 0.615,
-    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.796,
-    "skill_id": "shadcn_skill_md__5830b87dd6aa",
-    "source": "local.cc-switch",
-    "step_count": 17,
-    "taxonomy": "tool-reference"
-  },
-  {
-    "code_block_count": 6,
-    "environment_mismatch": 1.0,
-    "name": "apify-actor-development",
-    "overall_risk": 0.376,
-    "primitive_count": 20,
-    "priority_score": 0.611,
-    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.832,
-    "skill_id": "apify_actor_development_skill_md__f98c0d6d5a35",
-    "source": "local.cc-switch",
-    "step_count": 8,
-    "taxonomy": "tool-reference"
-  },
-  {
-    "code_block_count": 18,
-    "environment_mismatch": 0.94,
-    "name": "devcontainer-setup",
-    "overall_risk": 0.344,
-    "primitive_count": 17,
-    "priority_score": 0.61,
-    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.812,
-    "skill_id": "devcontainer_setup_skill_md__d61826a8065c",
-    "source": "local.cc-switch",
-    "step_count": 22,
     "taxonomy": "procedural"
   }
 ]

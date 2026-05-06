@@ -4,23 +4,23 @@
 
 各位老师好，我这次《探索性数据分析与可视化技术》课程项目的题目是 **SkillScope: LLM Agent Skills 的探索性分析与可视化**。
 
-这个项目受 SkVM 论文启发。SkVM 的核心观点是：现在很多 LLM agent 系统都会使用 skills，而 skills 不应该只被看成普通 prompt 或补充上下文。很多 skills 其实包含多步骤工作流、工具调用、代码片段、依赖配置、验证步骤和运行环境假设。因此，它们更像一种 **自然语言程序**。
+这个项目受 SkVM 论文启发。SkVM 的一个核心观点是：LLM agent 系统里的 skills 不应该只被看作普通 prompt 或补充上下文。很多 skills 实际上包含多步骤工作流、工具调用、代码片段、依赖配置、验证步骤和运行环境假设。因此，它们更像一种 **自然语言程序**。
 
-我的项目不是复现 SkVM 的编译器和运行时，而是从探索性数据分析的角度出发，把 skills 当作一种新的数据对象，分析它们的结构、能力需求、工具依赖和迁移风险，并用 dashboard 的形式进行交互式可视化。
+我的项目不是复现 SkVM 的 compiler/runtime，而是从探索性数据分析的角度出发，把 skills 当作一种新的数据对象，分析它们的结构、能力需求、工具依赖、运行环境风险和跨 model/harness 的迁移风险，并用 dashboard 网站进行交互式可视化。
 
-## 1. 背景与问题
+## 1. 背景与研究问题
 
-随着 LLM agent 的发展，skills 正在成为一种重要的复用单位。比如一个 skill 可以告诉 agent 如何做代码审查、如何使用 GitHub、如何生成文档、如何分析数据，或者如何调用某个工具链。
+随着 LLM agent 的发展，skills 正在成为一种重要的复用单位。一个 skill 可以告诉 agent 如何做代码审查、如何使用 GitHub、如何生成文档、如何分析数据，或者如何调用某个工具链。
 
 但是当前 skills 的使用存在几个问题。
 
-第一，skills 经常被直接塞进模型上下文里，系统并不会真正理解这个 skill 对模型能力和运行环境有什么要求。
+第一，skills 经常被直接塞进模型上下文，系统并不会真正理解这个 skill 对模型能力和运行环境有什么要求。
 
-第二，不同模型和不同 agent harness 的能力并不一样。一个 skill 在某个模型和 harness 上能工作，不代表换一个模型或换一个运行框架还能正常工作。
+第二，不同模型和不同 agent harness 的能力并不一样。一个 skill 在某个 model/harness 上能工作，不代表换一个模型或换一个运行框架还能正常工作。
 
-第三，很多 skills 依赖外部环境，比如 Python、Node、npm、pip、Git、GitHub、API key、浏览器、Docker 等。如果环境不匹配，skill 可能会失败，或者让 agent 花很多额外 token 去诊断和修复环境。
+第三，很多 skills 依赖外部环境，比如 Python、Node、npm、pip、Git、GitHub、API key、浏览器和 Docker。如果环境不匹配，skill 可能会失败，或者让 agent 花很多额外成本去诊断环境。
 
-所以我的项目主要想回答以下几个研究问题：
+因此这个项目主要回答以下问题：
 
 1. skills 最常要求哪些 primitive capabilities？
 2. 不同来源和不同类型的 skills，在结构和风险上有什么差异？
@@ -28,79 +28,85 @@
 4. skill fragility 更多来自 model mismatch，还是 harness mismatch？
 5. 哪些 primitive capabilities 最容易成为 portability bottleneck？
 6. 环境依赖是不是 skills 迁移风险的重要来源？
-7. 哪些 skills 应该被优先重写、优化或者未来编译？
+7. 能不能用共现、降维和聚类方法发现 skill 家族、异常点和高风险区域？
+8. 哪些 skills 应该被优先重写、优化或者未来编译？
 
-这些问题正好对应探索性数据分析的目标：不是先假设一个确定答案，而是通过数据和可视化逐步发现结构、异常、模式和关系。
+这些问题对应探索性数据分析的目标：不是先假设一个确定答案，而是通过数据、统计特征和可视化逐步发现结构、关系、异常和模式。
 
-## 2. 数据来源
+## 2. 数据来源与当前状态
 
-当前项目主要使用三类数据。
+当前项目主要使用三类数据接口。
 
 第一类是本机 local skills，包括 `.cc-switch`、`.agents`、`.codex` 等目录下的 `SKILL.md` 文件。这部分数据可以反映我本机 agent skills 生态的实际情况。
 
 第二类是 SkVM benchmark skills。SkVM-data 中提供了一批 benchmark skills 和 task 数据，我把其中的 skills 导入到项目中，作为和论文更直接对齐的参考样本。
 
-第三类是 SkVM TCP profiles。TCP 的意思是 Target Capability Profile，也就是某个 model/harness 组合具备哪些 primitive capabilities，以及对应能力等级。当前项目导入了 25 个 TCP profiles，覆盖 3 个 harness 和 12 个模型。
+第三类是 SkVM TCP profiles。TCP 是 Target Capability Profile，也就是某个 model/harness 组合具备哪些 primitive capabilities，以及对应能力等级。当前项目导入了 25 个 TCP profiles，覆盖 3 个 harness 和 12 个模型。
 
-这里有一个非常重要的区分：
+第四类是 public GitHub skills。项目补充实现了公开 skills 采样脚本 `scripts/collect_public_skills.py`，它可以通过 GitHub code search 采样公开的 `SKILL.md` 文件，并接入完整 pipeline。当前数据快照已经采集到 96 条 `public.github` skills。因此当前 dashboard 不再只是 local + SkVM 的对比，而是包含 **本机 skills、SkVM benchmark skills 和公开 GitHub skills 样本** 的三路语料分析。
 
-- **TCP profiles 是从 SkVM-data 导入的官方数据。**
-- **SCR labels 是本项目从 skill 文本中派生出来的标签。**
+这里还有一个非常重要的区分：
+
+- **TCP profiles 是从 SkVM-data 导入的官方 target capability 数据。**
+- **SCR labels 是本项目从 skill 文本中派生出来的能力需求标签。**
 
 SCR 的意思是 Skill Capability Requirement，也就是一个 skill 对 primitive capability 的需求。比如一个 skill 如果要求执行 shell 命令、读写文件、调用 GitHub、生成 Python 代码，那么它就会有对应的 primitive requirement。
 
+当前数据快照包含：
+
+- 1,739 个 skills
+- 25 个 TCP profiles
+- 3 个 harness：`bare-agent`、`hermes`、`openclaw`
+- 12 个模型
+
+其中 source mix 大致为：
+
+- `local.cc-switch`：1,455
+- `skvm.benchmark`：106
+- `public.github`：96
+- `local.agents`：68
+- `local.codex`：14
+
 ## 3. 分析流程
 
-整个项目的数据处理流程可以概括为：
+整个数据处理流程可以概括为：
 
-`Skill Markdown -> Feature Extraction -> Taxonomy -> SCR Extraction -> SCR/TCP Gap -> Dashboard`
+`Skill Markdown -> Feature Extraction -> Taxonomy -> SCR Extraction -> SCR/TCP Gap -> Advanced EDA -> Dashboard`
 
 第一步是收集和标准化 skills，把不同来源的 `SKILL.md` 转成统一 JSON 记录。
 
-第二步是做结构特征提取，包括：
+第二步是做结构特征提取，包括字符数、词数、section 数、code block 数、step count、branching、loop、verification、工具证据和依赖证据。
 
-- 字符数和词数
-- markdown section 数
-- code block 数
-- step count
-- 是否包含 branching
-- 是否包含 loop
-- 是否包含 verification
-- 工具证据
-- 依赖证据
+第三步是 taxonomy 分类，把 skills 初步分为 `tool-reference`、`procedural`、`generative` 和 `mixed`，同时提取 domain tags，例如 code、data、document、web、security、research、agent、cloud。
 
-第三步是 taxonomy 分类，把 skills 初步分为：
+第四步是 SCR extraction。项目首先使用规则方法识别 primitive requirements，并给出 level 和 evidence。Level 分为 L1、L2、L3，分别代表基础需求、标准多步骤需求和复杂组合需求。在此基础上，我又接入了 OpenAI-compatible 的 LLM API 作为辅助标注方式；当前已经对 20 条 SkVM benchmark skills 合并了 `rule+llm` SCR 标注，用来提升关键样本的能力需求判断质量。
 
-- tool-reference
-- procedural
-- generative
-- mixed
+第五步是 portability gap 分析。对于每个 skill，我把它的 SCR 和每个 SkVM TCP profile 比较，计算：
 
-同时也会提取 domain tags，比如 code、data、document、web、security、research、agent、cloud 等。
-
-第四步是 SCR extraction。项目使用规则方法识别 primitive requirements，并给出 level 和 evidence。Level 分为 L1、L2、L3，分别代表基础需求、标准多步骤需求和复杂组合需求。
-
-第五步是 portability gap 分析。对于每个 skill，我会把它的 SCR 和每个 SkVM TCP profile 比较，计算：
-
-`gap(skill, target, primitive) = max(0, required_level - provided_level)`
+```text
+gap(skill, target, primitive) = max(0, required_level - provided_level)
+```
 
 也就是说，如果 skill 要求某个 primitive 是 L3，但目标 model/harness 只支持 L1，那么这个 primitive 就会产生 gap。
+
+第六步是高级探索性分析。我增加了 primitive 共现矩阵、taxonomy 到 primitive 的 Sankey、source x language heatmap、skill x primitive matrix、长度和步骤直方图，以及基于结构特征和 SCR primitive 特征的 PCA 投影和 k-means 聚类。
 
 最后，把所有分析结果生成 dashboard JSON，用 Vue 3、Vite、TypeScript 和 ECharts 做成交互式可视化网站。
 
 ## 4. Dashboard 总体布局
 
-Dashboard 顶部有全局过滤器，可以按 source、taxonomy 和关键词进行筛选。筛选会影响下方所有统计图、风险分析和 skill detail。
+Dashboard 顶部有全局过滤器，可以按 source、taxonomy 和关键词进行筛选。筛选会影响下方所有统计图、风险分析和高级 EDA 结果。
 
-当前页面分为五个主要模块：
+当前页面分为六个主要模块：
 
 1. Findings
 2. Skills
 3. Risks
 4. Primitives
-5. Alignment
+5. Advanced EDA
+6. Alignment
 
-底部还有一个 risk-ranked skill table 和右侧 skill detail panel，用于查看单个 skill 的具体证据。
+其中 `Risk-ranked skills` 和右侧 `Skill detail` 现在只放在 Skills 页面。这样 Skills 页面负责样本级下钻，其他页面专注各自的分析任务，避免每一页都重复出现同一个列表。
 
 ## 5. Findings 模块
 
@@ -108,23 +114,25 @@ Dashboard 顶部有全局过滤器，可以按 source、taxonomy 和关键词进
 
 目前这个页面展示了几个核心发现。
 
-第一个发现是：`follow.procedure` 是最常见的 primitive，出现在 1,427 个 skills 中，占 86.9%。这说明大部分 skills 都不是简单知识片段，而是包含步骤和工作流的自然语言程序。
+第一个发现是：`follow.procedure` 是当前最常见的 primitive，出现在 1,496 个 skills 中，占 86.0%。紧随其后的是 `follow.verify`，也接近同样比例。这说明大量 skills 不只是告诉 agent 怎么做，还会要求按步骤执行，并检查、验证、确认或测试结果。
 
-第二个发现是：`doc.generate` 是最大的 portability bottleneck，aggregate SCR/TCP gap 达到 17,059。这说明文档生成、结构化输出和长文本生成在不同 target profile 之间可能存在明显能力差距。
+第二个发现是：`doc.generate` 是最大的 portability bottleneck，aggregate SCR/TCP gap 达到 18,068。这说明文档生成、结构化输出和长文本生成在不同 target profile 之间可能存在明显能力差距。
 
-第三个发现是：当前最兼容的 target profile 是 `deepseek-v4-pro / openclaw`，平均 gap 是 0.341。这说明同一个 skill corpus 在不同 model/harness 组合上的兼容性差别很大。
+第三个发现是：当前最兼容的 target profile 是 `deepseek-v4-pro / openclaw`，平均 gap 是 0.339；而较弱 target 的平均 gap 可以明显更高。这说明同一个 skill corpus 在不同 model/harness 组合上的兼容性差别很大。
 
-第四个发现是：有 1,038 个 skills，也就是 63.2%，提到了 dependencies、credentials、packages 或 environment setup。这说明环境依赖不是边缘问题，而是 skills 生态中的常见风险。
+第四个发现是：有 1,107 个 skills，也就是 63.7%，提到了 dependencies、credentials、packages 或 environment setup。这说明环境依赖不是边缘问题，而是 skills 生态中的常见风险。
 
-第五个发现是：dashboard 会计算 model mismatch 和 harness mismatch 的平均贡献，用于回答“到底是模型能力问题更大，还是 harness 支持问题更大”。
+第五个发现是：当前 model mismatch 平均值约为 0.141，harness mismatch 平均值约为 0.145，差距很小但当前数据里 harness 略高。这说明 skill fragility 不能只归因于模型能力，运行框架和工具支持也很重要。
+
+此外，顶部指标卡中新增了 `LLM SCR`，用于显示当前筛选条件下已经合并 LLM 辅助标注的 skills 数量。当前全局为 20 条，主要来自 SkVM benchmark，用于展示规则抽取之外的辅助标注能力。
 
 这个模块解决的问题是：它让展示不是从一堆图开始，而是先给出可讨论的结论，再通过后续页面解释这些结论是怎么来的。
 
 ## 6. Skills 模块
 
-`Skills` 页面是 corpus overview 和基础结构分析。
+`Skills` 页面是 corpus overview 和样本下钻页面。
 
-这里的第一个图是 Source mix，用于展示不同来源 skills 的数量分布。它回答的问题是：当前 corpus 主要由哪些来源构成？本机 skills 和 SkVM benchmark skills 的比例如何？
+这里的第一个图是 Source mix，用于展示不同来源 skills 的数量分布。它回答的问题是：当前 corpus 主要由哪些来源构成？本机 skills、SkVM benchmark skills 和 public GitHub skills 的比例如何？当前 source mix 已经包含 `public.github`，所以可以用来做公开样本和本机样本之间的初步对比。
 
 第二个图是 Taxonomy，用饼图展示 tool-reference、procedural、generative、mixed 等类型的分布。它帮助我们理解 skills 的角色结构：有些 skills 偏工具说明，有些偏流程控制，有些偏内容生成。
 
@@ -134,21 +142,23 @@ Dashboard 顶部有全局过滤器，可以按 source、taxonomy 和关键词进
 
 第五个图是 Selected skill risk radar。当用户选择一个 skill 后，可以看到它在 model mismatch、harness mismatch、environment mismatch 和 overall risk 上的风险结构。
 
-这个模块的作用是给出 corpus 的基本画像，包括来源、类型、代码片段和能力需求分布。
+页面下方的 `Risk-ranked skills` 表格按风险排序，点击某个 skill 后，右侧 detail panel 会显示它的 taxonomy、长度、step、code block、risk profile、top primitives 和 evidence list。
+
+这个模块的作用是给出 corpus 的基本画像，并允许从总体统计回到单个样本检查证据。它符合 EDA 中很重要的一点：图表发现异常之后，要能回到原始样本解释异常。
 
 ## 7. Primitives 模块
 
 `Primitives` 页面专门分析 skill capability requirements。
 
-第一个核心图是 **Primitive Level Heatmap**。横轴是 L1、L2、L3，纵轴是 primitive。颜色越深表示对应 primitive 在该 level 上出现越多。
+第一个核心图是 Primitive Level Heatmap。横轴是 L1、L2、L3，纵轴是 primitive。颜色越深表示对应 primitive 在该 level 上出现越多。
 
 这个图回答的问题是：skills 不仅需要哪些能力，还需要这些能力达到什么复杂度等级。比如某个 primitive 如果大量集中在 L3，就说明它往往不是简单调用，而是复杂、多步骤、需要验证或组合的能力需求。
 
-第二个图是 **Primitive Demand Ranking**。它展示当前 corpus 中最常见的 primitives，例如 `follow.procedure`、`follow.verify`、`follow.constraints`、`tool.git`、`doc.generate` 等。
+第二个图是 Primitive Demand Ranking。它展示当前 corpus 中最常见的 primitives，例如 `follow.procedure`、`follow.verify`、`follow.constraints`、`tool.git`、`doc.generate` 等。
 
-第三个图是 **Workflow Complexity Map**。横轴是 step count，纵轴是 primitive diversity。每个点是一个 skill。这个图可以帮助发现复杂工作流和异常点：比如有些 skill 步骤很多，同时 primitive 也很多，说明它可能对模型和 harness 都有较高要求。
+第三个图是 Workflow Complexity Map。横轴是 step count，纵轴是 primitive diversity，每个点是一个 skill。这个图可以帮助发现复杂工作流和异常点：比如有些 skill 步骤很多，同时 primitive 也很多，说明它可能对模型和 harness 都有较高要求。
 
-第四个图是 **Bottleneck Primitives**。它不是单纯统计出现频率，而是结合 TCP profiles 之后，展示哪些 primitive 造成的 aggregate gap 最大。
+第四个图是 Bottleneck Primitives。它不是单纯统计出现频率，而是结合 TCP profiles 之后，展示哪些 primitive 造成的 aggregate gap 最大。
 
 这个模块解决的问题是：它把 skills 的“能力需求结构”可视化出来，让我们能看到 skills 作为自然语言程序到底依赖哪些底层能力。
 
@@ -156,99 +166,65 @@ Dashboard 顶部有全局过滤器，可以按 source、taxonomy 和关键词进
 
 `Risks` 页面主要回答 portability 和 fragility 问题。
 
-第一个图是 **Model x Harness Portability Heatmap**。横轴是模型，纵轴是 harness，每个格子的颜色表示平均 SCR/TCP gap。颜色越深，说明这个 model/harness 组合对当前 skills corpus 的支持越弱。
+第一个图是 Model x Harness Portability Heatmap。横轴是模型，纵轴是 harness，每个格子的颜色表示平均 SCR/TCP gap。颜色越深，说明这个 model/harness 组合对当前 skills corpus 的支持越弱。
 
 这个图非常关键，因为它说明 portability 不是只看模型，也不是只看 harness，而是两者组合的结果。
 
-第二个图是 **Risk by Source**。它展示不同来源 skills 的平均风险。这个图可以帮助判断某些来源的 skills 是否更复杂、更依赖工具或更容易迁移失败。
+第二个图是 Risk by Source。它展示不同来源 skills 的平均风险。这个图可以帮助判断某些来源的 skills 是否更复杂、更依赖工具或更容易迁移失败。
 
-第三个图是 **Target Compatibility**。它把所有 target profiles 按平均 gap 排序，让我们直观看到哪些 model/harness pair 最兼容、哪些最不兼容。
+第三个图是 Target Compatibility。它把所有 target profiles 按平均 gap 排序，让我们直观看到哪些 model/harness pair 最兼容、哪些最不兼容。
 
-第四个图是 **Risk Components**。它把风险拆成 model mismatch、harness mismatch、environment mismatch 和 overall risk。这样可以避免只看一个总分，而是知道风险到底来自哪里。
+第四个图是 Risk Components。它把风险拆成 model mismatch、harness mismatch、environment mismatch 和 overall risk。这样可以避免只看一个总分，而是知道风险到底来自哪里。
 
-第五个面板是 **Model vs Harness Contribution**。它直接计算平均 model mismatch 和平均 harness mismatch，并给出 dominant axis。这个面板对应项目最重要的问题之一：skill fragility 到底更受模型影响，还是更受运行框架影响？
+第五个面板是 Model vs Harness Contribution。它直接计算平均 model mismatch 和平均 harness mismatch，并给出 dominant axis。这个面板对应项目最重要的问题之一：skill fragility 到底更受模型影响，还是更受运行框架影响？
 
-第六个区域是 **Dependency / Environment Risk**。它统计 environment risk categories，例如：
+第六个区域是 Dependency / Environment Risk。它统计 environment risk categories，例如 system cli、version control、web/browser、runtime、credentials 和 package managers。
 
-- system cli
-- version control
-- web/browser
-- runtime
-- credentials
-- package managers
+第七个区域是 Rewrite / Compilation Priority。这里不是只列最高风险 skills，而是用一个综合 priority score 排名。这个 score 结合了 overall risk、environment mismatch、primitive diversity、workflow complexity 和 SCR confidence gap。
 
-这个专区回答的问题是：哪些环境依赖类型最常见？哪些 skills 对环境最敏感？
+这个模块解决的问题是：它把“哪些 skill 容易失败”进一步拆解成“为什么可能失败”，并给出后续重写或优化的优先级。
 
-第七个区域是 **Rewrite / Compilation Priority**。这里不是只列最高风险 skills，而是用一个综合 priority score 排名。这个 score 结合了：
+## 9. Advanced EDA 模块
 
-- overall risk
-- environment mismatch
-- primitive diversity
-- workflow complexity
-- SCR confidence gap
+`Advanced EDA` 是当前新增的高级探索页面，用来补充传统统计图之外的关系分析和机器学习式探索。
 
-它解决的问题是：如果后续要重写、优化或编译 skills，应该从哪些 skills 开始。
+第一个图是 Primitive Co-occurrence Matrix。它统计两个 primitives 是否经常出现在同一个 skill 中。这个图可以发现能力组合模式，例如 procedure、verification、constraint、tool use 是否经常成组出现。
 
-## 9. Alignment 模块
+第二个图是 Taxonomy x Primitive Sankey。左侧是 skill taxonomy，右侧是 primitive requirements，中间的流量表示某类 skill 对某些 primitive 的需求强度。这个图可以回答：tool-reference、procedural、generative 等类型分别流向哪些能力需求。
+
+第三个图是 Source x Language Heatmap。它统计不同来源中 fenced code block 的语言分布。这个图能帮助比较不同来源的技能是不是偏 shell、python、typescript 或 plain text。
+
+第四个图是 Skill x Primitive Matrix。它选择高风险或 primitive-dense 的 skills，纵轴是 skill，横轴是 primitive，颜色表示 required level。这个图让我们能看到单个 skill 的能力需求画像，也能发现一组 skills 是否共享相似能力结构。
+
+第五和第六个图是 Length Histogram 和 Step Histogram。它们分别展示 skill 文本长度和工作流步骤数量的分布。这两个图是典型的 EDA 分布分析，用来发现长尾、偏态和异常复杂样本。
+
+最后一个图是 PCA / Clustering Map。这里我使用结构特征和 SCR primitive 特征构造向量，比如文本长度、词数、section 数、code block 数、step 数、dependency 数、tool 数、是否有 branching/loop/verification，以及 top primitives 的 required level。然后对这些特征做标准化，用 PCA 投影到二维，并用 k-means 做粗聚类。
+
+这个图的目的不是做预测，而是做探索。它可以帮助我们看到 skill 之间是否形成簇，比如工具密集型、文档生成型、代码生成型、流程控制型等；也可以发现远离主簇的异常 skills。这是探索性数据分析中“从单变量分布走向多变量结构”的一步。
+
+## 10. Alignment 模块
 
 `Alignment` 页面用于说明本项目和 SkVM 论文之间的关系。
 
 这个页面非常重要，因为我的项目不是 SkVM 的完整复现，而是 SkVM-inspired EDA dashboard。
 
-页面中分成三类：
+页面中分成三类。
 
-第一类是已经实现的部分：
+第一类是已经实现的部分：把 skills 当作可分析的自然语言程序、提取 derived SCR、导入 SkVM TCP profiles、计算 SCR/TCP gap、检测 environment risk、做 dashboard 可视化。
 
-- 把 skills 当作可分析的自然语言程序
-- 提取 derived SCR
-- 导入 SkVM TCP profiles
-- 计算 SCR/TCP gap
-- 检测 environment risk
-- 做 dashboard 可视化
+第二类是部分近似的部分：项目 primitive catalog 不是论文 primitive catalog 的完全复刻；project primitives 被映射到最接近的 SkVM primitive ids；environment binding 被简化成风险检测，而不是生成 setup scripts；concurrency extraction 被简化成 `agent.parallel` 和复杂度信号，而不是真正生成 DAG。
 
-第二类是部分近似的部分：
-
-- 项目 primitive catalog 不是论文 primitive catalog 的完全复刻
-- project primitives 被映射到最接近的 SkVM primitive ids
-- environment binding 被简化成风险检测，而不是生成 setup scripts
-- concurrency extraction 被简化成 `agent.parallel` 和复杂度信号，而不是真正生成 DAG
-
-第三类是未实现的部分：
-
-- AOT compilation
-- target-specific skill variants
-- environment-binding setup scripts
-- concurrency DAG extraction
-- JIT code solidification
-- adaptive recompilation
-- task-level completion rate、token、speedup evaluation
+第三类是未实现的部分：AOT compilation、target-specific skill variants、environment-binding setup scripts、concurrency DAG extraction、JIT code solidification、adaptive recompilation、task-level completion rate、token 和 speedup evaluation。
 
 这个页面解决的问题是：它明确限定项目范围，避免把 EDA dashboard 误讲成 SkVM compiler/runtime，同时也说明未来可以怎么扩展。
 
-## 10. Skill Detail 与 Evidence Traceability
-
-页面下方有一个 risk-ranked skill table。用户点击某个 skill 后，右侧会显示它的 detail panel。
-
-Detail panel 包括：
-
-- skill name 和 source
-- taxonomy
-- length、steps、code blocks
-- risk profile
-- top primitives
-- evidence list
-
-这个设计的意义是：dashboard 不只是给一个黑箱分数，而是让用户能追溯到 skill 文本里的 evidence。例如为什么某个 skill 被认为需要 `tool.git`，为什么它有 environment risk，为什么它有 verification signal。
-
-这符合探索性数据分析中的一个重要原则：不仅要看到统计结果，还要能回到原始样本检查异常和证据。
-
-## 11. 得出的主要结论
+## 11. 主要结论
 
 综合当前分析，可以得到以下结论。
 
-第一，skills 高度 workflow 化。`follow.procedure` 和 `follow.verify` 的出现频率很高，说明大部分 skills 都包含步骤、约束和验证逻辑。
+第一，skills 高度 workflow 化。`follow.verify`、`follow.procedure` 和 `follow.constraints` 的出现频率很高，说明大部分 skills 都包含步骤、约束和验证逻辑。
 
-第二，skills 不只是文本说明，很多 skills 包含代码片段、工具链和外部服务依赖。因此分析 skills 时，不能只看自然语言内容，还要看 code/tool/dependency signals。
+第二，skills 不只是文本说明，很多 skills 包含代码片段、工具链和外部服务依赖。因此分析 skills 时，不能只看自然语言内容，还要看 code、tool 和 dependency signals。
 
 第三，portability risk 和 model/harness pair 强相关。不同 target profile 对同一批 skills 的平均 gap 差异明显。
 
@@ -256,9 +232,11 @@ Detail panel 包括：
 
 第五，某些 primitive 是主要 bottleneck，例如 `doc.generate`、`reason.plan`、`data.parse`、`data.transform` 和 `tool.github`。这些能力应该成为后续 skill rewriting 或 compiler optimization 的重点。
 
-第六，dashboard 可以给出优先重写或编译的 skills 排名，这让分析结果不只是描述性统计，还能转化成实际行动建议。
+第六，共现矩阵、Sankey、skill-primitive matrix 和 PCA/聚类图说明，skills 不只是单一标签可以解释的对象，而是由多种能力需求组合形成的多变量结构。
 
-## 12. 这个项目解决了什么问题
+第七，dashboard 可以给出优先重写或编译的 skills 排名，这让分析结果不只是描述性统计，还能转化成实际行动建议。
+
+## 12. 项目解决的问题
 
 这个项目主要解决了四个问题。
 
@@ -270,38 +248,29 @@ Detail panel 包括：
 
 第四，它用交互式可视化支持探索：用户可以过滤来源、类型、关键词，可以查看不同图表，也可以点击单个 skill 检查证据。
 
-从课程角度看，这个项目体现了探索性数据分析和可视化技术的几个核心点：
-
-- 多来源数据整合
-- 特征工程
-- 分类和标签提取
-- 分布分析
-- 排名分析
-- 热力图分析
-- 散点图分析
-- 交互式过滤
-- 样本级 drill-down
-- 从图表到结论的叙事组织
+从课程角度看，这个项目体现了探索性数据分析和可视化技术的几个核心点：多来源数据整合、特征工程、分类和标签提取、分布分析、共现分析、热力图、桑基图、散点图、降维、聚类、交互式过滤、样本级 drill-down，以及从图表到结论的叙事组织。
 
 ## 13. 局限性
 
 这个项目也有一些限制。
 
-第一，SCR labels 是规则派生的，不是官方标注，因此存在噪声。项目已经生成了 validation sample，但还需要进一步人工验证。
+第一，SCR labels 主要是规则派生的，并辅以少量 LLM 标注，不是官方人工金标，因此仍然存在噪声。项目已经生成 validation sample，但还需要进一步人工验证。
 
 第二，primitive mapping 是近似的。因为项目 primitive catalog 和 SkVM primitive catalog 不是完全一致，所以某些 project primitives 只能映射到最接近的 SkVM primitive。
 
-第三，public skills crawling 还没有实现。目前主要比较 local skills 和 SkVM benchmark skills。
+第三，public skills sampler 已经实现并采集了 96 条公开 GitHub skills，但这个数量仍然是一个小样本，所以只能做初步公共样本对比，不能代表完整公共 skills 生态。
 
 第四，environment risk 是 keyword-based，适合 EDA 阶段发现模式，但不能直接作为最终因果结论。
 
-第五，本项目没有复现 SkVM 的 AOT compilation、JIT code solidification、adaptive recompilation，也没有跑 task-level completion rate、token reduction 或 speedup evaluation。
+第五，PCA 和 k-means 聚类用于探索，不用于预测；簇的解释需要结合 skill detail 和人工检查。
+
+第六，本项目没有复现 SkVM 的 AOT compilation、JIT code solidification、adaptive recompilation，也没有跑 task-level completion rate、token reduction 或 speedup evaluation。
 
 所以更准确地说，SkillScope 是一个 **SkVM-inspired exploratory dashboard**，而不是 SkVM compiler/runtime 的复现。
 
 ## 14. 结束语
 
-总结来说，本项目把 LLM agent skills 当作自然语言程序进行探索性分析。通过结构特征、taxonomy、SCR primitive requirements、SkVM TCP profiles、portability gap 和 environment risk 的可视化，我们可以理解 skills 生态中最常见的能力需求、最脆弱的迁移点，以及哪些 skills 应该优先被重写或未来编译。
+总结来说，本项目把 LLM agent skills 当作自然语言程序进行探索性分析。通过结构特征、taxonomy、SCR primitive requirements、SkVM TCP profiles、portability gap、environment risk、共现关系、矩阵分析和 PCA/聚类可视化，我们可以理解 skills 生态中最常见的能力需求、最脆弱的迁移点，以及哪些 skills 应该优先被重写或未来编译。
 
 这个项目的价值在于：它把原本隐藏在 skill 文本里的能力假设和运行风险变成了可观察、可比较、可解释的分析结果，为后续 skill rewriting、compiler optimization 和 agent runtime adaptation 提供了数据基础。
 
