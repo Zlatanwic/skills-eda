@@ -17,6 +17,7 @@ from skillscope_common import (
     extract_headings,
     parse_frontmatter,
     read_json,
+    resolve_skill_name,
     stable_id,
     write_json,
 )
@@ -98,8 +99,11 @@ def parse_public_skill(item: dict[str, Any], raw_text: str) -> dict[str, Any]:
     repo = item.get("repository", {})
     repo_full_name = repo.get("full_name", "unknown/repo")
     path = item.get("path", "SKILL.md")
-    fallback_name = path.split("/")[-2] if "/" in path else path.removesuffix(".md")
-    name = str(frontmatter.get("name") or fallback_name)
+    # Build fallback candidates: repo short name → parent dir → filename stem
+    repo_short = repo_full_name.rsplit("/", 1)[-1] if "/" in repo_full_name else repo_full_name
+    dir_name = path.split("/")[-2] if "/" in path else ""
+    filename_stem = path.split("/")[-1].removesuffix(".md") if path else ""
+    name = resolve_skill_name(frontmatter, headings, repo_short, dir_name, filename_stem)
 
     html_url = item.get("html_url") or ""
     source_url = html_url.replace("/blob/", "/raw/") if html_url else item.get("url", "")

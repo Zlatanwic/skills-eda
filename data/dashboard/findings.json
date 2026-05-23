@@ -1,48 +1,48 @@
 [
   {
-    "detail": "1667 skills (95.9%) require this primitive.",
+    "detail": "1680 skills (96.6%) require this primitive.",
     "question": "What capability requirements are most common?",
     "title": "Most common capability",
     "value": "follow.constraints"
   },
   {
-    "detail": "Aggregated SCR/TCP gap score: 17984.",
+    "detail": "Aggregated SCR/TCP gap score: 18150.",
     "question": "Which primitive capabilities become bottlenecks most often?",
     "title": "Largest portability bottleneck",
     "value": "doc.generate"
   },
   {
-    "detail": "Average overall risk is 0.226 across 14 skills.",
+    "detail": "Average overall risk is 0.234 across 15 skills.",
     "question": "Do skills from different sources have different structures and risks?",
     "title": "Riskiest source",
     "value": "local.codex"
   },
   {
-    "detail": "Average overall risk is 0.212.",
+    "detail": "Average overall risk is 0.214.",
     "question": "How do skill taxonomy and primitive requirements relate?",
     "title": "Riskiest taxonomy",
     "value": "tool-reference"
   },
   {
-    "detail": "Lowest average gap is 0.333.",
+    "detail": "Lowest average gap is 0.344.",
     "question": "Which model/harness pairs are most compatible with the corpus?",
     "title": "Best target profile",
     "value": "deepseek-v4-pro / openclaw"
   },
   {
-    "detail": "63.7% of skills mention dependencies, credentials, packages, or environment setup.",
+    "detail": "63.5% of skills mention dependencies, credentials, packages, or environment setup.",
     "question": "Are environment dependencies a major portability risk?",
     "title": "Environment dependency footprint",
-    "value": "1107/1739"
+    "value": "1105/1739"
   },
   {
-    "detail": "83.0% of skills include test/check/verify signals.",
+    "detail": "83.3% of skills include test/check/verify signals.",
     "question": "How procedural are skills?",
     "title": "Verification-heavy workflows",
-    "value": "1444/1739"
+    "value": "1448/1739"
   },
   {
-    "detail": "Model avg 0.135, harness avg 0.142; margin 0.007.",
+    "detail": "Model avg 0.136, harness avg 0.143; margin 0.007.",
     "question": "Is model mismatch or harness mismatch stronger?",
     "title": "Dominant mismatch axis",
     "value": "harness"

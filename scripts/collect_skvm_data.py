@@ -27,6 +27,7 @@ from skillscope_common import (
     parse_frontmatter,
     read_json,
     read_text,
+    resolve_skill_name,
     stable_id,
     write_json,
 )
@@ -69,8 +70,11 @@ def iter_benchmark_skills(skvm_root: Path) -> list[SkillPath]:
 def parse_skill(skill_path: SkillPath) -> dict[str, Any]:
     raw_text = read_text(skill_path.path)
     frontmatter, body = parse_frontmatter(raw_text)
-    skill_dir_name = skill_path.path.parent.name
-    name = str(frontmatter.get("name") or skill_dir_name)
+    headings = extract_headings(body)
+    parent = skill_path.path.parent
+    dir_name = parent.name
+    grandparent_name = parent.parent.name if parent.parent != parent else ""
+    name = resolve_skill_name(frontmatter, headings, dir_name, grandparent_name)
     description = str(frontmatter.get("description") or "")
     return {
         "skill_id": stable_id(skill_path.source, skill_path.relative_path),
@@ -84,11 +88,11 @@ def parse_skill(skill_path: SkillPath) -> dict[str, Any]:
         "metadata": {
             "description": description,
             "frontmatter": frontmatter,
-            "skill_dir": skill_dir_name,
+            "skill_dir": dir_name,
             "benchmark": True,
         },
         "parsed": {
-            "headings": extract_headings(body),
+            "headings": headings,
             "code_blocks": extract_code_blocks(body),
         },
     }

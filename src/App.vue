@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import EChart, { type ChartOption } from "./components/EChart.vue";
 import FilterBar from "./components/FilterBar.vue";
 import MetricCard from "./components/MetricCard.vue";
@@ -22,6 +22,34 @@ import type {
 } from "./types";
 
 type PageKey = "findings" | "skills" | "risks" | "primitives" | "advanced" | "alignment";
+type ExpandedChart = {
+  title: string;
+  subtitle: string;
+  option: ChartOption;
+  className?: string;
+};
+
+const expandedChart = ref<ExpandedChart | null>(null);
+
+function openChartModal(title: string, subtitle: string, option: ChartOption, className = "chart modal-chart") {
+  expandedChart.value = { title, subtitle, option, className };
+}
+
+function closeChartModal() {
+  expandedChart.value = null;
+}
+
+function handleEscape(event: KeyboardEvent) {
+  if (event.key === "Escape") closeChartModal();
+}
+
+onMounted(() => {
+  window.addEventListener("keydown", handleEscape);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("keydown", handleEscape);
+});
 
 function axisLabelConfig(labels: string[]) {
   const longest = Math.max(...labels.map((label) => label.length), 0);
@@ -64,8 +92,8 @@ function barOption(title: string, items: CountItem[], color: string): ChartOptio
   };
 }
 
-function horizontalBarOption(title: string, items: CountItem[], color: string): ChartOption {
-  const displayItems = [...items].slice(0, 12).reverse();
+function horizontalBarOption(title: string, items: CountItem[], color: string, limit = 12): ChartOption {
+  const displayItems = [...items].slice(0, limit).reverse();
   return {
     color: [color],
     tooltip: { trigger: "axis" },
@@ -255,10 +283,14 @@ function modelHarnessHeatmapOption(portability: PortabilitySummary | null): Char
 }
 
 function primitiveLevelHeatmapOption(items: CountItem[]): ChartOption {
-  const topPrimitives = countBy(
-    items.map((item) => item.name.split(":L")[0]),
-    (primitive) => primitive,
-  )
+  const primitiveTotals = new Map<string, number>();
+  for (const item of items) {
+    const primitive = item.name.split(":L")[0];
+    primitiveTotals.set(primitive, (primitiveTotals.get(primitive) ?? 0) + item.count);
+  }
+  const topPrimitives = [...primitiveTotals.entries()]
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
     .slice(0, 14)
     .map((item) => item.name);
   const levels = ["L1", "L2", "L3"];
@@ -461,23 +493,55 @@ function buildFindings(
   ];
 }
 
+function workflowComplexityScore(skill: SkillIndexRecord): number {
+  const steps = Math.min(1, skill.features.step_count / 30);
+  const sections = Math.min(1, skill.features.section_count / 40);
+  const codeBlocks = Math.min(1, skill.features.code_block_count / 10);
+  const primitives = Math.min(1, skill.scr.requirements.length / 18);
+  const branching = skill.features.has_branching ? 1 : 0;
+  const verification = skill.features.has_verification ? 1 : 0;
+  const score =
+    steps * 0.3 +
+    sections * 0.18 +
+    codeBlocks * 0.16 +
+    primitives * 0.22 +
+    branching * 0.07 +
+    verification * 0.07;
+  return Math.round(score * 100);
+}
+
 function primitiveDiversityOption(skills: SkillIndexRecord[]): ChartOption {
   const points = skills.slice(0, 500).map((skill) => [
-    skill.features.step_count,
+    workflowComplexityScore(skill),
     skill.scr.requirements.length,
     Math.round(skill.risks.overall * 100),
     skill.name,
+    skill.features.step_count,
+    skill.features.section_count,
+    skill.features.code_block_count,
+    skill.features.has_branching ? 1 : 0,
+    skill.features.has_verification ? 1 : 0,
   ]);
   return {
     color: ["#ff385c"],
     tooltip: {
       formatter: (params: unknown) => {
-        const value = (params as { value: [number, number, number, string] }).value;
-        return `${value[3]}<br/>Steps: ${value[0]}<br/>Primitives: ${value[1]}<br/>Risk: ${value[2]}`;
+        const value = (params as { value: [number, number, number, string, number, number, number, number, number] }).value;
+        return [
+          value[3],
+          `Complexity: ${value[0]}`,
+          `Primitives: ${value[1]}`,
+          `Risk: ${value[2]}`,
+          `Steps: ${value[4]}`,
+          `Sections: ${value[5]}`,
+          `Code blocks: ${value[6]}`,
+          `Branching: ${value[7] ? "yes" : "no"}`,
+          `Verification: ${value[8] ? "yes" : "no"}`,
+        ].join("<br/>");
       },
     },
     grid: { left: 52, right: 20, top: 24, bottom: 42 },
-    xAxis: { name: "steps", type: "value", axisLabel: { color: "#6a6a6a" }, splitLine: { lineStyle: { color: "#ebebeb" } } },
+    xAxis: { name: "complexity", type: "value", max: 100, axisLabel: { color: "#6a6a6a" }, splitLine: { lineStyle: { color: "#ebebeb" } } },
     yAxis: { name: "primitives", type: "value", axisLabel: { color: "#6a6a6a" }, splitLine: { lineStyle: { color: "#ebebeb" } } },
     series: [{ type: "scatter", data: points, symbolSize: 8, itemStyle: { opacity: 0.58 } }],
   };
@@ -1048,7 +1112,13 @@ function clearFilters() {
       </section>
 
       <section v-else-if="activePage === 'skills'" class="dashboard-grid">
-        <section class="panel">
+        <section
+          class="panel chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Source mix', 'Imported local, public GitHub, and SkVM skill roots.', barOption('skills', filteredSummary.overview.source_counts, '#ff385c'), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Source mix', 'Imported local, public GitHub, and SkVM skill roots.', barOption('skills', filteredSummary.overview.source_counts, '#ff385c'), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Source mix</h2>
@@ -1058,7 +1128,13 @@ function clearFilters() {
           <EChart :option="barOption('skills', filteredSummary.overview.source_counts, '#ff385c')" />
         </section>
 
-        <section class="panel">
+        <section
+          class="panel chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Taxonomy', 'Rule-derived primary types.', pieOption(filteredSummary.overview.taxonomy_counts), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Taxonomy', 'Rule-derived primary types.', pieOption(filteredSummary.overview.taxonomy_counts), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Taxonomy</h2>
@@ -1068,20 +1144,13 @@ function clearFilters() {
           <EChart :option="pieOption(filteredSummary.overview.taxonomy_counts)" />
         </section>
 
-        <section class="panel wide">
-          <div class="panel-header">
-            <div>
-              <h2>Primitive capability demand</h2>
-              <p>Top derived SCR primitives across the current corpus.</p>
-            </div>
-          </div>
-          <EChart
-            :option="horizontalBarOption('skills', filteredSummary.capabilities.primitive_counts.slice(0, 15), '#222222')"
-            class-name="chart tall"
-          />
-        </section>
-
-        <section class="panel">
+        <section
+          class="panel chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Code languages', 'Detected fenced code blocks.', horizontalBarOption('blocks', filteredSummary.code_tools.code_language_counts, '#ff385c'), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Code languages', 'Detected fenced code blocks.', horizontalBarOption('blocks', filteredSummary.code_tools.code_language_counts, '#ff385c'), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Code languages</h2>
@@ -1090,26 +1159,16 @@ function clearFilters() {
           </div>
           <EChart :option="horizontalBarOption('blocks', filteredSummary.code_tools.code_language_counts, '#ff385c')" />
         </section>
-
-        <section class="panel">
-          <div class="panel-header">
-            <div>
-              <h2>Selected skill risk</h2>
-              <p>Model, harness, and environment mismatch.</p>
-            </div>
-          </div>
-          <EChart :option="radarOption(activeSkill)" />
-        </section>
-
-        <PortabilityPanel
-          v-if="filteredPortability"
-          :portability="filteredPortability"
-          :active-skill="activeSkill"
-        />
       </section>
 
       <section v-else-if="activePage === 'risks'" class="dashboard-grid">
-        <section class="panel wide">
+        <section
+          class="panel wide chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Model x Harness portability heatmap', 'Average SCR/TCP gap by target profile; lower is more portable.', modelHarnessHeatmapOption(filteredPortability), 'chart modal-chart modal-chart-tall')"
+          @keydown.enter="openChartModal('Model x Harness portability heatmap', 'Average SCR/TCP gap by target profile; lower is more portable.', modelHarnessHeatmapOption(filteredPortability), 'chart modal-chart modal-chart-tall')"
+        >
           <div class="panel-header">
             <div>
               <h2>Model x Harness portability heatmap</h2>
@@ -1119,7 +1178,13 @@ function clearFilters() {
           <EChart :option="modelHarnessHeatmapOption(filteredPortability)" class-name="chart tall" />
         </section>
 
-        <section class="panel wide">
+        <section
+          class="panel wide chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Risk by source', 'Average overall risk for each imported corpus.', riskGroupOption('avg risk', filteredSummary.risks.by_source), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Risk by source', 'Average overall risk for each imported corpus.', riskGroupOption('avg risk', filteredSummary.risks.by_source), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Risk by source</h2>
@@ -1129,7 +1194,13 @@ function clearFilters() {
           <EChart :option="riskGroupOption('avg risk', filteredSummary.risks.by_source)" class-name="chart tall" />
         </section>
 
-        <section class="panel wide">
+        <section
+          class="panel wide chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Target compatibility', 'Lower average gap means better SCR/TCP alignment.', targetGapOption(filteredPortability), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Target compatibility', 'Lower average gap means better SCR/TCP alignment.', targetGapOption(filteredPortability), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Target compatibility</h2>
@@ -1139,7 +1210,13 @@ function clearFilters() {
           <EChart :option="targetGapOption(filteredPortability)" class-name="chart tall" />
         </section>
 
-        <section class="panel">
+        <section
+          class="panel chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Risk components', 'Model, harness, environment, and total risk.', riskBreakdownOption(filteredSkills), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Risk components', 'Model, harness, environment, and total risk.', riskBreakdownOption(filteredSkills), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Risk components</h2>
@@ -1149,7 +1226,29 @@ function clearFilters() {
           <EChart :option="riskBreakdownOption(filteredSkills)" />
         </section>
 
-        <section class="panel">
+        <section
+          class="panel chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Selected skill risk', 'Model, harness, environment, and overall mismatch for the selected skill.', radarOption(activeSkill), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Selected skill risk', 'Model, harness, environment, and overall mismatch for the selected skill.', radarOption(activeSkill), 'chart modal-chart')"
+        >
+          <div class="panel-header">
+            <div>
+              <h2>Selected skill risk</h2>
+              <p>Model, harness, environment, and overall mismatch for the selected skill.</p>
+            </div>
+          </div>
+          <EChart :option="radarOption(activeSkill)" />
+        </section>
+
+        <section
+          class="panel chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Risk by taxonomy', 'Which skill types are more fragile.', riskGroupOption('avg risk', filteredSummary.risks.by_taxonomy), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Risk by taxonomy', 'Which skill types are more fragile.', riskGroupOption('avg risk', filteredSummary.risks.by_taxonomy), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Model vs harness contribution</h2>
@@ -1183,7 +1282,13 @@ function clearFilters() {
           :active-skill="activeSkill"
         />
 
-        <section class="panel wide">
+        <section
+          class="panel wide chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Dependency / Environment Risk', 'Signals for packages, credentials, runtimes, browsers, CLI tools, and external services.', horizontalBarOption('skills', filteredSummary.environment.dependency_categories, '#ff385c'), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Dependency / Environment Risk', 'Signals for packages, credentials, runtimes, browsers, CLI tools, and external services.', horizontalBarOption('skills', filteredSummary.environment.dependency_categories, '#ff385c'), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Dependency / Environment Risk</h2>
@@ -1197,7 +1302,13 @@ function clearFilters() {
           />
         </section>
 
-        <section class="panel">
+        <section
+          class="panel chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Dependency evidence', 'Most frequent dependency words and setup hints.', horizontalBarOption('skills', filteredSummary.code_tools.dependency_counts, '#222222'), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Dependency evidence', 'Most frequent dependency words and setup hints.', horizontalBarOption('skills', filteredSummary.code_tools.dependency_counts, '#222222'), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Dependency evidence</h2>
@@ -1257,7 +1368,13 @@ function clearFilters() {
       </section>
 
       <section v-else-if="activePage === 'primitives'" class="dashboard-grid">
-        <section class="panel wide">
+        <section
+          class="panel wide chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Primitive level heatmap', 'Derived SCR demand split by required capability level.', primitiveLevelHeatmapOption(filteredSummary.capabilities.primitive_level_counts), 'chart modal-chart modal-chart-tall')"
+          @keydown.enter="openChartModal('Primitive level heatmap', 'Derived SCR demand split by required capability level.', primitiveLevelHeatmapOption(filteredSummary.capabilities.primitive_level_counts), 'chart modal-chart modal-chart-tall')"
+        >
           <div class="panel-header">
             <div>
               <h2>Primitive level heatmap</h2>
@@ -1267,55 +1384,48 @@ function clearFilters() {
           <EChart :option="primitiveLevelHeatmapOption(filteredSummary.capabilities.primitive_level_counts)" class-name="chart tall" />
         </section>
 
-        <section class="panel wide">
+        <section
+          class="panel wide chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Primitive demand ranking', 'The most common capability requirements in the filtered corpus.', horizontalBarOption('skills', filteredSummary.capabilities.primitive_counts, '#222222', 18), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Primitive demand ranking', 'The most common capability requirements in the filtered corpus.', horizontalBarOption('skills', filteredSummary.capabilities.primitive_counts, '#222222', 18), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Primitive demand ranking</h2>
               <p>The most common capability requirements in the filtered corpus.</p>
             </div>
           </div>
-          <EChart :option="horizontalBarOption('skills', filteredSummary.capabilities.primitive_counts.slice(0, 18), '#222222')" class-name="chart tall" />
+          <EChart :option="horizontalBarOption('skills', filteredSummary.capabilities.primitive_counts, '#222222', 18)" class-name="chart tall" />
         </section>
 
-        <section class="panel wide">
+        <section
+          class="panel wide chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Workflow complexity map', 'Weighted workflow complexity vs primitive diversity.', primitiveDiversityOption(filteredSkills), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Workflow complexity map', 'Weighted workflow complexity vs primitive diversity.', primitiveDiversityOption(filteredSkills), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Workflow complexity map</h2>
-              <p>Step count vs primitive diversity, colored by SkillScope style.</p>
+              <p>Weighted workflow complexity vs primitive diversity.</p>
             </div>
           </div>
           <EChart :option="primitiveDiversityOption(filteredSkills)" class-name="chart tall" />
         </section>
 
-        <section class="panel">
-          <div class="panel-header">
-            <div>
-              <h2>Bottleneck primitives</h2>
-              <p>Capability gaps aggregated over TCP profiles.</p>
-            </div>
-          </div>
-          <EChart
-            :option="horizontalBarOption(
-              'gap',
-              (filteredPortability?.primitive_bottleneck ?? []).map((item) => ({ name: item.primitive, count: item.gap_sum })),
-              '#ff385c',
-            )"
-          />
-        </section>
-
-        <section class="panel">
-          <div class="panel-header">
-            <div>
-              <h2>Selected skill risk</h2>
-              <p>Inspect how a skill's risks align with its primitives.</p>
-            </div>
-          </div>
-          <EChart :option="radarOption(activeSkill)" />
-        </section>
       </section>
 
       <section v-else-if="activePage === 'advanced'" class="dashboard-grid">
-        <section class="panel wide">
+        <section
+          class="panel wide chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Primitive co-occurrence matrix', 'Which primitive requirements tend to appear in the same skills.', primitiveCooccurrenceOption(filteredSummary.advanced), 'chart modal-chart modal-chart-tall')"
+          @keydown.enter="openChartModal('Primitive co-occurrence matrix', 'Which primitive requirements tend to appear in the same skills.', primitiveCooccurrenceOption(filteredSummary.advanced), 'chart modal-chart modal-chart-tall')"
+        >
           <div class="panel-header">
             <div>
               <h2>Primitive co-occurrence matrix</h2>
@@ -1325,7 +1435,13 @@ function clearFilters() {
           <EChart :option="primitiveCooccurrenceOption(filteredSummary.advanced)" class-name="chart extra-tall" />
         </section>
 
-        <section class="panel wide">
+        <section
+          class="panel wide chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Taxonomy x primitive Sankey', 'How derived skill types flow into capability requirements.', taxonomyPrimitiveSankeyOption(filteredSummary.advanced), 'chart modal-chart modal-chart-tall')"
+          @keydown.enter="openChartModal('Taxonomy x primitive Sankey', 'How derived skill types flow into capability requirements.', taxonomyPrimitiveSankeyOption(filteredSummary.advanced), 'chart modal-chart modal-chart-tall')"
+        >
           <div class="panel-header">
             <div>
               <h2>Taxonomy x primitive Sankey</h2>
@@ -1335,7 +1451,13 @@ function clearFilters() {
           <EChart :option="taxonomyPrimitiveSankeyOption(filteredSummary.advanced)" class-name="chart extra-tall" />
         </section>
 
-        <section class="panel wide">
+        <section
+          class="panel wide chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Source x language heatmap', 'Embedded code language distribution by skill source.', sourceLanguageHeatmapOption(filteredSummary.advanced), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Source x language heatmap', 'Embedded code language distribution by skill source.', sourceLanguageHeatmapOption(filteredSummary.advanced), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Source x language heatmap</h2>
@@ -1345,7 +1467,13 @@ function clearFilters() {
           <EChart :option="sourceLanguageHeatmapOption(filteredSummary.advanced)" class-name="chart tall" />
         </section>
 
-        <section class="panel wide">
+        <section
+          class="panel wide chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Skill x primitive matrix', 'High-risk and primitive-dense skills, colored by required level.', skillPrimitiveMatrixOption(filteredSummary.advanced), 'chart modal-chart modal-chart-tall')"
+          @keydown.enter="openChartModal('Skill x primitive matrix', 'High-risk and primitive-dense skills, colored by required level.', skillPrimitiveMatrixOption(filteredSummary.advanced), 'chart modal-chart modal-chart-tall')"
+        >
           <div class="panel-header">
             <div>
               <h2>Skill x primitive matrix</h2>
@@ -1355,7 +1483,13 @@ function clearFilters() {
           <EChart :option="skillPrimitiveMatrixOption(filteredSummary.advanced)" class-name="chart extra-tall" />
         </section>
 
-        <section class="panel">
+        <section
+          class="panel chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Length histogram', 'Skill text size distribution.', histogramOption('skills', filteredSummary.advanced.length_histogram), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Length histogram', 'Skill text size distribution.', histogramOption('skills', filteredSummary.advanced.length_histogram), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Length histogram</h2>
@@ -1365,7 +1499,13 @@ function clearFilters() {
           <EChart :option="histogramOption('skills', filteredSummary.advanced.length_histogram)" />
         </section>
 
-        <section class="panel">
+        <section
+          class="panel chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('Step histogram', 'Workflow procedure signal distribution.', histogramOption('skills', filteredSummary.advanced.step_histogram, '#222222'), 'chart modal-chart')"
+          @keydown.enter="openChartModal('Step histogram', 'Workflow procedure signal distribution.', histogramOption('skills', filteredSummary.advanced.step_histogram, '#222222'), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>Step histogram</h2>
@@ -1375,7 +1515,13 @@ function clearFilters() {
           <EChart :option="histogramOption('skills', filteredSummary.advanced.step_histogram, '#222222')" />
         </section>
 
-        <section class="panel wide">
+        <section
+          class="panel wide chart-panel"
+          role="button"
+          tabindex="0"
+          @click="openChartModal('PCA / clustering map', filteredSummary.advanced.pca_projection.method, pcaProjectionOption(filteredSummary.advanced), 'chart modal-chart')"
+          @keydown.enter="openChartModal('PCA / clustering map', filteredSummary.advanced.pca_projection.method, pcaProjectionOption(filteredSummary.advanced), 'chart modal-chart')"
+        >
           <div class="panel-header">
             <div>
               <h2>PCA / clustering map</h2>
@@ -1468,6 +1614,29 @@ function clearFilters() {
         <SkillDetail :skill="activeSkill" />
       </section>
     </main>
+
+    <Teleport to="body">
+      <div
+        v-if="expandedChart"
+        class="chart-modal-backdrop"
+        role="dialog"
+        aria-modal="true"
+        :aria-label="expandedChart.title"
+        @click.self="closeChartModal"
+      >
+        <section class="chart-modal" @click.stop>
+          <div class="chart-modal-header">
+            <div>
+              <p class="eyebrow">Expanded View</p>
+              <h2>{{ expandedChart.title }}</h2>
+              <p>{{ expandedChart.subtitle }}</p>
+            </div>
+            <button type="button" class="modal-close" aria-label="Close expanded chart" @click="closeChartModal">x</button>
+          </div>
+          <EChart :option="expandedChart.option" :class-name="expandedChart.className" />
+        </section>
+      </div>
+    </Teleport>
 
     <footer class="app-footer">
       <div class="legal">

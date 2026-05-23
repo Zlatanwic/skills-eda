@@ -1,13 +1,13 @@
 {
-  "avg_dependency_count": 1.71,
-  "avg_tool_count": 3.76,
+  "avg_dependency_count": 1.72,
+  "avg_tool_count": 3.77,
   "dependency_categories": [
     {
-      "count": 1090,
+      "count": 1097,
       "name": "system cli"
     },
     {
-      "count": 1036,
+      "count": 1032,
       "name": "version control"
     },
     {
@@ -15,7 +15,7 @@
       "name": "web/browser"
     },
     {
-      "count": 865,
+      "count": 869,
       "name": "runtime"
     },
     {
@@ -23,7 +23,7 @@
       "name": "credentials"
     },
     {
-      "count": 419,
+      "count": 424,
       "name": "package managers"
     },
     {
@@ -31,8 +31,8 @@
       "name": "implicit"
     }
   ],
-  "dependency_skill_count": 1107,
-  "env_risk_skill_count": 538,
+  "dependency_skill_count": 1105,
+  "env_risk_skill_count": 547,
   "top_environment_risk_skills": [
     {
       "dependency_count": 13,
@@ -41,14 +41,6 @@
       "skill_id": "apify_actor_development_skill_md__f98c0d6d5a35",
       "source": "local.cc-switch",
       "tool_count": 16
-    },
-    {
-      "dependency_count": 12,
-      "env_risk": 1.0,
-      "name": "aws-deploy",
-      "skill_id": "skill_md__27167b60844c",
-      "source": "public.github",
-      "tool_count": 14
     },
     {
       "dependency_count": 11,
@@ -73,14 +65,6 @@
       "skill_id": "security_scanning_security_sast_skill_md__ca7a7492456b",
       "source": "local.cc-switch",
       "tool_count": 11
-    },
-    {
-      "dependency_count": 10,
-      "env_risk": 1.0,
-      "name": "SKILL",
-      "skill_id": "skill_md__a24e1f109766",
-      "source": "public.github",
-      "tool_count": 8
     },
     {
       "dependency_count": 9,
@@ -221,6 +205,14 @@
     {
       "dependency_count": 8,
       "env_risk": 1.0,
+      "name": "Harness: Project Development Scaffold Meta-Skill",
+      "skill_id": "skill_md__79c9156eec09",
+      "source": "public.github",
+      "tool_count": 8
+    },
+    {
+      "dependency_count": 8,
+      "env_risk": 1.0,
       "name": "skill-scanner",
       "skill_id": "skill_scanner_skill_md__19f737a8750c",
       "source": "local.cc-switch",
@@ -273,6 +265,14 @@
       "skill_id": "electron_development_skill_md__ec7f196aca47",
       "source": "local.cc-switch",
       "tool_count": 13
+    },
+    {
+      "dependency_count": 7,
+      "env_risk": 1.0,
+      "name": "007",
+      "skill_id": "007_skill_md__98df64a1efcb",
+      "source": "local.cc-switch",
+      "tool_count": 11
     }
   ]
 }

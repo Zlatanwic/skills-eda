@@ -12,6 +12,7 @@ from skillscope_common import (
     extract_headings,
     parse_frontmatter,
     read_text,
+    resolve_skill_name,
     stable_id,
     write_json,
 )
@@ -40,8 +41,11 @@ def parse_skill(skill_path: SkillPath) -> dict:
     headings = extract_headings(body)
     code_blocks = extract_code_blocks(body)
 
-    skill_dir_name = skill_path.path.parent.name
-    name = str(frontmatter.get("name") or skill_dir_name)
+    parent = skill_path.path.parent
+    # Walk up to find a meaningful directory name (skip "skills", root, etc.)
+    dir_name = parent.name
+    grandparent_name = parent.parent.name if parent.parent != parent else ""
+    name = resolve_skill_name(frontmatter, headings, dir_name, grandparent_name, parent.stem)
     description = str(frontmatter.get("description") or "")
 
     return {
@@ -56,7 +60,7 @@ def parse_skill(skill_path: SkillPath) -> dict:
         "metadata": {
             "description": description,
             "frontmatter": frontmatter,
-            "skill_dir": skill_dir_name,
+            "skill_dir": dir_name,
         },
         "parsed": {
             "headings": headings,

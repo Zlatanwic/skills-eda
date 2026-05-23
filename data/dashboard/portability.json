@@ -20,234 +20,234 @@
   ],
   "primitive_bottleneck": [
     {
-      "gap_sum": 17984,
+      "gap_sum": 18150,
       "primitive": "doc.generate"
     },
     {
-      "gap_sum": 17468,
-      "primitive": "data.parse"
-    },
-    {
-      "gap_sum": 17439,
+      "gap_sum": 17961,
       "primitive": "reason.plan"
     },
     {
-      "gap_sum": 15135,
+      "gap_sum": 17611,
+      "primitive": "data.parse"
+    },
+    {
+      "gap_sum": 15127,
       "primitive": "data.transform"
     },
     {
-      "gap_sum": 10361,
+      "gap_sum": 10664,
       "primitive": "tool.github"
     },
     {
-      "gap_sum": 10076,
+      "gap_sum": 10230,
       "primitive": "reason.diagnose"
     },
     {
-      "gap_sum": 8544,
+      "gap_sum": 8650,
       "primitive": "tool.web.fetch"
     },
     {
-      "gap_sum": 7249,
+      "gap_sum": 7404,
       "primitive": "data.visualize"
     },
     {
-      "gap_sum": 7204,
+      "gap_sum": 7339,
       "primitive": "gen.code.javascript"
     },
     {
-      "gap_sum": 7088,
+      "gap_sum": 7267,
       "primitive": "tool.web.search"
     },
     {
-      "gap_sum": 5621,
+      "gap_sum": 5801,
       "primitive": "gen.code.test"
     },
     {
-      "gap_sum": 3772,
+      "gap_sum": 3738,
       "primitive": "follow.constraints"
     },
     {
-      "gap_sum": 3651,
+      "gap_sum": 3712,
       "primitive": "gen.code.python"
     },
     {
-      "gap_sum": 3419,
+      "gap_sum": 3502,
       "primitive": "gen.code.shell"
     },
     {
-      "gap_sum": 2978,
+      "gap_sum": 2889,
       "primitive": "follow.verify"
     },
     {
-      "gap_sum": 2690,
+      "gap_sum": 2693,
       "primitive": "gen.code.sql"
     },
     {
-      "gap_sum": 2563,
+      "gap_sum": 2639,
       "primitive": "agent.parallel"
     },
     {
-      "gap_sum": 1941,
+      "gap_sum": 1994,
       "primitive": "gen.code.typescript"
     },
     {
-      "gap_sum": 1438,
+      "gap_sum": 1458,
       "primitive": "runtime.env_bind"
     },
     {
-      "gap_sum": 1185,
+      "gap_sum": 1190,
       "primitive": "presentation.generate"
     }
   ],
   "profile_count": 25,
   "target_matrix": [
     {
-      "avg_gap": 3.83,
+      "avg_gap": 3.903,
       "harness": "bare-agent",
       "model": "deepseek/deepseek-v4-flash",
       "skill_count": 1738
     },
     {
-      "avg_gap": 1.715,
+      "avg_gap": 1.743,
       "harness": "bare-agent",
       "model": "deepseek/deepseek-v4-pro",
       "skill_count": 1738
     },
     {
-      "avg_gap": 5.854,
+      "avg_gap": 5.97,
       "harness": "bare-agent",
       "model": "openrouter/anthropic/claude-opus-4.6",
       "skill_count": 1738
     },
     {
-      "avg_gap": 6.865,
+      "avg_gap": 6.98,
       "harness": "bare-agent",
       "model": "openrouter/deepseek/deepseek-v3.2",
       "skill_count": 1738
     },
     {
-      "avg_gap": 3.357,
+      "avg_gap": 3.392,
       "harness": "bare-agent",
       "model": "openrouter/minimax/minimax-m2.5",
       "skill_count": 1738
     },
     {
-      "avg_gap": 1.649,
+      "avg_gap": 1.679,
       "harness": "bare-agent",
       "model": "openrouter/openai/gpt-5.4",
       "skill_count": 1738
     },
     {
-      "avg_gap": 7.008,
+      "avg_gap": 7.103,
       "harness": "bare-agent",
       "model": "openrouter/qwen/qwen3.5-122b-a10b",
       "skill_count": 1738
     },
     {
-      "avg_gap": 5.707,
+      "avg_gap": 5.819,
       "harness": "bare-agent",
       "model": "openrouter/qwen/qwen3.5-35b-a3b",
       "skill_count": 1738
     },
     {
-      "avg_gap": 15.323,
+      "avg_gap": 15.651,
       "harness": "bare-agent",
       "model": "openrouter/qwen/qwen3.5-9b",
       "skill_count": 1738
     },
     {
-      "avg_gap": 1.377,
+      "avg_gap": 1.403,
       "harness": "bare-agent",
       "model": "openrouter/qwen/qwen3.6-plus",
       "skill_count": 1738
     },
     {
-      "avg_gap": 2.736,
+      "avg_gap": 2.768,
       "harness": "bare-agent",
       "model": "openrouter/z-ai/glm-5-turbo",
       "skill_count": 1738
     },
     {
-      "avg_gap": 4.749,
+      "avg_gap": 4.823,
       "harness": "hermes",
       "model": "deepseek/deepseek-v4-flash",
       "skill_count": 1738
     },
     {
-      "avg_gap": 3.608,
+      "avg_gap": 3.681,
       "harness": "hermes",
       "model": "deepseek/deepseek-v4-pro",
       "skill_count": 1738
     },
     {
-      "avg_gap": 1.715,
+      "avg_gap": 1.757,
       "harness": "openclaw",
       "model": "deepseek/deepseek-v4-flash",
       "skill_count": 1738
     },
     {
-      "avg_gap": 0.333,
+      "avg_gap": 0.344,
       "harness": "openclaw",
       "model": "deepseek/deepseek-v4-pro",
       "skill_count": 1738
     },
     {
-      "avg_gap": 1.175,
+      "avg_gap": 1.204,
       "harness": "openclaw",
       "model": "openrouter/anthropic/claude-haiku-4.5",
       "skill_count": 1738
     },
     {
-      "avg_gap": 2.784,
+      "avg_gap": 2.816,
       "harness": "openclaw",
       "model": "openrouter/anthropic/claude-opus-4.6",
       "skill_count": 1738
     },
     {
-      "avg_gap": 2.335,
+      "avg_gap": 2.372,
       "harness": "openclaw",
       "model": "openrouter/deepseek/deepseek-v3.2",
       "skill_count": 1738
     },
     {
-      "avg_gap": 4.522,
+      "avg_gap": 4.575,
       "harness": "openclaw",
       "model": "openrouter/minimax/minimax-m2.5",
       "skill_count": 1738
     },
     {
-      "avg_gap": 5.43,
+      "avg_gap": 5.527,
       "harness": "openclaw",
       "model": "openrouter/openai/gpt-5.4",
       "skill_count": 1738
     },
     {
-      "avg_gap": 1.468,
+      "avg_gap": 1.507,
       "harness": "openclaw",
       "model": "openrouter/qwen/qwen3.5-122b-a10b",
       "skill_count": 1738
     },
     {
-      "avg_gap": 2.93,
+      "avg_gap": 2.974,
       "harness": "openclaw",
       "model": "openrouter/qwen/qwen3.5-35b-a3b",
       "skill_count": 1738
     },
     {
-      "avg_gap": 19.393,
+      "avg_gap": 19.759,
       "harness": "openclaw",
       "model": "openrouter/qwen/qwen3.5-9b",
       "skill_count": 1738
     },
     {
-      "avg_gap": 7.373,
+      "avg_gap": 7.475,
       "harness": "openclaw",
       "model": "openrouter/qwen/qwen3.6-plus",
       "skill_count": 1738
     },
     {
-      "avg_gap": 6.467,
+      "avg_gap": 6.611,
       "harness": "openclaw",
       "model": "openrouter/z-ai/glm-5-turbo",
       "skill_count": 1738
@@ -255,175 +255,175 @@
   ],
   "target_ranking": [
     {
-      "avg_gap": 0.333,
+      "avg_gap": 0.344,
       "harness": "openclaw",
       "model": "deepseek/deepseek-v4-pro",
       "profile_id": "deepseek_deepseek_v4_pro__df4b8d4427ee",
       "skill_count": 1738
     },
     {
-      "avg_gap": 1.175,
+      "avg_gap": 1.204,
       "harness": "openclaw",
       "model": "openrouter/anthropic/claude-haiku-4.5",
       "profile_id": "openrouter_anthropic_claude_haiku_4_5__1b4a5e4300a5",
       "skill_count": 1738
     },
     {
-      "avg_gap": 1.377,
+      "avg_gap": 1.403,
       "harness": "bare-agent",
       "model": "openrouter/qwen/qwen3.6-plus",
       "profile_id": "openrouter_qwen_qwen3_6_plus__b289683946cc",
       "skill_count": 1738
     },
     {
-      "avg_gap": 1.468,
+      "avg_gap": 1.507,
       "harness": "openclaw",
       "model": "openrouter/qwen/qwen3.5-122b-a10b",
       "profile_id": "openrouter_qwen_qwen3_5_122b_a10b__f975503d9047",
       "skill_count": 1738
     },
     {
-      "avg_gap": 1.649,
+      "avg_gap": 1.679,
       "harness": "bare-agent",
       "model": "openrouter/openai/gpt-5.4",
       "profile_id": "openrouter_openai_gpt_5_4__3fb11ccaa857",
       "skill_count": 1738
     },
     {
-      "avg_gap": 1.715,
+      "avg_gap": 1.743,
       "harness": "bare-agent",
       "model": "deepseek/deepseek-v4-pro",
       "profile_id": "deepseek_deepseek_v4_pro__1112152c304a",
       "skill_count": 1738
     },
     {
-      "avg_gap": 1.715,
+      "avg_gap": 1.757,
       "harness": "openclaw",
       "model": "deepseek/deepseek-v4-flash",
       "profile_id": "deepseek_deepseek_v4_flash__ccf36e9bb565",
       "skill_count": 1738
     },
     {
-      "avg_gap": 2.335,
+      "avg_gap": 2.372,
       "harness": "openclaw",
       "model": "openrouter/deepseek/deepseek-v3.2",
       "profile_id": "openrouter_deepseek_deepseek_v3_2__efdace68aac4",
       "skill_count": 1738
     },
     {
-      "avg_gap": 2.736,
+      "avg_gap": 2.768,
       "harness": "bare-agent",
       "model": "openrouter/z-ai/glm-5-turbo",
       "profile_id": "openrouter_z_ai_glm_5_turbo__751551529b87",
       "skill_count": 1738
     },
     {
-      "avg_gap": 2.784,
+      "avg_gap": 2.816,
       "harness": "openclaw",
       "model": "openrouter/anthropic/claude-opus-4.6",
       "profile_id": "openrouter_anthropic_claude_opus_4_6__d7010cccd458",
       "skill_count": 1738
     },
     {
-      "avg_gap": 2.93,
+      "avg_gap": 2.974,
       "harness": "openclaw",
       "model": "openrouter/qwen/qwen3.5-35b-a3b",
       "profile_id": "openrouter_qwen_qwen3_5_35b_a3b__fa300ddd2d21",
       "skill_count": 1738
     },
     {
-      "avg_gap": 3.357,
+      "avg_gap": 3.392,
       "harness": "bare-agent",
       "model": "openrouter/minimax/minimax-m2.5",
       "profile_id": "openrouter_minimax_minimax_m2_5__cdbb9d8622d6",
       "skill_count": 1738
     },
     {
-      "avg_gap": 3.608,
+      "avg_gap": 3.681,
       "harness": "hermes",
       "model": "deepseek/deepseek-v4-pro",
       "profile_id": "deepseek_deepseek_v4_pro__1acef51268b7",
       "skill_count": 1738
     },
     {
-      "avg_gap": 3.83,
+      "avg_gap": 3.903,
       "harness": "bare-agent",
       "model": "deepseek/deepseek-v4-flash",
       "profile_id": "deepseek_deepseek_v4_flash__b31a601e05eb",
       "skill_count": 1738
     },
     {
-      "avg_gap": 4.522,
+      "avg_gap": 4.575,
       "harness": "openclaw",
       "model": "openrouter/minimax/minimax-m2.5",
       "profile_id": "openrouter_minimax_minimax_m2_5__345a834ccf26",
       "skill_count": 1738
     },
     {
-      "avg_gap": 4.749,
+      "avg_gap": 4.823,
       "harness": "hermes",
       "model": "deepseek/deepseek-v4-flash",
       "profile_id": "deepseek_deepseek_v4_flash__b6049de72d32",
       "skill_count": 1738
     },
     {
-      "avg_gap": 5.43,
+      "avg_gap": 5.527,
       "harness": "openclaw",
       "model": "openrouter/openai/gpt-5.4",
       "profile_id": "openrouter_openai_gpt_5_4__c2f22f36aca9",
       "skill_count": 1738
     },
     {
-      "avg_gap": 5.707,
+      "avg_gap": 5.819,
       "harness": "bare-agent",
       "model": "openrouter/qwen/qwen3.5-35b-a3b",
       "profile_id": "openrouter_qwen_qwen3_5_35b_a3b__3aef3059f6ea",
       "skill_count": 1738
     },
     {
-      "avg_gap": 5.854,
+      "avg_gap": 5.97,
       "harness": "bare-agent",
       "model": "openrouter/anthropic/claude-opus-4.6",
       "profile_id": "openrouter_anthropic_claude_opus_4_6__309373f0fdfd",
       "skill_count": 1738
     },
     {
-      "avg_gap": 6.467,
+      "avg_gap": 6.611,
       "harness": "openclaw",
       "model": "openrouter/z-ai/glm-5-turbo",
       "profile_id": "openrouter_z_ai_glm_5_turbo__dec9a3c1f9f4",
       "skill_count": 1738
     },
     {
-      "avg_gap": 6.865,
+      "avg_gap": 6.98,
       "harness": "bare-agent",
       "model": "openrouter/deepseek/deepseek-v3.2",
       "profile_id": "openrouter_deepseek_deepseek_v3_2__f5d0a84d8568",
       "skill_count": 1738
     },
     {
-      "avg_gap": 7.008,
+      "avg_gap": 7.103,
       "harness": "bare-agent",
       "model": "openrouter/qwen/qwen3.5-122b-a10b",
       "profile_id": "openrouter_qwen_qwen3_5_122b_a10b__f274539f0943",
       "skill_count": 1738
     },
     {
-      "avg_gap": 7.373,
+      "avg_gap": 7.475,
       "harness": "openclaw",
       "model": "openrouter/qwen/qwen3.6-plus",
       "profile_id": "openrouter_qwen_qwen3_6_plus__b2876c41e6fa",
       "skill_count": 1738
     },
     {
-      "avg_gap": 15.323,
+      "avg_gap": 15.651,
       "harness": "bare-agent",
       "model": "openrouter/qwen/qwen3.5-9b",
       "profile_id": "openrouter_qwen_qwen3_5_9b__56978b60265a",
       "skill_count": 1738
     },
     {
-      "avg_gap": 19.393,
+      "avg_gap": 19.759,
       "harness": "openclaw",
       "model": "openrouter/qwen/qwen3.5-9b",
       "profile_id": "openrouter_qwen_qwen3_5_9b__4a1274b861c0",
@@ -508,7 +508,7 @@
     },
     {
       "fleet_gap": 292,
-      "name": "skill",
+      "name": "Summary",
       "skill_id": "skill_md__f48eedb878ee"
     },
     {
@@ -527,11 +527,6 @@
       "skill_id": "convex_skill_md__8c4ffa287904"
     },
     {
-      "fleet_gap": 290,
-      "name": "SKILL",
-      "skill_id": "skill_md__a24e1f109766"
-    },
-    {
       "fleet_gap": 289,
       "name": "go-rod-master",
       "skill_id": "go_rod_master_skill_md__3e369e23240b"
@@ -543,7 +538,7 @@
     },
     {
       "fleet_gap": 288,
-      "name": "skill",
+      "name": "-> Someone chatted, respond!",
       "skill_id": "skill_md__5bc6e9a9f691"
     },
     {
@@ -555,6 +550,11 @@
       "fleet_gap": 285,
       "name": "cred-omega",
       "skill_id": "cred_omega_skill_md__9ec4fd261ada"
+    },
+    {
+      "fleet_gap": 285,
+      "name": "Pump My Claw - Multi-Chain AI Trading Agent Platform",
+      "skill_id": "skill_md__15ad6a14bc73"
     }
   ]
 }

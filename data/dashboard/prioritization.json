@@ -44,7 +44,7 @@
   {
     "code_block_count": 44,
     "environment_mismatch": 1.0,
-    "name": "skill",
+    "name": "Summary",
     "overall_risk": 0.383,
     "primitive_count": 22,
     "priority_score": 0.671,
@@ -81,6 +81,20 @@
     "skill_id": "bun_development_skill_md__9cb3eb9b171e",
     "source": "local.cc-switch",
     "step_count": 0,
+    "taxonomy": "tool-reference"
+  },
+  {
+    "code_block_count": 51,
+    "environment_mismatch": 1.0,
+    "name": "moltbook",
+    "overall_risk": 0.386,
+    "primitive_count": 21,
+    "priority_score": 0.668,
+    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+    "scr_confidence": 0.786,
+    "skill_id": "skill_md__c86e9bd6e1ec",
+    "source": "public.github",
+    "step_count": 8,
     "taxonomy": "tool-reference"
   },
   {
@@ -140,20 +154,6 @@
     "taxonomy": "procedural"
   },
   {
-    "code_block_count": 33,
-    "environment_mismatch": 1.0,
-    "name": "SKILL",
-    "overall_risk": 0.399,
-    "primitive_count": 20,
-    "priority_score": 0.661,
-    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.841,
-    "skill_id": "skill_md__a24e1f109766",
-    "source": "public.github",
-    "step_count": 8,
-    "taxonomy": "tool-reference"
-  },
-  {
     "code_block_count": 12,
     "environment_mismatch": 1.0,
     "name": "docker-expert",
@@ -165,20 +165,6 @@
     "skill_id": "docker_expert_skill_md__6d1c3e0f4262",
     "source": "local.cc-switch",
     "step_count": 38,
-    "taxonomy": "procedural"
-  },
-  {
-    "code_block_count": 20,
-    "environment_mismatch": 1.0,
-    "name": "aws-deploy",
-    "overall_risk": 0.376,
-    "primitive_count": 21,
-    "priority_score": 0.66,
-    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.826,
-    "skill_id": "skill_md__27167b60844c",
-    "source": "public.github",
-    "step_count": 49,
     "taxonomy": "procedural"
   },
   {
@@ -294,32 +280,18 @@
     "taxonomy": "tool-reference"
   },
   {
-    "code_block_count": 26,
+    "code_block_count": 16,
     "environment_mismatch": 0.94,
-    "name": "mini-wiki",
-    "overall_risk": 0.362,
+    "name": "spine-animation",
+    "overall_risk": 0.357,
     "primitive_count": 22,
-    "priority_score": 0.65,
-    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.812,
-    "skill_id": "skill_md__a96fe56718b8",
-    "source": "public.github",
-    "step_count": 39,
-    "taxonomy": "procedural"
-  },
-  {
-    "code_block_count": 12,
-    "environment_mismatch": 0.94,
-    "name": "SKILL",
-    "overall_risk": 0.368,
-    "primitive_count": 21,
     "priority_score": 0.647,
     "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
-    "scr_confidence": 0.799,
-    "skill_id": "skill_md__b34aee145f8c",
+    "scr_confidence": 0.818,
+    "skill_id": "skill_md__6b61d9c85872",
     "source": "public.github",
-    "step_count": 38,
-    "taxonomy": "tool-reference"
+    "step_count": 21,
+    "taxonomy": "procedural"
   },
   {
     "code_block_count": 12,
@@ -375,6 +347,20 @@
     "skill_id": "amazon_alexa_skill_md__46743285eef7",
     "source": "local.cc-switch",
     "step_count": 0,
+    "taxonomy": "tool-reference"
+  },
+  {
+    "code_block_count": 36,
+    "environment_mismatch": 0.94,
+    "name": "uv-package-manager",
+    "overall_risk": 0.359,
+    "primitive_count": 21,
+    "priority_score": 0.641,
+    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+    "scr_confidence": 0.822,
+    "skill_id": "uv_package_manager_skill_md__09916635be8c",
+    "source": "local.cc-switch",
+    "step_count": 20,
     "taxonomy": "tool-reference"
   },
   {
@@ -628,6 +614,20 @@
     "source": "local.cc-switch",
     "step_count": 50,
     "taxonomy": "procedural"
+  },
+  {
+    "code_block_count": 16,
+    "environment_mismatch": 0.94,
+    "name": "youtube-creator-cli-skill",
+    "overall_risk": 0.354,
+    "primitive_count": 18,
+    "priority_score": 0.622,
+    "reason": "high gap/risk, environment pressure, primitive diversity, complexity, or low SCR confidence",
+    "scr_confidence": 0.792,
+    "skill_id": "skill_md__23873b5227a5",
+    "source": "public.github",
+    "step_count": 23,
+    "taxonomy": "tool-reference"
   },
   {
     "code_block_count": 1,

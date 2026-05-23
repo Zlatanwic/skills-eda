@@ -100,6 +100,46 @@ def parse_frontmatter(text: str) -> tuple[dict[str, Any], str]:
     return metadata, body
 
 
+_GENERIC_FILENAMES = {"skill", "readme", "index"}
+
+
+def resolve_skill_name(
+    frontmatter: dict[str, Any],
+    headings: list[dict[str, Any]],
+    *fallback_candidates: str,
+) -> str:
+    """Return the best available skill name.
+
+    Priority:
+        1. frontmatter ``name`` field (authoritative)
+        2. First H1 heading from markdown body (human-readable)
+        3. First non-generic fallback candidate (repo name, dir name, etc.)
+        4. Last-resort: final candidate even if generic
+    """
+    fm_name = frontmatter.get("name") if isinstance(frontmatter, dict) else None
+    if fm_name and str(fm_name).strip():
+        return str(fm_name).strip()
+
+    for heading in headings or []:
+        if heading.get("level") == 1:
+            title = str(heading.get("title", "")).strip()
+            if 0 < len(title) <= 64:
+                return title
+            break  # only try the first H1
+
+    for candidate in fallback_candidates:
+        normalized = candidate.lower()
+        if normalized and normalized not in _GENERIC_FILENAMES:
+            return candidate
+
+    # last resort — return the first non-empty candidate even if generic
+    for candidate in fallback_candidates:
+        if candidate:
+            return candidate
+
+    return "unnamed-skill"
+
+
 def extract_headings(markdown: str) -> list[dict[str, Any]]:
     headings = []
     for match in re.finditer(r"^(#{1,6})\s+(.+?)\s*$", markdown, flags=re.MULTILINE):
