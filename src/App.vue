@@ -723,9 +723,21 @@ function buildAdvancedEdaSummary(skills: SkillIndexRecord[]): AdvancedEdaSummary
     }
   }
 
-  const matrixSkills = [...skills]
-    .sort((a, b) => b.risks.overall - a.risks.overall || b.scr.requirements.length - a.scr.requirements.length)
-    .slice(0, 36);
+  // Sample evenly across the risk spectrum instead of taking only the riskiest skills.
+  // The top-risk skills saturate at primitive level 3, which renders the matrix as a
+  // single color; a stratified sample surfaces real L1/L2/L3 variation while keeping
+  // risk-descending order for a readable gradient (high-risk/L3 at top -> lower-risk/L2 at bottom).
+  const riskSorted = [...skills].sort(
+    (a, b) => b.risks.overall - a.risks.overall || b.scr.requirements.length - a.scr.requirements.length,
+  );
+  const matrixSampleSize = Math.min(36, riskSorted.length);
+  const matrixSkills =
+    matrixSampleSize >= riskSorted.length
+      ? riskSorted
+      : Array.from(
+          { length: matrixSampleSize },
+          (_, index) => riskSorted[Math.round((index * (riskSorted.length - 1)) / (matrixSampleSize - 1))],
+        );
   const matrixPrimitives = primitives.slice(0, 16);
   const matrixCells = matrixSkills.flatMap((skill, skillIndex) => {
     const levels = new Map(skill.scr.requirements.map((requirement) => [requirement.primitive, requirement.level]));
