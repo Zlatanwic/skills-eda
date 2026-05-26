@@ -269,6 +269,7 @@ function modelHarnessHeatmapOption(portability: PortabilitySummary | null): Char
       splitArea: { show: true },
     },
     visualMap: {
+      dimension: 2,
       min: 0,
       max: maxValue,
       calculable: false,
