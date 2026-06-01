@@ -240,12 +240,12 @@ PPT 内容：
 
 放 Findings 页面截图或复刻卡片：
 
-- Most common capability: `follow.procedure`
-- Largest bottleneck: `doc.generate`
-- Best target: `deepseek-v4-pro / openclaw`
-- Dependency footprint: `1107/1739`
-- Dominant mismatch axis: `harness`
-- LLM SCR: `20`
+- Most common capability: `follow.constraints`（1680 skills / 96.6%）
+- Largest bottleneck: `doc.generate`（gap 18150）
+- Best target: `deepseek-v4-pro / openclaw`（avg gap 0.344）
+- Dependency footprint: `1105/1739`（63.5%）
+- Dominant mismatch axis: `harness`（model 0.136 / harness 0.143）
+- LLM SCR annotations: `20`（独立统计 tile，不计入 8 条 findings 卡片）
 
 对应讲稿章节：
 
@@ -253,11 +253,11 @@ PPT 内容：
 
 讲稿：
 
-Findings 页面是 dashboard 首页，它把研究问题直接转成结论卡片。当前最常见的 primitive 是 `follow.procedure`，出现在 1,496 个 skills 中，占 86.0%。这说明大部分 skills 都包含过程性操作，不只是静态说明。
+Findings 页面是 dashboard 首页，它把研究问题直接转成结论卡片。当前最常见的 primitive 是 `follow.constraints`，出现在 1,680 个 skills 中，占 96.6%。这说明绝大部分 skills 都包含约束遵守和过程性操作，不只是静态说明。
 
-最大的 portability bottleneck 是 `doc.generate`，aggregate SCR/TCP gap 为 18,068。这说明结构化输出、长文本生成和文档生成，在不同 target profiles 之间存在明显能力差距。
+最大的 portability bottleneck 是 `doc.generate`，aggregate SCR/TCP gap 为 18,150。这说明结构化输出、长文本生成和文档生成，在不同 target profiles 之间存在明显能力差距。
 
-当前最兼容的 target profile 是 `deepseek-v4-pro / openclaw`，平均 gap 是 0.339。环境依赖方面，有 1,107 个 skills，也就是 63.7%，提到了 dependencies、credentials、packages 或 environment setup。
+当前最兼容的 target profile 是 `deepseek-v4-pro / openclaw`，平均 gap 是 0.344。环境依赖方面，有 1,105 个 skills，也就是 63.5%，提到了 dependencies、credentials、packages 或 environment setup。
 
 这一页的作用是先给出结论，再用后面的模块解释结论如何产生。
 
@@ -361,7 +361,7 @@ PPT 内容：
 
 Advanced EDA 页面补充了更典型的探索性分析方法。Primitive co-occurrence matrix 用来观察哪些 primitives 经常一起出现，比如 procedure、verification、constraints 和 tool use 是否形成组合模式。
 
-Taxonomy x primitive Sankey 展示 skill 类型如何流向能力需求。Source x language heatmap 比较不同来源中的代码语言分布。Skill x primitive matrix 则选取高风险或 primitive-dense 的 skills，展示单个 skill 的能力需求画像。
+Taxonomy x primitive Sankey 展示 skill 类型如何流向能力需求。Source x language heatmap 比较不同来源中的代码语言分布。Skill x primitive matrix 沿 overall risk 谱做分层均匀取样，选出 36 个 skills（而不是只取最高风险的样本），并保持风险从高到低排序。这样做是因为最高风险 skills 的 primitive level 几乎全部饱和在 L3，单看它们矩阵会退化成单一颜色；分层取样能让 L1/L2/L3 的等级差异真正显现，矩阵从顶部高风险（偏 L3）到底部低风险（偏 L2）形成可读的梯度，用来展示单个 skill 的能力需求画像。
 
 最后是 PCA / Clustering Map。我用结构特征和 SCR primitive 特征构造向量，包括文本长度、词数、section 数、code block 数、step 数、dependency 数、tool 数、branching、loop、verification，以及 top primitives 的 required level。然后做标准化，用 PCA 投影到二维，再用 k-means 做粗聚类。
 
@@ -434,7 +434,7 @@ PPT 内容：
 
 讲稿：
 
-综合当前分析，我得到几个主要结论。第一，skills 高度 workflow 化，`follow.procedure`、`follow.verify` 和 `follow.constraints` 的出现频率都很高。第二，很多 skills 不只是文本说明，而是包含代码片段、工具链和外部服务依赖。第三，portability risk 和 model/harness pair 强相关。第四，environment mismatch 是重要风险，很多 skills 都依赖 CLI、GitHub、runtime、credentials 或 package managers。
+综合当前分析，我得到几个主要结论。第一，skills 高度 workflow 化，`follow.constraints`、`follow.procedure` 和 `follow.verify` 的出现频率都很高。第二，很多 skills 不只是文本说明，而是包含代码片段、工具链和外部服务依赖。第三，portability risk 和 model/harness pair 强相关。第四，environment mismatch 是重要风险，很多 skills 都依赖 CLI、GitHub、runtime、credentials 或 package managers。
 
 局限方面，SCR 主要是规则派生，并辅以 20 条 LLM 标注，不是人工金标；public GitHub 样本目前是 96 条，只能做初步探索；PCA 和 k-means 也只是用于发现结构，不用于预测。
 

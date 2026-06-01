@@ -16,19 +16,19 @@ Important distinction: SkVM TCP profiles are imported official data from SkVM-da
 
 ### 1. Procedure-following and verification dominate the skill corpus
 
-The most common derived primitive is now `follow.procedure`, appearing in 1,496 skills, or 86.0% of the corpus. Verification is nearly tied as the second strongest signal. This supports the project framing that skills encode action plus validation logic, not ordinary documentation snippets.
+The most common derived primitive is now `follow.constraints`, appearing in 1,680 skills, or 96.6% of the corpus. Procedure-following and verification follow closely as the next strongest signals. This supports the project framing that skills encode action plus constraint and validation logic, not ordinary documentation snippets.
 
 Related dashboard view: `Findings`, `Primitives -> Primitive demand ranking`.
 
 ### 2. Verification is a major workflow pattern
 
-1,368 skills, or 83.3% of the corpus, include verification signals such as test, check, confirm, inspect, or validate. This suggests many skills encode not only how to act, but how to decide whether the action succeeded.
+1,448 skills, or 83.3% of the corpus, include verification signals such as test, check, confirm, inspect, or validate. This suggests many skills encode not only how to act, but how to decide whether the action succeeded.
 
 Related dashboard view: `Findings`, `Primitives -> Workflow complexity map`, selected skill detail.
 
 ### 3. `doc.generate` is the largest portability bottleneck
 
-Across the SCR/TCP comparison, `doc.generate` has the largest aggregate gap score at 18,068. Other high bottlenecks include `reason.plan`, `data.parse`, `data.transform`, and `tool.github`.
+Across the SCR/TCP comparison, `doc.generate` has the largest aggregate gap score at 18,150. Other high bottlenecks include `reason.plan`, `data.parse`, `data.transform`, and `tool.github`.
 
 Interpretation: writing structured or long-form outputs, planning, data handling, and GitHub/web-mediated work are recurring weak points when skill requirements are compared against available target profiles.
 
@@ -36,7 +36,7 @@ Related dashboard view: `Risks -> Portability Risk`, `Primitives -> Bottleneck p
 
 ### 4. Target compatibility varies strongly by model/harness pair
 
-The best observed target profile is `deepseek-v4-pro / openclaw`, with an average gap of 0.339. The weakest target in the current profiles is `qwen3.5-9b / openclaw`, with an average gap of 19.459.
+The best observed target profile is `deepseek-v4-pro / openclaw`, with an average gap of 0.344. The weakest target in the current profiles is `qwen3.5-9b / openclaw`, with an average gap of 19.759.
 
 This makes the model/harness pair a useful unit of analysis: the same skill corpus can look much more or less portable depending on runtime and model pairing.
 
@@ -50,14 +50,14 @@ Related dashboard view: `Risks -> Risk by taxonomy`, `Dependency / Environment R
 
 ### 6. Environment dependencies are common
 
-1,107 of 1,739 skills, or 63.7%, mention dependencies, credentials, packages, environment variables, or setup hints. The largest environment categories are:
+1,105 of 1,739 skills, or 63.5%, mention dependencies, credentials, packages, environment variables, or setup hints. The largest environment categories are:
 
-- `system cli`: 1,090 skills
-- `version control`: 1,036 skills
+- `system cli`: 1,097 skills
+- `version control`: 1,032 skills
 - `web/browser`: 1,002 skills
-- `runtime`: 865 skills
+- `runtime`: 869 skills
 - `credentials`: 761 skills
-- `package managers`: 419 skills
+- `package managers`: 424 skills
 
 This supports the idea that environment mismatch is not a marginal issue for skills; it is a visible part of the ecosystem.
 

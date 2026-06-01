@@ -36,7 +36,7 @@ Open the `Findings` page.
 
 This page turns research questions into finding cards:
 
-- `follow.procedure` is the most common primitive.
+- `follow.constraints` is the most common primitive.
 - `doc.generate` is the largest portability bottleneck.
 - `deepseek-v4-pro / openclaw` is the most compatible target in the current profile set.
 - A large share of skills mention dependencies, credentials, packages, or environment setup.

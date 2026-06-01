@@ -24,14 +24,14 @@
 
 可得结论：
 
-- 当前最常见能力需求是 `follow.procedure`，说明 skills 高度 workflow 化。
+- 当前最常见能力需求是 `follow.constraints`，说明 skills 高度 workflow 化。
 - 最大 portability bottleneck 是 `doc.generate`，说明文档生成和结构化输出是跨 target 的主要短板之一。
-- 环境依赖覆盖 1,107 / 1,739 个 skills，说明 environment mismatch 是常见风险。
+- 环境依赖覆盖 1,105 / 1,739 个 skills，说明 environment mismatch 是常见风险。
 - 当前 dominant mismatch axis 是 harness，说明运行框架和工具支持不能忽略。
 
 讲稿示例：
 
-“Findings 页面不是普通图表堆叠，而是把研究问题直接转成结论卡片。比如这里可以看到，`follow.procedure` 出现在 1,496 个 skills 中，占 86.0%，说明 skills 普遍包含过程性操作。`doc.generate` 是最大的 gap bottleneck，说明文档生成和结构化输出在不同 target profiles 上最容易产生迁移问题。”
+“Findings 页面不是普通图表堆叠，而是把研究问题直接转成结论卡片。比如这里可以看到，`follow.constraints` 出现在 1,680 个 skills 中，占 96.6%，说明 skills 普遍包含约束遵守和过程性操作。`doc.generate` 是最大的 gap bottleneck，说明文档生成和结构化输出在不同 target profiles 上最容易产生迁移问题。”
 
 ## 2. Skills 模块
 
@@ -141,7 +141,7 @@
 
 可得结论：
 
-- `follow.procedure`、`follow.verify`、`follow.constraints` 等 primitive 频繁出现，说明 skills 普遍要求步骤执行、约束遵守和结果验证。
+- `follow.constraints`、`follow.procedure`、`follow.verify` 等 primitive 频繁出现，说明 skills 普遍要求约束遵守、步骤执行和结果验证。
 - 如果某些 primitive 在 L3 上颜色较深，说明这些能力通常涉及复杂组合、验证或多工具协作。
 
 讲稿示例：
@@ -162,7 +162,7 @@
 
 可得结论：
 
-- 当前 workflow 类 primitive 非常突出，如 `follow.procedure`、`follow.verify`、`follow.constraints`。
+- 当前 workflow 类 primitive 非常突出，如 `follow.constraints`、`follow.procedure`、`follow.verify`。
 - 这说明 skills 普遍要求模型按流程、按规则、带验证地行动。
 
 讲稿示例：
@@ -296,7 +296,7 @@
 
 可得结论：
 
-- 当前 63.7% skills 提到依赖、凭据、包或环境配置。
+- 当前 63.5% skills 提到依赖、凭据、包或环境配置。
 - system CLI、Git/version control、web/browser、runtime 是高频环境风险。
 - environment mismatch 是 skills 迁移问题的重要组成部分。
 
@@ -403,24 +403,29 @@
 图表内容：
 
 - 矩阵热力图。
-- 纵轴是选出的高风险或 primitive-dense skills。
+- 纵轴是沿 overall risk 谱分层均匀取样的 36 个 skills，按风险从高到低排序（顶部最高风险，底部最低风险）。
 - 横轴是 top primitives。
-- 颜色表示 required level。
+- 颜色表示 required level（L1/L2/L3）。
+
+选样说明：
+
+- 早期版本只取风险最高的 36 个 skills，但它们的 primitive level 几乎全部饱和在 L3，矩阵退化成单一颜色、信息量为零。
+- 改为沿风险谱分层均匀取样后，L1/L2/L3 的等级差异得以显现，全量分布大致是 L3 占 3/4、L2 占 1/4、L1 极少。
 
 分析意义：
 
 - 从单个 skill 角度查看能力需求画像。
-- 观察高风险 skills 是否共享相似 primitive 结构。
+- 借助风险梯度观察「越高风险的 skill 是否越倾向于把多个 primitives 顶到 L3」。
 
 可得结论：
 
-- 某些高风险 skills 在多个 primitives 上达到 L2/L3。
-- 这些 skills 可能需要重写、拆分或编译优化。
-- 同一类高风险 skill 可能形成相似能力需求模式。
+- 高风险 skills 在多个 primitives 上达到 L3，低风险 skills 更多停留在 L2，矩阵呈现顶部偏深、底部偏浅的梯度。
+- 顶部高风险 skills 可能需要重写、拆分或编译优化。
+- 同一风险区间的 skills 往往形成相似能力需求模式。
 
 讲稿示例：
 
-“Skill x Primitive Matrix 是从样本层面看能力需求。每一行是一个 skill，每一列是一个 primitive，颜色表示等级。颜色越密集，说明这个 skill 对能力要求越复杂，也越可能产生迁移风险。”
+“Skill x Primitive Matrix 是从样本层面看能力需求。每一行是一个 skill，每一列是一个 primitive，颜色表示等级。这里我特意沿风险谱做了分层取样而不是只取最高风险样本——因为最高风险的 skills 等级几乎都饱和在 L3，全取它们矩阵会变成一片纯色；分层之后就能看到从顶部高风险偏 L3、到底部低风险偏 L2 的梯度，这样矩阵才真正反映出能力需求的差异。”
 
 ### 5.5 Length / Step Histogram
 

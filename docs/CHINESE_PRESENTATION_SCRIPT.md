@@ -114,15 +114,15 @@ Dashboard 顶部有全局过滤器，可以按 source、taxonomy 和关键词进
 
 目前这个页面展示了几个核心发现。
 
-第一个发现是：`follow.procedure` 是当前最常见的 primitive，出现在 1,496 个 skills 中，占 86.0%。紧随其后的是 `follow.verify`，也接近同样比例。这说明大量 skills 不只是告诉 agent 怎么做，还会要求按步骤执行，并检查、验证、确认或测试结果。
+第一个发现是：`follow.constraints` 是当前最常见的 primitive，出现在 1,680 个 skills 中，占 96.6%。紧随其后的是 `follow.procedure` 和 `follow.verify`，比例也很高。这说明大量 skills 不只是告诉 agent 怎么做，还会要求遵守约束、按步骤执行，并检查、验证、确认或测试结果。
 
-第二个发现是：`doc.generate` 是最大的 portability bottleneck，aggregate SCR/TCP gap 达到 18,068。这说明文档生成、结构化输出和长文本生成在不同 target profile 之间可能存在明显能力差距。
+第二个发现是：`doc.generate` 是最大的 portability bottleneck，aggregate SCR/TCP gap 达到 18,150。这说明文档生成、结构化输出和长文本生成在不同 target profile 之间可能存在明显能力差距。
 
-第三个发现是：当前最兼容的 target profile 是 `deepseek-v4-pro / openclaw`，平均 gap 是 0.339；而较弱 target 的平均 gap 可以明显更高。这说明同一个 skill corpus 在不同 model/harness 组合上的兼容性差别很大。
+第三个发现是：当前最兼容的 target profile 是 `deepseek-v4-pro / openclaw`，平均 gap 是 0.344；而较弱 target 的平均 gap 可以明显更高。这说明同一个 skill corpus 在不同 model/harness 组合上的兼容性差别很大。
 
-第四个发现是：有 1,107 个 skills，也就是 63.7%，提到了 dependencies、credentials、packages 或 environment setup。这说明环境依赖不是边缘问题，而是 skills 生态中的常见风险。
+第四个发现是：有 1,105 个 skills，也就是 63.5%，提到了 dependencies、credentials、packages 或 environment setup。这说明环境依赖不是边缘问题，而是 skills 生态中的常见风险。
 
-第五个发现是：当前 model mismatch 平均值约为 0.141，harness mismatch 平均值约为 0.145，差距很小但当前数据里 harness 略高。这说明 skill fragility 不能只归因于模型能力，运行框架和工具支持也很重要。
+第五个发现是：当前 model mismatch 平均值约为 0.136，harness mismatch 平均值约为 0.143，差距很小但当前数据里 harness 略高。这说明 skill fragility 不能只归因于模型能力，运行框架和工具支持也很重要。
 
 此外，顶部指标卡中新增了 `LLM SCR`，用于显示当前筛选条件下已经合并 LLM 辅助标注的 skills 数量。当前全局为 20 条，主要来自 SkVM benchmark，用于展示规则抽取之外的辅助标注能力。
 
@@ -222,7 +222,7 @@ Dashboard 顶部有全局过滤器，可以按 source、taxonomy 和关键词进
 
 综合当前分析，可以得到以下结论。
 
-第一，skills 高度 workflow 化。`follow.verify`、`follow.procedure` 和 `follow.constraints` 的出现频率很高，说明大部分 skills 都包含步骤、约束和验证逻辑。
+第一，skills 高度 workflow 化。`follow.constraints`、`follow.procedure` 和 `follow.verify` 的出现频率很高，说明大部分 skills 都包含步骤、约束和验证逻辑。
 
 第二，skills 不只是文本说明，很多 skills 包含代码片段、工具链和外部服务依赖。因此分析 skills 时，不能只看自然语言内容，还要看 code、tool 和 dependency signals。
 
