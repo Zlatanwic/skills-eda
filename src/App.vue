@@ -599,7 +599,9 @@ function taxonomyPrimitiveSankeyOption(advanced: AdvancedEdaSummary): ChartOptio
         data: advanced.taxonomy_primitive_sankey.nodes,
         links: advanced.taxonomy_primitive_sankey.links.slice(0, 70),
         left: 12,
-        right: 22,
+        // Right-column (primitive) labels render to the right of the node;
+        // reserve room so long names like "tool.package_manager" are not clipped.
+        right: 150,
         top: 12,
         bottom: 12,
         nodeWidth: 12,
